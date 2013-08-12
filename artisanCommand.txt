@@ -1,0 +1,7 @@
+php artisan generate:migration create_news_table --fields="title:string, body:text" - generate table news
+php artisan migrate - run migration
+php artisan db:seed  - start seeding 
+php artisan migrate --seed - umeste
+php artisan generate:model news
+
+composer dump-autoload

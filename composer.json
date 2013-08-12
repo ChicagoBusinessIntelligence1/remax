@@ -1,0 +1,51 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"require": {
+		"laravel/framework": "4.0.*",
+		"way/generators": "dev-master",
+		"way/guard-laravel": "dev-master",
+		"pafelin/laravel-nonce": "dev-master",
+		"sunra/php-simple-html-dom-parser": "1.5.0.*@dev"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/controllers/search",
+			"app/controllers/admin",
+			"app/controllers/rent",
+			"app/controllers/about",
+			"app/controllers/buying",
+			"app/controllers/selling",
+			"app/controllers/contact",
+			"app/controllers/mortgage",
+			"app/controllers/news",
+			"app/controllers/email",
+			"app/controllers/agent",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan optimize"
+		],
+		"pre-update-cmd": [
+			"php artisan clear-compiled"
+		],
+		"post-update-cmd": [
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev"
+}

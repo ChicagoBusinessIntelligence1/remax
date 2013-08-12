@@ -1,0 +1,22 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	deleted:    app/database/migrations/2013_06_21_182451_create_news_table.php
+#	deleted:    app/database/migrations/2013_06_21_201010_create_news_table.php
+#	deleted:    app/database/migrations/2013_06_30_164536_proptype.php
+#	deleted:    app/database/migrations/2013_06_30_174107_home.php
+#	deleted:    app/database/migrations/2013_06_30_174225_homes.php
+#	deleted:    app/database/migrations/2013_07_05_231742_create_homes_table.php
+#	deleted:    app/database/migrations/2013_07_29_164713_create_users_table.php
+#	deleted:    app/database/migrations/2013_08_02_160509_create_tests_table.php
+#	deleted:    app/database/seeds/HomesTableSeeder.php
+#	deleted:    app/database/seeds/NewsTableSeeder.php
+#	deleted:    app/database/seeds/ProptypeTableSeeder.php
+#	deleted:    app/database/seeds/TestsTableSeeder.php
+#	deleted:    app/database/seeds/UsersTableSeeder.php
+#
+

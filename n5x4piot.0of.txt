@@ -1,0 +1,45 @@
+﻿Merge branch 'master' of https://github.com/IvanBohun/remax
+
+Conflicts:
+	app/views/layouts/master.blade.php
+	remax.sublime-workspace
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 3 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	renamed:    app/database/migrations/2013_06_19_185755_create_user_table.php -> app/database/migrations/2013_06_21_143749_create_users_table.php
+#	new file:   app/database/migrations/2013_06_21_143823_create_news_table.php
+#	modified:   app/views/about/vw_about.blade.php
+#	modified:   app/views/buying/vw_deciding_where_to_live.blade.php
+#	modified:   app/views/buying/vw_five_tips_to_narrow_your_online_home_search.blade.php
+#	modified:   app/views/contact/vw_contact.blade.php
+#	modified:   app/views/layouts/master.blade.php
+#	modified:   app/views/mortgage/vw_down_payments_how_much_do_you_need.blade.php
+#	modified:   app/views/mortgage/vw_finding_the_right_mortgage_professional.blade.php
+#	modified:   app/views/mortgage/vw_getting_preapproved.blade.php
+#	modified:   app/views/mortgage/vw_how_much_can_you_afford.blade.php
+#	modified:   app/views/mortgage/vw_mortgages_101_basic_loan_types.blade.php
+#	modified:   app/views/mortgage/vw_renovating_a_home.blade.php
+#	modified:   app/views/selling/vw_consider_a_home_inspection_when_selling.blade.php
+#	modified:   app/views/selling/vw_preparing_your_house_for_sale.blade.php
+#	modified:   public/comp/fire_app_log.txt
+#	modified:   public/comp/sass/screen.scss
+#	modified:   public/comp/stylesheets/screen.css
+#	modified:   remax.sublime-workspace
+#
+
