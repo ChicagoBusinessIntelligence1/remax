@@ -1,0 +1,1375 @@
+//LOCATION: remax/public
+@import "compass";
+@import "app";
+@import "foundation";
+@import "settings";
+// @import "sassybuttons";
+
+
+* {
+	vertical-align: top;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+}
+
+/* =variables*/
+$colorNavPanel: #393939;
+$colorButtonBackground: #428CB9;
+$colorLogoWrapper: #F6F6F6;
+$colorFontGray: #525252;
+$colorGray: #4B4F54;
+$colorSlash: #AAAAAA;
+$colorFontOffWhite: #F7F7F4;
+$copyrightBackgroundColor: #3F3F3F;
+$colorRed: lighten(#B92025, 10%);
+$myTextShadow: #FFFFFF 1px 1px 0px;
+$myTextShadow2: #FFFFFF 2px 2px 0px;
+$colorBlue: #396C95;
+$myBorderGray: 1px solid darken(#F2F2F2, 5%)!important;
+
+/*=mixins*/
+@mixin marginOneEmTopLeft{
+	margin-left:1em;
+	margin-top: 1em;
+}
+
+@mixin myButtonStyle {
+	background-color: lighten($colorNavPanel, 15%) !important;
+	margin-top: .5em !important;
+	margin-bottom: .5em !important;
+	margin-right: 7em !important;
+	border-color: lighten($colorNavPanel, 15%) !important;
+	color: $colorFontOffWhite;
+}
+
+@mixin logoWrapperStyle{
+	padding: 10px;
+	background-color: darken($colorLogoWrapper, 10%);
+	margin-bottom: 15px;
+}
+
+@mixin mailIconStyle {
+	padding-left:10px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+@mixin mainContentStyle{
+	padding-bottom: 20px;
+}
+@mixin findFormStyle {
+	display: inline-block;
+	font-weight:bold;
+	color: $colorFontGray;
+}
+
+@mixin slashBefore{
+	color: $colorSlash;
+	content: "/";
+	position: relative;
+}
+@mixin footerStyle{
+	background-color: darken($colorLogoWrapper, 10%);
+	padding-top: 10px;
+	margin-top: 17px;
+}
+@mixin contactFooterStyle{
+	font-size: 11px;
+	font-weight: bold !important;
+	// margin-top: 3px !important;
+	margin-bottom: 5px !important;
+	display: inline-block;
+	min-width: 180px;
+	line-height: 17px !important;
+}
+@mixin propertiesFooterStyle{
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 5px;
+	color: $colorNavPanel;
+	text-shadow: $myTextShadow;
+	min-width: 150px;
+}
+
+@mixin connectFooterStyle{
+	padding-bottom: 5px !important;
+	display: inline-block;
+	font-size: 11px;
+	float: left;
+	font-weight: bold;
+	text-shadow: $myTextShadow;
+	border-bottom: 1px solid $colorNavPanel;
+}
+@mixin myThLiStyle{
+	margin-bottom: 0px !important;
+	margin-right: 0px !important;
+	padding-bottom: 0px !important;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+@mixin myPanelStyle {
+	margin-top: 15px;
+	padding: 15px !important;
+	padding-bottom: 0px !important;
+	padding-top: 15px !important;
+	
+}
+h2, h3 {
+	color: $colorFontGray !important;
+}
+h1{
+	color: $colorNavPanel !important;
+	font-size: 35px !important;
+	line-height: 40px !important;
+}
+h3{
+	font-size: 22px !important;
+}
+h4{
+	color: $colorNavPanel !important;
+}
+h5{
+	line-height: 25px !important;
+}
+.light{
+	background-color: #FFFFFF;
+}
+.dark{
+
+	background-color: lighten(#F7F7F4, 3%)
+}
+.noMargin{
+	margin: 0px !important;
+}
+.fiveMarginBottom{
+	margin-bottom: 5px !important;
+}
+.tenMarginTop{
+	margin-top: 10px  !important;
+}
+.noPadding{
+	padding: 0px !important;
+}
+.noRightPadding{
+	padding-right:0px !important;
+}
+.fivePadding{
+	padding: 5px !important;
+}
+
+/*  */
+/* =accountPanel starts here */
+.panel{
+
+	border-color: darken(#FBFBFB, 10%) !important;
+	background-color: lighten(#F2F2F2, 2%) !important;
+}
+
+input[type="password"]{
+	padding: 6px !important;
+	line-height: 15px !important;
+	font-size: 12px !important;
+}
+.emailCreate{
+	font-size: 12px !important;
+}
+
+.haveAccountWrapper{
+	margin-bottom: 7px !important;
+}
+.haveAccountSpan{
+	font-size: 13px !important;
+	color: $colorFontGray;
+}
+.signInStyle{
+	font-size: 13px !important;
+	font-weight: bold;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+.forgotPassStyle{
+	font-size: 12px;
+	background-color: #FFFFFF;
+	color: $colorFontGray !important;
+}
+.accountPanelWrapper{
+	background-color: darken($colorNavPanel, 7%); 
+}
+.accountPanel{
+	padding-right: 0px !important;
+}
+.ulAccountPanel{
+	margin-bottom: 0px !important;
+	padding-bottom: 5px !important;
+	padding-top: 5px !important;
+}
+.ulLoginError{
+	li{
+		color: $colorRed;
+		font-size: 14px;
+	}
+}
+.liCreateAccount{
+	a{
+		font-size: 12px !important;
+		color: $colorFontOffWhite !important;
+		&:hover{
+			color: lighten($colorBlue, 30%) !important;
+		}
+	}
+	em{
+		color: $colorFontOffWhite;
+		&:hover{
+			color: lighten($colorBlue, 30%);
+		}
+	}
+}
+.liSignIn{
+	padding-right: 15px !important;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 12px !important;
+	a{
+		display: inline-block !important;
+		color: $colorFontOffWhite;
+		&:hover{
+			color: lighten($colorBlue, 30%);
+		}
+	}
+}
+.signInFormWrapper{
+	label{
+		font-size: 13px !important;
+	}
+	input{
+		font-size: 13px !important;
+	}
+	button, .button {
+		@include myButtonStyle;
+		font-size: 11px !important;
+		letter-spacing: 1px;
+		word-spacing: 2px !important;
+	}
+	button:hover, button:focus, .button:hover, .button:focus{
+		background-color: $colorNavPanel !important;
+	}
+}
+
+/* =userPanel starts here */
+
+.updated{
+	padding: 7px !important;
+}
+.optionStyle{
+	font-size: 11px !important;
+	color: $colorFontGray !important;
+}
+.olDreamhomes{
+	margin-left: 20px !important;
+	.inline-list{
+		margin-bottom: 0px !important;
+	}
+}
+.requestButtons{
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+}
+.userPanel{
+	padding-left: 10px !important;
+	.panel{
+		background-color: #FBFBFB !important;
+		border-color: darken(#FBFBFB, 10%) !important;
+		padding-right: 15px !important;
+		padding-left: 15px !important;
+		padding-top: 15px !important;
+		padding-bottom: 0px !important;
+		margin-bottom: 25px !important; 
+	}
+}
+.userPanelContent{
+
+}
+.userImgL{
+	padding: 0px !important;
+}
+.ulUserPanel{
+	margin-bottom: 0px !important;
+	li a{
+		font-size: 11px !important;
+		font-weight: bold !important;
+	}
+}
+.aUserPanelStyle{
+	color: #FFFFFF !important;
+	&:hover{
+		color: #FFFFFF !important;
+	}
+}
+.aEditProfileStyle{
+	color: $colorFontGray !important;
+
+}
+.requestResultButtons{
+	margin-left: 10px !important;
+}
+.editRequestButton{
+	padding: 7px !important;
+	.tiny{
+		font-size:12px !important;
+		letter-spacing: 1px !important;
+	}
+}
+
+.submitDeleteButton{
+	.button{
+
+		.tiny{
+
+			font-size:12px !important;
+			letter-spacing: 1px !important;
+		}
+	}
+}
+
+.leaveRequest{
+	background-color: lighten($colorBlue, 15%)!important;
+	border-color: lighten($colorBlue, 15%)!important;
+
+	&:hover{
+		background-color: lighten($colorBlue, 5%)!important;
+	}
+}
+.manageRequest{
+	background-color: lighten($colorBlue, 15%)!important;
+	border-color: lighten($colorBlue, 15%)!important;
+
+	&:hover{
+		background-color: lighten($colorBlue, 5%)!important;
+	}
+
+}
+.editButtonWrapper{
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+}
+.deleteButtonWrapper{
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+}
+/* =navPanel starts here */
+
+.panel h5{
+	margin-bottom: 5px !important;
+}
+
+.about-us{
+
+	p{
+		font-size:14px !important;
+		line-height: 22px !important;
+	}
+}
+.companyName{
+	font-size: 17px !important;
+}
+.name{
+	h1{
+
+		font-size: 17px !important;
+	}
+	a{
+		color: $colorFontOffWhite; 
+		&:hover{
+			color: lighten($colorBlue, 30%);
+		}
+	}
+}
+.navPanel{
+	background-color: $colorNavPanel;
+
+}
+.top-bar{
+	margin-bottom: 0 !important;
+	background-color: $colorNavPanel !important;
+}
+.top-bar-section ul li > a {
+	background-color: $colorNavPanel !important;
+	font-size: 12px !important;
+	letter-spacing: 1px !important;
+	color: $colorFontOffWhite; 
+	&:hover{
+		color: lighten($colorNavPanel, 45%);
+	}
+}
+.toggle-topbar, .top-bar.expanded .title-area{
+	background-color: $colorNavPanel !important;
+}
+.logoWrapper{
+	@include logoWrapperStyle;
+
+	.callUs{
+		color: $colorRed;
+		text-shadow: $colorFontOffWhite 1px 1px 0px;
+		font-size: 19px;
+		font-weight: bold;
+		display: inline-block;
+		padding-left: 5px;
+	}
+	.callUsContent{
+		margin-top: 10px !important;
+		text-align: right;
+		padding:0px;
+		width: 166px;
+	}
+	.oneStopService{
+		margin-bottom: 10px !important;
+	}
+	.contactTextStyle{
+		font-size: 10px;
+		font-weight: bold;
+		margin-top: 5px;
+		color: $colorFontGray;
+		display: inline-block;
+	}
+
+	.HeaderWrapper{
+		padding-right: 0px !important;
+	}
+	.connectWithContent{
+		margin-bottom: 10px;
+		padding: 0px !important;
+		width: 170px;
+	}
+	.residentialCommercialContent{
+		padding: 0px !important;
+	}
+	.logoContent{
+		padding: 0px !important;
+		width: 120px !important;
+	}
+}
+.realEstateRC{
+	font-family: 'Roboto Slab', serif !important;
+	color: lighten($colorNavPanel, 30%) !important;
+	font-size: .6em !important;
+	margin-top: 7px !important;
+	margin-bottom: 7px !important;
+	letter-spacing:1px !important;
+}
+.logoContentRow{
+	margin-right: 0px !important;
+}
+.sloganText{
+	p{
+		font-family: 'Noto Serif', ​serif;
+		font-size: 17px;
+		margin-bottom: 0px !important;
+		color: $colorBlue;
+		font-weight: bold;
+		text-shadow: $myTextShadow;
+		letter-spacing: 1px;
+		line-height: 30px;
+	}	
+	padding: 0px !important;
+	margin-top: 15px;
+
+}
+.sloganTop{
+	margin-left: 15px;
+}
+.oneStopService{
+	text-align: center;
+	margin-left: -30px;
+}	
+
+.oneStopText{
+	color: $colorFontOffWhite;
+	font-size:14px;
+	line-height: 20px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: -65px;
+}
+
+.customerTips{
+	padding: 0px !important;
+	width: 260px;
+	margin-top: -70px;
+	margin-right: -100px;
+	font-weight: bold;
+	color: $colorFontGray;
+	text-shadow: $myTextShadow;
+
+}
+.ulCustomerTips{
+	font-size: 13px !important;
+	line-height: 20px;
+}
+
+.buyOrSell{
+	margin-left: -20px;
+}
+.invOpportunity{
+	@extend .buyOrSell;
+}
+
+/*  =call us style starts here*/
+
+
+.iconMailHome{
+	margin-top: 35px;
+	text-align: right;
+	margin-bottom: -5px;
+	padding:0px;
+}
+.mailIcon{
+	@include mailIconStyle;
+}
+
+.homeIcon{
+	@extend .mailIcon;
+}
+
+
+/* =mainContent starts here */
+.mainContent{
+	@include mainContentStyle;
+
+	dt{
+		font-size: 14px;
+	}
+	dd{
+		font-size: 14px;
+	}
+
+
+}
+.menues{
+	p{
+		font-size: 14px !important;
+	}
+}
+/*  =home page starts here*/
+.selectedProperty{
+	letter-spacing: 1px;
+	margin-bottom: 10px !important;
+	text-shadow: $myTextShadow2;
+}
+.ulWorkWith{
+	li{
+		font-size: 14px !important;
+		margin-left: 20px;
+		p{
+			line-height: 22px !important;
+			font-size: 14px !important;
+		}
+	}
+}
+
+/* =find starts here */
+.oneRentDescriptionUl{
+	font-size:12px !important;
+	p{
+
+		font-size:12px !important;
+	}
+}
+
+.submitSearch{
+	font-size: 11px !important;
+	letter-spacing: 1px;
+	text-shadow: $myTextShadow;
+}
+.sectionWidth{
+	font-size: 12px !important;
+	font-weight: bold;
+	padding-left: 14px !important;
+	text-shadow: $myTextShadow;
+
+}
+.find{
+	@include findFormStyle;
+}
+.findInput{
+	margin-bottom: 15px !important;
+}
+label{
+	margin-bottom: .5em;
+	font-size: 12px !important;
+}
+.propertiesAllert{
+	text-align: center;
+	color: $colorNavPanel;
+	font-size: 11px !important; 
+	letter-spacing: 1px;
+}
+.propertiesAllert:hover, .propertiesAllert:active{
+	color: lighten($colorNavPanel, 25%);
+}
+.priceStyle{
+	color: $colorFontGray !important;
+	font-weight: bold !important;
+	background-color:  lighten(#F2F2F2, 1%)!important;
+	border: 1px solid darken(#F2F2F2, 5%)!important;
+	padding-right: 15px !important;
+	padding-left: 15px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	margin-bottom: 0px !important;
+	font-size: 14px;
+}
+.alertRentalStyle{
+	font-size: 14px;
+	color: $colorBlue !important;
+	display: inline-block !important;
+	font-weight: bold !important;
+	background-color:  lighten(#F2F2F2, 1%)!important;
+	border: 1px solid lighten($colorRed, 35%)!important;
+	padding-right: 15px !important;
+	padding-left: 15px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+
+}
+.ulRent{
+	line-height: 14px !important;
+	a{
+		line-height: 14px !important;
+	}
+}
+.basicInfoWrapper{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.basicInfo{
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	font-size: 12px !important;
+	border: 1px groove $colorFontOffWhite !important;
+
+	background-color:  darken(#F2F2F2, 2%)!important;
+	margin-top: 10px !important;
+	text-shadow: $myTextShadow !important;
+}
+.basicInfoUl{
+	padding-left: 0px !important;
+}
+.propDetails{
+	font-size: 10px;
+	letter-spacing: 1px;
+	color: 	$colorBlue !important;
+	text-shadow: $myTextShadow !important;
+
+}
+
+.agentNameList{
+	color: 	$colorBlue !important;
+	font-size: 11px;
+	text-shadow: $myTextShadow !important;
+	font-weight: bold !important;
+	&:hover{
+		color: lighten($colorBlue, 15%) !important;
+
+	}
+}
+.agentPhoneList{
+	font-size: 11px;
+	text-shadow: $myTextShadow !important;
+	font-weight: bold !important;
+}
+
+.oneRentVcard{
+	padding: 0px !important;
+}
+.agentPic{
+	margin-bottom: 5px !important;
+}
+.propDetails:hover{
+	color: 	lighten($colorBlue, 10%)!important;
+	text-decoration: underline !important;
+
+}
+.details{
+	margin-top: 5px !important;
+	display: inline-block !important;
+	font-size: 10px !important;
+}
+.callAgent{
+	font-size: 10px !important;
+	border: 0px !important;	
+	background-color:  lighten(#F2F2F2, 3%)!important;
+	border: 1px solid darken(#F2F2F2, 5%)!important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	// margin-top: 10px !important;
+	margin-bottom: 0px !important;
+	a:hover{
+		color: lighten($colorFontGray, 10%) !important;
+	}
+}
+
+
+.addPropertyButton{
+	font-size: 12px !important;	
+	margin-top: 10px !important;
+}
+.deletePropertyButton{
+	margin-top: 10px !important;
+	font-size: 12px !important;	
+
+}
+.aCallAgent{
+
+	display: inline-block !important;
+	border: 0px solid #FFFFFF !important;
+	padding-bottom: 5px !important;
+	padding-top: 5px !important;
+	box-shadow: 0px 0px 0px 0px #FFFFFF !important;
+	color: $colorFontGray;
+	font-size: 11px !important;
+}
+.callAgentRent{
+	
+	margin-bottom: 10px !important;
+}
+.searchDescription{
+	font-size: 11px !important;
+	hr{
+		margin-bottom: 10px !important;
+		margin-top: 5px !important;
+	}
+}
+.showAllListings{
+	margin-bottom: 10px !important;	
+	button, .button {
+		@include myButtonStyle;
+		font-size: 11px !important;
+		letter-spacing: 1px;
+		word-spacing: 2px !important;
+	}
+	button:hover, button:focus, .button:hover, .button:focus{
+		background-color: $colorNavPanel !important;
+	}
+}
+.listingsAlertBox{
+	margin-bottom: 10px !important;
+}
+.listingImage{
+	margin-left: 0px !important;
+	margin-top: 5px !important;
+	margin-bottom: 10px !important;
+	width: 315px;
+}
+
+.houseImgWrapper{
+	padding-right: 0px !important;
+	font-size: 16px !important;
+	font-weight: bold !important;
+	color: $colorFontGray !important;
+	// letter-spacing: .1em !important;
+}
+.alert-box{
+	margin-bottom: .5em !important;
+}	
+.listPropWrap{
+	hr{
+		margin-bottom: 10px !important;
+	}
+}
+.addressColor{
+	color: $colorFontGray;
+	a{
+		color: $colorFontGray;
+		line-height: 14px !important;
+	}
+	a:hover{
+		color: lighten($colorFontGray, 10%);
+	}
+	margin-bottom: 10px !important;
+	padding-bottom: 15px !important;
+}
+
+/* =oneListing style starts here */ 
+
+.shortProtDet{
+	margin-left: 20px !important;
+} 
+.oneListing{
+	font-size:12px;
+	padding-top: 20px !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	h4{
+		font-size: 18px !important;
+	}
+	h5{
+		color: $colorFontGray;
+		font-size: 16px;
+	}
+}
+
+.listingDetails{
+	font-size: 13px !important;
+	hr{
+		margin-top: 0px !important;
+	}
+	p{
+		font-size: 13px !important;
+	}
+}
+.dlInlineDescription{
+	margin-left:-5px;
+	padding: 5px;
+	overflow: auto;
+	line-height: 13px !important;
+	margin-bottom: 0px !important;
+}
+.dtDes{
+	padding-top: 5px !important;
+	width: 150px;
+	font-size: 12px !important;
+	float: left;
+	display:inline-block;
+	line-height: 13px !important;
+}
+.ddDes{
+	padding-top: 5px !important;
+	margin-bottom: 0px !important;
+	width: 250px;
+	font-size: 12px !important;
+	display: inline-block;
+	margin-left: 30px;
+	float: left;
+	line-height: 13px !important;
+}
+
+.pleaseSignIn{
+	padding-right: 10px !important;
+	padding-left: 10px !important;
+	padding-top: 7px !important;
+	padding-bottom: 7px !important;
+	font-size: 11px !important;
+	background-color: lighten($colorGray, 5%) !important;
+	font-weight: normal !important;
+	letter-spacing: 1px !important;
+	border: 1px solid $colorFontOffWhite;
+	margin-bottom: 15px !important;
+	margin-top: 10px !important;
+}
+
+.pleaseSignInOneListing{
+	@extend .pleaseSignIn;
+	margin-bottom: 15px !important;
+}
+.button.secondary{
+	color: $colorFontGray !important;
+}
+
+/* news start here */
+.readMore{
+	color: $colorBlue !important;
+	font-size: 10px;
+	letter-spacing: 1px;
+}
+.newsHead{
+	color: $colorFontGray !important; 
+	font-size: 18px !important;
+	text-shadow: $myTextShadow !important;
+}
+.newsHead:hover{
+	color: lighten($colorFontGray, 10%);
+}
+.newsHead:active{
+	color: lighten($colorFontGray, 10%);
+
+}
+.newsHeadHover{
+	font-size: 14px !important;
+	font-weight: bold;
+	p{
+		font-size: 10px !important;
+	}
+}
+.newListingsTitle{
+	color: $colorFontGray;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.newListingsTitle:hover{
+	color: lighten($colorFontGray, 10%);
+}
+.newListingsTitle:active{
+	color: lighten($colorFontGray, 10%);
+
+}
+article p{
+	font-size: 11px;
+	line-height: 1.7em; 
+	margin-bottom: .5em;
+}
+.pNews{
+	font-size: 10px !important;
+}
+
+/* =breadcrumbs style starts here */
+.breadcrumbs {
+	border:none !important;
+	padding: 0px  !important;
+	li a{
+		font-size: 9px !important;
+	}
+}
+.breadcrumbs li:before {
+	@include slashBefore;
+}
+.breadcrumbsFontStyle{
+	a{
+		color: lighten($colorBlue, 15%) !important;
+	}
+	a:hover{
+		color: $colorBlue !important;
+		text-decoration: underline !important;
+	}
+}
+.current{
+	a{
+
+		color: lighten($colorFontGray, 10%)!important;
+		font-weight: bold;
+	}
+}
+
+/* =welcome style starts here */
+.welcome{
+	text-align: center;
+	line-height: 55px !important;
+}
+
+/* =newListings style starts here  */
+.listingSection{
+	padding-right: 0px 	!important;
+	padding-left: 0px 	!important;
+	.content{
+		// padding: 14px !important;
+	}
+}
+input[type="text"]{
+	font-size: 12px !important;
+}
+.newListings{
+	@include myPanelStyle;
+	.liNewListings{
+		padding-right: 0px !important;
+		padding-left: 0px !important;
+	}
+}
+.imgNewListings{
+	width: 75px;
+}
+
+
+/* =newListings style ends here  *
+
+/* =our agents style starts here */
+.oneRentAgent{
+	padding-top: 10px !important;
+	// font-size: 12px;
+}
+.marginPadding{
+	margin: 0px !important;
+	padding: 0px !important;
+}
+.allAgents{
+	margin-top: 20px !important;
+}
+.position{
+	font-size: 13px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+.ulagents{
+	margin-top: 15px !important;
+	a{
+		text-align: center;
+	}
+}
+
+ul.ulagents li {
+	font-size: 12px;
+	color: $colorNavPanel;
+	display: inline-block;
+	text-shadow:$myTextShadow;
+	text-align: center !important;
+	font-weight: bold;
+	letter-spacing: .04em;
+}
+
+.ourAgents{
+	@include myPanelStyle;
+	margin-bottom: 0px !important;
+	padding-bottom: 20px !important;
+	.carousel{
+		margin-left: -12px !important;
+	}
+	.liAgents{
+		margin-bottom: 0px !important;
+		margin-right: 0px !important;
+		padding-bottom: 0px !important;
+		padding-right: 0px !important;
+		padding-left: 0px !important;
+		text-align: center !important;
+		.th{
+			border-right-width: 2px !important;
+			border-left-width: 2px !important;
+			border-top-width: 2px !important;
+			border-bottom-width: 2px !important;
+		}
+	}
+	.agentLinkLast{
+		font-size: 11px !important;
+		font-weight: bold !important;
+		text-shadow: $myTextShadow;
+		color: $colorBlue;
+		margin-top: -5px;
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	.agentLink:hover{
+		color: lighten($colorBlue, 15%);
+	}
+	.agentLinkLast:hover{
+		color: lighten($colorBlue, 15%);
+	}
+}
+.agentLink{
+	color: $colorBlue;
+	font-size: 10px !important;
+	font-weight: bold !important;
+	text-shadow: $myTextShadow;
+	margin-bottom: 7px !important;
+	margin-top: 5px !important;
+	display: inline-block !important;
+}
+
+/* =agent profile starts here */
+
+.specialties{
+	font-size: 12px;
+}
+.ulAgentName{
+	margin-bottom: 10px !important;
+}
+.agentName{
+	margin-bottom: 5px 	!important;
+	font-size:22px !important;
+}
+.agentInfoContent{
+	margin-top: 10px;
+}
+
+.specialist{
+	font-size: 11px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	color: $colorFontGray;
+	background-color: darken(#F2F2F2, 7%) !important;
+	text-shadow: $myTextShadow !important;
+	border: 1px solid $colorFontOffWhite !important;
+}
+
+.specialist:hover, .specialist:focus{
+	color: lighten($colorFontGray, 20%) !important;
+
+}
+.info{
+	margin-top: 25px !important;
+	padding-bottom: 25px !important;
+	padding-top: 0px !important;
+}
+.innerInfo{
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	font-size: 14px !important;
+}
+.agentPropSale{
+	font-size: 9px !important;
+	font-weight: bold !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	margin-top: 5px !important;
+	padding-left: 10px !important;
+	letter-spacing: 1px !important;
+	margin-left: 5px !important;
+	font-size: 11px;
+
+}
+.agentPropRent{
+	font-size: 9px !important;
+	font-weight: bold !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	padding-left: 10px !important;
+	letter-spacing: 1px !important;
+	margin-left: 5px !important;
+	font-size: 11px;
+}
+
+.agentP{
+	color: $colorBlue !important;
+	text-shadow: 1px solid $colorFontOffWhite !important;
+	&:hover{
+		color: lighten($colorBlue, 15%) !important;
+	}
+}
+.logoS{
+	margin-top:5px;
+	display: inline-block;
+}
+.profileContent{
+	padding-right: 25px !important;
+	padding-left: 25px !important;
+	color: $colorFontGray !important;
+}
+
+/*=footer starts here */
+.logoFooterPadding{
+	@include marginOneEmTopLeft;
+}
+.logoRemaxFooter{
+	@include marginOneEmTopLeft;
+}
+.connectFooter{
+	@include connectFooterStyle;
+	
+}
+
+.vcard{
+	border: 0em;
+	margin-bottom: 0em !important;
+	min-width:170px;
+	hr{
+		margin-bottom: 5px !important;
+	}
+}
+.vcard .fn{
+	font-size: 12px;
+}
+.vcard .street-address{
+	font-size: 12px;
+}
+.vcard .locality{
+	font-size: 12px;
+}
+.vcard .state{
+	font-size: 12px;
+}
+.vcard .zip{
+	font-size: 12px;
+	display: inline-block;
+}
+.vcard .email{
+	a{
+		font-size: 11px !important;
+	}
+}
+footer{
+	@include footerStyle;
+	.row .columns{
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	.prop{
+		font-size: 11px !important;
+	}
+	.row.ul.li.a{
+		color: $colorFontOffWhite;
+		cursor: pointer;
+	}
+}
+
+.contactFooter{
+	@include contactFooterStyle;
+	hr { 
+		display: block; 
+		height: 1px;
+		border: 1px solid $colorNavPanel;
+		padding: 0; 
+		margin-bottom: 5px !important;
+		margin-top: 0px !important;
+	}
+}
+
+.ulFooterSocial{
+	margin: 0px !important;
+	padding-top: 5px !important;
+}
+
+.liFooterConnect{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+	width: 45px !important;
+	height: 45px !important;
+	hr { 
+		display: block; 
+		height: 1px;
+		border: 1px solid $colorNavPanel;
+		padding: 0; 
+		margin-bottom: 5px !important;
+		margin-top: 0px !important;
+	}
+}
+.liFooterConnectRight{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+	width: 32px !important;
+	height: 45px !important;
+	hr { 
+		display: block; 
+		height: 1px;
+		border: 1px solid $colorNavPanel;
+		padding: 0; 
+		margin-bottom: 5px !important;
+		margin-top: 0px !important;
+	}
+}
+.social{
+	padding-top: 10px;
+	width: 125px;
+	hr { 
+		display: block; 
+		height: 1px;
+		border-top: 1px solid $colorNavPanel;
+		padding: 0; 
+		margin-bottom: 5px !important;
+		margin-top: 0px !important;
+	}
+}
+.propRent{
+	padding-top: 10px;
+	margin-right: 30px !important;
+	width:130px;
+	hr { 
+		display: block; 
+		height: 1px;
+		border-top: 1px solid $colorNavPanel;
+		padding: 0; 
+		margin-bottom: 5px !important;
+		margin-top: 0px !important;
+	}
+}
+.mls{
+	margin-top: 70px;
+}
+.properties{
+	margin-left: 15px;
+	font-size: 10px;
+	line-height: 20px;
+	margin-left: 0px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: 	$colorBlue;
+	text-shadow: $myTextShadow;
+}
+
+.propertiesFooter{
+	@include propertiesFooterStyle;
+}
+.copyright{
+	background-color: $copyrightBackgroundColor;
+	padding-top: 10px;
+}
+.copy{
+	color: $colorFontOffWhite !important;
+}
+/* =addInfoFooter Starts Here */
+.addInfoFooterWrapper{
+	padding: 10px;
+	background-color: lighten($copyrightBackgroundColor, 20%);
+	text-align: center !important;
+	vertical-align: center !important;
+	.addInfoFooterLinks{
+		margin-bottom: 0px !important;
+		text-align: center !important;
+		vertical-align: center !important;
+		margin-left: 0px !important;
+
+		li, a{
+			vertical-align: center !important;
+			text-align: center !important;
+			line-height: 16px !important;
+			color: $colorFontOffWhite;
+			font-size: 10px;
+		}
+		li{
+			margin-left: 5px !important;
+		}
+	}
+}
+
+.addInfoFooter{
+	vertical-align: center !important;
+	text-align: center !important;
+	font-family: Verdana, Geneva, Sans-Serif;
+	line-height: 14px !important;
+	padding: 0px !important;
+	h5{
+		margin-top: 3px !important;
+		line-height: 12px !important;
+		font-size: 10px !important;
+	}
+
+}
+.skokieRentals{
+	font-size:10px;
+	color: $colorFontGray;
+}
+/* =Contact Us */
+
+.prefix{
+	font-size: 12px !important;
+}
+.contactUsFormWrapper{
+	legend{
+		background-color: none !important;
+	}
+}
+textarea{
+	height: 300px;
+	cursor: pointer;
+}
+.textareaCommentsWrapper{
+	textarea{
+		height: 200px !important;
+	}
+}
+
+.min{
+	margin-top: 20px !important;
+}
+
+.createAccount{
+
+	.account{
+		margin-top: 15px !important;
+		margin-bottom: 25px !important;
+	}
+
+	label{
+		font-size: 1em;
+		margin-bottom: 10px;
+	}
+	.button{
+		@include myButtonStyle;		
+	}
+}
+.contactModal{
+	font-size: 27px !important;	
+}
