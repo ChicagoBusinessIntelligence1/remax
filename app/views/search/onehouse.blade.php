@@ -52,13 +52,13 @@
 			<div class="large-12 columns listingDetails">
 
 				<div class="shortPropDet">
-					<div class="row">
+					<div class="row noMargin">
 
-						<div class="large-4 offset-1 column panel secondary">
+						<div class="large-4 column panel secondary">
 
 							<strong>MLS: #</strong> {{$house->listing}}<br/><br/>
 
-							<strong>Status: </strong>Info<br/><br/>
+							<strong>Status: </strong>{{$house->status->dbstatus}}<br/><br/>
 						</div>
 
 
@@ -71,7 +71,7 @@
 
 							<strong>Lot Size: </strong>Info<br/><br/>
 
-							<strong>Year Builts:</strong> {{$house->year}} <br/><br/>
+							<strong>Year Built:</strong> {{$house->year}} <br/><br/>
 						</div>		
 					</div>
 					</div
@@ -82,8 +82,11 @@
 					<hr/>
 					<p>{{ucfirst(strtolower($house->details))}}</p>
 
-					<h5 class="tenMarginTop">Interior Details</h5>
+					<h4 class="label tiny secondary radius tenMarginTop">Interior Details</h4>
+
+					<h5 class="subheader"><em>Bedrooms</em></h5>
 					<hr/>
+
 					<dl class="dlInlineDescription light radius">
 						<dt class="dtDes">Master Bedroom</dt>
 						<dd class="ddDes">info</dd>
@@ -101,6 +104,14 @@
 
 					<dl class="dlInlineDescription">
 						<dt class="dtDes">Bedroom 4</dt>
+						<dd class="ddDes">info</dd>
+					</dl>
+
+					<h5 class="subheader"><em>Bathrooms</em></h5>
+				<hr/>	
+					<dl class="dlInlineDescription light radius">
+
+						<dt class="dtDes">Full Bathrooms</dt>
 						<dd class="ddDes">info</dd>
 					</dl>
 

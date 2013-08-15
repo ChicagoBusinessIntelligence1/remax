@@ -153,6 +153,15 @@ h5{
 .tenMarginTop{
 	margin-top: 10px  !important;
 }
+.tenMarginBottom{
+	
+	margin-bottom: 10px  !important;
+}
+.tenMarginTopBottom{
+	margin-bottom: 10px  !important;
+	margin-top: 10px  !important;
+
+}
 .noPadding{
 	padding: 0px !important;
 }
@@ -808,12 +817,17 @@ label{
 	padding-right: 20px !important;
 	h4{
 		font-size: 18px !important;
+		margin-bottom: i10px !important;
 	}
 	h5{
 		color: $colorFontGray;
 		font-size: 16px;
+		margin-top: 10px !important;
 	}
-}
+/* 	h6{
+		font-size: 16px;
+	}
+ */}
 
 .listingDetails{
 	font-size: 13px !important;
