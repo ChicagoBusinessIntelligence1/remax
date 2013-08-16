@@ -1106,7 +1106,8 @@
 						</div>
 
 						@if($imCounter)
-						<ul class="clearing-thumbs" data-clearing>
+
+ 						<ul class="clearing-thumbs" data-clearing>
 							@for ($i =1; $i <= $imCounter; $i++)
 							<li class="clearing-featured-img"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
 								<img width="100px" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>

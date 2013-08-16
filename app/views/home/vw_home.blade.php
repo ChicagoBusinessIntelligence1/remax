@@ -18,9 +18,9 @@
 
 		<div class="row">
 			<div class="large-12 columns">
-				<div class="orbit-container panel">
+				<div class="panel">
 					<h4 class="selectedProperty">Our selected property</h4>
-					<ul class="orbit-slides-container" data-orbit data-options="timer_speed:20000;">
+					<ul data-orbit>
 						<li> <a href="{{URL::to('search/22')}}">
 							<img src="{{url('comp/img/orbit/5.jpg')}}" alt="">
 							<div class="orbit-caption">Glenview, IL 60025</div>

@@ -11,12 +11,13 @@
       <link href='http://fonts.googleapis.com/css?family=Numans' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
-      {{HTML::style("comp/stylesheets/normalize.css" )}} 
+      
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
       {{HTML::style("comp/stylesheets/screen.css" )}} 
-      {{HTML::script("//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js")}} 
+      
 
       {{HTML::script("comp/javascripts/vendor/custom.modernizr.js")}} 
-      {{HTML::script("comp/javascripts/foundation.min.js")}} 
       {{HTML::script("comp/javascripts/script.js")}} 
 
 
@@ -1155,46 +1156,32 @@
 
         <!-- =agentInfo ends here -->
 
-        <script>
-          document.write('<script src=' +
-            ('_proto_' in {} ? 'comp/javascripts/vendor/zepto' : 'comp/javascripts/vendor/jquery') +
-            '.js><\/script>')
-        </script>
-
-        {{HTML::script("comp/javascripts/foundation/foundation.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.alerts.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.clearing.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.cookie.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.dropdown.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.forms.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.interchange.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.joyride.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.magellan.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.orbit.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.placeholder.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.reveal.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.section.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.tooltips.js")}}
-
-        {{HTML::script("comp/javascripts/foundation/foundation.topbar.js")}}
 
 
-        <script>
-          $(document).foundation();
-        </script>
         @yield('agent_thumb')  
+
+ {{HTML::script("comp/javascripts/vendor/zepto.js")}} 
+
+ {{HTML::script("comp/javascripts/foundation/foundation.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.abide.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.alerts.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.clearing.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.cookie.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.dropdown.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.forms.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.interchange.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.joyride.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.magellan.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.orbit.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.placeholder.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.reveal.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.section.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.tooltips.js")}} 
+ {{HTML::script("comp/javascripts/foundation/foundation.topbar.js")}} 
+  
+  
+  <script>
+    $(document).foundation();
+  </script>
       </body>
       </html>
