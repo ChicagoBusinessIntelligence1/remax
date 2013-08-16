@@ -14,26 +14,30 @@
 				<div class="panel addressColor">
 					<div class="row listPropWrap">
 						<div class="large-10 columns">
-							<h6>
+							<h2>
 								{{$house->address}}
-							</h6> &nbsp	&nbsp	
+							</h2> &nbsp	&nbsp	
 							<br/>
 						</div>
 
 						<div class="large-2 columns">
-							<span class="alert-box secondary radius priceStyle right ">${{number_format($house->price)}}
+							<span class="priceStyle right ">${{number_format($house->price)}}
 							</span>
 						</div>
 					</div>
-						<hr/>
+					<div class="row">
+						<div class="large-4 columns">
+							<h3 class="subheader propType"><em>Property Type</em> </h3>
+						</div>
+					</div>
 
-
+					<hr/>
 					<div class="row">
 						<div class="large-7 columns houseImgWrapper">
 
 							<div class="fiveMarginBottom">
 								<small>
-								<em>MLS#: </em>{{$house->listing}} | 
+									<em>MLS#: </em>{{$house->listing}} | 
 									<em>Year: </em>{{$house->year}} | 
 									<em>Bedrooms: </em>{{$house->bedrooms}} | 
 									<em>Bathrooms: </em>{{$house->bathrooms}}  

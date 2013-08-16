@@ -38,7 +38,7 @@
 				{{link_to('all-rent-listings', 'Rental', array('class'=>'alert-box secondary round alertRentalStyle'));}}
 			</div>
 			<div class="large-2 columns">
-				<a class="button secondary radius priceStyle right ">${{number_format($rental->price)}}
+				<a class="priceStyle right ">${{number_format($rental->price)}}
 				</a>
 			</div>
 

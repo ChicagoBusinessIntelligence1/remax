@@ -10,7 +10,7 @@
 <div class="mainContent">
 	<div class="panel oneListing oneRentAgent">
 		<div class="row callAgentRent">
-			<div class="large-10 columns left">
+			<div class="large-5 columns left">
 				@if($house->agent)
 				<ul class="vcard oneRentVcard">
 					<li>					
@@ -32,21 +32,37 @@
 				@endif
 
 			</div> 
-			
+<!-- 			<div class="large-5 columns">
+				
+				<h5 class="label tiny success radius">Property Status</h5>
+			</div>
+ -->			
 			<div class="large-2 columns">
 
-				<a class="button secondary radius priceStyle right">${{number_format($house->price)}}
+				<a class="priceStyle tenMarginTop right">${{number_format($house->price)}}
 				</a>
 			</div>
 		</div>
+		<!-- =callAgentRent ends here -->
+
 		<hr/>
 		<div class="row">
-			<div class="large-12 columns l">
-				<h4>{{$house->address}}</h4>
-				<h4 class="label tiny  secondary radius">Property Type </h4>
+			<div class="large-9 columns">
+				<h2 class="oneHouseAddress">{{$house->address}}</h2>
 				&nbsp &nbsp
 			</div>
+			<div class="large-3 columns">
+				
+				<h6 class="alert-box secondary radius propStat">PROPERTY STATUS</h6>
+			</div>
+			
 		</div>
+		<div class="row">
+			<div class="large-4 columns">
+			<h3 class="subheader propType"><em>Property Type</em> </h3>
+			</div>
+		</div>
+		<hr/>
 
 		<div class="row">
 			<div class="large-12 columns listingDetails">
@@ -54,7 +70,7 @@
 				<div class="shortPropDet">
 					<div class="row noMargin">
 
-						<div class="large-4 column panel secondary">
+						<div class="large-4 column panel secondary panelShortInfo ">
 
 							<strong>MLS: #</strong> {{$house->listing}}<br/><br/>
 
@@ -690,7 +706,7 @@
 
 										<div class="large-7 columns">
 											<dl class="dlInlineDescription light radius">
-												<dt class="dtDes">Lot Features</dt>
+												<dt class="dtDes">Lot Dimensions</dt>
 												<dd class="ddDes">info</dd>
 											</dl>
 										</div>
@@ -699,7 +715,7 @@
 									<div class="row">
 										<div class="large-5 columns">
 											<dl class="dlInlineDescription light radius">
-												<dt class="dtDes">Patio</dt>
+												<dt class="dtDes">Lot Features</dt>
 												<dd class="ddDes">info</dd>
 											</dl>
 
@@ -708,6 +724,21 @@
 										<div class="large-7 columns">
 											<dl class="dlInlineDescription light radius">
 												<dt class="dtDes">Deck</dt>
+												<dd class="ddDes">info</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="row">
+										<div class="large-5 columns">
+											<dl class="dlInlineDescription light radius">
+												<dt class="dtDes">Patio</dt>
+												<dd class="ddDes">info</dd>
+											</dl>
+
+										</div>	
+										<div class="large-7 columns">
+											<dl class="dlInlineDescription light radius">
+												<dt class="dtDes">Driveway</dt>
 												<dd class="ddDes">info</dd>
 											</dl>
 										</div>
@@ -1107,7 +1138,7 @@
 
 						@if($imCounter)
 
- 						<ul class="clearing-thumbs" data-clearing>
+						<ul class="clearing-thumbs" data-clearing>
 							@for ($i =1; $i <= $imCounter; $i++)
 							<li class="clearing-featured-img"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
 								<img width="100px" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>

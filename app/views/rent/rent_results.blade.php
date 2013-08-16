@@ -27,7 +27,7 @@
 
 						</div>
 						<div class="large-2 small-3 columns">
-							<span class="alert-box secondary radius priceStyle right ">${{number_format($rental->price)}}
+							<span class="priceStyle right ">${{number_format($rental->price)}}
 							</span>
 						</div>
 					</div>
