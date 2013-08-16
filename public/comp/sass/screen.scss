@@ -137,12 +137,15 @@ h4{
 h5{
 	line-height: 25px !important;
 }
+.has-tip-left{
+	cursor: pointer !important;
+}
 .light{
 	background-color: #FFFFFF;
 }
 .dark{
 
-	background-color: lighten(#F7F7F4, 3%)
+	background-color: #F7F7F7;
 }
 .noMargin{
 	margin: 0px !important;
@@ -817,7 +820,7 @@ label{
 	padding-right: 20px !important;
 	h4{
 		font-size: 18px !important;
-		margin-bottom: i10px !important;
+		margin-bottom: 10px !important;
 	}
 	h5{
 		color: $colorFontGray;
@@ -839,11 +842,13 @@ label{
 	}
 }
 .dlInlineDescription{
-	margin-left:-5px;
-	padding: 5px;
+	margin-left: 0px;
+	padding-left: 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
 	overflow: auto;
 	line-height: 13px !important;
-	margin-bottom: 0px !important;
+	margin-bottom: 10px !important;
 }
 .dtDes{
 	padding-top: 5px !important;
@@ -856,10 +861,9 @@ label{
 .ddDes{
 	padding-top: 5px !important;
 	margin-bottom: 0px !important;
-	width: 250px;
 	font-size: 12px !important;
 	display: inline-block;
-	margin-left: 30px;
+	margin-left: 0px;
 	float: left;
 	line-height: 13px !important;
 }
