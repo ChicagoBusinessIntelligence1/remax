@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('set')
 {{$imCounter = $house->images()->first()->maxid}}
 @stop
@@ -30,22 +29,16 @@
 					</li>
 				</ul>
 				@endif
-
 			</div> 
-<!-- 			<div class="large-5 columns">
-				
-				<h5 class="label tiny success radius">Property Status</h5>
-			</div>
- -->			
-			<div class="large-2 columns">
 
+			<div class="large-2 columns">
 				<a class="priceStyle tenMarginTop right">${{number_format($house->price)}}
 				</a>
 			</div>
 		</div>
 		<!-- =callAgentRent ends here -->
-
 		<hr/>
+
 		<div class="row">
 			<div class="large-9 columns">
 				<h2 class="oneHouseAddress">{{$house->address}}</h2>
@@ -55,11 +48,11 @@
 				
 				<h6 class="alert-box secondary radius propStat">PROPERTY STATUS</h6>
 			</div>
-			
 		</div>
+
 		<div class="row">
 			<div class="large-4 columns">
-			<h3 class="subheader propType"><em>Property Type</em> </h3>
+				<h3 class="subheader propType"><em>Property Type</em> </h3>
 			</div>
 		</div>
 		<hr/>
@@ -107,7 +100,7 @@
 						<div class="section-container accordion" data-section="accordion">
 							<section class="section active">
 								<p class="title">
-									<a href="#panel1"><span>Bedrooms</span></a>
+									<a class="aAccordion" href="#panel1"><span class="spanAccordion">Bedrooms</span></a>
 								</p>
 								<div class="content" data-slug="panel1">
 									<div class="row">
@@ -196,7 +189,7 @@
 							</section>
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Bathrooms</a>
+									<a href="#panel2"><span class="spanAccordion">Bathrooms</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 									
@@ -238,7 +231,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Kitchen</a>
+									<a href="#panel2"><span class="spanAccordion">Kitchen</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -264,7 +257,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Dining Area</a>
+									<a href="#panel2"><span class="spanAccordion">Dining Area</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -289,7 +282,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Living Room</a>
+									<a href="#panel2"><span class="spanAccordion">Living Room</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -330,7 +323,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Family Room</a>
+									<a href="#panel2"><span class="spanAccordion">Family Room</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -354,7 +347,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Laundry Room</a>
+									<a href="#panel2"><span class="spanAccordion">Laundry Room</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -379,7 +372,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Exercise Room</a>
+									<a href="#panel2"><span class="spanAccordion">Exercise Room</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -405,7 +398,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Basement</a>
+									<a href="#panel2"><span class="spanAccordion">Basement</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -447,7 +440,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Utility Room </a>
+									<a href="#panel2"><span class="spanAccordion">Utility Room </span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -472,7 +465,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Walk In Closets</a>
+									<a href="#panel2"><span class="spanAccordion">Walk In Closets</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -534,7 +527,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Other Rooms</a>
+									<a href="#panel2"><span class="spanAccordion">Other Rooms</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -580,7 +573,7 @@
 							</section>
 							<section class="section">
 								<p class="title">
-									<a href="#panel2">Interior Features</a>
+									<a href="#panel2"><span class="spanAccordion">Interior Features</span></a>
 								</p>
 								<div class="content" data-slug="panel2">
 
@@ -614,7 +607,7 @@
 							</section>
 							<section class="section">
 								<p class="title">
-									<a href="#panel3">Appliances</a>
+									<a href="#panel3"><span class="spanAccordion">Appliances</span></a>
 								</p>
 								<div class="content" data-slug="panel3">
 
@@ -691,7 +684,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel3">Lot Features</a>
+									<a href="#panel3"><span class="spanAccordion">Exterior Features</span></a>
 								</p>
 								<div class="content" data-slug="panel3">
 
@@ -744,11 +737,20 @@
 										</div>
 									</div>
 
+									<div class="row">
+										<div class="large-5 columns">
+											<dl class="dlInlineDescription light radius">
+												<dt class="dtDes">Swimming Pool</dt>
+												<dd class="ddDes">info</dd>
+											</dl>
+										</div>	
+									</div>
+
 								</div>
 							</section>
 							<section class="section">
 								<p class="title">
-									<a href="#panel3">Garage and Parking</a>
+									<a href="#panel3"><span class="spanAccordion">Garage and Parking</span></a>
 								</p>
 								<div class="content" data-slug="panel3">
 
@@ -791,7 +793,7 @@
 
 							<section class="section">
 								<p class="title">
-									<a href="#panel3">Building and Construction</a>
+									<a href="#panel3"><span class="spanAccordion">Building and Construction</span></a>
 								</p>
 								<div class="content" data-slug="panel3">
 
@@ -850,7 +852,7 @@
 							</section>
 							<section class="section">
 								<p class="title">
-									<a href="#panel3">Utilities</a>
+									<a href="#panel3"><span class="spanAccordion">Utilities</span></a>
 								</p>
 								<div class="content" data-slug="panel3">
 

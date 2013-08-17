@@ -8,23 +8,21 @@
 		<div class="large-12 columns userPanel">
 			@include('partials._admin_panel_menu')
 			<div class="userPanelContent">
-				<h2 class="subheader">Saved Homes</h2>
-				<hr/>
-				<br/>
+				<h2 class="subheader">My Saved Homes</h2>
 				@foreach($user->houses as $house)
 
 				<!-- =addressColor starts here -->
 				<div class="panel addressColor">
 					<div class="row listPropWrap">
 						<div class="large-10 columns">
-							<h6>
+							<h3>
 								{{$house->address}}
-							</h6> &nbsp	&nbsp	
+							</h3> &nbsp	&nbsp	
 							<br/>
 						</div>
 
 						<div class="large-2 columns">
-							<span class="alert-box secondary radius priceStyle right ">${{number_format($house->price)}}
+							<span class="priceStyle right ">${{number_format($house->price)}}
 							</span>
 						</div>
 					</div>

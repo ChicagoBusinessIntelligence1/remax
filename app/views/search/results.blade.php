@@ -55,8 +55,8 @@
 								{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
 								{{Form::close()}}
 								@else
-								<div class="label radius pleaseSignIn"><em>Please Sign-in to Receive Alerts for this Property</em>
-								</div>
+								<span class="label radius pleaseSignIn"><em>Please Sign-in to Receive Alerts for this Property</em>
+								</span>
 								@endif
 							</div>
 
