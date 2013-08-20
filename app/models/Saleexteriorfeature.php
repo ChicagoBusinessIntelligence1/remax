@@ -1,7 +1,7 @@
 <?php
 
 
-class Status extends Eloquent {
+class Saleexteriorfeature extends Eloquent {
     protected $guarded = array();
 
     public static $rules = array();

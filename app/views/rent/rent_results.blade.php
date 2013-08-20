@@ -40,7 +40,7 @@
 									<em>Bedrooms:</em> {{$rental->bedrooms}} | 
 									<em>Bathrooms:</em> {{$rental->bathrooms}} | 
 
-									<em>Property Type:</em> {{$rental ->rentalpropertytype->rentaltype}}  
+									<em>Property Type:</em> {{$rental ->rentpropertytype->rentaltype}}  
 								</small>
 							</div>
 

@@ -54,13 +54,13 @@
 			</div>
 			<div class="large-3 columns">
 				
-				<h6 class="alert-box secondary radius propStat">PROPERTY STATUS</h6>
+				<h6 class="alert-box secondary radius propStat">{{$rental->rentstatus->dbstatus}}</h6>
 			</div>
 		</div>
 		
 		<div class="row">
-			<div class="large-4 columns">
-				<h3 class="subheader propType"><em>Property Type</em> </h3>
+			<div class="large-6 columns">
+				<h3 class="subheader propType"><em>{{$rental->rentpropertytype->rentaltype}}</em> </h3>
 			</div>
 		</div>
 		<hr/>
@@ -69,9 +69,10 @@
 			<div class="large-12 columns listingDetails">	
 				<div class="shortPropDet">
 					<div class="row noMargin">
-						<div class="large-4 column panel secondary panelShortInfo ">
+						<div class="large-5 column panel secondary panelShortInfo ">
 							<strong>MLS: #</strong> {{$rental->listing}}<br></br>
-							<strong>Status: </strong>Info<br/><br/>
+							<strong>Lease Terms: </strong>{{$rental->rentalinfo->leaseterms}}<br/><br/>
+							<strong>Monthly Rent Include: </strong> <br/><br/>{{$rental->rentalinfo->monthlyrentinclude}}<br/><br/>
 						</div>				
 
 
@@ -114,14 +115,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription radius">
 										<dt class="dtDes">Master Bedroom <br/> Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->masterbedsize}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Master Bedroom <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->maseterbedfeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -130,14 +131,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Bedroom 2 Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->bed2size}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Bedroom 2 Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->bed2features}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -146,14 +147,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Bedroom 3 Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->bed3size}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Bedroom 3 Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->bed3features}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -162,14 +163,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Bedroom 4 Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->bed4size}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Bedroom 4 Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->bed4features}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -179,14 +180,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Bedroom 5 Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->bed5size}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Bedroom 5 Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbedroom->bed5features}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -204,7 +205,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Full Bathrooms</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbathroom->fullbath}}</dd>
 									</dl>
 								</div>
 
@@ -212,7 +213,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Half Bathrooms</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbathroom->halfbath}}</dd>
 									</dl>
 								</div>
 
@@ -221,7 +222,7 @@
 									<dl class="dlInlineDescription light radius">
 
 										<dt class="dtDes">Master Bath <br/> Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbathroom->masterbathsize}}</dd>
 									</dl>
 								</div>
 
@@ -229,7 +230,7 @@
 									<dl class="dlInlineDescription light radius">
 
 										<dt class="dtDes">Master Bath <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbathroom->bathamenities}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -246,14 +247,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Kitchen Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentkitchen->kitchensize}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Kitchen Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentkitchen->kitchenfeatures}}</dd>
 									</dl>
 								</div>
 
@@ -273,14 +274,14 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Dining Room Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentdiningroom->diningroomsize}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Dining Room <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentdiningroom->diningroomfeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -298,13 +299,13 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription">
 										<dt class="dtDes">Living Room <br/> Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlivingroom->livroomsize}}</dd>
 									</dl>
 								</div>
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription">
 										<dt class="dtDes">Living Room <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlivingroom->livroomfeatures}}</dd>
 									</dl>
 								</div>
 
@@ -313,14 +314,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Living Dining Combo <br/> Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlivingroom->livdiningcombosize}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Living Dining Combo <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlivingroom->livdiningcombofeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -338,14 +339,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Family Room <br/> Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentfamroom->famroomsize}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Family Room <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentfamroom->famroomfeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -362,7 +363,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Laundry Room <br/> Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlaundryroom->laundryroomsize}}</dd>
 									</dl>
 
 								</div>
@@ -370,7 +371,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Laundry Room <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlaundryroom->laundryroomfeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -388,7 +389,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Exercise Room <br/> Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentexerciseroom->size}}</dd>
 									</dl>
 								</div>
 
@@ -396,7 +397,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Exercise Room <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentexerciseroom->features}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -414,14 +415,14 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Basement Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbasement->basementsize}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Basement Features</dt>
-										<dd class="ddDes">yes/no</dd>
+										<dd class="ddDes">{{$rental->rentbasement->basementfeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -430,7 +431,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Basement Bath</dt>
-										<dd class="ddDes">yes/no</dd>
+										<dd class="ddDes">{{$rental->rentbasement->basementbathsize}}</dd>
 									</dl>
 
 								</div>
@@ -438,7 +439,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Basement Bath <br/>  Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbasement->basementbathfeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -455,7 +456,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Utility Room <br/> Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutilityroom->utilroomsize}}</dd>
 									</dl>
 
 								</div>
@@ -463,7 +464,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Utility Room <br/> Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutilityroom->utilroomfeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -483,7 +484,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Walk In Closet 1</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentwalkincloset->closet1}}</dd>
 									</dl>
 
 								</div>
@@ -491,7 +492,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Walk In Closet 2</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentwalkincloset->closet2}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -500,7 +501,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Walk In Closet 3</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentwalkincloset->closet3}}</dd>
 									</dl>
 
 								</div>
@@ -508,7 +509,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Walk In Closet 4</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentwalkincloset->closet4}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -517,7 +518,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Walk In Closet 5</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentwalkincloset->closet5}}</dd>
 									</dl>
 								</div>
 
@@ -525,7 +526,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Walk In Closet 6</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentwalkincloset->closet6}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -547,7 +548,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Additional Room 1</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentotherroom->room1}}</dd>
 									</dl>
 								</div>
 
@@ -555,7 +556,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Additional Room 2</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentotherroom->room2}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -564,7 +565,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Additional Room 3</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentotherroom->room3}}</dd>
 									</dl>
 								</div>
 
@@ -572,7 +573,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Additional Room 3</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentotherroom->room4}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -588,7 +589,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Window Type</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentinteriorfeature->windowtype}}</dd>
 									</dl>
 								</div>
 
@@ -596,7 +597,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Skylight</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentinteriorfeature->windowtritment}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -605,10 +606,16 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Flooring</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentinteriorfeature->skylight}}</dd>
 									</dl>
 								</div>
 
+								<div class="large-7 columns">
+									<dl class="dlInlineDescription light radius">
+										<dt class="dtDes">Flooring</dt>
+										<dd class="ddDes">{{$rental->rentinteriorfeature->flooring}}</dd>
+									</dl>
+								</div>
 							</div>
 						</div>
 					</section>
@@ -622,7 +629,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Refrigerator</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentappliance->refrigerator}}</dd>
 									</dl>
 
 								</div>
@@ -630,7 +637,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Oven</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentappliance->oven}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -639,7 +646,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Microwave</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentappliance->microwave}}</dd>
 									</dl>
 								</div>
 
@@ -647,7 +654,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Washer</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentappliance->washer}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -656,7 +663,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Dryer</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentappliance->dryer}}</dd>
 									</dl>
 								</div>
 
@@ -664,7 +671,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Dishwasher</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentappliance->dishwasher}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -673,7 +680,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Disposal</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentappliance->disposal}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -699,7 +706,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Lot Size</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlotfeature->lotsize}}</dd>
 									</dl>
 
 								</div>
@@ -707,7 +714,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Lot Dimensions</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlotfeature->lotdimensions}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -716,7 +723,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Lot Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlotfeature->lotfeatures}}</dd>
 									</dl>
 
 								</div>
@@ -724,7 +731,7 @@
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Deck</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlotfeature->deck}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -732,14 +739,14 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Patio</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlotfeature->patio}}</dd>
 									</dl>
 
 								</div>	
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Driveway</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlotfeature->driveway}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -747,9 +754,9 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Swimming Pool</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentlotfeature->swimmingpool}}</dd>
 									</dl>
-								</div>	
+								</div>
 							</div>
 
 						</div>
@@ -764,7 +771,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Parking Type</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentgarageandparking->numberofparking}}</dd>
 									</dl>
 								</div>
 
@@ -772,7 +779,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Garage Type</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentgarageandparking->parkingtype}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -781,7 +788,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Number of Garages</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentgarageandparking->numberofgarage}}</dd>
 									</dl>
 								</div>
 
@@ -789,9 +796,19 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Number of Parking Spaces</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentgarageandparking->garagetype}}</dd>
 									</dl>
 								</div>
+							</div>
+
+							<div class="row">
+								<div class="large-5 columns">
+									<dl class="dlInlineDescription light radius">
+										<dt class="dtDes">Number of Garages</dt>
+										<dd class="ddDes">{{$rental->rentgarageandparking->garagefeatures}}</dd>
+									</dl>
+								</div>
+
 							</div>
 
 						</div>
@@ -807,7 +824,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Architecture</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->architecture}}</dd>
 									</dl>
 								</div>
 
@@ -815,7 +832,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Type of House</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->typeofhouse}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -824,7 +841,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Exterior Building Type</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->exteriorbuildingtype}}</dd>
 									</dl>
 								</div>
 
@@ -832,7 +849,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Levels or Stories</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->typedetached}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -841,7 +858,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Roof Type</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->levelsorstories}}</dd>
 									</dl>
 								</div>
 
@@ -849,9 +866,19 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Additional Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->rooftype}}</dd>
 									</dl>
 								</div>
+							</div>
+
+							<div class="row">
+								<div class="large-5 columns">
+									<dl class="dlInlineDescription light radius">
+										<dt class="dtDes">Roof Type</dt>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->additionalfeatures}}</dd>
+									</dl>
+								</div>
+
 							</div>
 
 						</div>
@@ -866,7 +893,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Electricity</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutility->electricity}}</dd>
 									</dl>
 								</div>
 
@@ -874,7 +901,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Cooling Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutility->coolingfeatures}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -883,7 +910,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Heating Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutility->heatingfeatures}}</dd>
 									</dl>
 								</div>
 
@@ -891,7 +918,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Number of Fireplaces</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutility->numberoffireplaces}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -900,7 +927,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Fireplace Location</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutility->fireplacelocation}}</dd>
 									</dl>
 								</div>
 
@@ -908,7 +935,7 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Water</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutility->fireplacedetails}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -917,7 +944,7 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Sewer</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutility->water}}</dd>
 									</dl>
 								</div>
 
@@ -925,12 +952,20 @@
 
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Additional Features</dt>
-										<dd class="ddDes">info</dd>
+										<dd class="ddDes">{{$rental->rentutility->sewer}}</dd>
 									</dl>
 								</div>
 							</div>
 
 
+							<div class="row">
+								<div class="large-5 columns">
+									<dl class="dlInlineDescription light radius">
+										<dt class="dtDes">Sewer</dt>
+										<dd class="ddDes">{{$rental->rentutility->additionalfeatures}}</dd>
+									</dl>
+								</div>
+							</div>	
 						</div>
 					</section>
 				</div>
@@ -947,17 +982,31 @@
 			<div class="content" data-slug="panel3">
 				<dl class="dlInlineDescription light radius">
 					<dt class="dtDes">Elementary</dt>
-					<dd class="ddDes">info</dd>
+					<dd class="ddDes">{{$rental->rentschool->elementary}}</dd>
 				</dl>
 
 				<dl class="dlInlineDescription light radius">
 					<dt class="dtDes">High</dt>
-					<dd class="ddDes">info</dd>
+					<dd class="ddDes">{{$rental->rentschool->elemschdistrict}}</dd>
 				</dl>
 
 				<dl class="dlInlineDescription light radius">
 					<dt class="dtDes">Junion Hign</dt>
-					<dd class="ddDes">info</dd>
+					<dd class="ddDes">{{$rental->rentschool->high}}</dd>
+				</dl>
+				<dl class="dlInlineDescription light radius">
+					<dt class="dtDes">Elementary</dt>
+					<dd class="ddDes">{{$rental->rentschool->highschdistrict}}</dd>
+				</dl>
+
+				<dl class="dlInlineDescription light radius">
+					<dt class="dtDes">High</dt>
+					<dd class="ddDes">{{$rental->rentschool->juniorhigh}}</dd>
+				</dl>
+
+				<dl class="dlInlineDescription light radius">
+					<dt class="dtDes">Junion Hign</dt>
+					<dd class="ddDes">{{$rental->rentschool->jrhighdistrict}}</dd>
 				</dl>
 			</div>
 
@@ -973,7 +1022,7 @@
 					<div class="large-6 columns">
 						<dl class="dlInlineDescription light radius">
 							<dt class="dtDes">Township</dt>
-							<dd class="ddDes">info</dd>
+							<dd class="ddDes">{{$rental->rentpropertyinfo->rentpropertyinfo}}</dd>
 						</dl>
 
 					</div>
@@ -981,7 +1030,7 @@
 					<div class="large-6 columns">
 						<dl class="dlInlineDescription light radius">
 							<dt class="dtDes">City</dt>
-							<dd class="ddDes">info</dd>
+							<dd class="ddDes">{{$rental->rentpropertyinfo->city}}</dd>
 						</dl>
 					</div>
 				</div>
@@ -990,7 +1039,7 @@
 					<div class="large-6 columns">
 						<dl class="dlInlineDescription light radius">
 							<dt class="dtDes">State</dt>
-							<dd class="ddDes">info</dd>
+							<dd class="ddDes">{{$rental->rentpropertyinfo->county}}</dd>
 						</dl>
 
 					</div>
@@ -998,7 +1047,7 @@
 					<div class="large-6 columns">
 						<dl class="dlInlineDescription light radius">
 							<dt class="dtDes">County</dt>
-							<dd class="ddDes">info</dd>
+							<dd class="ddDes">{{$rental->rentpropertyinfo->area}}</dd>
 						</dl>
 					</div>
 				</div>
@@ -1007,7 +1056,7 @@
 					<div class="large-6 columns">
 						<dl class="dlInlineDescription light radius">
 							<dt class="dtDes">Area</dt>
-							<dd class="ddDes">info</dd>
+							<dd class="ddDes">{{$rental->rentpropertyinfo->directions}}</dd>
 						</dl>
 
 					</div>
@@ -1015,7 +1064,7 @@
 					<div class="large-6 columns">
 						<dl class="dlInlineDescription light radius">
 							<dt class="dtDes">Directions</dt>
-							<dd class="ddDes">info</dd>
+							<dd class="ddDes">{{$rental->rentpropertyinfo->apnnumber}}</dd>
 						</dl>
 					</div>
 				</div>
@@ -1024,7 +1073,7 @@
 					<div class="large-6 columns">
 						<dl class="dlInlineDescription light radius">
 							<dt class="dtDes">APN Number</dt>
-							<dd class="ddDes">info</dd>
+							<dd class="ddDes">{{$rental->rentpropertyinfo->otherinfo}}</dd>
 						</dl>
 					</div>
 				</div>

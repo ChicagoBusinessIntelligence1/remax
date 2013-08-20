@@ -16,15 +16,24 @@ public function images()
 return $this->hasOne('Image');
 }
 
-public function status()
-{
-return $this->hasOne('Status');
-}
+
 
 
 public function agent()
 {
 return $this->belongsTo('Agent');
 }
+
+public function status()
+{
+return $this->belongsTo('Status');
+}
+
+public function saleexteriorfeature()
+{
+return $this->belongsTo('Saleexteriorfeature');
+}
+
+
 
 }
