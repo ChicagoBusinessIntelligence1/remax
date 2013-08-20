@@ -10,7 +10,7 @@
 			<div class="panel radius">
 				<h1 class="welcome">Welcome to <br/>Remax 1st Class Realty</h1>
 					<hr/>
-					<p>We are a trustful Real Estate Company located in Skokie, IL. We offer a comprehensive service in real estate. We can help to buy, sell or manage residential property. We will also help to get the best mortgage conditions via our mortgage department as well as get all paper prepared by our staff attorneys. We have successful experience in short sales and always have a great investment opportunities. Our main price range is from 35k till 500k, though we also have experience and listing in luxury market.</p>
+					<p>Remax 1st Class Realty is a <em>trustful Real Estate Company</em> located in <em>Skokie, IL</em>. We offer a comprehensive service in real estate. We can help to buy, sell or manage residential property. Remax 1st Class Realty will also help to get the best mortgage conditions via our mortgage department as well as get all paper prepared by staff attorneys. We have successful experience in short sales and always have a great investment opportunities. Our main price range is from 35k till 500k, though we also have experience and listing in luxury market.</p>
 					<p>Our first line districts are Skokie, Morton Grove, Evanston, Niles, North Side Chicago, Ukrainian Village and neighboring areas.</p>
 				</div>
 			</div>
@@ -50,7 +50,7 @@
 		<div class="row">
 			<div class="large-12 columns">	
 				<div class="panel radius">
-					<h3>Why we are worth to work with:</h3>
+					<h3>Why Remax 1st Class Realty is worth to work with:</h3>
 					<hr/>
 					<ul class="ulWorkWith">
 						<li>
@@ -60,7 +60,7 @@
 							<p>we have no hidden fees and as a Remax Representative, we are very flexible in commissions. We always prioritize the client interest and in some cases we work without commissions when they are obstacles to closing. Our main mission is client satisfaction and long term partnership.</p>
 						</li>
 						<li>
-							<p>we offer a comprehensive service in real estate - we can help to change house, avoid foreclosure without any influence on your credit score.</p>
+							<p>Remax 1st Class offers comprehensive service in real estate - we can help to change house, avoid foreclosure without any influence on your credit score.</p>
 						</li>
 						<li>
 							<p>we also can sell your residential property in the shortest time as we have a wide network of real estate partnerships in the area and our commissions are never the problem. We have a great experience in pre-sell preparation when small investments could bring the highest return.</p>
@@ -86,7 +86,7 @@
 
 				<div class="section-container auto" data-section>
 					<section>
-						<h6 class="title" data-section-title><a class="newsHead" href="#panel1">NEWS FOR BUYERS</a></h6>
+						<h6 class="title" data-section-title><a class="newsHead" href="#panel1">NEWS FOR Home BUYERS</a></h6>
 						<div class="content" data-section-content>
 							<article >
 								
@@ -100,7 +100,7 @@
 						</div>
 					</section>
 					<section>
-						<h6 class="title" data-section-title><a class="newsHead" href="#panel2">NEWS FOR SELLERS</a></h6>
+						<h6 class="title" data-section-title><a class="newsHead" href="#panel2">NEWS FOR Home SELLERS</a></h6>
 						<div class="content" data-section-content>
 							<article>
 							
