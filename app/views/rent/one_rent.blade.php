@@ -202,21 +202,22 @@
 						<div class="content" data-slug="panel2">
 
 							<div class="row">
-								<div class="large-5 columns">
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Full Bathrooms</dt>
-										<dd class="ddDes">{{$rental->rentbathroom->fullbath}}</dd>
-									</dl>
+								<div class="row">
+									<div class="large-5 columns">
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Full Bathrooms</dt>
+											<dd class="ddDes">{{$rental->rentbathroom->fullbath}}</dd>
+										</dl>
+									</div>
+
+
+									<div class="large-7 columns">
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Half Bathrooms</dt>
+											<dd class="ddDes">{{$rental->rentbathroom->halfbath}}</dd>
+										</dl>
+									</div>
 								</div>
-
-
-								<div class="large-7 columns">
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Half Bathrooms</dt>
-										<dd class="ddDes">{{$rental->rentbathroom->halfbath}}</dd>
-									</dl>
-								</div>
-
 
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
@@ -1113,6 +1114,7 @@
 					@endif
 				</div>
 			</div>
+		</div>
 		
 		@stop
 
