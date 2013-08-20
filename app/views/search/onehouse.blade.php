@@ -67,7 +67,7 @@
 
 							<strong>MLS: #</strong> {{$house->listing}}<br/><br/>
 
-							<strong>Status: </strong>Info<br/><br/>
+							<strong>Status: </strong> {{$house->status->dbstatus}} <br/><br/>
 						</div>
 
 
@@ -78,7 +78,7 @@
 
 							<strong>House Size:</strong> {{$house->size}} <br/><br/>
 
-							<strong>Lot Size: </strong>Info<br/><br/>
+							<strong>Lot Size: </strong>{{$house->saleexteriorfeature->lotsize}}<br/><br/>
 
 							<strong>Year Built:</strong> {{$house->year}} <br/><br/>
 						</div>		
