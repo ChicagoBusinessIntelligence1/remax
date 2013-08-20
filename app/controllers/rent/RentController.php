@@ -11,7 +11,7 @@ class RentController extends BaseController {
      */
     public function apartments() {
 
-    $rentals = Rental::with('rentalimage', 'agent', 'rentpropertytype')->where('rentalpropertytype_id','=', 1)->paginate(5);
+    $rentals = Rental::with('rentalimage', 'agent', 'rentpropertytype')->where('rentpropertytype_id','=', 1)->paginate(5);
     return View::make('rent.rent_results')->with(compact('rentals'))->with('agents', parent::getRandomAgents());
 
     }
@@ -31,7 +31,7 @@ class RentController extends BaseController {
 
     public function houses(){
 
-    $rentals = Rental::with('rentalimage', 'agent', 'rentpropertytype')->where('rentalpropertytype_id','=', 2)->paginate(5);
+    $rentals = Rental::with('rentalimage', 'agent', 'rentpropertytype')->where('rentpropertytype_id','=', 2)->paginate(5);
     return View::make('rent.rent_results')->with(compact('rentals'))->with('agents', parent::getRandomAgents());
 
     }
