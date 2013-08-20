@@ -6,7 +6,19 @@
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width" />
-      <title>Remax First Class Realty Company | Residential Real Estate | Commercial Real Estate | Investment Real Estate | Property for Sale | Property for Rent | Realty Agents</title>
+      
+      @if(!isset($title))
+      <title>Remax Skokie, Homes Sale, Houses Rent Remax Skokie, Real Estate Niles</title>
+       <meta name="description" content="Comprehensive Real Estate Services, Buy House, Get approved for Home Loan, 
+  Rent, Sell, Invest in Real Estate. ONE STOP SERVICE!" />
+      @else
+
+      <title>{{ucwords($title)}}</title>
+       <meta name="description" content="{{ucwords($meta)}}" />
+  
+      @endif
+
+
       <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Numans' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
@@ -19,7 +31,17 @@
 
       {{HTML::script("comp/javascripts/vendor/custom.modernizr.js")}} 
       {{HTML::script("comp/javascripts/script.js")}} 
+     
+     <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-43248319-1', 'remax1stclass.com');
+  ga('send', 'pageview');
+
+</script>
 
     </head>
     <body>
@@ -83,40 +105,40 @@
               <ul class="right">
                 <li>{{link_to_route('home', 'Home');}}</li>
                 <li>{{link_to_route('about', 'About');}}</li>
-                <li class="has-dropdown">{{link_to('#', 'Buying');}}
+                <li class="has-dropdown">{{link_to('#', 'Buying Home');}}
 
                   <ul class="dropdown">
-                    <li>{{link_to_route('the_benefits_of_home_ownership', 'The Benefits of Home Ownership');}}</li>
-                    <li>{{link_to_route('the_importance_of_buyers_agent', 'The Importance of a Buyer\'s Agent');}}</li>
-                    <li>{{link_to_route('deciding_where_to_live', 'Deciding Where to Live');}}</li>
-                    <li>{{link_to_route('anatomy_of_a_home_purchase', 'Anatomy of a Home Purchase');}}</li>
-                    <li>{{link_to_route('five_tips_to_narrow_your_online_home_search', '5 Tips to Narrow Your Online Home Search');}}</li>
+                    <li>{{link_to_route('the-benefits-of-home-ownership', 'The Benefits of Home Ownership');}}</li>
+                    <li>{{link_to_route('the-importance-of-buyers-agent', 'The Importance of a Buyer\'s Agent');}}</li>
+                    <li>{{link_to_route('deciding-where-to-live', 'Deciding Where to Live');}}</li>
+                    <li>{{link_to_route('anatomy-of-a-home-purchase', 'Anatomy of a Home Purchase');}}</li>
+                    <li>{{link_to_route('five-tips-to-narrow-your-online-home-search', '5 Tips to Narrow Your Online Home Search');}}</li>
                   </ul>
                 </li>
-                <li class="has-dropdown">{{link_to('#', 'Selling');}}
+                <li class="has-dropdown">{{link_to('#', 'Selling Home');}}
                   <ul class="dropdown">
-                    <li>{{link_to_route('the_right_listing_agent', 'The Right Listing Agent');}}</li>
-                    <li>{{link_to_route('how_an_agent_markets_your_home', 'How an Agent Markets Your Home');}}</li>
-                    <li>{{link_to_route('pricing_your_home_to_sell', 'Pricing Your Home to Sell');}}</li>
-                    <li>{{link_to_route('preparing_your_house_for_sale', 'Preparing Your House for Sale');}}</li>
-                    <li>{{link_to_route('consider_a_home_inspection_when_selling', 'Consider a Home Inspection When Selling');}}</li>
+                    <li>{{link_to_route('the-right-listing-agent', 'The Right Listing Agent');}}</li>
+                    <li>{{link_to_route('how-an-agent-markets-your-home', 'How an Agent Markets Your Home');}}</li>
+                    <li>{{link_to_route('pricing-your-home-to-sell', 'Pricing Your Home to Sell');}}</li>
+                    <li>{{link_to_route('preparing-your-house-for-sale', 'Preparing Your House for Sale');}}</li>
+                    <li>{{link_to_route('consider-a-home-inspection-when-selling', 'Consider a Home Inspection When Selling');}}</li>
                   </ul>
                   <li/>
                   <li class="has-dropdown">{{link_to('#', 'Mortgage');}}
                     <ul class="dropdown">
-                      <li>{{link_to_route('finding_the_right_mortgage_professional', 'Finding the Right Mortgage Professional');}}</li>
-                      <li>{{link_to_route('getting_preapproved', 'Getting Preapproved');}}</li>
-                      <li>{{link_to_route('how_much_can_you_afford', 'How Much Can you afford?');}}</li>
-                      <li>{{link_to_route('down_payments_how_much_do_you_need', 'Down Payments: How Much Do You Need?');}}</li>
-                      <li>{{link_to_route('mortgages_101_basic_loan_types', 'Mortgages 101: Basic Loan Types');}}</li>
-                      <li>{{link_to_route('renovating_a_home', 'Renovating a Home? Consider a 203(k) Loan');}}</li>
+                      <li>{{link_to_route('finding-the-right-mortgage-professional', 'Finding the Right Mortgage Professional');}}</li>
+                      <li>{{link_to_route('getting-preapproved', 'Getting Preapproved');}}</li>
+                      <li>{{link_to_route('how-much-can-you-afford', 'How Much Can you afford?');}}</li>
+                      <li>{{link_to_route('down-payments-how-much-do-you-need', 'Down Payments: How Much Do You Need?');}}</li>
+                      <li>{{link_to_route('mortgages-101-basic-loan-types', 'Mortgages 101: Basic Loan Types');}}</li>
+                      <li>{{link_to_route('renovating-a-home', 'Renovating a Home? Consider a 203(k) Loan');}}</li>
                     </ul>
                     <li/>
-                    <li class="has-dropdown">{{link_to('#', 'News');}}
+                    <li class="has-dropdown">{{link_to('#', 'Realty News');}}
                       <ul class="dropdown">
-                        <li>{{link_to_route('real_estate_news', 'Real Estate News');}}</li>
-                        <li>{{link_to_route('news_for_buyers', 'News for Buyers');}}</li>
-                        <li>{{link_to_route('news_for_sellers', 'News for Sellers');}}</li>
+                        <li>{{link_to_route('real-estate-news', 'Real Estate News');}}</li>
+                        <li>{{link_to_route('news-for-buyers', 'News for Buyers');}}</li>
+                        <li>{{link_to_route('news-for-sellers', 'News for Sellers');}}</li>
                       </ul>
                       <li/>
                       <li>{{link_to_route('contact', 'Contact');}}</li> 
@@ -150,7 +172,7 @@
                     <p class="sloganTop">YOU NEED ONLY ONE COMPANY </p> <p> FOR ALL YOUR REAL ESTATE NEEDS</p>
                   </div>
                   <div class="large-6 columns oneStopService">
-                    <img class="left" src="{{url('comp/img/one_stop_service/One-Stop-Service-Text.png')}}" alt="RE/MAX FIRST CLASS One Stop Service">
+                    <img class="left" src="{{url('comp/img/one_stop_service/One-Stop-Service-Text.png')}}" alt="Real Estate One Stop Service">
 
                   </div>
 
@@ -182,7 +204,7 @@
 
                       <div class="row">
                        <div class="large-12 small-12 columns callUsContent">
-                         <img class="left"  src="{{url('comp/img/phone40.png')}}" alt="phone icon">
+                         <img class="left"  src="{{url('comp/img/phone40.png')}}" alt="remax phone icon">
                          <div class="callUs left has-tip-left" title="Call Our Agents for a Free Consultation">(847) 674-9797</div>
                        </div>
                      </div>
@@ -469,7 +491,7 @@
             <a class="th has-tip-left logoFooterPadding" title="Coming Soon RE/MAX 1ST CLASS COMMERCIAL" href="#">
               <img src="{{url('comp/img/remax-commercial-logo.png')}}" alt="RE/MAX 1ST CLASS COMMERCIAL">
             </a>
-            <a target="_blank" class="th has-tip-left logoFooterPadding"  title="Visit Our Remax Short Sale Chicago Website"  href="http://www.shortsalechicago.us/Short-Sale-Chicago">
+            <a target="_blank" rel="nofollow" class="th has-tip-left logoFooterPadding"  title="Visit Our Remax Short Sale Chicago Website"  href="http://www.shortsalechicago.us/Short-Sale-Chicago">
               <img src="{{url('comp/img/Chicago-Short-Sale-Logo.png')}}" alt="Chicago Short Sale">
             </a>
           </div>
@@ -534,7 +556,7 @@
       </div>
     </footer>
 
-    <div class="addInfoFooterWrapper">
+    <!-- <div class="addInfoFooterWrapper">
       <div class="row">
         <div class="large-12 columns addInfoFooter">
           <ul class="inline-list addInfoFooterLinks">
@@ -816,7 +838,7 @@
   </div>
   </div>
 
-  </div>
+  </div> -->
 
   <!-- /* =copyright starts here */ -->
 
@@ -849,9 +871,9 @@
            <div class="large-10 columns"> <ul class="title-area right">
             <!-- Title Area -->
             <li class="name">
-              <h1>
+              <h2>
                 {{link_to_route('home', 'REMAX FIRST CLASS');}}
-              </h1>
+              </h2>
             </li>
           </ul>
         </div>

@@ -24,8 +24,12 @@ class HomeController extends BaseController {
 	$newsBuy[0]->body = TextOperations::shortenString($newsBuy[0]->body, 420);  	
 	$newsSell[0]->body = TextOperations::shortenString($newsSell[0]->body, 420);  	
 
-		
+	$title = 'homes sale, houses rent remax skokie, real estate niles, evanstone';
+	$meta= 'Comprehensive Real Estate Services, Buy House, Get approved for Home Loan, 
+	Rent, Sell, Invest in Real Estate. ONE STOP SERVICE!';		
 	return View::make('home.vw_home')
+	->with('newsBuy',$newsBuy[0])
+	->with(compact('title', 'meta'))
 	->with('newsBuy',$newsBuy[0])
 	->with('newsSell', $newsSell[0])
 	->with('agents', parent::getRandomAgents());
