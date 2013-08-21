@@ -54,7 +54,7 @@
 			</div>
 			<div class="large-3 columns">
 				
-				<h6 class="alert-box secondary radius propStat">status</h6>
+				<h6 class="alert-box secondary radius propStat">{{$rental->rentcurrentstatus->currentstatus}}</h6>
 			</div>
 		</div>
 		

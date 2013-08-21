@@ -129,4 +129,9 @@ public function rentpropertyinfo()
 return $this->belongsTo('Rentpropertyinfo');
 }
 
+public function rentcurrentstatus()
+{
+return $this->belongsTo('Rentcurrentstatus');
+}
+
 }
