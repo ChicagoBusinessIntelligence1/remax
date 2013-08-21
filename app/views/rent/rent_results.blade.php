@@ -16,7 +16,7 @@
 				<!-- =addressColor starts here -->
 				<div class="panel addressColor">
 					<div class="row">
-						<div class="large-8 columns">
+						<div class="large-7 columns">
 							<h6>
 								{{$rental->address}}
 							</h6> &nbsp	&nbsp	
@@ -26,8 +26,8 @@
 
 
 						</div>
-						<div class="large-2 small-3 columns">
-							<span class="priceStyle right ">${{number_format($rental->price)}}
+						<div class="large-3 small-3 columns">
+							<span class="priceStyle right ">${{number_format($rental->price)}}/month
 							</span>
 						</div>
 					</div>

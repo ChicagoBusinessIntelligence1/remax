@@ -11,14 +11,18 @@ class RentController extends BaseController {
      */
     public function apartments() {
 
-    $rentals = Rental::with('rentalimage', 'agent', 'rentpropertytype')->where('rentpropertytype_id','=', 1)->paginate(5);
+    $rentals = Rental::with('rentalimage', 'agent', 'rentutility', 'rentpropertyinfo', 'rentschool', 'rentbuildingconstruction', 'rentgarageandparking', 'rentlotfeature', 
+        'rentcurrentstatus', 'rentappliance', 'rentalinfo', 'rentbedroom', 'rentbathroom', 'rentkitchen', 'rentdiningroom', 'rentlivingroom', 'rentfamroom', 'rentutilityroom', 
+        'rentinteriorfeature', 'rentotherroom', 'rentwalkincloset', 'rentbasement', 'rentlaundryroom', 'rentexerciseroom', 'rentpropertytype')->where('rentpropertytype_id','=', 1)->paginate(5);
     return View::make('rent.rent_results')->with(compact('rentals'))->with('agents', parent::getRandomAgents());
 
     }
 
     public function show($id) {
 
-    $rental = Rental::with('rentalimage', 'agent', 'rentutility', 'rentpropertyinfo', 'rentschool', 'rentbuildingconstruction', 'rentgarageandparking', 'rentlotfeature', 'rentcurrentstatus', 'rentappliance', 'rentalinfo', 'rentbedroom', 'rentbathroom', 'rentkitchen', 'rentdiningroom', 'rentlivingroom', 'rentfamroom', 'rentutilityroom', 'rentinteriorfeature', 'rentotherroom', 'rentwalkincloset', 'rentbasement', 'rentlaundryroom', 'rentexerciseroom', 'rentpropertytype')->where('id','=', $id)->first();
+    $rental = Rental::with('rentalimage', 'agent', 'rentutility', 'rentpropertyinfo', 'rentschool', 'rentbuildingconstruction', 'rentgarageandparking', 'rentlotfeature', 
+        'rentcurrentstatus', 'rentappliance', 'rentalinfo', 'rentbedroom', 'rentbathroom', 'rentkitchen', 'rentdiningroom', 'rentlivingroom', 'rentfamroom', 'rentutilityroom', 
+        'rentinteriorfeature', 'rentotherroom', 'rentwalkincloset', 'rentbasement', 'rentlaundryroom', 'rentexerciseroom', 'rentpropertytype')->where('id','=', $id)->first();
     return View::make('rent.one_rent')->with(compact('rental'))->with('agents', parent::getRandomAgents());
 
     }
@@ -31,7 +35,9 @@ class RentController extends BaseController {
 
     public function houses(){
 
-    $rentals = Rental::with('rentalimage', 'agent', 'rentpropertytype')->where('rentpropertytype_id','=', 2)->paginate(5);
+    $rentals = Rental::with('rentalimage', 'agent', 'rentutility', 'rentpropertyinfo', 'rentschool', 'rentbuildingconstruction', 'rentgarageandparking', 'rentlotfeature', 
+        'rentcurrentstatus', 'rentappliance', 'rentalinfo', 'rentbedroom', 'rentbathroom', 'rentkitchen', 'rentdiningroom', 'rentlivingroom', 'rentfamroom', 'rentutilityroom', 
+        'rentinteriorfeature', 'rentotherroom', 'rentwalkincloset', 'rentbasement', 'rentlaundryroom', 'rentexerciseroom', 'rentpropertytype')->where('rentpropertytype_id','=', 2)->paginate(5);
     return View::make('rent.rent_results')->with(compact('rentals'))->with('agents', parent::getRandomAgents());
 
     }

@@ -72,7 +72,8 @@
 						<div class="large-5 column panel secondary panelShortInfo ">
 							<strong>MLS: #</strong> {{$rental->listing}}<br></br>
 							<strong>Lease Terms: </strong>{{$rental->rentalinfo->leaseterms}}<br/><br/>
-							<strong>Monthly Rent Include: </strong> <br/><br/>{{$rental->rentalinfo->monthlyrentinclude}}<br/><br/>
+							<strong>Monthly Rent Include: </strong>{{$rental->rentalinfo->monthlyrentinclude}}<br/><br/>
+							<strong>Pet Info: </strong>{{$rental->rentalinfo->petinfo}}<br/><br/>
 						</div>				
 
 
@@ -82,10 +83,12 @@
 							<strong>House Size:</strong> {{$rental->size}} <br></br>
 
 							@if($rental->year)
-							<strong>Year Built:</strong> {{(new DateTime($rental->year))->format("Y")}} 
+							<strong>Year Built:</strong> {{(new DateTime($rental->year))->format("Y")}} <br/><br/>
+							@endif
 						</div>	
 					</div>
 				</div>
+				
 				<div class="row">
 					<div class="large-12 columns">
 						<h4 class="subheader tenMarginTop">Description</h4>
@@ -95,11 +98,10 @@
 						</div>
 					</div>
 				</div>
-				@endif
 
 
 			</div>
-			<!--  =listingDetails ends here-->
+			<!-- =listingDetails ends here -->
 		</div>
 
 		<h4 class="subheader tenMarginTop">Interior Details</h4>
@@ -691,6 +693,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- =Interior Details end here-->
 
 		<h4 class="subheader tenMarginTop">Exterior Details</h4>
 		<div class="row">
@@ -972,7 +975,7 @@
 				</div>
 			</div>
 		</div>
-
+		<!-- =Exterior Details end here -->
 		<br/>
 
 
@@ -1078,44 +1081,51 @@
 						</dl>
 					</div>
 				</div>
-			</section>
-			<br/>
-
-
-			<div class="row">
-				<div class="large-12 large-centered columns receivePriceChangeButtonWrapper">
-					@if(Auth::check())
-					{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}
-					{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
-					{{Form::close()}}
-					@else
-					<div class="label radius pleaseSignIn">Please Sign-in to Receive Alerts for this Property
-					</div>
-					@endif
-				</div>
 			</div>
+		</section>
+		<br/>
 
-			@if($imCounter)
-			<div class="row">
-				<div class="large-6 columns">
-					<ul class="clearing-thumbs" data-clearing>
-						@for ($i =1; $i <= $imCounter; $i++)
-						<li><a class="th" href="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}">
-							<img width="100px" height="50px" src="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}"></a></li>
-							@endfor
-						</ul>
-					</div>
-					@endif
 
-					@if($rental->agent)
-					<div class="large-6 columns">
-
-					</div>
-					@endif
+		<div class="row">
+			<div class="large-12 large-centered columns receivePriceChangeButtonWrapper">
+				@if(Auth::check())
+				{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}
+				{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
+				{{Form::close()}}
+				@else
+				<div class="label radius pleaseSignIn">Please Sign-in to Receive Alerts for this Property
 				</div>
+				@endif
 			</div>
 		</div>
-		
-		@stop
+
+		@if($imCounter)
+		<div class="row">
+			<div class="large-6 columns">
+				<ul class="clearing-thumbs" data-clearing>
+					@for ($i =1; $i <= $imCounter; $i++)
+					<li><a class="th" href="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}">
+						<img width="100px" height="50px" src="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}"></a></li>
+						@endfor
+					</ul>
+				</div>
+				@endif
+
+				@if($rental->agent)
+				<div class="large-6 columns">
+
+				</div>
+				@endif
+			</div>
+
+
+
+
+			<!-- =receivePriceChangeButtonWrapper ends here -->
+
+		</div>
+	</div>
+
+	@stop
 
 
