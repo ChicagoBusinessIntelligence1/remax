@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'remaxone_remax',
+			'database'  => 'remaxone_remax2',
 			'username'  => 'remaxone_user',
 			'password'  => 'talvisota!@',
 			'charset'   => 'utf8',

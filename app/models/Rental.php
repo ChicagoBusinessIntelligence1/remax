@@ -20,10 +20,6 @@ public function agent()
 {
 return $this->belongsTo('Agent');
 }
-public function rentstatus()
-{
-return $this->belongsTo('Rentstatus');
-}
 
 public function rentalinfo()
 {
