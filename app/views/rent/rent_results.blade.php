@@ -27,7 +27,7 @@
 
 						</div>
 						<div class="large-3 small-3 columns">
-							<span class="priceStyle right ">${{number_format($rental->price)}}/month
+							<span class="priceStyle right ">${{number_format($rental->price)}}/Month
 							</span>
 						</div>
 					</div>
