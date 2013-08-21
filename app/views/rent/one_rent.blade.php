@@ -434,17 +434,29 @@
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Basement Bath</dt>
-										<dd class="ddDes">{{$rental->rentbasement->basementbathsize}}</dd>
+										<dd class="ddDes">{{$rental->rentbasement->basementbathroom}}</dd>
 									</dl>
 
 								</div>
 
 								<div class="large-7 columns">
 									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Basement Bath <br/>  Features</dt>
-										<dd class="ddDes">{{$rental->rentbasement->basementbathfeatures}}</dd>
+										<dt class="dtDes">Basement Bath Size</dt>
+										<dd class="ddDes">{{$rental->rentbasement->basementbathsize}}</dd>
 									</dl>
 								</div>
+							</div>
+
+							<div class="row">
+								<div class="large-5 columns">
+									<dl class="dlInlineDescription light radius">
+										<dt class="dtDes">Basement Bath Features</dt>
+										<dd class="ddDes">{{$rental->rentbasement->basementbathfeatures}}</dd>
+									</dl>
+
+								</div>
+
+								
 							</div>
 						</div>
 					</section>
@@ -619,6 +631,16 @@
 										<dd class="ddDes">{{$rental->rentinteriorfeature->flooring}}</dd>
 									</dl>
 								</div>
+							</div>
+							<div class="row">
+								<div class="large-5 columns">
+									<dl class="dlInlineDescription light radius">
+										<dt class="dtDes">Storage</dt>
+										<dd class="ddDes">{{$rental->rentinteriorfeature->storage}}</dd>
+									</dl>
+								</div>
+
+								
 							</div>
 						</div>
 					</section>
@@ -844,16 +866,15 @@
 							<div class="row">
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Exterior Building Type</dt>
-										<dd class="ddDes">{{$rental->rentbuildingconstruction->exteriorbuildingtype}}</dd>
+										<dt class="dtDes">Levels or Stories</dt>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->levelsorstories}}</dd>
 									</dl>
 								</div>
 
 								<div class="large-7 columns">
-
 									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Levels or Stories</dt>
-										<dd class="ddDes">{{$rental->rentbuildingconstruction->levelsorstories}}</dd>
+										<dt class="dtDes">Unit Floor Level</dt>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->unitfloorlevel}}</dd>
 									</dl>
 								</div>
 							</div>
@@ -861,11 +882,26 @@
 							<div class="row">
 								<div class="large-5 columns">
 									<dl class="dlInlineDescription light radius">
+										<dt class="dtDes">Exterior Building Type</dt>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->exteriorbuildingtype}}</dd>
+									</dl>
+								</div>
+
+								<div class="large-7 columns">
+									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Roof Type</dt>
 										<dd class="ddDes">{{$rental->rentbuildingconstruction->rooftype}}</dd>
 									</dl>
 								</div>
+							</div>
 
+							<div class="row">
+								<div class="large-5 columns">
+									<dl class="dlInlineDescription light radius">
+										<dt class="dtDes">Foundation</dt>
+										<dd class="ddDes">{{$rental->rentbuildingconstruction->foundation}}</dd>
+									</dl>
+								</div>
 								<div class="large-7 columns">
 
 									<dl class="dlInlineDescription light radius">
@@ -876,239 +912,239 @@
 							</div>
 
 
-					</section>
-					<section class="section">
-						<p class="title">
-							<a href="#panel3"><span class="spanAccordion">Utilities</span></a>
-						</p>
-						<div class="content" data-slug="panel3">
+						</section>
+						<section class="section">
+							<p class="title">
+								<a href="#panel3"><span class="spanAccordion">Utilities</span></a>
+							</p>
+							<div class="content" data-slug="panel3">
 
-							<div class="row">
-								<div class="large-5 columns">
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Electricity</dt>
-										<dd class="ddDes">{{$rental->rentutility->electricity}}</dd>
-									</dl>
+								<div class="row">
+									<div class="large-5 columns">
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Electricity</dt>
+											<dd class="ddDes">{{$rental->rentutility->electricity}}</dd>
+										</dl>
+									</div>
+
+									<div class="large-7 columns">
+
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Cooling Features</dt>
+											<dd class="ddDes">{{$rental->rentutility->coolingfeatures}}</dd>
+										</dl>
+									</div>
 								</div>
 
-								<div class="large-7 columns">
+								<div class="row">
+									<div class="large-5 columns">
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Heating Features</dt>
+											<dd class="ddDes">{{$rental->rentutility->heatingfeatures}}</dd>
+										</dl>
+									</div>
 
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Cooling Features</dt>
-										<dd class="ddDes">{{$rental->rentutility->coolingfeatures}}</dd>
-									</dl>
+									<div class="large-7 columns">
+
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Number of Fireplaces</dt>
+											<dd class="ddDes">{{$rental->rentutility->numberoffireplaces}}</dd>
+										</dl>
+									</div>
 								</div>
+
+								<div class="row">
+									<div class="large-5 columns">
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Fireplace Location</dt>
+											<dd class="ddDes">{{$rental->rentutility->fireplacelocation}}</dd>
+										</dl>
+									</div>
+
+									<div class="large-7 columns">
+
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Water</dt>
+											<dd class="ddDes">{{$rental->rentutility->water}}</dd>
+										</dl>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="large-5 columns">
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Sewer</dt>
+											<dd class="ddDes">{{$rental->rentutility->sewer}}</dd>
+										</dl>
+									</div>
+
+									<div class="large-7 columns">
+
+										<dl class="dlInlineDescription light radius">
+											<dt class="dtDes">Additional Features</dt>
+											<dd class="ddDes">{{$rental->rentutility->additionalfeatures}}</dd>
+										</dl>
+									</div>
+								</div>
+
+
+
 							</div>
-
-							<div class="row">
-								<div class="large-5 columns">
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Heating Features</dt>
-										<dd class="ddDes">{{$rental->rentutility->heatingfeatures}}</dd>
-									</dl>
-								</div>
-
-								<div class="large-7 columns">
-
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Number of Fireplaces</dt>
-										<dd class="ddDes">{{$rental->rentutility->numberoffireplaces}}</dd>
-									</dl>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="large-5 columns">
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Fireplace Location</dt>
-										<dd class="ddDes">{{$rental->rentutility->fireplacelocation}}</dd>
-									</dl>
-								</div>
-
-								<div class="large-7 columns">
-
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Water</dt>
-										<dd class="ddDes">{{$rental->rentutility->water}}</dd>
-									</dl>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="large-5 columns">
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Sewer</dt>
-										<dd class="ddDes">{{$rental->rentutility->sewer}}</dd>
-									</dl>
-								</div>
-
-								<div class="large-7 columns">
-
-									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Additional Features</dt>
-										<dd class="ddDes">{{$rental->rentutility->additionalfeatures}}</dd>
-									</dl>
-								</div>
-							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+			<!-- =Exterior Details end here -->
+			<br/>
 
 
-							
+			<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">School</h4>
+			<hr/>
+
+			<section class="section">
+				<div class="content" data-slug="panel3">
+					<dl class="dlInlineDescription light radius">
+						<dt class="dtDes">Elementary</dt>
+						<dd class="ddDes">{{$rental->rentschool->elementary}}</dd>
+					</dl>
+
+					<dl class="dlInlineDescription light radius">
+						<dt class="dtDes">High</dt>
+						<dd class="ddDes">{{$rental->rentschool->elemschdistrict}}</dd>
+					</dl>
+
+					<dl class="dlInlineDescription light radius">
+						<dt class="dtDes">Junion Hign</dt>
+						<dd class="ddDes">{{$rental->rentschool->high}}</dd>
+					</dl>
+					<dl class="dlInlineDescription light radius">
+						<dt class="dtDes">Elementary</dt>
+						<dd class="ddDes">{{$rental->rentschool->highschdistrict}}</dd>
+					</dl>
+
+					<dl class="dlInlineDescription light radius">
+						<dt class="dtDes">High</dt>
+						<dd class="ddDes">{{$rental->rentschool->juniorhigh}}</dd>
+					</dl>
+
+					<dl class="dlInlineDescription light radius">
+						<dt class="dtDes">Junion Hign</dt>
+						<dd class="ddDes">{{$rental->rentschool->jrhighdistrict}}</dd>
+					</dl>
+				</div>
+
+			</section>
+			<br/>
+			<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">Property Information</h4>
+			<hr/>
+
+			<section class="section">
+				<div class="content" data-slug="panel3">
+
+					<div class="row">
+						<div class="large-6 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">Township</dt>
+								<dd class="ddDes">{{$rental->rentpropertyinfo->township}}</dd>
+							</dl>
+
 						</div>
-					</section>
+
+						<div class="large-6 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">City</dt>
+								<dd class="ddDes">{{$rental->rentpropertyinfo->city}}</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-6 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">State</dt>
+								<dd class="ddDes">{{$rental->rentpropertyinfo->state}}</dd>
+							</dl>
+
+						</div>
+
+						<div class="large-6 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">County</dt>
+								<dd class="ddDes">{{$rental->rentpropertyinfo->county}}</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-6 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">Area</dt>
+								<dd class="ddDes">{{$rental->rentpropertyinfo->area}}</dd>
+							</dl>
+
+						</div>
+
+						<div class="large-6 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">Directions</dt>
+								<dd class="ddDes">{{$rental->rentpropertyinfo->directions}}</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-6 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">APN Number</dt>
+								<dd class="ddDes">{{$rental->rentpropertyinfo->apnnumber}}</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</section>
+			<br/>
+
+
+			<div class="row">
+				<div class="large-12 large-centered columns receivePriceChangeButtonWrapper">
+					@if(Auth::check())
+					{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}
+					{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
+					{{Form::close()}}
+					@else
+					<div class="label radius pleaseSignIn">Please Sign-in to Receive Alerts for this Property
+					</div>
+					@endif
 				</div>
 			</div>
-		</div>
-		<!-- =Exterior Details end here -->
-		<br/>
 
-
-		<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">School</h4>
-		<hr/>
-
-		<section class="section">
-			<div class="content" data-slug="panel3">
-				<dl class="dlInlineDescription light radius">
-					<dt class="dtDes">Elementary</dt>
-					<dd class="ddDes">{{$rental->rentschool->elementary}}</dd>
-				</dl>
-
-				<dl class="dlInlineDescription light radius">
-					<dt class="dtDes">High</dt>
-					<dd class="ddDes">{{$rental->rentschool->elemschdistrict}}</dd>
-				</dl>
-
-				<dl class="dlInlineDescription light radius">
-					<dt class="dtDes">Junion Hign</dt>
-					<dd class="ddDes">{{$rental->rentschool->high}}</dd>
-				</dl>
-				<dl class="dlInlineDescription light radius">
-					<dt class="dtDes">Elementary</dt>
-					<dd class="ddDes">{{$rental->rentschool->highschdistrict}}</dd>
-				</dl>
-
-				<dl class="dlInlineDescription light radius">
-					<dt class="dtDes">High</dt>
-					<dd class="ddDes">{{$rental->rentschool->juniorhigh}}</dd>
-				</dl>
-
-				<dl class="dlInlineDescription light radius">
-					<dt class="dtDes">Junion Hign</dt>
-					<dd class="ddDes">{{$rental->rentschool->jrhighdistrict}}</dd>
-				</dl>
-			</div>
-
-		</section>
-		<br/>
-		<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">Property Information</h4>
-		<hr/>
-
-		<section class="section">
-			<div class="content" data-slug="panel3">
-
-				<div class="row">
-					<div class="large-6 columns">
-						<dl class="dlInlineDescription light radius">
-							<dt class="dtDes">Township</dt>
-							<dd class="ddDes">{{$rental->rentpropertyinfo->township}}</dd>
-						</dl>
-
-					</div>
-
-					<div class="large-6 columns">
-						<dl class="dlInlineDescription light radius">
-							<dt class="dtDes">City</dt>
-							<dd class="ddDes">{{$rental->rentpropertyinfo->city}}</dd>
-						</dl>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="large-6 columns">
-						<dl class="dlInlineDescription light radius">
-							<dt class="dtDes">State</dt>
-							<dd class="ddDes">{{$rental->rentpropertyinfo->state}}</dd>
-						</dl>
-
-					</div>
-
-					<div class="large-6 columns">
-						<dl class="dlInlineDescription light radius">
-							<dt class="dtDes">County</dt>
-							<dd class="ddDes">{{$rental->rentpropertyinfo->county}}</dd>
-						</dl>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="large-6 columns">
-						<dl class="dlInlineDescription light radius">
-							<dt class="dtDes">Area</dt>
-							<dd class="ddDes">{{$rental->rentpropertyinfo->area}}</dd>
-						</dl>
-
-					</div>
-
-					<div class="large-6 columns">
-						<dl class="dlInlineDescription light radius">
-							<dt class="dtDes">Directions</dt>
-							<dd class="ddDes">{{$rental->rentpropertyinfo->directions}}</dd>
-						</dl>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="large-6 columns">
-						<dl class="dlInlineDescription light radius">
-							<dt class="dtDes">APN Number</dt>
-							<dd class="ddDes">{{$rental->rentpropertyinfo->apnnumber}}</dd>
-						</dl>
-					</div>
-				</div>
-			</div>
-		</section>
-		<br/>
-
-
-		<div class="row">
-			<div class="large-12 large-centered columns receivePriceChangeButtonWrapper">
-				@if(Auth::check())
-				{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}
-				{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
-				{{Form::close()}}
-				@else
-				<div class="label radius pleaseSignIn">Please Sign-in to Receive Alerts for this Property
-				</div>
-				@endif
-			</div>
-		</div>
-
-		@if($imCounter)
-		<div class="row">
-			<div class="large-6 columns">
-				<ul class="clearing-thumbs" data-clearing>
-					@for ($i =1; $i <= $imCounter; $i++)
-					<li><a class="th" href="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}">
-						<img width="100px" height="50px" src="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}"></a></li>
-						@endfor
-					</ul>
-				</div>
-				@endif
-
-				@if($rental->agent)
+			@if($imCounter)
+			<div class="row">
 				<div class="large-6 columns">
+					<ul class="clearing-thumbs" data-clearing>
+						@for ($i =1; $i <= $imCounter; $i++)
+						<li><a class="th" href="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}">
+							<img width="100px" height="50px" src="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}"></a></li>
+							@endfor
+						</ul>
+					</div>
+					@endif
 
+					@if($rental->agent)
+					<div class="large-6 columns">
+
+					</div>
+					@endif
 				</div>
-				@endif
+
+
+
+
+				<!-- =receivePriceChangeButtonWrapper ends here -->
+
 			</div>
-
-
-
-
-			<!-- =receivePriceChangeButtonWrapper ends here -->
-
 		</div>
-	</div>
 
-	@stop
+		@stop
 
 
