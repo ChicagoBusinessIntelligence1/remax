@@ -773,6 +773,14 @@
 										</div>
 									</div>
 									
+									<div class="row">
+										<div class="large-5 columns">
+											<dl class="dlInlineDescription light radius">
+												<dt class="dtDes">Disability Access and/or Equipped</dt>
+												<dd class="ddDes">{{$house->salehomefeature->chairlift}}</dd>
+											</dl>
+										</div>
+									</div>
 
 								</div>
 							</section>
@@ -1248,6 +1256,11 @@
 								<dt class="dtDes">Style</dt>
 								<dd class="ddDes">{{$house->salepublicrecord->style}}</dd>
 							</dl>
+
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">Garage</dt>
+								<dd class="ddDes">{{$house->salepublicrecord->garage}}</dd>
+							</dl>
 						</div>
 
 
@@ -1296,39 +1309,41 @@
 							<dl class="dlInlineDescription light radius">
 								<dt class="dtDes">Fireplace</dt>
 								<dd class="ddDes">{{$house->salepublicrecord->fireplace}}</dd>
-							</dl></div>
+							</dl>
+
 						</div>
-
-
-
-						<div class="row">
-							<div class="large-12 large-centered columns receivePriceChangeButtonWrapper">
-								@if(Auth::check())
-								{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}
-								{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
-								{{Form::close()}}
-								@else
-								<div class="label radius pleaseSignIn">Please Sign-in to Receive Alerts for this Property
-								</div>
-								@endif
-							</div>
-						</div>
-
-						@if($imCounter)
-
-						<ul class="clearing-thumbs" data-clearing>
-							@for ($i =1; $i <= $imCounter; $i++)
-							<li class="clearing-featured-img"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
-								<img width="100px" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>
-							</li>
-							@endfor
-						</ul>	
-						@endif
 					</div>
-				</div>
 
+
+
+					<div class="row">
+						<div class="large-12 large-centered columns receivePriceChangeButtonWrapper">
+							@if(Auth::check())
+							{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}
+							{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
+							{{Form::close()}}
+							@else
+							<div class="label radius pleaseSignIn">Please Sign-in to Receive Alerts for this Property
+							</div>
+							@endif
+						</div>
+					</div>
+
+					@if($imCounter)
+
+					<ul class="clearing-thumbs" data-clearing>
+						@for ($i =1; $i <= $imCounter; $i++)
+						<li class="clearing-featured-img"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
+							<img width="100px" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>
+						</li>
+						@endfor
+					</ul>	
+					@endif
+				</div>
 			</div>
+
 		</div>
-		@stop
+	</div>
+	@stop
 
 
