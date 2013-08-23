@@ -2,6 +2,9 @@
 
 
 class Agent extends Eloquent {
+
+protected $fillable = array('id');
+
     protected $guarded = array();
 
     public static $rules = array();

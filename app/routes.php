@@ -6,6 +6,7 @@
 /*----- Admin ---------*/
 
 Route::get('admin-db', array('as'=>'admin-db', 'uses'=>'AdminController@index'));
+Route::post('admin-db', array('as'=>'admin-db-store', 'uses'=>'AdminController@store'));
 
 
 
