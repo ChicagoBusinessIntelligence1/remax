@@ -27,7 +27,7 @@
 					</div>
 					<div class="row">
 						<div class="large-4 columns">
-							<h3 class="subheader propType"><em>Property Type</em> </h3>
+							<h3 class="subheader propType"><em>{{$house->propertytype->type}}</em> </h3>
 						</div>
 					</div>
 

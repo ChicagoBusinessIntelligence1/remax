@@ -11,7 +11,7 @@
 	<div class="panel oneListing oneRentAgent">
 		<div class="row callAgentRent">
 			
-			<div class="large-8 columns left">
+			<div class="large-7 columns left">
 				@if($rental->agent)
 				<ul class="vcard oneRentVcard">
 					<li>					
@@ -38,8 +38,8 @@
 				{{link_to('all-rent-listings', 'Rental', array('class'=>'alert-box secondary round alertRentalStyle'));}}
 			</div>
 
-			<div class="large-2 columns">
-				<a class="priceStyle right ">${{number_format($rental->price)}}
+			<div class="large-3 columns">
+				<a class="priceStyle right ">${{number_format($rental->price)}}/Month
 				</a>
 			</div>
 		</div>
@@ -83,7 +83,7 @@
 							<strong>House Size:</strong> {{$rental->size}} <br></br>
 
 							@if($rental->year)
-							<strong>Year Built:</strong> {{(new DateTime($rental->year))->format("Y")}} <br/><br/>
+							<strong>Year Built:</strong> {{$rental->year}} <br/><br/>
 							@endif
 						</div>	
 					</div>
@@ -1001,40 +1001,62 @@
 			<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">School</h4>
 			<hr/>
 
+
 			<section class="section">
 				<div class="content" data-slug="panel3">
-					<dl class="dlInlineDescription light radius">
-						<dt class="dtDes">Elementary</dt>
-						<dd class="ddDes">{{$rental->rentschool->elementary}}</dd>
-					</dl>
+					<div class="row">
+						<div class="large-7 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">Elementary</dt>
+								<dd class="ddDes">{{$rental->rentschool->elementary}}</dd>
+							</dl>
 
-					<dl class="dlInlineDescription light radius">
-						<dt class="dtDes">High</dt>
-						<dd class="ddDes">{{$rental->rentschool->elemschdistrict}}</dd>
-					</dl>
+						</div>
 
-					<dl class="dlInlineDescription light radius">
-						<dt class="dtDes">Junion Hign</dt>
-						<dd class="ddDes">{{$rental->rentschool->high}}</dd>
-					</dl>
-					<dl class="dlInlineDescription light radius">
-						<dt class="dtDes">Elementary</dt>
-						<dd class="ddDes">{{$rental->rentschool->highschdistrict}}</dd>
-					</dl>
+						<div class="large-4 large-offset-1 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">District</dt>
+								<dd class="ddDes">{{$rental->rentschool->elemschdistrict}}</dd>
+							</dl>
+						</div>
+					</div>
 
-					<dl class="dlInlineDescription light radius">
-						<dt class="dtDes">High</dt>
-						<dd class="ddDes">{{$rental->rentschool->juniorhigh}}</dd>
-					</dl>
+					<div class="row">
+						<div class="large-7 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">Junion Hign</dt>
+								<dd class="ddDes">{{$rental->rentschool->high}}</dd>
+							</dl>
 
-					<dl class="dlInlineDescription light radius">
-						<dt class="dtDes">Junion Hign</dt>
-						<dd class="ddDes">{{$rental->rentschool->jrhighdistrict}}</dd>
-					</dl>
+						</div>
+
+						<div class="large-4 large-offset-1 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">District</dt>
+								<dd class="ddDes">{{$rental->rentschool->highschdistrict}}</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-7 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">High</dt>
+								<dd class="ddDes">{{$rental->rentschool->juniorhigh}}</dd>
+							</dl>
+
+						</div>
+
+						<div class="large-4 large-offset-1 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">District</dt>
+								<dd class="ddDes">{{$rental->rentschool->jrhighdistrict}}</dd>
+							</dl>
+						</div>
+					</div>
 				</div>
 
-			</section>
-			<br/>
+			</section>			<br/>
 			<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">Property Information</h4>
 			<hr/>
 
@@ -1097,6 +1119,12 @@
 							<dl class="dlInlineDescription light radius">
 								<dt class="dtDes">APN Number</dt>
 								<dd class="ddDes">{{$rental->rentpropertyinfo->apnnumber}}</dd>
+							</dl>
+						</div>
+						<div class="large-6 columns">
+							<dl class="dlInlineDescription light radius">
+								<dt class="dtDes">Other Info</dt>
+								<dd class="ddDes">{{$rental->rentpropertyinfo->otherinfo}}</dd>
 							</dl>
 						</div>
 					</div>
