@@ -63,7 +63,8 @@ class SearchController extends BaseController {
     }
     public function show($id)
     {
-     $house = House::with('images', 'agent','status', 'saleexteriorfeature')->where('id', '=', $id)->first();   
+     $house = House::with('images', 'agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
+      'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 'saleutility', 'salehomefeature' )->where('id', '=', $id)->first();   
      return View::make('search.onehouse')->with(compact('house'))->with('agents', parent::getRandomAgents());
     }
 

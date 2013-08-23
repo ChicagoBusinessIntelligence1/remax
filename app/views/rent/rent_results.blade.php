@@ -17,9 +17,9 @@
 				<div class="panel addressColor">
 					<div class="row">
 						<div class="large-7 columns">
-							<h6>
+							<h2>
 								{{$rental->address}}
-							</h6> &nbsp	&nbsp	
+							</h2> &nbsp	&nbsp	
 						</div>
 						<div class="large-2 small-3 columns">
 							<a class="alert-box secondary round alertRentalStyle" href="">Rental</a>
@@ -31,8 +31,13 @@
 							</span>
 						</div>
 					</div>
-					<hr/>
 
+					<div class="row">
+						<div class="large-7 columns">
+							<h3 class="subheader propType"><em>{{$rental->rentpropertytype->rentaltype}}</em> </h3>
+						</div>
+					</div>
+					<hr/>
 					<div class="row">
 						<div class="large-7 columns houseImgWrapper">
 							<div class="fiveMarginBottom">
@@ -40,7 +45,7 @@
 									<em>Bedrooms:</em> {{$rental->bedrooms}} | 
 									<em>Bathrooms:</em> {{$rental->bathrooms}} | 
 
-									<em>Property Type:</em> {{$rental ->rentpropertytype->rentaltype}}  
+									<!-- <em>Property Type:</em> {{$rental ->rentpropertytype->rentaltype}}   -->
 								</small>
 							</div>
 

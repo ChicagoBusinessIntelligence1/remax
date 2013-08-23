@@ -7888,7 +7888,7 @@ label {
 
 /* line 640, ../sass/screen.scss */
 .priceStyle {
-  color: #df464b !important;
+  color: #396c95 !important;
   font-weight: bold !important;
   padding-left: 15px !important;
   padding-top: 5px !important;
@@ -8213,9 +8213,8 @@ label {
 /* line 907, ../sass/screen.scss */
 .dtDes {
   padding-top: 5px !important;
-  width: 150px;
+  width: 130px;
   font-size: 12px !important;
-  float: left;
   display: inline-block;
   line-height: 13px !important;
 }
@@ -8227,7 +8226,6 @@ label {
   font-size: 12px !important;
   display: inline-block;
   margin-left: 0px;
-  float: left;
   line-height: 13px !important;
 }
 
