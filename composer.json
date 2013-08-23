@@ -14,6 +14,7 @@
 			"app/commands",
 			"app/controllers",
 			"app/controllers/search",
+			"app/controllers/seo",
 			"app/controllers/admin",
 			"app/controllers/rent",
 			"app/controllers/about",

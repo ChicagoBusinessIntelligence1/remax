@@ -555,7 +555,18 @@
         </div>
       </div>
     </footer>
+<div class="addInfoFooterWrapper">
+      <div class="row">
+        <div class="large-12 columns addInfoFooter">
+          <ul class="inline-list addInfoFooterLinks">
 
+            <li class="liClass">
+              {{link_to_route('homes-sale-skokie-il', 'Homes Sale Skokie IL', array(), array('class'=>'className'))}}
+            </li>
+            </ul>
+    </div>
+</div>
+</div>
     <!-- <div class="addInfoFooterWrapper">
       <div class="row">
         <div class="large-12 columns addInfoFooter">
