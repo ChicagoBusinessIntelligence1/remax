@@ -1,7 +1,8 @@
 <!-- //LOCATION: remax/public 
 -->
 <?php
-
+/* Parsing */
+Route::get('realtor-sale', array('as'=>'realtor-sale', 'uses'=>'ParseController@realtor_sale'));
 
 /*----- Admin ---------*/
 
@@ -9,7 +10,7 @@ Route::get('admin-db', array('as'=>'admin-db', 'uses'=>'AdminController@index'))
 Route::post('admin-db', array('as'=>'admin-db-store', 'uses'=>'AdminController@store'));
 
 
-
+Route::get('about', array('as'=>'about', 'uses'=>'AboutController@index'));
 Route::get('homes-sale-skokie-il', array('as'=>'homes-sale-skokie-il', 'uses'=>'SeoController@home_sale_skokie'));
 
 Route::post('login', array('uses'=>'LoginController@index'));
@@ -44,10 +45,6 @@ Route::get('/', array('as'=>'home', 'uses'=>'HomeController@index'));
 Route::get('sendmail', array('as'=>'sendmail', 'uses'=>'EmailController@index'));
 /* =about */
 
-Route::post('sendmail', array('uses'=>'EmailController@index'));
-
-Route::get('about', array('as'=>'about', 'uses'=>'AboutController@index'));
-// Route::get('parse', array('as'=>'parse', 'uses'=>'ParseController@index'));
 
 /* =news*/
 Route::get('news/{id}', array('as'=>'news', 'uses'=>'NewsController@show'));
