@@ -6,7 +6,7 @@
 <div class="mainContent">
 	<div class="row">
 		<div class="large-12 columns userPanel">
-			{{ Form::open(array('route' => 'admin-db-store')) }}
+          {{ Form::open(array('route' => 'admin-db-store')) }}
 			<ol>
 				<li>
 					{{ Form::label('agents', 'Agent') }}
@@ -20,10 +20,6 @@
     				</option>	
 						@endforeach
 					</select>
-
-
-
-
 				</li>
 
 				<li>
