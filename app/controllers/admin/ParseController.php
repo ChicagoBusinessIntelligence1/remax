@@ -9,33 +9,229 @@ class ParseController extends BaseController {
 	{
 		$html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
 		
-		$arr_schools = $this->getSchools($html);
 		$mls = $this->getMls($html);
 		$details = $this->getPropertyDescription($html);
-		$arr_bedrooms = $this->getBedrooms($html);
-		$arr_bathrooms = $this->getBathrooms($html);
 		$size = $this->getHouseSize($html);
 		$year = $this->getHouseYear($html);
-		$propertyType = $this->getPropertyType($html);
-		$status = $this->getStatus($html);
 		$address = $this->getAddress($html);
 		$price = $this->getPrice($html);
 		$pricesqft = round($price/$size);
+
+		$house = new House();
+
+		$house->mls = $mls;
+		$house->details = $details;
+		$house->size = $size;
+		$house->year = $year;
+		$house->address = $address;
+		$house->price = $price;
+		$house->pricesqft = $pricesqft;
+
+			
+
+
+		$propertyType = $this->getPropertyType($html);
+		$status = $this->getStatus($html);
+		
+
+		$propertyTypeObj = PropertyType::where('type','=', $propertyType)->get();
+		
+		if (count($propertyTypeObj)){
+		$house->propertytype()->associate($propertyTypeObj);
+		} else{
+		$propertyTypeObj = new PropertyType(); 
+		$propertyTypeObj->type = $propertyType;
+		$propertyTypeObj->save();
+		}
+		$house->propertytype()->associate($propertyTypeObj);
+		dd($house->save());
+
+
+
+		$arr_schools = $this->getSchools($html);
+		$arr_bedrooms = $this->getBedrooms($html);
+		$arr_bathrooms = $this->getBathrooms($html);
 		$arr_exteriorFeatures = $this->getExteriorFeatures($html);
 		$arr_salebedrooms = $this->getSaleBedrooms($html);
 		$arr_salebathrooms = $this->getSaleBathrooms($html);
-
 		$arr_salekitchen = $this->getSaleKitchenDining($html)['arr_kitchen'];
 		$arr_saledining = $this->getSaleKitchenDining($html)['arr_dining'];
 		$arr_saleliving = $this->getSaleLivingRoom($html);
-		
 		$arr_salepropertyinfo = $this->getSalePropertyInfos($html);
-
 		$arr_salepublicrecord= $this->getSalePublicRecords($html);
+		$arr_saleInteriorFeatures = $this->getSaleInteriorFeatures($html);
+		$arr_saleHomeFeatures = $this->getSaleHomeFeatures($html);
+		$arr_saleBuildingConstruction = $this->getSaleBuildingConstruction($html);
+		$arr_saleExteriorLotFeatures = $this->getSaleExteriorLotFeatures($html);
+		$arr_saleHeatingCooling = $this->getSaleHeatingCooling($html);
+		$arr_saleUtilities = $this->getSaleUtilities($html);
+		$arr_saleAppliances = $this->getSaleAppliances($html);
+		$arr_saleAmenitiesCommunityFeatures = $this->getSaleAmenitiesCommunityFeatures($html);
+		$arr_salePoolSpa = $this->getSalePoolSpa($html);
+		$arr_saleMultiUnitInfo = $this->getSaleMultiUnitInfo($html);
+		$arr_salegarageparking = $this->getSaleGarageParking($html);
+		
 
-		dd($arr_salepublicrecord);
+
+
+		
 
 		return '===== END =====';
+	}
+
+	
+
+	protected function getSaleGarageParking($html)	
+	{
+		$start = strpos($html, 'Garage and Parking</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+		protected function getSaleInteriorFeatures($html)	
+	{
+		$start = strpos($html, 'Interior Features</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+	protected function getSaleHomeFeatures($html)	
+	{
+		$start = strpos($html, 'Home Features</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+	protected function getSaleBuildingConstruction($html)	
+	{
+		$start = strpos($html, 'Building and Construction</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+	protected function getSaleExteriorLotFeatures($html)	
+	{
+		$start = strpos($html, 'Exterior and Lot Features</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+
+protected function getSaleHeatingCooling($html)	
+	{
+		$start = strpos($html, 'Heating and Cooling</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+	protected function getSaleUtilities($html)	
+	{
+		$start = strpos($html, 'Utilities</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+	protected function getSaleAppliances($html)	
+	{
+		$start = strpos($html, 'Appliances</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+
+
+	protected function getSaleAmenitiesCommunityFeatures($html)	
+	{
+		$start = strpos($html, 'Amenities and Community Features</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+	protected function getSalePoolSpa($html)	
+	{
+		$start = strpos($html, 'Pool and Spa</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+	protected function getSaleMultiUnitInfo($html)	
+	{
+		$start = strpos($html, 'Multi-Unit Info</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
+	}
+
+
+
+
+
+
+
+	protected function getSaleOtherrooms($html)	
+	{
+		$start = strpos($html, 'Other rooms</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
 	}
 
 	protected function getSalePublicRecords($html)	
@@ -57,25 +253,29 @@ class ParseController extends BaseController {
 
 
 	//return trim($element);
-		return $this->lisToArrayPublicRecords($ul1);
+		return $this->lisToArrayPublicRecords($ul1, $ul2);
 	}
 
 
-	protected function lisToArrayPublicRecords($ul)
+	protected function lisToArrayPublicRecords($ul1,$ul2)
 	{
 
 		$arr_new =[];
-		$arr_lists = explode("</li>", $ul);
+		$arr_lists = explode("</li>", $ul1);
 		foreach ($arr_lists as $list) {
 
-			if(strpos('>', $list))
-				continue;
-
-			$list2 = explode(">", $list);
-			if (count($list2)>1){
-				$arr_new[]=trim($list2[1]);	
-			}
+		$arr_new[]=strip_tags($list);
+		
 		}
+
+		$arr_lists = explode("</li>", $ul2);
+		foreach ($arr_lists as $list) {
+
+		$arr_new[]=strip_tags($list);
+		
+		}
+
+
 		return $arr_new;
 	}
 

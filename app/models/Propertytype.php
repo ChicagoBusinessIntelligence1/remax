@@ -3,6 +3,7 @@
 
 class Propertytype extends Eloquent {
 	 protected $guarded = array();
+	 public $timestamps  = false;
 
     public static $rules = array();
 
@@ -10,4 +11,10 @@ class Propertytype extends Eloquent {
 {
 return $this->belongsTo('Rental');
 }
+
+ public function house()
+{
+return $this->hasOne('House');
+}
+
 }
