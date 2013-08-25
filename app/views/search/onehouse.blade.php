@@ -644,6 +644,13 @@
 											</dl>
 										</div>
 
+										<div class="large-5 columns">
+											<dl class="dlInlineDescription light radius">
+												<dt class="dtDes">Elevator</dt>
+												<dd class="ddDes">{{$house->saleinteriorfeature->elevator}}</dd>
+											</dl>
+										</div>
+
 									</div>
 								</div>
 							</section>
@@ -848,6 +855,12 @@
 												<dd class="ddDes">{{$house->saleexteriorfeature->swimmingpool}}</dd>
 											</dl>
 										</div>	
+										<div class="large-7 columns">
+											<dl class="dlInlineDescription light radius">
+												<dt class="dtDes">Balcony</dt>
+												<dd class="ddDes">{{$house->saleexteriorfeature->balcony}}</dd>
+											</dl>
+										</div>	
 									</div>
 
 								</div>
@@ -962,6 +975,12 @@
 
 									<div class="row">
 										<div class="large-5 columns">
+											<dl class="dlInlineDescription light radius">
+												<dt class="dtDes">Foundation</dt>
+												<dd class="ddDes">{{$house->salebuildingconstruction->foundation}}</dd>
+											</dl>
+										</div>
+										<div class="large-7 columns">
 											<dl class="dlInlineDescription light radius">
 												<dt class="dtDes">Additional Features</dt>
 												<dd class="ddDes">{{$house->salebuildingconstruction->additionalfeatures}}</dd>
@@ -1177,11 +1196,23 @@
 							<div class="row">
 								<div class="large-6 columns">
 									<dl class="dlInlineDescription light radius">
-										<dt class="dtDes">Area</dt>
-										<dd class="ddDes">{{$house->salepropertyinfo->area}}</dd>
+										<dt class="dtDes">Subdivision</dt>
+										<dd class="ddDes">{{$house->salepropertyinfo->subdivision}}</dd>
 									</dl>
 
 								</div>
+
+								<div class="large-6 columns">
+									<dl class="dlInlineDescription light radius">
+
+										<dt class="dtDes">Area</dt>
+										<dd class="ddDes">{{$house->salepropertyinfo->area}}</dd>
+									</dl>
+								</div>
+							</div>
+
+							<div class="row">
+								
 
 								<div class="large-6 columns">
 									<dl class="dlInlineDescription light radius">
@@ -1189,15 +1220,15 @@
 										<dd class="ddDes">{{$house->salepropertyinfo->directions}}</dd>
 									</dl>
 								</div>
-							</div>
-
-							<div class="row">
 								<div class="large-6 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">APN Number</dt>
 										<dd class="ddDes">{{$house->salepropertyinfo->apnnumber}}</dd>
 									</dl>
 								</div>
+							</div>
+
+							<div class="row">
 								<div class="large-6 columns">
 									<dl class="dlInlineDescription light radius">
 										<dt class="dtDes">Other Info</dt>

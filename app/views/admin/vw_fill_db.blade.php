@@ -11,6 +11,9 @@
 				<li>
 					{{ Form::label('agents', 'Agent') }}
 					<select id="agents" name="agents">
+					<option value="0">
+       				Undefined
+    				</option>
 						@foreach($m_agents as $m_agent)
 					<option value="{{$m_agent->id}}">
        				{{$m_agent->firstname}} {{$m_agent->lastname}}
@@ -26,6 +29,9 @@
 				<li>
 					{{ Form::label('salediningroom', 'Salediningroom') }}
 					<select id="salediningroom" name="salediningroom">
+					<option value="0">
+       				Undefined
+    				</option
 						@foreach($salediningrooms as $salediningroom)
 					<option value="{{$salediningroom->id}}">
        				{{$salediningroom->diningroomsize}} {{$salediningroom->diningroomfeatures}}
