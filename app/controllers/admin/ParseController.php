@@ -8,6 +8,7 @@ class ParseController extends BaseController {
 	public function realtor_sale()
 	{
 		$html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
+		
 		$arr_schools = $this->getSchools($html);
 		$mls = $this->getMls($html);
 		$details = $this->getPropertyDescription($html);
@@ -27,11 +28,68 @@ class ParseController extends BaseController {
 		$arr_salekitchen = $this->getSaleKitchenDining($html)['arr_kitchen'];
 		$arr_saledining = $this->getSaleKitchenDining($html)['arr_dining'];
 		$arr_saleliving = $this->getSaleLivingRoom($html);
+		
+		$arr_salepropertyinfo = $this->getSalePropertyInfos($html);
 
+		$arr_salepublicrecord= $this->getSalePublicRecords($html);
 
-		dd($arr_saleliving);
+		dd($arr_salepublicrecord);
 
 		return '===== END =====';
+	}
+
+	protected function getSalePublicRecords($html)	
+	{
+		$start = strpos($html, 'Property Information from local public');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$ul1 = substr($html, $start, $finish - $start);
+
+		$start = $finish;
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+
+		$ul2 = substr($html, $start, $finish - $start);
+
+
+
+
+	//return trim($element);
+		return $this->lisToArrayPublicRecords($ul1);
+	}
+
+
+	protected function lisToArrayPublicRecords($ul)
+	{
+
+		$arr_new =[];
+		$arr_lists = explode("</li>", $ul);
+		foreach ($arr_lists as $list) {
+
+			if(strpos('>', $list))
+				continue;
+
+			$list2 = explode(">", $list);
+			if (count($list2)>1){
+				$arr_new[]=trim($list2[1]);	
+			}
+		}
+		return $arr_new;
+	}
+
+
+	protected function getSalePropertyInfos($html)	
+	{
+		$start = strpos($html, 'Other Property Info</h3>');
+		$start = strpos($html, '<ul', $start);
+		$start = strpos($html, '>', $start)+1;
+		$finish = strpos($html, '</ul>', $start);
+		$element = substr($html, $start, $finish - $start);
+		
+	//return trim($element);
+		return $this->lisToArray($element);
 	}
 
 	protected function getSaleLivingRoom($html)	
