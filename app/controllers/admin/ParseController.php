@@ -29,13 +29,9 @@ class ParseController extends BaseController {
 
 			
 
-
+		///////////////////////////////////////////////////
 		$propertyType = $this->getPropertyType($html);
-		$status = $this->getStatus($html);
-		
-
-		$propertyTypeObj = PropertyType::where('type','=', $propertyType)->get();
-		
+		$propertyTypeObj = PropertyType::where('type','=', $propertyType)->first();
 		if (count($propertyTypeObj)){
 		$house->propertytype()->associate($propertyTypeObj);
 		} else{
@@ -44,32 +40,289 @@ class ParseController extends BaseController {
 		$propertyTypeObj->save();
 		}
 		$house->propertytype()->associate($propertyTypeObj);
+		///////////////////////////////////////////////////
+
+		///////////////////////////////////////////////////
+		$status = $this->getStatus($html);
+		$statusObj = Status::where('dbstatus','=', $status)->first();
+		if (count($statusObj)){
+		$house->status()->associate($statusObj);
+		} else{
+		$statusObj = new Status(); 
+		$statusObj->dbstatus = $status;
+		$statusObj->save();
+		}
+		$house->status()->associate($statusObj);
+		///////////////////////////////////////////////////
+
+
+
+		///////////////////////////////////////////////////
+		$arr_schools = $this->getSchools($html);
+		//dd($arr_schools);
+		$schoolsObj = Saleschool::where('elementary','=', $arr_schools[0])->first();
+		if (count($schoolsObj)){
+		$house->saleschool()->associate($schoolsObj);
+		} else{
+		$schoolsObj = new Saleschool(); 
+		$schoolsObj->elementary = $arr_schools[0];
+		$schoolsObj->elemschdistrict = $arr_schools[3];
+		$schoolsObj->high = $arr_schools[1];
+		$schoolsObj->highdistrict = $arr_schools[4];
+		$schoolsObj->juniorhigh = $arr_schools[2];
+		$schoolsObj->jrhighdistrict = $arr_schools[5];
+
+		$schoolsObj->save();
+		}
+		$house->saleschool()->associate($schoolsObj);
+		///////////////////////////////////////////////////
+
+		$arr_bedrooms = $this->getBedrooms($html);
+/*		dd($arr_bedrooms);
+*/		$bedroomsObj = Salebedroom::where('masterbedsize','=', $arr_bedrooms[0])->first();
+		if (count($bedroomsObj)){
+		$house->salebedroom()->associate($bedroomsObj);
+		} else{
+		$bedroomsObj = new Salebedroom(); 
+		$bedroomsObj->masterbedsize = $arr_bedrooms[3];
+		$bedroomsObj->masterbedfeatures = $arr_bedrooms[1].' '.$arr_bedrooms[5].' '.$arr_bedrooms[6];
+		$bedroomsObj->bed2size = $arr_bedrooms[4];
+		$bedroomsObj->bed2features= $arr_bedrooms[2].' '.$arr_bedrooms[8];
+
+		$bedroomsObj->save();
+		}
+		$house->salebedroom()->associate($bedroomsObj);
+		///////////////////////////////////////////////////
+
+		$arr_bathrooms = $this->getBathrooms($html);
+		// dd($arr_bathrooms);
+		$bathroomsObj = Salebathroom::where('fullbath','=', $arr_bathrooms[0])->first();
+		if (count($bathroomsObj)){
+		$house->salebathroom()->associate($bathroomsObj);
+		} else{
+		$bathroomsObj = new Salebathroom(); 
+		$bathroomsObj->fullbath= $arr_bathrooms[0];
+
+		$bathroomsObj->save();
+		}
+		$house->salebathroom()->associate($bathroomsObj);
+		///////////////////////////////////////////////////
+
+		$arr_exteriorFeatures = $this->getExteriorFeatures($html);
+		// dd($arr_exteriorFeatures);
+		$exteriorFeaturesObj = SaleexteriorFeature::where('lotsize','=', $arr_exteriorFeatures[0])->first();
+		if (count($exteriorFeaturesObj)){
+		$house->saleexteriorFeature()->associate($exteriorFeaturesObj);
+		} else{
+		$exteriorFeaturesObj = new SaleexteriorFeature(); 
+		$exteriorFeaturesObj->driveway = $arr_exteriorFeatures[1];
+
+		$exteriorFeaturesObj->save();
+		}
+		$house->saleexteriorFeature()->associate($exteriorFeaturesObj);
+		///////////////////////////////////////////////////
+
+
+
+		$arr_salekitchen = $this->getSaleKitchenDining($html)["arr_kitchen"];
+		// dd($arr_salekitchen);
+		$kitchensObj = Salekitchen::where('kitchensize','=', $arr_salekitchen[0])->first();
+		if (count($kitchensObj)){
+		$house->salekitchen()->associate($kitchensObj);
+		} else{
+		$kitchensObj = new Salekitchen(); 
+		$kitchensObj->kitchensize= $arr_salekitchen[1];
+		$kitchensObj->kitchenfeatures = $arr_salekitchen[0].' '.$arr_salekitchen[2];
+
+		$kitchensObj->save();
+		}
+		$house->salekitchen()->associate($kitchensObj);
+		///////////////////////////////////////////////////
+
+
+		$arr_saledining = $this->getSaleKitchenDining($html)['arr_dining'];
+		// dd($arr_saledining);
+		$diningsObj = Salediningroom::where('diningroomsize','=', $arr_saledining[0])->first();
+		if (count($diningsObj)){
+		$house->salediningroom()->associate($diningsObj);
+		} else{
+		$diningsObj = new Salediningroom(); 
+		$diningsObj->diningroomsize= $arr_saledining[2];
+		$diningsObj->diningroomfeatures = $arr_saledining[0].' '.$arr_saledining[1].' '.$arr_saledining[3];
+
+		$diningsObj->save();
+		}
+		$house->salediningroom()->associate($diningsObj);
+		///////////////////////////////////////////////////
+
+
+		$arr_saleliving = $this->getSaleOtherrooms($html);
+		// dd($arr_saleliving);
+		$livingsObj = Salelivingroom::where('livroomsize','=', $arr_saledining[0])->first();
+		if (count($livingsObj)){
+		$house->salelivingroom()->associate($livingsObj);
+		} else{
+		$livingsObj = new Salelivingroom(); 
+		$livingsObj->livroomsize= $arr_saleliving[0];
+		$livingsObj->livroomfeatures = $arr_saleliving[2].' '.$arr_saleliving[5];
+
+		$livingsObj->save();
+		}
+		$house->salelivingroom()->associate($livingsObj);
+		///////////////////////////////////////////////////
+
+
+
+		$arr_salepropertyinfo = $this->getSalePropertyInfos($html);
+		// dd($arr_salepropertyinfo);
+		$propertyinfosObj = Salepropertyinfo::where('township','=', $arr_salepropertyinfo [0])->first();
+		if (count($propertyinfosObj)){
+		$house->salepropertyinfo()->associate($propertyinfosObj);
+		} else{
+		$propertyinfosObj = new Salepropertyinfo(); 
+		$propertyinfosObj->township = $arr_salepropertyinfo[2];
+		$propertyinfosObj->city = $arr_salepropertyinfo[3];
+		$propertyinfosObj->state = $arr_salepropertyinfo[4];
+		$propertyinfosObj->county = $arr_salepropertyinfo[5];
+
+		$propertyinfosObj->area = $arr_salepropertyinfo[7];
+		$propertyinfosObj->directions = $arr_salepropertyinfo[8];
+		$propertyinfosObj->apnnumber = $arr_salepropertyinfo[9];
+		$propertyinfosObj->otherinfo = $arr_salepropertyinfo[0].' '.$arr_salepropertyinfo[1].' '.$arr_salepropertyinfo[10].' '.$arr_salepropertyinfo[11];
+
+		$propertyinfosObj->save();
+		}
+		$house->salepropertyinfo()->associate($propertyinfosObj);
+		///////////////////////////////////////////////////
+
+
+		$arr_salepublicrecord= $this->getSalePublicRecords($html);
+		// dd($arr_salepublicrecord);
+		$publicrecordsObj = Salepublicrecord::where('beds','=', $arr_salepublicrecord [0])->first();
+		if (count($publicrecordsObj)){
+		$house->salepublicrecord()->associate($publicrecordsObj);
+		} else{
+		$publicrecordsObj = new Salepublicrecord(); 
+		$publicrecordsObj->beds = $arr_salepublicrecord[0];
+		$publicrecordsObj->units = $arr_salepublicrecord[5];
+		$publicrecordsObj->baths = $arr_salepublicrecord[11];
+		$publicrecordsObj->cooling = $arr_salepublicrecord[16];
+		$publicrecordsObj->housesize = $arr_salepublicrecord[1];
+		$publicrecordsObj->pool = $arr_salepublicrecord[6];
+		$publicrecordsObj->lotsize = $arr_salepublicrecord[12];
+		$publicrecordsObj->construction = $arr_salepublicrecord[17];
+
+		$publicrecordsObj->yearbuilt = $arr_salepublicrecord[2];
+		$publicrecordsObj->heating = $arr_salepublicrecord[7];
+		$publicrecordsObj->price = $arr_salepublicrecord[13];
+		$publicrecordsObj->yearrenovated = $arr_salepublicrecord[18];
+		$publicrecordsObj->proptype = $arr_salepublicrecord[3];
+		$publicrecordsObj->rooms = $arr_salepublicrecord[8];
+		$publicrecordsObj->stories = $arr_salepublicrecord[14];
+		$publicrecordsObj->roofing = $arr_salepublicrecord[19];
+		$publicrecordsObj->style = $arr_salepublicrecord[4];
+		$publicrecordsObj->fireplace = $arr_salepublicrecord[9];
+		$publicrecordsObj->garage = $arr_salepublicrecord[15];
+
+		$publicrecordsObj->save();
+		}
+		$house->salepublicrecord()->associate($publicrecordsObj);
+		///////////////////////////////////////////////////
+
+
+		$arr_saleInteriorFeatures = $this->getSaleInteriorFeatures($html);
+		$arr_saleHomeFeatures = $this->getSaleHomeFeatures($html);
+		// dd($arr_saleInteriorFeatures);
+		$interiorFeaturesObj = SaleinteriorFeature::where('equipment','=', $arr_saleInteriorFeatures [0])->first();
+		if (count($interiorFeaturesObj)){
+		$house->saleinteriorFeature()->associate($interiorFeaturesObj);
+		} else{
+		$interiorFeaturesObj = new SaleinteriorFeature(); 
+		$interiorFeaturesObj->equipment = $arr_saleInteriorFeatures[0].', '.$arr_saleHomeFeatures[0];
+
+		$interiorFeaturesObj->save();
+		}
+		$house->saleinteriorFeature()->associate($interiorFeaturesObj);
+		///////////////////////////////////////////////////
+
+
+
+
+		$arr_saleHomeFeatures = $this->getSaleHomeFeatures($html);
+		$arr_saleMultiUnitInfo = $this->getSaleMultiUnitInfo($html);
+		// dd($arr_saleMultiUnitInfo );
+		$homeFeaturesObj = SaleHomeFeature::where('numberofunits','=', $arr_saleHomeFeatures  [0])->first();
+		if (count($homeFeaturesObj)){
+		$house->salehomeFeature()->associate($homeFeaturesObj);
+		} else{
+		$homeFeaturesObj = new SaleHomeFeature(); 
+		$homeFeaturesObj->numberofunits= $arr_saleMultiUnitInfo [0];
+
+		$homeFeaturesObj->save();
+		}
+		$house->salehomeFeature()->associate($homeFeaturesObj);
+		///////////////////////////////////////////////////
+
+
+		$arr_saleAppliances = $this->getSaleAppliances($html);
+		// dd($arr_saleAppliances);
+		$appliancesObj = Saleappliance::where('refrigerator','=', $arr_saleAppliances [0])->first();
+		if (count($appliancesObj)){
+		$house->saleappliance()->associate($appliancesObj);
+		} else{
+		$appliancesObj = new Saleappliance(); 
+		$appliancesObj->refrigerator = $arr_saleAppliances[3];
+		$appliancesObj->oven= $arr_saleAppliances[0];
+		$appliancesObj->microwave = $arr_saleAppliances[1];
+		$appliancesObj->dishwasher = $arr_saleAppliances[2];
+
+		$appliancesObj->save();
+		}
+		$house->saleappliance()->associate($appliancesObj);
+		///////////////////////////////////////////////////
+
+		$arr_saleBuildingConstruction = $this->getSaleBuildingConstruction($html);
+		// dd($arr_saleBuildingConstruction);
+		$buildingConstructionsObj = Salebuildingconstruction::where('levelsorstories','=', $arr_saleBuildingConstruction [0])->first();
+		if (count($buildingConstructionsObj)){
+		$house->salebuildingConstruction()->associate($buildingConstructionsObj);
+		} else{
+		$buildingConstructionsObj = new Salebuildingconstruction(); 
+		$buildingConstructionsObj->levelsorstories = $arr_saleBuildingConstruction[0];
+		$buildingConstructionsObj->exteriorbuildingtype = $arr_saleBuildingConstruction[1];
+
+		$buildingConstructionsObj->save();
+		}
+		$house->salebuildingConstruction()->associate($buildingConstructionsObj);
+		///////////////////////////////////////////////////
+
+
+		$arr_salegarageparking = $this->getSaleGarageParking($html);
+		// dd($arr_salegarageparking);
+		$garageParkingsObj = SalegarageandParking::where('numberofparking','=', $arr_salegarageparking [0])->first();
+		if (count($garageParkingsObj)){
+		$house->salegarageandParking()->associate($garageParkingsObj);
+		} else{
+		$garageParkingsObj = new SalegarageandParking(); 
+		$garageParkingsObj->numberofparking = $arr_salegarageparking[0];
+		$garageParkingsObj->parkingtype = $arr_salegarageparking[1];
+		$garageParkingsObj->garagetype = $arr_salegarageparking[2];
+
+		$garageParkingsObj->save();
+		}
+		$house->salegarageandParking()->associate($garageParkingsObj);
+		///////////////////////////////////////////////////
+
+
 		dd($house->save());
 
 
-
-		$arr_schools = $this->getSchools($html);
-		$arr_bedrooms = $this->getBedrooms($html);
-		$arr_bathrooms = $this->getBathrooms($html);
-		$arr_exteriorFeatures = $this->getExteriorFeatures($html);
-		$arr_salebedrooms = $this->getSaleBedrooms($html);
-		$arr_salebathrooms = $this->getSaleBathrooms($html);
-		$arr_salekitchen = $this->getSaleKitchenDining($html)['arr_kitchen'];
-		$arr_saledining = $this->getSaleKitchenDining($html)['arr_dining'];
-		$arr_saleliving = $this->getSaleLivingRoom($html);
-		$arr_salepropertyinfo = $this->getSalePropertyInfos($html);
-		$arr_salepublicrecord= $this->getSalePublicRecords($html);
-		$arr_saleInteriorFeatures = $this->getSaleInteriorFeatures($html);
-		$arr_saleHomeFeatures = $this->getSaleHomeFeatures($html);
-		$arr_saleBuildingConstruction = $this->getSaleBuildingConstruction($html);
+		
 		$arr_saleExteriorLotFeatures = $this->getSaleExteriorLotFeatures($html);
 		$arr_saleHeatingCooling = $this->getSaleHeatingCooling($html);
 		$arr_saleUtilities = $this->getSaleUtilities($html);
-		$arr_saleAppliances = $this->getSaleAppliances($html);
 		$arr_saleAmenitiesCommunityFeatures = $this->getSaleAmenitiesCommunityFeatures($html);
 		$arr_salePoolSpa = $this->getSalePoolSpa($html);
-		$arr_saleMultiUnitInfo = $this->getSaleMultiUnitInfo($html);
-		$arr_salegarageparking = $this->getSaleGarageParking($html);
 		
 
 
