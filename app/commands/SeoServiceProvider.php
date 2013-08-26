@@ -1,5 +1,5 @@
 <?php 
-namespace CBI\SEO;
+namespace Commands;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -21,7 +21,8 @@ class SeoServiceProvider extends ServiceProvider {
 
 		$this->app['command.seo'] = $this->app->share(function($app)
 		{
-			return new \SeoCommand();
+			$writer = new Writer();
+			return new SeoCommand($writer);
 		});
 		$this->commands('command.seo');
 	}

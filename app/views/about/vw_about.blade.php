@@ -6,6 +6,7 @@
 <div class="mainContent">
 	<div class="row">
 		<div class="large-12 columns menues">
+		<p>{{link_to_route('Remax-Skokie', 'Remax Skokie Real Estate', array(),array('class'=>'className'))}}</p>
 			<h1 class="docs header">Re/Max First Class</h1>
 			<hr/>
 			<p>On the Shoulders of Titan – we are the biggest Real Estate company in the World. All Real Estate property gets maximum exposure.</p> 
