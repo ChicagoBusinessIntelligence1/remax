@@ -1,0 +1,18 @@
+<?php
+ //LOCATION: remax/public/{{url}}
+class {{controllerName}} extends BaseController {
+
+
+
+	public function index()
+	{
+		
+		$title = '{{title}}';
+		$meta = '{{meta}}';
+
+		return View::make('{{viewName}}')
+		->with(compact('title', 'meta'))
+		->with('gents', parent::getRandomAgents());
+	}
+
+}

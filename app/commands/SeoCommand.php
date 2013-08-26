@@ -1,5 +1,6 @@
 <?php
-//namespace CBI\SEO;
+namespace Commands;
+
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
@@ -21,15 +22,13 @@ class SeoCommand extends Command {
 	 * @var string
 	 */
 	protected $description = 'Generates seo stuff';
+	protected $writer;	
 
-	/**
-	 * Create a new command instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
+	public function __construct($writer)
 	{
+
 		parent::__construct();
+		$this->writer = $writer;
 	}
 
 	/**
@@ -41,46 +40,119 @@ class SeoCommand extends Command {
 	{
 	 // 1. Add route
 
-	$keywords = $this->argument('keywords');
-	$this->addRoute($keywords);
+		$keywords = $this->argument('keywords');
+		$keywords = ucwords(str_replace(" ", "-", $keywords));
 
-	
+		$controllerName = $this->addRoute($keywords);
 
 	 // 2. Create Controller
-	 // 3. Render View with seo keywords
-	 // 4. Create view file
-	 // 5. Notify  
+		$viewPath = $this->addController($controllerName, $keywords);	
+	 // 3. Create View with seo keywords
+		$this->addView($viewPath, $keywords);	
 
-	$this->info('+++++++Come to the END+++++++');	
-	
+		$this->addLink($keywords);
+
+		
+
+		$this->info('+++++++ Seems no mistakes +++++++');	
+
 	}
-	/**
-	 * Get the console command arguments.
-	 *
-	 * @return array
-	 */
+
+	protected function addLink($keywords)
+	{
+		$path = app_path().'\views\CopyLinks.txt';
+		$linkTitle = str_replace('-', ' ', $keywords);
+		$controllerNameArray = explode("-", $keywords);
+		$alias= ($controllerNameArray[0])."-" . ($controllerNameArray[1]);  
+		$link_to_route = "{{link_to_route('$alias', '$linkTitle', array(), array('class'=>'className'))}}";
+
+		if (\File::put($path, $link_to_route))
+			$this->info("Write $path was succesful");	
+		else
+			$this->error("Error writing $path");
+
+
+		$this->info($link_to_route);
+		
+	}
+
+	protected function addView($viewPath, $keywords)
+	{
+		$viewTemplate = \File::get(__DIR__.'\ViewTemplate.txt');
+		$viewTemplate = str_replace('{{keywords}}', $keywords, $viewTemplate);
+		$h1 = str_replace('-', ' ', $keywords);
+
+		$viewTemplate = str_replace('{{H1}}', $h1, $viewTemplate);
+		$path = $viewPath;
+		if (\File::put($path, $viewTemplate))
+			$this->info("Write $path was succesful");	
+		else
+			$this->error("Error writing $path");	
+
+		
+	}
+
+
+	protected function addController($controllerName, $keywords)
+	{
+		$path = app_path()."/controllers/seo/$controllerName.php";
+		$url = $keywords;
+		$title = 'Make short sentence with '. str_replace('-', ', ', $keywords); 
+		$meta = 'Make short sentence with call to action in the END '. str_replace('-', ', ', $keywords); 
+		$arr_keywords = explode('-', $keywords);
+		$viewName = "seo.vw_".strtolower($arr_keywords[0].'_'.$arr_keywords[1]);	
+		$viewPath = app_path()."/views/seo/vw_".strtolower($arr_keywords[0].'_'.$arr_keywords[1]).'.blade.php';	
+
+		$controllerTemplate = \File::get(__DIR__.'\ControllerTemplate.txt');
+
+		$controllerTemplate = str_replace('{{url}}', $url, $controllerTemplate);
+		$controllerTemplate = str_replace('{{controllerName}}', $controllerName, $controllerTemplate);
+		$controllerTemplate = str_replace('{{title}}', $title, $controllerTemplate);
+		$controllerTemplate = str_replace('{{meta}}', $meta, $controllerTemplate);
+		$controllerTemplate = str_replace('{{viewName}}', $viewName, $controllerTemplate);
+
+		if (\File::put($path, $controllerTemplate))
+			$this->info("Write $path was succesful");	
+		else
+			$this->error("Error writing $path");	
+
+		return $viewPath;
+
+
+
+
+	}	
+
 
 	protected function addRoute($keywords)
 	{
-	$keywords = str_replace(" ", "-", $keywords);
-	$controllerNameArray = explode("-", $keywords);
-	$controllerName= ucfirst($controllerNameArray[0]) . ucfirst($controllerNameArray[1]);  
-	$this->info($controllerName);
 
-		# code...
-	// $f = fopen(app_path()."/routes2.php", 'a');
-	// fwrite($f,"\n");
-	// fwrite($f,$keywords);
-	// fclose($f);
-	// // $this->info('Commands is finished');
+		$controllerNameArray = explode("-", $keywords);
+
+		$controllerName= ucfirst($controllerNameArray[0]) . ucfirst($controllerNameArray[1])."Controller";  
+		$alias= ($controllerNameArray[0])."-" . ($controllerNameArray[1]);  
+		
+		$routeLine = "Route::get('$keywords', array('as'=>'$alias', 'uses'=>'$controllerName@index'));";
+	//$this->info($routeLine);
+
+
+	# code...
+		$path = app_path().'/routes.php';
+		if ($this->writer->put($path, $routeLine))
+			$this->info("Write $path was succesful");	
+		else
+			$this->error("Error writing $path");	
+		
+
+		return $controllerName;
 
 	}
 
 	protected function getArguments()
 	{
 		return array(
-		array('keywords', InputArgument::REQUIRED, 'seo important keywords'),
-		);
+			array('keywords', InputArgument::REQUIRED, 'seo important keywords'),
+			);
 	}
 
 	/**
@@ -92,7 +164,7 @@ class SeoCommand extends Command {
 	{
 		return array(
 	//		array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
-		);
+			);
 	}
 
 }
