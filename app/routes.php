@@ -104,3 +104,5 @@ Route::get('rent/{id}', 'RentController@show');
 Route::get('rent-apartments', 'RentController@apartments');
 Route::get('rent-houses', 'RentController@houses');
 Route::get('all-rent-listings', array('as'=>'all-rent-listings', 'uses'=>'RentController@all'));
+
+Route::get('Evanston-township-high-school', array('as'=>'Evanston-township', 'uses'=>'EvanstonTownshipController@index'));

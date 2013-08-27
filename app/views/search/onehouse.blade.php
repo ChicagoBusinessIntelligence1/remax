@@ -1,7 +1,4 @@
 @extends('layouts.master')
-@section('set')
-{{$imCounter = $house->images()->first()->maxid}}
-@stop
 @section('content')
 
 <!-- //LOCATION: remax/public/search
@@ -10,7 +7,7 @@
 	<div class="panel oneListing oneRentAgent">
 		<div class="row callAgentRent">
 			<div class="large-5 columns left">
-				@if($house->agent)
+				@if(isset($house->agent))
 				<ul class="vcard oneRentVcard">
 					<li>					
 						<div class="locality alert-box secondary radius callAgent">
@@ -30,30 +27,38 @@
 				</ul>
 				@endif
 			</div> 
-
+		@if(isset($house->price))
 			<div class="large-2 columns">
 				<a class="priceStyle tenMarginTop right">${{number_format($house->price)}}
 				</a>
 			</div>
+			@endif 
 		</div>
 		<!-- =callAgentRent ends here -->
 		<hr/>
 
 		<div class="row">
+		@if(isset($house->address))
 			<div class="large-9 columns">
 				<h2 class="oneHouseAddress">{{$house->address}}</h2>
 				&nbsp &nbsp
 			</div>
+					@endif
+@if(isset($house->status))
 			<div class="large-3 columns">
 				
 				<h6 class="alert-box secondary radius propStat">{{$house->status->dbstatus}}</h6>
 			</div>
+			@endif
+
 		</div>
 
 		<div class="row">
-			<div class="large-4 columns">
+		@if(isset($house->propertytype))
+		<div class="large-4 columns">
 				<h3 class="subheader propType"><em>{{$house->propertytype->type}}</em> </h3>
 			</div>
+		@endif
 		</div>
 		<hr/>
 
@@ -64,15 +69,19 @@
 					<div class="row noMargin">
 
 						<div class="large-4 column panel secondary panelShortInfo ">
-
-							<strong>MLS: #</strong> {{$house->listing}}<br/><br/>
-
+						@if(isset($house->mls))
+							<strong>MLS: #</strong> {{$house->mls}}<br/><br/>
+						@endif
+						@if(isset($house->pricesqft))
 							<strong>Price/sqft: </strong> {{$house->pricesqft}} <br/><br/>
+						@endif
 						</div>
 
 
 						<div class="large-4 offset-1 columns panel secondary panelShortInfo ">
+							@if(isset($house->bedrooms))
 							<strong>Bedrooms:</strong> {{$house->bedrooms}} <br/><br/>
+							@endif
 
 							<strong>Full Bathrooms:</strong> {{$house->bathrooms}} <br/><br/>
 
@@ -1360,10 +1369,9 @@
 						</div>
 					</div>
 
-					@if($imCounter)
-
+					@if($house->images()->first()->maxid)
 					<ul class="clearing-thumbs" data-clearing>
-						@for ($i =1; $i <= $imCounter; $i++)
+						@for ($i =1; $i <= $house->images()->first()->maxid; $i++)
 						<li class="clearing-featured-img"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
 							<img width="100px" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>
 						</li>

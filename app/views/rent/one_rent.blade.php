@@ -1,8 +1,4 @@
 @extends('layouts.master')
-
-@section('set')
-{{$imCounter = $rental->rentalimage->maxid}}
-@stop
 @section('content')
 
 <!-- //LOCATION: remax/public
@@ -1146,11 +1142,11 @@
 				</div>
 			</div>
 
-			@if($imCounter)
+			@if($rental->rentalimage->maxid}})
 			<div class="row">
 				<div class="large-6 columns">
 					<ul class="clearing-thumbs" data-clearing>
-						@for ($i =1; $i <= $imCounter; $i++)
+						@for ($i =1; $i <= $rental->rentalimage->maxid; $i++)
 						<li><a class="th" href="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}">
 							<img width="100px" height="50px" src="{{url('comp/img/rent/'.$rental->id.'/'.$i.'.jpg')}}"></a></li>
 							@endfor
