@@ -9,6 +9,11 @@ class ParseController extends BaseController {
 	{
 		$html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
 		
+
+
+
+
+
 		$mls = $this->getMls($html);
 		$details = $this->getPropertyDescription($html);
 		$size = $this->getHouseSize($html);
@@ -402,11 +407,12 @@ $house->saleamenity()->associate($saleAmenitiesObj);
 // $house->saleamenity()->associate($saleAmenitiesObj);
 
 
-dd($house->save());
+if(!$house->save())
+return 'ERROR occured';	
+$id = $house->id;
+$this->extractImages($html, $id);
 
-
-
-return '===== END =====';
+return Redirect::to("search/$id");
 }
 
 
@@ -873,6 +879,38 @@ protected function lisToArray($lists)
 	return $arr_new;
 }
 
+protected function extractImages($html, $houseId)
+		{
+			$start = strpos($html, '#modal_PhotoGallery');			
+			$arr_images = [];
+
+
+			while ($start<strlen($html) && ($start = strpos($html,'http://p.rdcpix.com', $start))) {
+				$finish = strpos($html,'.jpg', $start)+4;
+				$imgAddress = substr($html, $start, $finish - $start);
+
+				$start+=1;
+
+				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s'))
+					continue;
+
+				if (!in_array($imgAddress, $arr_images))
+					$arr_images[]=trim($imgAddress);
+			}
+			$i=1;
+			foreach ($arr_images as $image) {
+				$fileImage = \File::getRemote($image);
+				$dir_path = public_path()."/comp/img/images/$houseId/";
+				if (!File::exists($dir_path))
+					File::makeDirectory($dir_path, '777', true);
+
+				File::put($dir_path."$i.jpg", $fileImage);
+				$i++;
+			}
+
+
+
+		}
 
 
 }
