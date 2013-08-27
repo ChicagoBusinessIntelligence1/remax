@@ -2,7 +2,7 @@
 -->
 <?php
 /* Parsing */
-Route::get('realtor-sale', array('as'=>'realtor-sale', 'uses'=>'ParseController@realtor_sale'));
+//Route::get('realtor-sale', array('as'=>'realtor-sale', 'uses'=>'ParseController@realtor_sale'));
 
 /*----- Admin ---------*/
 
@@ -106,3 +106,5 @@ Route::get('rent-houses', 'RentController@houses');
 Route::get('all-rent-listings', array('as'=>'all-rent-listings', 'uses'=>'RentController@all'));
 
 Route::get('Evanston-township-high-school', array('as'=>'Evanston-township', 'uses'=>'EvanstonTownshipController@index'));
+Route::get('realtor-sale', array('as'=>'Parser-realtor', 'uses'=>'ParserRealtorController@index'));
+Route::post('parser-realtor-save', array('as'=>'parser-realtor-save', 'uses'=>'ParseController@save'));

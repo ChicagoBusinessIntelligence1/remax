@@ -4,11 +4,24 @@
 class ParseController extends BaseController {
 
 
-
-	public function realtor_sale()
+	public function save()
 	{
-		$html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
+		$url = Input::get('url');
+		$issale = Input::get('issale');
 		
+		if ($issale=='9'){
+			return 'Please choose Sale or Rent';
+		}
+
+		return $this->realtor_sale($url, $issale);
+
+	}
+
+	public function realtor_sale($url, $issale)
+	{
+		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
+		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale2.html');
+		$html = file_get_contents($url);
 
 
 
@@ -20,7 +33,11 @@ class ParseController extends BaseController {
 		$year = $this->getHouseYear($html);
 		$address = $this->getAddress($html);
 		$price = $this->getPrice($html);
+		if($size!=0)
 		$pricesqft = round($price/$size);
+		else
+		$pricesqft=0;
+
 
 		$house = new House();
 
@@ -192,15 +209,19 @@ if (count($propertyinfosObj)){
 	$house->salepropertyinfo()->associate($propertyinfosObj);
 } else{
 	$propertyinfosObj = new Salepropertyinfo(); 
+	$propertyinfosObj->otherinfo = $arr_salepropertyinfo[0].' '.$arr_salepropertyinfo[1];
 	$propertyinfosObj->township = $arr_salepropertyinfo[2];
 	$propertyinfosObj->city = $arr_salepropertyinfo[3];
 	$propertyinfosObj->state = $arr_salepropertyinfo[4];
 	$propertyinfosObj->county = $arr_salepropertyinfo[5];
-
+	if (count($arr_salepropertyinfo)>7) {
+		# code...
+	
 	$propertyinfosObj->area = $arr_salepropertyinfo[7];
 	$propertyinfosObj->directions = $arr_salepropertyinfo[8];
 	$propertyinfosObj->apnnumber = $arr_salepropertyinfo[9];
-	$propertyinfosObj->otherinfo = $arr_salepropertyinfo[0].' '.$arr_salepropertyinfo[1].' '.$arr_salepropertyinfo[10].' '.$arr_salepropertyinfo[11];
+	$propertyinfosObj->otherinfo .=$arr_salepropertyinfo[10].' '.$arr_salepropertyinfo[11];
+	}
 
 	$propertyinfosObj->save();
 }
@@ -216,25 +237,28 @@ if (count($publicrecordsObj)){
 } else{
 	$publicrecordsObj = new Salepublicrecord(); 
 	$publicrecordsObj->beds = $arr_salepublicrecord[0];
-	$publicrecordsObj->units = $arr_salepublicrecord[5];
-	$publicrecordsObj->baths = $arr_salepublicrecord[11];
-	$publicrecordsObj->cooling = $arr_salepublicrecord[16];
 	$publicrecordsObj->housesize = $arr_salepublicrecord[1];
+		# code...
+	$publicrecordsObj->yearbuilt = $arr_salepublicrecord[2];
+	$publicrecordsObj->proptype = $arr_salepublicrecord[3];
+	$publicrecordsObj->style = $arr_salepublicrecord[4];
+	$publicrecordsObj->units = $arr_salepublicrecord[5];
 	$publicrecordsObj->pool = $arr_salepublicrecord[6];
+	$publicrecordsObj->heating = $arr_salepublicrecord[7];
+	$publicrecordsObj->rooms = $arr_salepublicrecord[8];
+	$publicrecordsObj->fireplace = $arr_salepublicrecord[9];
+	$publicrecordsObj->baths = $arr_salepublicrecord[11];
 	$publicrecordsObj->lotsize = $arr_salepublicrecord[12];
+	if (count($arr_salepublicrecord)>16) {
+	$publicrecordsObj->price = $arr_salepublicrecord[13];
+	$publicrecordsObj->stories = $arr_salepublicrecord[14];
+	$publicrecordsObj->garage = $arr_salepublicrecord[15];
+	$publicrecordsObj->cooling = $arr_salepublicrecord[16];
 	$publicrecordsObj->construction = $arr_salepublicrecord[17];
 
-	$publicrecordsObj->yearbuilt = $arr_salepublicrecord[2];
-	$publicrecordsObj->heating = $arr_salepublicrecord[7];
-	$publicrecordsObj->price = $arr_salepublicrecord[13];
 	$publicrecordsObj->yearrenovated = $arr_salepublicrecord[18];
-	$publicrecordsObj->proptype = $arr_salepublicrecord[3];
-	$publicrecordsObj->rooms = $arr_salepublicrecord[8];
-	$publicrecordsObj->stories = $arr_salepublicrecord[14];
 	$publicrecordsObj->roofing = $arr_salepublicrecord[19];
-	$publicrecordsObj->style = $arr_salepublicrecord[4];
-	$publicrecordsObj->fireplace = $arr_salepublicrecord[9];
-	$publicrecordsObj->garage = $arr_salepublicrecord[15];
+	}
 
 	$publicrecordsObj->save();
 }
@@ -333,8 +357,9 @@ if (count($saleexteriorFeatureObj)){
 	$house->saleexteriorfeature()->associate($saleexteriorFeatureObj);
 } else{
 	$saleexteriorFeatureObj = new Saleexteriorfeature(); 
-	$saleexteriorFeatureObj->lotsize = $arr_saleExteriorFeatures[1];
 	$saleexteriorFeatureObj->lotdimension = $arr_saleExteriorFeatures[0];
+	$saleexteriorFeatureObj->lotsize = $arr_saleExteriorFeatures[1];
+	if(array_key_exists(2, $arr_saleExteriorFeatures))
 	$saleexteriorFeatureObj->lotfeature = $arr_saleExteriorFeatures[2];
 
 	$saleexteriorFeatureObj->save();
@@ -412,9 +437,14 @@ $house->saleamenity()->associate($saleAmenitiesObj);
 // }
 // $house->saleamenity()->associate($saleAmenitiesObj);
 
+$house->issale = $issale;
+
 
 if(!$house->save())
 return 'ERROR occured';	
+
+
+
 $id = $house->id;
 $this->extractImages($html, $house);
 

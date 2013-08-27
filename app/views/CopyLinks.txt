@@ -1,1 +1,1 @@
-{{link_to_route('Evanston-township', 'Evanston township high school', array(), array('class'=>'className'))}}
+{{link_to_route('Parser-realtor', 'Parser realtor', array(), array('class'=>'className'))}}

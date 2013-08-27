@@ -6,6 +6,8 @@ class Status extends Eloquent {
 
     public static $rules = array();
 
+public $timestamps  = false;
+
 public function house()
 {
 return $this->hasOne('House');
