@@ -84,6 +84,7 @@ if (count($bedroomsObj)){
 	$house->salebedroom()->associate($bedroomsObj);
 } else{
 	$bedroomsObj = new Salebedroom(); 
+	$bedroomsObj->masterbedsize = $arr_bedrooms[0];
 	$bedroomsObj->masterbedsize = $arr_bedrooms[3];
 	$bedroomsObj->masterbedfeatures = $arr_bedrooms[1].' '.$arr_bedrooms[5].' '.$arr_bedrooms[6];
 	$bedroomsObj->bed2size = $arr_bedrooms[4];
