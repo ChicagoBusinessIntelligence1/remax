@@ -11,13 +11,7 @@ class House extends Eloquent {
     	return $this->belongsToMany('User');
     }
 
-public function images()
-{
-return $this->hasOne('Image');
-}
-
-
-
+    
 
 public function agent()
 {

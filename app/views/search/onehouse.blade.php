@@ -399,6 +399,7 @@
 								</div>
 
 							</section>
+@if(isset($house->salefamroom))
 
 							<section class="section">
 								<p class="title">
@@ -427,7 +428,7 @@
 									</div>
 								</div>
 							</section>
-
+@endif
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Laundry Room</span></a>
@@ -1630,9 +1631,9 @@
 						</div>
 					</div>
 
-					@if($house->images()->first()->maxid)
+					@if($house->maximgid)
 					<ul class="clearing-thumbs" data-clearing>
-						@for ($i =1; $i <= $house->images()->first()->maxid; $i++)
+						@for ($i =1; $i <= $house->maximgid; $i++)
 						<li class="clearing-featured-img"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
 							<img width="100px" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>
 						</li>

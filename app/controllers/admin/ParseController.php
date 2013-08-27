@@ -27,9 +27,15 @@ class ParseController extends BaseController {
 		$house->mls = $mls;
 		$house->details = $details;
 		$house->size = $size;
+
+		if(intval($year)>1800)
 		$house->year = $year;
+		
 		$house->address = $address;
+		if(intval($price)>1)
 		$house->price = $price;
+
+		if(intval($pricesqft)>1)
 		$house->pricesqft = $pricesqft;
 
 
@@ -410,10 +416,11 @@ $house->saleamenity()->associate($saleAmenitiesObj);
 if(!$house->save())
 return 'ERROR occured';	
 $id = $house->id;
-$this->extractImages($html, $id);
+$this->extractImages($html, $house);
 
 return Redirect::to("search/$id");
 }
+
 
 
 
@@ -879,7 +886,7 @@ protected function lisToArray($lists)
 	return $arr_new;
 }
 
-protected function extractImages($html, $houseId)
+protected function extractImages($html, $house)
 		{
 			$start = strpos($html, '#modal_PhotoGallery');			
 			$arr_images = [];
@@ -900,16 +907,17 @@ protected function extractImages($html, $houseId)
 			$i=1;
 			foreach ($arr_images as $image) {
 				$fileImage = \File::getRemote($image);
-				$dir_path = public_path()."/comp/img/images/$houseId/";
+				$dir_path = public_path()."/comp/img/images/$house->id/";
 				if (!File::exists($dir_path))
 					File::makeDirectory($dir_path, '777', true);
 
 				File::put($dir_path."$i.jpg", $fileImage);
 				$i++;
 			}
-
-
-
+			
+			
+			$house->maximgid = --$i;
+			$house->save();
 		}
 
 
