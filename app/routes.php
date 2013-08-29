@@ -90,7 +90,7 @@ Route::get('search', 'SearchController@index');
 Route::get('search/{id}', 'SearchController@show');
 
 /*  Browse db */
-Route::get('browse/{type}', array('as'=>'browse', 'uses'=>'BrowseController@index'));
+Route::get('browse/{type}', array('as'=>'browse', 'uses'=>'SearchController@browse'));
 
 /* Agent listing */
 

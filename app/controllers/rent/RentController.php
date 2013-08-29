@@ -11,66 +11,94 @@ class RentController extends BaseController {
      */
     public function apartments() {
 
-    $rentals = Rental::with('agent', 'rentutility', 'rentpropertyinfo', 'rentschool', 'rentbuildingconstruction', 'rentgarageandparking', 'rentlotfeature', 
-        'rentcurrentstatus', 'rentappliance', 'rentalinfo', 'rentbedroom', 'rentbathroom', 'rentkitchen', 'rentdiningroom', 'rentlivingroom', 'rentfamroom', 'rentutilityroom', 
-        'rentinteriorfeature', 'rentotherroom', 'rentwalkincloset', 'rentbasement', 'rentlaundryroom', 'rentexerciseroom', 'rentpropertytype')->where('rentpropertytype_id','=', 1)->paginate(5);
-    return View::make('rent.rent_results')->with(compact('rentals'));
+    $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
+    'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
+    'saleutility', 'salehomefeature', 'saleamenity' )->where('propertytype_id', '=', 8)->where('issale', '=', 0)->first();   
 
+   return View::make('search.results')->with(compact('houses'));
     }
 
     public function show($id) {
 
-    $rental = Rental::with('rentalimage', 'agent', 'rentutility', 'rentpropertyinfo', 'rentschool', 'rentbuildingconstruction', 'rentgarageandparking', 'rentlotfeature', 
-        'rentcurrentstatus', 'rentappliance', 'rentalinfo', 'rentbedroom', 'rentbathroom', 'rentkitchen', 'rentdiningroom', 'rentlivingroom', 'rentfamroom', 'rentutilityroom', 
-        'rentinteriorfeature', 'rentotherroom', 'rentwalkincloset', 'rentbasement', 'rentlaundryroom', 'rentexerciseroom', 'rentpropertytype')->where('id','=', $id)->first();
-    return View::make('rent.one_rent')->with(compact('rental'));
+     $house = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
+    'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
+    'saleutility', 'salehomefeature', 'saleamenity' )->where('id', '=', $id)->where('issale', '=', 0)->first();   
+
+   return View::make('search.onehouse')->with(compact('house'));
 
     }
     public function all() {
 
-    $rentals = Rental::with('rentalimage', 'agent', 'rentpropertytype')->paginate(5);
-    return View::make('rent.rent_results')->with(compact('rentals'));
+    $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
+      'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
+      'saleutility', 'salehomefeature', 'saleamenity' )->where('issale', '=', 0)->where(function($query){
+
+      $location  = Input::get('location');
+      if($location)
+        $query->where('address', 'LIKE', '%'.$location.'%');
+
+      $price_l  = Input::get('from');
+      if($price_l)
+        $query->where('price', '>=', $price_l);
+
+      $price_h  = Input::get('to');
+      if($price_h)
+        $query->where('price', '<=', $price_h);
+
+      $beds  = Input::get('beds');
+      if($beds)
+        $query->where('bedrooms', '>=', $beds);
+
+      $baths  = Input::get('baths');
+      if($baths)
+        $query->where('bathrooms', '>=', $baths);
+
+
+    })->paginate(5);  
+
+        return View::make('search.results')->with(compact('houses'));
 
     }
 
     public function houses(){
 
-    $rentals = Rental::with('rentalimage', 'agent', 'rentutility', 'rentpropertyinfo', 'rentschool', 'rentbuildingconstruction', 'rentgarageandparking', 'rentlotfeature', 
-        'rentcurrentstatus', 'rentappliance', 'rentalinfo', 'rentbedroom', 'rentbathroom', 'rentkitchen', 'rentdiningroom', 'rentlivingroom', 'rentfamroom', 'rentutilityroom', 
-        'rentinteriorfeature', 'rentotherroom', 'rentwalkincloset', 'rentbasement', 'rentlaundryroom', 'rentexerciseroom', 'rentpropertytype')->where('rentpropertytype_id','=', 2)->paginate(5);
-    return View::make('rent.rent_results')->with(compact('rentals'));
+        $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
+    'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
+    'saleutility', 'salehomefeature', 'saleamenity' )->where('propertytype_id', '=', 9)->where('issale', '=', 0)->first();   
 
+   return View::make('search.results')->with(compact('houses'));
     }
 
     public function index()
     {
-    $rentals = Rental::with('rentalimage', 'agent', 'rentpropertytype')->where(function($query){
+     $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
+      'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
+      'saleutility', 'salehomefeature', 'saleamenity' )->where('issale', '=', 0)->where(function($query){
 
-    $location_r  = Input::get('location_r');
-    if($location_r)
-    $query->where('address', 'LIKE', '%'.$location_r.'%');
+      $location  = Input::get('location');
+      if($location)
+        $query->where('address', 'LIKE', '%'.$location.'%');
 
-    $price_l_r  = Input::get('from_r');
-    if($price_l_r)
-    $query->where('price', '>=', $price_l_r);
+      $price_l  = Input::get('from');
+      if($price_l)
+        $query->where('price', '>=', $price_l);
 
-    $price_h_r  = Input::get('to_r');
-    if($price_h_r)
-    $query->where('price', '<=', $price_h_r);
+      $price_h  = Input::get('to');
+      if($price_h)
+        $query->where('price', '<=', $price_h);
 
-    $beds_r  = Input::get('beds_r');
-    if($beds_r)
-    $query->where('bedrooms', '>=', $beds_r);
+      $beds  = Input::get('beds');
+      if($beds)
+        $query->where('bedrooms', '>=', $beds);
 
-    $baths_r  = Input::get('baths_r');
-    if($baths_r)
-    $query->where('bathrooms', '>=', $baths_r);
+      $baths  = Input::get('baths');
+      if($baths)
+        $query->where('bathrooms', '>=', $baths);
 
 
-    })->paginate(5);
+    })->paginate(5);  
 
-    return View::make('rent.rent_results')
-    ->with(compact('rentals'))->with('Input', Input::all());
+        return View::make('search.results')->with(compact('houses'));
     }
  
 
