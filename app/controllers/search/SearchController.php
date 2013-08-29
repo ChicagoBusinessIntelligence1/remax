@@ -9,6 +9,17 @@ class SearchController extends BaseController {
      *
      * @return Response
      */
+    public function browse($type)
+    {
+        
+        $houses = House::with('agent')->where('propertytype_id', '=', $type)
+       ->where('issale', '=', 1)
+        ->paginate(5);
+        return View::make('search.results')->with(compact('houses'));
+
+    }
+
+
     public function alert_signup($house_id)
     {
       $user_id  = Auth::user()->id;
@@ -29,7 +40,7 @@ class SearchController extends BaseController {
 
     public function index()
     {
-      $house = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
+      $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
       'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
       'saleutility', 'salehomefeature', 'saleamenity' )->where('issale', '=', 1)->where(function($query){
 
@@ -54,15 +65,9 @@ class SearchController extends BaseController {
         $query->where('bathrooms', '>=', $baths);
 
 
-    })->get();  
+    })->paginate(5);  
 
-    return View::make('search.onehouse')->with(compact('house'));
-   
-
-
-
-
-    return View::make('search.results')->with(compact('houses'));
+        return View::make('search.results')->with(compact('houses'));
 
   }
   public function show($id)
@@ -70,6 +75,7 @@ class SearchController extends BaseController {
    $house = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
     'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
     'saleutility', 'salehomefeature', 'saleamenity' )->where('id', '=', $id)->where('issale', '=', 1)->first();   
+
    return View::make('search.onehouse')->with(compact('house'));
  }
 

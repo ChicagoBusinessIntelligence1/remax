@@ -45,7 +45,7 @@
 									@endif
 								</small>
 							</div>
-							@if($house->images()->first()->maxid)
+							@if($house->maxid)
 							<a class="listingImage" href="{{url('search/'.$house->id)}}"><img src="{{url('comp/img/thumbs/'.$house->id.'/1.jpg')}}"  class="th">
 							</a> 
 							@endif
