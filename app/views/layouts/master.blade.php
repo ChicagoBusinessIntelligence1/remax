@@ -155,80 +155,96 @@
     <!-- =logoWrapper -->
     <div class="logoWrapper">
      <div class="row">
-      <div class="large-10 columns ">
-        <div class="row">
-          <div class="large-2 columns logoContent">
-           <a href="{{URL::route('home')}}" title="Home Page">
-             <img src="{{url('comp/img/REMAX1Logo.png')}}" alt="Remax First Class Logo">
-           </a> 
-         </div><!-- =logoContent -->
 
-         <div class="large-10 columns">
-           <div class="row">
-             <div class="large-6 columns  sloganText">
-              <p class="sloganTop">YOU NEED ONLY ONE COMPANY </p> <p> FOR ALL YOUR REAL ESTATE NEEDS</p>
-            </div>
-            <div class="large-6 columns oneStopService">
-              <img class="left" src="{{url('comp/img/one_stop_service/One-Stop-Service-Text.png')}}" alt="Real Estate One Stop Service">
-            </div>
+      <div class="large-2 columns logoContent">
+       <a href="{{URL::route('home')}}" title="Home Page">
+         <img src="{{url('comp/img/REMAX1Logo.png')}}" alt="Remax First Class Logo">
+       </a> 
+     </div><!-- =logoContent -->
 
-          </div>
-          <div class="row">
-           <div class="small-12 columns residentialCommercialContent">
-           
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
+     <div class="large-4 columns  sloganText">
+      <p class="sloganTop">YOU NEED ONLY ONE COMPANY </p> <p> FOR ALL YOUR REAL ESTATE NEEDS</p>
+      <ul class="inline-list  ulCallUs">
+        <li class="callUsContent">
 
-   <aside class="large-2 left columns logoDiv">
-     <div class="row left">
-      <div class="large-12 small-12 columns left connectWithContent">
+          <img src="{{url('comp/img/phone40.png')}}" alt="remax phone icon">
+        </li>
+        <li class="left callUs has-tip-left" title="Call Our Agents for a Free Consultation">
+          <span class="callUs">(847) 674-9797</span>
+        </li>
+      </ul>
+        <!-- <div class="callUsContent">
+        </div>
 
-        <!-- <span class="contactTextStyle">CONNECT WITH US:</span> -->
+        <div class="left callUs has-tip-left" title="Call Our Agents for a Free Consultation">
+        </div>
+      -->
 
-        <a target="_blank" class="has-tip-left" title="Our Facebook Page" href="https://www.facebook.com/pages/Remax-1st-CLASS/177448822432081"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/facebook.png')}}" alt="Skokie Remax First Class Facebook Icon"><a/>
-          <a target="_blank" class="has-tip-left" title="Our Twitter Page" href="https://twitter.com/RemaxFirstClass"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/twitter.png')}}" alt="Skokie Remax First Class Twitter Profile">
-            <a/>
-            <a target="_blank" class="has-tip-left" title="Our Linkedin Page" href="http://www.linkedin.com/profile/view?id=271875691&trk=nav_responsive_tab_profile"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/linkedin.png')}}" alt="Skokie Remax First Class Linkedin Profile">
+    </div>
+    <div class="large-4 columns oneStopService">
+      <img class="left" src="{{url('comp/img/one_stop_service/One-Stop-Service-Text.png')}}" alt="Real Estate One Stop Service">
+    </div>
+
+
+
+    <aside class="large-2 columns logoDiv">
+      <div class="row">
+        <div class="large-12 small-12 columns connectWithContent">
+
+          <!-- <span class="contactTextStyle">CONNECT WITH US:</span> -->
+
+          <a target="_blank" class="has-tip-left" title="Our Facebook Page" href="https://www.facebook.com/pages/Remax-1st-CLASS/177448822432081"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/facebook.png')}}" alt="Skokie Remax First Class Facebook Icon"><a/>
+            <a target="_blank" class="has-tip-left" title="Our Twitter Page" href="https://twitter.com/RemaxFirstClass"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/twitter.png')}}" alt="Skokie Remax First Class Twitter Profile">
               <a/>
-
-              <a target="_blank" class="has-tip-left" title="Our Google Plus Page" href="https://plus.google.com"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/google.png')}}" alt="Skokie Remax First Class Google Profile">
+              <a target="_blank" class="has-tip-left" title="Our Linkedin Page" href="http://www.linkedin.com/profile/view?id=271875691&trk=nav_responsive_tab_profile"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/linkedin.png')}}" alt="Skokie Remax First Class Linkedin Profile">
                 <a/>
-                <a target="_blank" class="has-tip-left" title="Our Yelp Page" href="http://www.yelp.com/biz/remax-first-class-skokie"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/yelp.png')}}" alt="Skokie Remax First Class Feed Profile">
+
+                <a target="_blank" class="has-tip-left" title="Our Google Plus Page" href="https://plus.google.com"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/google.png')}}" alt="Skokie Remax First Class Google Profile">
                   <a/>
-                  <a target="_blank" class="has-tip-left" title="Our Page" href="https://www.youtube.com/"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/you_tube.png')}}" alt="Skokie Remax First Class Youtube Profile"><a/>
+                  <a target="_blank" class="has-tip-left" title="Our Yelp Page" href="http://www.yelp.com/biz/remax-first-class-skokie"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/yelp.png')}}" alt="Skokie Remax First Class Feed Profile">
+                    <a/>
+                    <a target="_blank" class="has-tip-left" title="Our Page" href="https://www.youtube.com/"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/you_tube.png')}}" alt="Skokie Remax First Class Youtube Profile"><a/>
 
+                    </div>
                   </div>
-                </div>
+                  <ul class="inline-list ulIcons">
+                    <li id="shortSaleChicago">
+                      <img class="imgShortSale"src="{{url('comp/img/Chicago-Short-Sale-Logo_small.png')}}" alt="name">                                           
+                    </li>
+                    <li class="shortSaleChicago">
+                      <span>Short Sale <br/> Chicago</span>
+                    </li>
+                  </ul>
 
-                <div class="row">
-                 <div class="large-12 small-12 columns callUsContent">
-                   <img class="left"  src="{{url('comp/img/phone40.png')}}" alt="remax phone icon">
-                   <div class="callUs left has-tip-left" title="Call Our Agents for a Free Consultation">(847) 674-9797</div>
-                 </div>
-               </div>
-               <div class="row right">
-                 <div class="large-12 columns left iconMailHome">
+                  <!-- <div class="row"> -->
+                  <!-- <div class="large- 8 columns iconMailHome"> -->
+                  <ul class="inline-list ulIcons">
+                   <li class="liIcon right">
+                    <a href="#" class="mailIcon has-tip-left" title="Send Us Email" data-reveal-id="myModal"> 
+                      <img src="{{url('comp/img/icons/mail_remax1.png')}}" alt="REMAX FIRST CLASS Mail Icon" ></a>
 
-                  <a href="{{ URL::route('home')}}" class="homeIcon has-tip-left" title="Home Page">
-                    <img src="{{url('comp/img/icons/home_remax1.png')}}" alt="REMAX FIRST CLASS Home Icon">
-                  </a> 
+                    </li>
+                    <li class="liIconi right">
+                      <a href="{{ URL::route('home')}}" class="homeIcon has-tip-left" title="Home Page">
+                        <img src="{{url('comp/img/icons/home_remax1.png')}}" alt="REMAX FIRST CLASS Home Icon">
+                      </a> 
+
+                    </li>
+                  </ul>
+
                   <!-- =mailIcon -->
-                  <a href="#" class="mailIcon has-tip-left" title="Send Us Email" data-reveal-id="myModal"> 
-                    <img src="{{url('comp/img/icons/mail_remax1.png')}}" alt="REMAX FIRST CLASS Mail Icon" ></a>
-                  </div>
-                </div>
-              </aside>          
-            </div>
-          </div><!-- =logoWrapper ends here -->
-          <!-- =header ends here -->
+                  <!-- </div> -->
+                  <!-- </div> -->
+
+                </aside>          
+              </div>
+            </div><!-- =logoWrapper ends here -->
+            <!-- =header ends here -->
 
 
-          <div id="mainContent">
-           <div class="row">
-            <div class="large-8 columns">
+            <div id="mainContent">
+             <div class="row">
+              <div class="large-8 columns">
                  <!--   @if(Session::has('message'))
                    {{Session::get('message')}}
                    @endif --> 

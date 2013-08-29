@@ -6,27 +6,13 @@
 <div class="mainContent">
 	<div class="panel oneListing oneRentAgent">
 		<div class="row callAgentRent">
-			<div class="large-5 columns left">
-				@if(isset($house->agent))
-				<ul class="vcard oneRentVcard">
-					<li>					
-						<div class="locality alert-box secondary radius callAgent">
-							<a class="th radius aCallAgent" data-reveal-id="{{$house->agent['id']}}" href="#">Listing Agent:
-								<span class="agentNameList" >{{$house->agent['firstname'] . ' '. $house->agent['lastname']}}
-								</span>
-							</a>
-							<br/>
-							<span class="agentPhoneList">
-								Direct Phone: 
-								<strong>
-									{{$house->agent['directphone']}}
-								</strong>
-							</span>
-						</div>
-					</li>
-				</ul>
-				@endif
-			</div> 
+
+			@if(isset($house->status))
+			<div class="large-3 columns">
+				
+				<h5 class="propStat"><em>{{$house->status->dbstatus}}</em></h5>
+			</div>
+			@endif
 			@if(isset($house->price))
 			<div class="large-2 columns">
 				<a class="priceStyle tenMarginTop right">${{number_format($house->price)}}
@@ -42,12 +28,6 @@
 			<div class="large-9 columns">
 				<h2 class="oneHouseAddress">{{$house->address}}</h2>
 				&nbsp &nbsp
-			</div>
-			@endif
-			@if(isset($house->status))
-			<div class="large-3 columns">
-				
-				<h6 class="alert-box secondary radius propStat">{{$house->status->dbstatus}}</h6>
 			</div>
 			@endif
 
@@ -1696,6 +1676,22 @@
 						@endfor
 					</ul>	
 					@endif
+					
+					<div class="row">
+						<div class="large-5 columns left">
+							<ul class="vcard oneRentVcard">
+								<li>					
+									<!-- =callUs starts here -->
+									<div class="locality right alert-box secondary radius callAgent">
+
+										<span class="agentPhoneList">CALL US FOR A FREE CONSULTATION:</span><br/>
+										<span class="phoneNumber"><strong>(847) 674-9797</strong></span>
+									</div>
+									<!-- =callUs ends here -->
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 

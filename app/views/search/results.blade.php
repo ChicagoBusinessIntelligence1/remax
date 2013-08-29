@@ -78,18 +78,14 @@
 									</div>
 									<!-- =searchDescription ends here -->
 								</li>
-								@if($house->agent)
 
-								<!-- =callAgent starts here -->
+								<!-- =callUs starts here -->
 								<div class="locality right alert-box secondary radius callAgent">
-									<a class="th radius aCallAgent" data-reveal-id="{{$house->agent['id']}}" href="#">Listing Agent:
-										<span class="agentNameList" >{{$house->agent['firstname'] . ' '. $house->agent['lastname']}}</span >
-										</a>
-										<br/>
-										<span class="agentPhoneList">Direct Phone: <strong>{{$house->agent['directphone']}}</strong></span>
+									
+										<span class="agentPhoneList">CALL US FOR A FREE CONSULTATION:</span><br/>
+										 <span class="phoneNumber"><strong>(847) 674-9797</strong></span>
 									</div>
-									<!-- =callAgent ends here -->
-									@endif
+									<!-- =callUs ends here -->
 								</ul>
 							</div>
 							<!-- =basicInfoWrapper ends here -->
