@@ -1,1 +1,1 @@
-{{link_to_route('Parser-realtor', 'Parser realtor', array(), array('class'=>'className'))}}
+{{link_to_route('Remax-agent', 'Remax agent real estate skokie hiring', array(), array('class'=>'className'))}}

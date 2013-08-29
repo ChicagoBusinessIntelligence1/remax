@@ -17,7 +17,7 @@ class Deciding_where_to_liveController extends BaseController {
 
 	public function index()
 	{
-		return View::make('buying.vw_deciding_where_to_live')->with('agents', parent::getRandomAgents());
+		return View::make('buying.vw_deciding_where_to_live');
 	}
 
 }

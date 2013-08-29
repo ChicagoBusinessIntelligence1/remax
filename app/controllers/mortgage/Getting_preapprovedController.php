@@ -17,7 +17,7 @@ class Getting_preapprovedController extends BaseController {
 
 	public function index()
 	{
-		return View::make('mortgage.vw_getting_preapproved')->with('agents', parent::getRandomAgents());
+		return View::make('mortgage.vw_getting_preapproved');
 
 	}
 

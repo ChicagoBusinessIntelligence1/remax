@@ -17,7 +17,7 @@ class Down_payments_how_much_do_you_needController extends BaseController {
 
 	public function index()
 	{
-		return View::make('mortgage.vw_down_payments_how_much_do_you_need')->with('agents', parent::getRandomAgents());
+		return View::make('mortgage.vw_down_payments_how_much_do_you_need');
 
 	}
 

@@ -17,7 +17,7 @@ class Mortgages_101_basic_loan_typesController extends BaseController {
 
 	public function index()
 	{
-		return View::make('mortgage.vw_mortgages_101_basic_loan_types')->with('agents', parent::getRandomAgents());
+		return View::make('mortgage.vw_mortgages_101_basic_loan_types');
 
 	}
 

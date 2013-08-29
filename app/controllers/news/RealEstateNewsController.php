@@ -11,9 +11,7 @@ class RealEstateNewsController extends BaseController {
     {
 
       return View::make('news.vw_real_estate_news')
-     ->with('news', News::all())->with('agents', parent::getRandomAgents());
-        
-
+     ->with('news', News::all());
     }
 
 }

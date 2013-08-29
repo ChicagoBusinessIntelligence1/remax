@@ -17,7 +17,7 @@ class The_right_listing_agentController extends BaseController {
 
 	public function index()
 	{
-		return View::make('selling.vw_the_right_listing_agent')->with('agents', parent::getRandomAgents());
+		return View::make('selling.vw_the_right_listing_agent');
 
 	}
 

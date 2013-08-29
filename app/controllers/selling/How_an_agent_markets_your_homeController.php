@@ -17,7 +17,7 @@ class How_an_agent_markets_your_homeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('selling.vw_how_an_agent_markets_your_home')->with('agents', parent::getRandomAgents());
+		return View::make('selling.vw_how_an_agent_markets_your_home');
 
 	}
 

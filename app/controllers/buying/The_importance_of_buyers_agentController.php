@@ -17,7 +17,7 @@ class The_importance_of_buyers_agentController extends BaseController {
 
 	public function index()
 	{
-		return View::make('buying.vw_the_importance_of_buyers_agent')->with('agents', parent::getRandomAgents());
+		return View::make('buying.vw_the_importance_of_buyers_agent');
 	}
 
 }

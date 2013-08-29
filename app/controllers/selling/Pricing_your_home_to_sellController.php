@@ -17,7 +17,7 @@ class Pricing_your_home_to_sellController extends BaseController {
 
 	public function index()
 	{
-		return View::make('selling.vw_pricing_your_home_to_sell')->with('agents', parent::getRandomAgents());
+		return View::make('selling.vw_pricing_your_home_to_sell');
 
 	}
 

@@ -17,7 +17,7 @@ class Five_tips_to_narrow_your_online_home_searchController extends BaseControll
 
 	public function index()
 	{
-		return View::make('buying.vw_five_tips_to_narrow_your_online_home_search')->with('agents', parent::getRandomAgents());
+		return View::make('buying.vw_five_tips_to_narrow_your_online_home_search');
 	}
 
 }

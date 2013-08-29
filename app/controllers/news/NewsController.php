@@ -10,7 +10,7 @@ class NewsController extends BaseController {
     public function show($id)
     {
      return View::make('news.vw_news')
-     ->with('news', News::find($id))->with('agents', parent::getRandomAgents())->with('agents', parent::getRandomAgents());
+     ->with('news', News::find($id));
     }
 
 }

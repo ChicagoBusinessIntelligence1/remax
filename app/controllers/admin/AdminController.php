@@ -31,7 +31,7 @@ class AdminController extends BaseController {
 
 
 
-        return View::make('admin.vw_fill_db')->with(compact($agents));
+        return View::make('admin.vw_fill_db');
        
     }
     

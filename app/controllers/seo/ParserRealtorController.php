@@ -11,8 +11,7 @@ class ParserRealtorController extends BaseController {
 		$meta = 'Make short sentence with call to action in the END Parser, realtor';
 
 		return View::make('seo.vw_parser_realtor')
-		->with(compact('title', 'meta'))
-		->with('gents', parent::getRandomAgents());
+		->with(compact('title', 'meta'));
 	}
 
 }

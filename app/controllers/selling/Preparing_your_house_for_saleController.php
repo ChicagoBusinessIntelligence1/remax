@@ -17,7 +17,7 @@ class Preparing_your_house_for_saleController extends BaseController {
 
 	public function index()
 	{
-		return View::make('selling.vw_preparing_your_house_for_sale')->with('agents', parent::getRandomAgents());
+		return View::make('selling.vw_preparing_your_house_for_sale');
 
 	}
 

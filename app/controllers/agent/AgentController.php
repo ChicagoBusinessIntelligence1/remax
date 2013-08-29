@@ -13,7 +13,8 @@ class AgentController extends BaseController {
     {
     
     $houses = House::with('images')->where('agent_id', '=', $id)->paginate(5);
-    return View::make('search.results')->with(compact('houses'))->with('agents', parent::getRandomAgents());
+    return View::make('search.results')->with(compact('houses'))
+    ->with('agents', parent::getRandomAgents());
 
     }
 
@@ -22,14 +23,18 @@ class AgentController extends BaseController {
     {
     
     $allAgents = Agent::orderBy('lastname')->get();
-    return View::make('agents.vw_allAgents')->with(compact('allAgents'));
+    return View::make('agents.vw_allAgents')
+    ->with(compact('allAgents'));
     }
 
     public function show_rentals($id)
     {
     
-    $rentals = Rental::with('rentalimage')->where('agent_id', '=', $id)->paginate(5);
-    return View::make('rent.rent_results')->with(compact('rentals'))->with('agents', parent::getRandomAgents());
+    $rentals = Rental::with('rentalimage')
+    ->where('agent_id', '=', $id)->paginate(5);
+    return View::make('rent.rent_results')
+    ->with(compact('rentals'))
+    ->with('agents', parent::getRandomAgents());
 
     }
 

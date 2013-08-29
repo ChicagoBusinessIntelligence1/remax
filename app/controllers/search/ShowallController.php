@@ -11,16 +11,8 @@ class ShowallController extends BaseController {
      */
     public function index()
     {
-    $houses = House::with('images', 'agent')->paginate(5);
+        $houses = House::with('images', 'agent')->paginate(5);
 
-    return View::make('search.showall')->with(compact('houses'))->with('agents', parent::getRandomAgents());
-
+        return View::make('search.showall');
     }
-
-
-
-  
-
-
-   
 }

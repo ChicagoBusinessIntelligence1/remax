@@ -17,7 +17,7 @@ class Consider_a_home_inspection_when_sellingController extends BaseController {
 
 	public function index()
 	{
-		return View::make('selling.vw_consider_a_home_inspection_when_selling')->with('agents', parent::getRandomAgents());
+		return View::make('selling.vw_consider_a_home_inspection_when_selling');
 
 	}
 

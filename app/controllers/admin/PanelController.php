@@ -15,15 +15,13 @@ class PanelController extends BaseController {
         
 
         return View::make('admin.vw_saved_homes')
-        ->with('user', $user)
-        ->with('agents', parent::getRandomAgents());
+        ->with('user', $user);
     }
 
 
     public function index()
     {
-        return View::make('admin.vw_panel')
-        ->with('agents', parent::getRandomAgents());
+        return View::make('admin.vw_panel');
     }
 
     

@@ -17,7 +17,7 @@ class Finding_the_right_mortgage_professionalController extends BaseController {
 
 	public function index()
 	{
-		return View::make('mortgage.vw_finding_the_right_mortgage_professional')->with('agents', parent::getRandomAgents());
+		return View::make('mortgage.vw_finding_the_right_mortgage_professional');
 
 	}
 

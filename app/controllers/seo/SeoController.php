@@ -22,8 +22,7 @@ class SeoController extends BaseController {
 		$meta = 'Houses, Appartments, Vacand Land in Skokie IL. HOME LOANS AVALIABLE!';
 		return View::make('seo.vw_home_sale_skokie')
 		->with(compact($skokie_houses))
-		->with(compact('title', 'meta'))
-		->with('gents', parent::getRandomAgents());
+		->with(compact('title', 'meta'));
 	}
 
 }

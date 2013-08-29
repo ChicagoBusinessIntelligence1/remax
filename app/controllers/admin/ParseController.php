@@ -116,7 +116,11 @@ if (count($bedroomsObj)){
 	$bedroomsObj->masterbedsize = $arr_bedrooms[3];
 	$bedroomsObj->masterbedfeatures = $arr_bedrooms[1].' '.$arr_bedrooms[5].' '.$arr_bedrooms[6];
 	$bedroomsObj->bed2size = $arr_bedrooms[4];
-	$bedroomsObj->bed2features= $arr_bedrooms[2].' '.$arr_bedrooms[8];
+
+
+	$bedroomsObj->bed2features= $arr_bedrooms[2];
+	if(array_key_exists(8, $arr_bedrooms))
+	$bedroomsObj->bed2features+= $arr_bedrooms[8];
 
 	$bedroomsObj->save();
 }
@@ -152,8 +156,8 @@ $house->saleexteriorFeature()->associate($exteriorFeaturesObj);
 		///////////////////////////////////////////////////
 
 
-
 $arr_salekitchen = $this->getSaleKitchenDining($html)["arr_kitchen"];
+if(array_key_exists(0, $arr_salekitchen)){
 		// dd($arr_salekitchen);
 $kitchensObj = Salekitchen::where('kitchensize','=', $arr_salekitchen[0])->first();
 if (count($kitchensObj)){
@@ -167,9 +171,10 @@ if (count($kitchensObj)){
 }
 $house->salekitchen()->associate($kitchensObj);
 		///////////////////////////////////////////////////
-
+}
 
 $arr_saledining = $this->getSaleKitchenDining($html)['arr_dining'];
+if(array_key_exists(0, $arr_saledining)){
 		// dd($arr_saledining);
 $diningsObj = Salediningroom::where('diningroomsize','=', $arr_saledining[0])->first();
 if (count($diningsObj)){
@@ -183,7 +188,7 @@ if (count($diningsObj)){
 }
 $house->salediningroom()->associate($diningsObj);
 		///////////////////////////////////////////////////
-
+}
 
 $arr_saleliving = $this->getSaleOtherrooms($html);
 		// dd($arr_saleliving);

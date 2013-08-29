@@ -111,6 +111,8 @@
 				<div class="row">
 					<div class="large-12 columns">
 						<div class="section-container accordion" data-section="accordion">
+
+							@if(isset($house->salefamroom))
 							<section class="section active">
 								<p class="title">
 									<a class="aAccordion" href="#panel1"><span class="spanAccordion">Bedrooms</span></a>
@@ -220,6 +222,9 @@
 									
 								</div>
 							</section>
+
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Bathrooms</span></a>
@@ -282,6 +287,9 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
+
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Kitchen</span></a>
@@ -322,6 +330,8 @@
 
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Dining Area</span></a>
@@ -351,6 +361,8 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Living Room</span></a>
@@ -399,7 +411,10 @@
 								</div>
 
 							</section>
-@if(isset($house->salefamroom))
+
+							@endif
+							@if(isset($house->salefamroom))
+
 
 							<section class="section">
 								<p class="title">
@@ -428,7 +443,9 @@
 									</div>
 								</div>
 							</section>
-@endif
+							@endif
+
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Laundry Room</span></a>
@@ -458,6 +475,8 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Exercise Room</span></a>
@@ -488,6 +507,8 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Basement</span></a>
@@ -549,6 +570,8 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Utility Room </span></a>
@@ -578,6 +601,8 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Walk In Closets</span></a>
@@ -649,6 +674,8 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Other Rooms</span></a>
@@ -703,6 +730,9 @@
 									</div>
 								</div>
 							</section>
+
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel2"><span class="spanAccordion">Interior Features</span></a>
@@ -771,6 +801,9 @@
 									</div>
 								</div>
 							</section>
+
+							@endif
+							@if(isset($house->salefamroom))
 
 							<section class="section">
 								<p class="title">
@@ -864,6 +897,8 @@
 								</div>
 							</section>
 
+							@endif
+
 						</div>
 					</div>
 				</div>
@@ -873,6 +908,7 @@
 					<div class="large-12 columns">
 						<div class="section-container accordion" data-section="accordion">
 
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel3"><span class="spanAccordion">Home Features</span></a>
@@ -936,6 +972,8 @@
 							</section>
 
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel3"><span class="spanAccordion">Exterior Features</span></a>
@@ -1024,6 +1062,9 @@
 
 								</div>
 							</section>
+
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel3"><span class="spanAccordion">Garage and Parking</span></a>
@@ -1085,6 +1126,8 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel3"><span class="spanAccordion">Building and Construction</span></a>
@@ -1175,6 +1218,8 @@
 								</div>
 							</section>
 
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel3"><span class="spanAccordion">Utilities</span></a>
@@ -1268,6 +1313,9 @@
 
 								</div>
 							</section>
+
+							@endif
+							@if(isset($house->salefamroom))
 							<section class="section">
 								<p class="title">
 									<a href="#panel3"><span class="spanAccordion">Amenities and Community Features</span></a>
@@ -1289,6 +1337,8 @@
 
 									
 								</section>
+
+								@endif
 							</div>
 						</div>
 					</div>
@@ -1299,6 +1349,7 @@
 					<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">School</h4>
 					<hr/>
 
+					@if(isset($house->salefamroom))
 					<section class="section">
 						<div class="content" data-slug="panel3">
 							<div class="row">
@@ -1367,10 +1418,13 @@
 
 					</section>
 
+					@endif
+
 					<br/>
 					<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">Property Information</h4>
 					<hr/>
 
+					@if(isset($house->salefamroom))
 					<section class="section">
 						<div class="content" data-slug="panel3">
 
@@ -1471,6 +1525,8 @@
 							</div>
 						</div>
 					</section>
+
+					@endif
 					<br/>
 					<h4 class="subheader tenMarginTop" title="Property Information Provided by County Assessor and Recorder Offices. May Not Reflect Recent Additions or Improvements.">Public Records</h4>
 					<hr/>

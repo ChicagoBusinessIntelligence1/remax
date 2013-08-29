@@ -11,8 +11,7 @@ class EvanstonTownshipController extends BaseController {
 		$meta = 'Make short sentence with call to action in the END Evanston, township, high, school';
 
 		return View::make('seo.vw_evanston_township')
-		->with(compact('title', 'meta'))
-		->with('gents', parent::getRandomAgents());
+		->with(compact('title', 'meta'));
 	}
 
 }

@@ -17,7 +17,7 @@ class Renovating_a_homeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('mortgage.vw_renovating_a_home')->with('agents', parent::getRandomAgents());
+		return View::make('mortgage.vw_renovating_a_home');
 
 	}
 

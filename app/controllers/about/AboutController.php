@@ -17,7 +17,7 @@ class AboutController extends BaseController {
 
 	public function index()
 	{
-		return View::make('about.vw_about')->with('agents', parent::getRandomAgents());
+		return View::make('about.vw_about');
 	}
 
 }

@@ -17,7 +17,7 @@ class Anatomy_of_a_home_purchaseController extends BaseController {
 
 	public function index()
 	{
-		return View::make('buying.vw_anatomy_of_a_home_purchase')->with('agents', parent::getRandomAgents());
+		return View::make('buying.vw_anatomy_of_a_home_purchase');
 	}
 
 }

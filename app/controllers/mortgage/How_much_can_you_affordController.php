@@ -17,7 +17,7 @@ class How_much_can_you_affordController extends BaseController {
 
 	public function index()
 	{
-		return View::make('mortgage.vw_how_much_can_you_afford')->with('agents', parent::getRandomAgents());
+		return View::make('mortgage.vw_how_much_can_you_afford');
 
 	}
 

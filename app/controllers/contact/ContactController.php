@@ -17,7 +17,7 @@ class ContactController extends BaseController {
 
 	public function index()
 	{
-		return View::make('contact.vw_contact')->with('agents', parent::getRandomAgents());
+		return View::make('contact.vw_contact');
 	}
 
 }

@@ -31,7 +31,6 @@ class HomeController extends BaseController {
 	->with('newsBuy',$newsBuy[0])
 	->with(compact('title', 'meta'))
 	->with('newsBuy',$newsBuy[0])
-	->with('newsSell', $newsSell[0])
-	->with('agents', parent::getRandomAgents());
+	->with('newsSell', $newsSell[0]);
 	}
 }

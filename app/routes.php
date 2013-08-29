@@ -108,3 +108,4 @@ Route::get('all-rent-listings', array('as'=>'all-rent-listings', 'uses'=>'RentCo
 Route::get('Evanston-township-high-school', array('as'=>'Evanston-township', 'uses'=>'EvanstonTownshipController@index'));
 Route::get('realtor-sale', array('as'=>'Parser-realtor', 'uses'=>'ParserRealtorController@index'));
 Route::post('parser-realtor-save', array('as'=>'parser-realtor-save', 'uses'=>'ParseController@save'));
+Route::get('Remax-agent-real-estate-skokie-hiring', array('as'=>'Remax-agent', 'uses'=>'RemaxAgentController@index'));

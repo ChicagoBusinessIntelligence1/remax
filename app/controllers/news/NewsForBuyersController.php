@@ -11,7 +11,7 @@ class NewsForBuyersController extends BaseController {
     {
 
       return View::make('news.vw_news_for_buyers')
-     ->with('news', News::where('bs','=', 1)->get())->with('agents', parent::getRandomAgents());
+     ->with('news', News::where('bs','=', 1)->get());
         
 
     }
