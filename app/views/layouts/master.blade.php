@@ -164,7 +164,7 @@
 
      <div class="large-4 columns  sloganText">
       <p class="sloganTop">YOU NEED ONLY ONE COMPANY </p> <p> FOR ALL YOUR REAL ESTATE NEEDS</p>
-      <ul class="inline-list  ulCallUs">
+      <ul class="inline-list ulCallUs">
         <li class="callUsContent">
 
           <img src="{{url('comp/img/phone40.png')}}" alt="remax phone icon">
@@ -191,8 +191,6 @@
       <div class="row">
         <div class="large-12 small-12 columns connectWithContent">
 
-          <!-- <span class="contactTextStyle">CONNECT WITH US:</span> -->
-
           <a target="_blank" class="has-tip-left" title="Our Facebook Page" href="https://www.facebook.com/pages/Remax-1st-CLASS/177448822432081"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/facebook.png')}}" alt="Skokie Remax First Class Facebook Icon"><a/>
             <a target="_blank" class="has-tip-left" title="Our Twitter Page" href="https://twitter.com/RemaxFirstClass"><img class="fiveMarginBottom" src="{{url('comp/img/social_header/twitter.png')}}" alt="Skokie Remax First Class Twitter Profile">
               <a/>
@@ -207,17 +205,15 @@
 
                     </div>
                   </div>
-                  <ul class="inline-list ulIcons">
-                    <li id="shortSaleChicago">
-                      <img class="imgShortSale"src="{{url('comp/img/Chicago-Short-Sale-Logo_small.png')}}" alt="name">                                           
+                  <ul class="inline-list ulShortSaleChicago">
+                    <li id="shortSaleChicagoLogo">
+                      <a target="_blank" href="http://www.shortsalechicago.us/Short-Sale-Chicago"><img class="imgShortSale"src="{{url('comp/img/Chicago-Short-Sale-Logo_small.png')}}" alt="name"></a>
                     </li>
                     <li class="shortSaleChicago">
-                      <span>Short Sale <br/> Chicago</span>
+                      <a target="_blank" href="http://www.shortsalechicago.us/Short-Sale-Chicago"><span>Short Sale <br/> Chicago</span></a>
                     </li>
                   </ul>
 
-                  <!-- <div class="row"> -->
-                  <!-- <div class="large- 8 columns iconMailHome"> -->
                   <ul class="inline-list ulIcons">
                    <li class="liIcon right">
                     <a href="#" class="mailIcon has-tip-left" title="Send Us Email" data-reveal-id="myModal"> 
