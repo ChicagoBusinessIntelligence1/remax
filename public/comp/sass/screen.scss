@@ -410,7 +410,6 @@ input[type="password"]{
 }
 .name{
 	h1{
-
 		font-size: 17px !important;
 	}
 	a{
@@ -476,7 +475,6 @@ input[type="password"]{
 	.connectWithContent{
 		margin-bottom: 10px;
 		padding: 0px !important;
-		// width: 170px;
 	}
 	.residentialCommercialContent{
 		padding: 0px !important;
@@ -484,7 +482,6 @@ input[type="password"]{
 	.logoContent{
 		padding: 0px !important;
 		width: 140px !important;
-		// margin-left: 20px;
 	}
 }
 .realEstateRC{
@@ -516,7 +513,6 @@ input[type="password"]{
 }
 .oneStopService{
 	text-align: center;
-	// margin-left: -30px;
 	padding: 0px !important;
 	margin-bottom: 10px !important;
 	margin-left: 10px !important;
@@ -563,22 +559,19 @@ input[type="password"]{
 	font-size: 17px !important;
 	line-height: 20px !important;
 	margin-bottom: 15px !important;
-	// margin-right: -15px!important;
 	display: inline-block;
 	text-align: right;
 	margin-left: 0px !important;
 	padding-left: 10px !important;
 }
+
 #shortSaleChicagoLogo{
-	// margin-left: 0px !important;
 	margin-left: 20px !important;
-	
 }
+
 .ulShortSaleChicago{
-	
 	margin-right: -15px !important;
 	margin-bottom: 0px !important;
-	// margin-top: 10px !important;
 	margin-left: 0px !important;
 	vertical-align: center !important;
 }
@@ -618,8 +611,6 @@ input[type="password"]{
 	dd{
 		font-size: 14px;
 	}
-
-
 }
 .menues{
 	p{
@@ -662,7 +653,6 @@ input[type="password"]{
 	font-weight: bold;
 	padding-left: 14px !important;
 	text-shadow: $myTextShadow;
-
 }
 .find{
 	@include findFormStyle;

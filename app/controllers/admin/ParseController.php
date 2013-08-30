@@ -17,7 +17,8 @@ class ParseController extends BaseController {
 
 	}
 
-	public function realtor_sale($url, $issale)
+	
+public function realtor_sale($url, $issale)
 	{
 		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
 		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale2.html');
@@ -34,9 +35,9 @@ class ParseController extends BaseController {
 		$address = $this->getAddress($html);
 		$price = $this->getPrice($html);
 		if($size!=0)
-		$pricesqft = round($price/$size);
+			$pricesqft = round($price/$size);
 		else
-		$pricesqft=0;
+			$pricesqft=0;
 
 
 		$house = new House();
@@ -46,14 +47,14 @@ class ParseController extends BaseController {
 		$house->size = $size;
 
 		if(intval($year)>1800)
-		$house->year = $year;
+			$house->year = $year;
 		
 		$house->address = $address;
 		if(intval($price)>1)
-		$house->price = $price;
+			$house->price = $price;
 
 		if(intval($pricesqft)>1)
-		$house->pricesqft = $pricesqft;
+			$house->pricesqft = $pricesqft;
 
 
 
@@ -87,290 +88,467 @@ class ParseController extends BaseController {
 
 		///////////////////////////////////////////////////
 		$arr_schools = $this->getSchools($html);
+		if(array_key_exists(0, $arr_schools)){
 		//dd($arr_schools);
-		$schoolsObj = Saleschool::where('elementary','=', $arr_schools[0])->first();
-		if (count($schoolsObj)){
-			$house->saleschool()->associate($schoolsObj);
-		} else{
-			$schoolsObj = new Saleschool(); 
-			$schoolsObj->elementary = $arr_schools[0];
-			$schoolsObj->elemschdistrict = $arr_schools[3];
-			$schoolsObj->high = $arr_schools[1];
-			$schoolsObj->highdistrict = $arr_schools[4];
-			$schoolsObj->juniorhigh = $arr_schools[2];
-			$schoolsObj->jrhighdistrict = $arr_schools[5];
+			$schoolsObj = Saleschool::where('elementary','=', $arr_schools[0])->first();
+			if (count($schoolsObj)){
+				$house->saleschool()->associate($schoolsObj);
+			} else{
+				$schoolsObj = new Saleschool(); 
+				
+	if(array_key_exists(111, $arr_schools))
+	$schoolsObj->elementary = $arr_schools[111];
+				
+	if(array_key_exists(3, $arr_schools))
+	$schoolsObj->elemschdistrict = $arr_schools[3];
+				
+	if(array_key_exists(1, $arr_schools))
+	$schoolsObj->high = $arr_schools[1];
+				
+	if(array_key_exists(4, $arr_schools))
+	$schoolsObj->highdistrict = $arr_schools[4];
+				
+	if(array_key_exists(2, $arr_schools))
+	$schoolsObj->juniorhigh = $arr_schools[2];
+				
+	if(array_key_exists(5, $arr_schools))
+	$schoolsObj->jrhighdistrict = $arr_schools[5];
 
-			$schoolsObj->save();
+				$schoolsObj->save();
+			}
+			$house->saleschool()->associate($schoolsObj);
 		}
-		$house->saleschool()->associate($schoolsObj);
 		///////////////////////////////////////////////////
 
 		$arr_bedrooms = $this->getBedrooms($html);
+		if(array_key_exists(0, $arr_bedrooms)){
 /*		dd($arr_bedrooms);
 */		$bedroomsObj = Salebedroom::where('masterbedsize','=', $arr_bedrooms[0])->first();
 if (count($bedroomsObj)){
 	$house->salebedroom()->associate($bedroomsObj);
 } else{
 	$bedroomsObj = new Salebedroom(); 
+	
+	if(array_key_exists(0, $arr_bedrooms))
 	$bedroomsObj->masterbedsize = $arr_bedrooms[0];
+	
+	if(array_key_exists(3, $arr_bedrooms))
 	$bedroomsObj->masterbedsize = $arr_bedrooms[3];
-	$bedroomsObj->masterbedfeatures = $arr_bedrooms[1].' '.$arr_bedrooms[5].' '.$arr_bedrooms[6];
+	
+	if(array_key_exists(1, $arr_bedrooms))
+	$bedroomsObj->masterbedfeatures = $arr_bedrooms[1];
+	
+	if(array_key_exists(5, $arr_bedrooms))
+	$bedroomsObj->masterbedfeatures += ' '.$arr_bedrooms[5];
+	
+	if(array_key_exists(6, $arr_bedrooms))
+	$bedroomsObj->masterbedfeatures += ' '.$arr_bedrooms[6];
+	
+	if(array_key_exists(4, $arr_bedrooms))
 	$bedroomsObj->bed2size = $arr_bedrooms[4];
-
-
+	
+	if(array_key_exists(2, $arr_bedrooms))
 	$bedroomsObj->bed2features= $arr_bedrooms[2];
+	
 	if(array_key_exists(8, $arr_bedrooms))
-	$bedroomsObj->bed2features+= $arr_bedrooms[8];
+	$bedroomsObj->bed2features+= ' '.$arr_bedrooms[8];
+
 
 	$bedroomsObj->save();
 }
 $house->salebedroom()->associate($bedroomsObj);
 		///////////////////////////////////////////////////
+}
 
 $arr_bathrooms = $this->getBathrooms($html);
-		// dd($arr_bathrooms);
-$bathroomsObj = Salebathroom::where('fullbath','=', $arr_bathrooms[0])->first();
-if (count($bathroomsObj)){
-	$house->salebathroom()->associate($bathroomsObj);
-} else{
-	$bathroomsObj = new Salebathroom(); 
+if(array_key_exists(0, $arr_bathrooms)){
+	$bathroomsObj = Salebathroom::where('fullbath','=', $arr_bathrooms[0])->first();
+	if (count($bathroomsObj)){
+		$house->salebathroom()->associate($bathroomsObj);
+	} else{
+		$bathroomsObj = new Salebathroom(); 
+		
+	if(array_key_exists(0, $arr_bathrooms))
 	$bathroomsObj->fullbath= $arr_bathrooms[0];
 
-	$bathroomsObj->save();
-}
-$house->salebathroom()->associate($bathroomsObj);
+		$bathroomsObj->save();
+	}
+	$house->salebathroom()->associate($bathroomsObj);
 		///////////////////////////////////////////////////
+}
 
 $arr_exteriorFeatures = $this->getExteriorFeatures($html);
+if(array_key_exists(0, $arr_exteriorFeatures)){
 		// dd($arr_exteriorFeatures);
-$exteriorFeaturesObj = SaleexteriorFeature::where('lotsize','=', $arr_exteriorFeatures[0])->first();
-if (count($exteriorFeaturesObj)){
-	$house->saleexteriorFeature()->associate($exteriorFeaturesObj);
-} else{
-	$exteriorFeaturesObj = new SaleexteriorFeature(); 
+	$exteriorFeaturesObj = SaleexteriorFeature::where('lotsize','=', $arr_exteriorFeatures[0])->first();
+	if (count($exteriorFeaturesObj)){
+		$house->saleexteriorFeature()->associate($exteriorFeaturesObj);
+	} else{
+		$exteriorFeaturesObj = new SaleexteriorFeature(); 
+		
+	if(array_key_exists(1, $arr_exteriorFeatures))
 	$exteriorFeaturesObj->driveway = $arr_exteriorFeatures[1];
 
-	$exteriorFeaturesObj->save();
-}
-$house->saleexteriorFeature()->associate($exteriorFeaturesObj);
+		$exteriorFeaturesObj->save();
+	}
+	$house->saleexteriorFeature()->associate($exteriorFeaturesObj);
 		///////////////////////////////////////////////////
 
+}
 
-$arr_salekitchen = $this->getSaleKitchenDining($html)["arr_kitchen"];
+$arr_salekitchen = 	$this->getSaleKitchenDining($html)["arr_kitchen"];
 if(array_key_exists(0, $arr_salekitchen)){
 		// dd($arr_salekitchen);
-$kitchensObj = Salekitchen::where('kitchensize','=', $arr_salekitchen[0])->first();
-if (count($kitchensObj)){
-	$house->salekitchen()->associate($kitchensObj);
-} else{
-	$kitchensObj = new Salekitchen(); 
+	$kitchensObj = Salekitchen::where('kitchensize','=', $arr_salekitchen[0])->first();
+	if (count($kitchensObj)){
+		$house->salekitchen()->associate($kitchensObj);
+	} else{
+		$kitchensObj = new Salekitchen(); 
+		
+	if(array_key_exists(1, $arr_salekitchen))
 	$kitchensObj->kitchensize= $arr_salekitchen[1];
-	$kitchensObj->kitchenfeatures = $arr_salekitchen[0].' '.$arr_salekitchen[2];
+		
+	if(array_key_exists(0, $arr_salekitchen))
+	$kitchensObj->kitchenfeatures = $arr_salekitchen[0];
+		
+	if(array_key_exists(2, $arr_salekitchen))
+	$kitchensObj->kitchenfeatures += ' '.$arr_salekitchen[2];
 
-	$kitchensObj->save();
-}
-$house->salekitchen()->associate($kitchensObj);
+		$kitchensObj->save();
+	}
+	$house->salekitchen()->associate($kitchensObj);
 		///////////////////////////////////////////////////
 }
 
 $arr_saledining = $this->getSaleKitchenDining($html)['arr_dining'];
 if(array_key_exists(0, $arr_saledining)){
-		// dd($arr_saledining);
-$diningsObj = Salediningroom::where('diningroomsize','=', $arr_saledining[0])->first();
-if (count($diningsObj)){
-	$house->salediningroom()->associate($diningsObj);
-} else{
-	$diningsObj = new Salediningroom(); 
-	$diningsObj->diningroomsize= $arr_saledining[2];
-	$diningsObj->diningroomfeatures = $arr_saledining[0].' '.$arr_saledining[1].' '.$arr_saledining[3];
 
-	$diningsObj->save();
-}
-$house->salediningroom()->associate($diningsObj);
+		// dd($arr_saledining);
+	$diningsObj = Salediningroom::where('diningroomsize','=', $arr_saledining[0])->first();
+	if (count($diningsObj)){
+		$house->salediningroom()->associate($diningsObj);
+	} else{
+		$diningsObj = new Salediningroom(); 
+		
+	if(array_key_exists(2, $arr_saledining))
+	$diningsObj->diningroomsize= $arr_saledining[2];
+		
+	if(array_key_exists(0, $arr_saledining))
+	$diningsObj->diningroomfeatures = $arr_saledining[0];
+		
+	if(array_key_exists(1, $arr_saledining))
+	$diningsObj->diningroomfeatures += ' '.$arr_saledining[1];
+		
+	if(array_key_exists(3, $arr_saledining))
+	$diningsObj->diningroomfeatures += ' '.$arr_saledining[3];
+		
+
+		$diningsObj->save();
+	}
+	$house->salediningroom()->associate($diningsObj);
 		///////////////////////////////////////////////////
 }
 
 $arr_saleliving = $this->getSaleOtherrooms($html);
+if(array_key_exists(0, $arr_saleliving)){
 		// dd($arr_saleliving);
-$livingsObj = Salelivingroom::where('livroomsize','=', $arr_saledining[0])->first();
-if (count($livingsObj)){
-	$house->salelivingroom()->associate($livingsObj);
-} else{
-	$livingsObj = new Salelivingroom(); 
+	$livingsObj = Salelivingroom::where('livroomsize','=', $arr_saleliving[0])->first();
+	if (count($livingsObj)){
+		$house->salelivingroom()->associate($livingsObj);
+	} else{
+		$livingsObj = new Salelivingroom(); 
+		
+	if(array_key_exists(0, $arr_saleliving))
 	$livingsObj->livroomsize= $arr_saleliving[0];
-	$livingsObj->livroomfeatures = $arr_saleliving[2].' '.$arr_saleliving[5];
+		
+	if(array_key_exists(2, $arr_saleliving))
+	$livingsObj->livroomfeatures = $arr_saleliving[2];
+		
+	if(array_key_exists(5, $arr_saleliving))
+	$livingsObj->livroomfeatures += ' '.$arr_saleliving[5];
 
-	$livingsObj->save();
-}
-$house->salelivingroom()->associate($livingsObj);
+		
+
+		$livingsObj->save();
+	}
+	$house->salelivingroom()->associate($livingsObj);
 		///////////////////////////////////////////////////
-
+}
 
 
 $arr_salepropertyinfo = $this->getSalePropertyInfos($html);
+if(array_key_exists(0, $arr_salepropertyinfo)){
 		// dd($arr_salepropertyinfo);
-$propertyinfosObj = Salepropertyinfo::where('township','=', $arr_salepropertyinfo [0])->first();
-if (count($propertyinfosObj)){
-	$house->salepropertyinfo()->associate($propertyinfosObj);
-} else{
-	$propertyinfosObj = new Salepropertyinfo(); 
-	$propertyinfosObj->otherinfo = $arr_salepropertyinfo[0].' '.$arr_salepropertyinfo[1];
+	$propertyinfosObj = Salepropertyinfo::where('township','=', $arr_salepropertyinfo [0])->first();
+	if (count($propertyinfosObj)){
+		$house->salepropertyinfo()->associate($propertyinfosObj);
+	} else{
+		$propertyinfosObj = new Salepropertyinfo(); 
+		
+	if(array_key_exists(0, $arr_salepropertyinfo))
+	$propertyinfosObj->otherinfo = $arr_salepropertyinfo[0];
+		
+	if(array_key_exists(1, $arr_salepropertyinfo))
+	$propertyinfosObj->otherinfo += ' '.$arr_salepropertyinfo[1];
+		
+	if(array_key_exists(2, $arr_salepropertyinfo))
 	$propertyinfosObj->township = $arr_salepropertyinfo[2];
+		
+	if(array_key_exists(3, $arr_salepropertyinfo))
 	$propertyinfosObj->city = $arr_salepropertyinfo[3];
+		
+	if(array_key_exists(4, $arr_salepropertyinfo))
 	$propertyinfosObj->state = $arr_salepropertyinfo[4];
+		
+	if(array_key_exists(5, $arr_salepropertyinfo))
 	$propertyinfosObj->county = $arr_salepropertyinfo[5];
-	if (count($arr_salepropertyinfo)>7) {
-		# code...
-	
+		
+	if(array_key_exists(7, $arr_salepropertyinfo))
 	$propertyinfosObj->area = $arr_salepropertyinfo[7];
+		
+	if(array_key_exists(8, $arr_salepropertyinfo))
 	$propertyinfosObj->directions = $arr_salepropertyinfo[8];
+		
+	if(array_key_exists(9, $arr_salepropertyinfo))
 	$propertyinfosObj->apnnumber = $arr_salepropertyinfo[9];
-	$propertyinfosObj->otherinfo .=$arr_salepropertyinfo[10].' '.$arr_salepropertyinfo[11];
-	}
+		
+	if(array_key_exists(10, $arr_salepropertyinfo))
+	$propertyinfosObj->otherinfo =$arr_salepropertyinfo[10];
+		
+	if(array_key_exists(11, $arr_salepropertyinfo))
+	$propertyinfosObj->otherinfo +=' '.$arr_salepropertyinfo[11];
+		
+		
 
-	$propertyinfosObj->save();
+		$propertyinfosObj->save();
+	}
+	$house->salepropertyinfo()->associate($propertyinfosObj);
 }
-$house->salepropertyinfo()->associate($propertyinfosObj);
 		///////////////////////////////////////////////////
 
 
 $arr_salepublicrecord= $this->getSalePublicRecords($html);
+if(array_key_exists(0, $arr_salepublicrecord)){
 		// dd($arr_salepublicrecord);
-$publicrecordsObj = Salepublicrecord::where('beds','=', $arr_salepublicrecord [0])->first();
-if (count($publicrecordsObj)){
-	$house->salepublicrecord()->associate($publicrecordsObj);
-} else{
-	$publicrecordsObj = new Salepublicrecord(); 
+	$publicrecordsObj = Salepublicrecord::where('beds','=', $arr_salepublicrecord [0])->first();
+	if (count($publicrecordsObj)){
+		$house->salepublicrecord()->associate($publicrecordsObj);
+	} else{
+		$publicrecordsObj = new Salepublicrecord(); 
+		
+	if(array_key_exists(0, $arr_salepublicrecord))
 	$publicrecordsObj->beds = $arr_salepublicrecord[0];
+		
+	if(array_key_exists(1, $arr_salepublicrecord))
 	$publicrecordsObj->housesize = $arr_salepublicrecord[1];
 		# code...
+		
+	if(array_key_exists(2, $arr_salepublicrecord))
 	$publicrecordsObj->yearbuilt = $arr_salepublicrecord[2];
+		
+	if(array_key_exists(3, $arr_salepublicrecord))
 	$publicrecordsObj->proptype = $arr_salepublicrecord[3];
+		
+	if(array_key_exists(4, $arr_salepublicrecord))
 	$publicrecordsObj->style = $arr_salepublicrecord[4];
+		
+	if(array_key_exists(5, $arr_salepublicrecord))
 	$publicrecordsObj->units = $arr_salepublicrecord[5];
+		
+	if(array_key_exists(6, $arr_salepublicrecord))
 	$publicrecordsObj->pool = $arr_salepublicrecord[6];
+		
+	if(array_key_exists(7, $arr_salepublicrecord))
 	$publicrecordsObj->heating = $arr_salepublicrecord[7];
+		
+	if(array_key_exists(8, $arr_salepublicrecord))
 	$publicrecordsObj->rooms = $arr_salepublicrecord[8];
+		
+	if(array_key_exists(9, $arr_salepublicrecord))
 	$publicrecordsObj->fireplace = $arr_salepublicrecord[9];
+		
+	if(array_key_exists(11, $arr_salepublicrecord))
 	$publicrecordsObj->baths = $arr_salepublicrecord[11];
+		
+	if(array_key_exists(12, $arr_salepublicrecord))
 	$publicrecordsObj->lotsize = $arr_salepublicrecord[12];
-	if (count($arr_salepublicrecord)>16) {
+		
+	if(array_key_exists(13, $arr_salepublicrecord))
 	$publicrecordsObj->price = $arr_salepublicrecord[13];
+		
+	if(array_key_exists(14, $arr_salepublicrecord))
 	$publicrecordsObj->stories = $arr_salepublicrecord[14];
+		
+	if(array_key_exists(15, $arr_salepublicrecord))
 	$publicrecordsObj->garage = $arr_salepublicrecord[15];
+		
+	if(array_key_exists(16, $arr_salepublicrecord))
 	$publicrecordsObj->cooling = $arr_salepublicrecord[16];
+		
+	if(array_key_exists(17, $arr_salepublicrecord))
 	$publicrecordsObj->construction = $arr_salepublicrecord[17];
 
+		
+	if(array_key_exists(18, $arr_salepublicrecord))
 	$publicrecordsObj->yearrenovated = $arr_salepublicrecord[18];
+		
+	if(array_key_exists(19, $arr_salepublicrecord))
 	$publicrecordsObj->roofing = $arr_salepublicrecord[19];
+		
+
+		$publicrecordsObj->save();
 	}
-
-	$publicrecordsObj->save();
-}
-$house->salepublicrecord()->associate($publicrecordsObj);
+	$house->salepublicrecord()->associate($publicrecordsObj);
 		///////////////////////////////////////////////////
-
+}
 
 $arr_saleInteriorFeatures = $this->getSaleInteriorFeatures($html);
 $arr_saleHomeFeatures = $this->getSaleHomeFeatures($html);
-		// dd($arr_saleInteriorFeatures);
-$interiorFeaturesObj = SaleinteriorFeature::where('equipment','=', $arr_saleInteriorFeatures [0])->first();
-if (count($interiorFeaturesObj)){
-	$house->saleinteriorFeature()->associate($interiorFeaturesObj);
-} else{
-	$interiorFeaturesObj = new SaleinteriorFeature(); 
-	$interiorFeaturesObj->equipment = $arr_saleInteriorFeatures[0].', '.$arr_saleHomeFeatures[0];
+if(array_key_exists(0, $arr_saleInteriorFeatures)){
 
-	$interiorFeaturesObj->save();
-}
-$house->saleinteriorFeature()->associate($interiorFeaturesObj);
+		// dd($arr_saleInteriorFeatures);
+	$interiorFeaturesObj = SaleinteriorFeature::where('equipment','=', $arr_saleInteriorFeatures [0])->first();
+	if (count($interiorFeaturesObj)){
+		$house->saleinteriorFeature()->associate($interiorFeaturesObj);
+	} else{
+		$interiorFeaturesObj = new SaleinteriorFeature(); 
+		
+	if(array_key_exists(0, $arr_saleInteriorFeatures))
+	$interiorFeaturesObj->equipment = $arr_saleInteriorFeatures[0];
+		
+	if(array_key_exists(1, $arr_saleInteriorFeatures))
+	$interiorFeaturesObj->equipment +=' '. $arr_saleInteriorFeatures[1];
+
+		$interiorFeaturesObj->save();
+	}
+	$house->saleinteriorFeature()->associate($interiorFeaturesObj);
 		///////////////////////////////////////////////////
+}
 
 
 
 
 $arr_saleHomeFeatures = $this->getSaleHomeFeatures($html);
 $arr_saleMultiUnitInfo = $this->getSaleMultiUnitInfo($html);
+if(array_key_exists(0, $arr_saleHomeFeatures)){
+	
 		// dd($arr_saleMultiUnitInfo );
-$homeFeaturesObj = SaleHomeFeature::where('numberofunits','=', $arr_saleHomeFeatures  [0])->first();
-if (count($homeFeaturesObj)){
-	$house->salehomeFeature()->associate($homeFeaturesObj);
-} else{
-	$homeFeaturesObj = new SaleHomeFeature(); 
+	$homeFeaturesObj = SaleHomeFeature::where('numberofunits','=', $arr_saleHomeFeatures  [0])->first();
+	if (count($homeFeaturesObj)){
+		$house->salehomeFeature()->associate($homeFeaturesObj);
+	} else{
+		$homeFeaturesObj = new SaleHomeFeature(); 
+		
+	if(array_key_exists(0, $arr_saleMultiUnitInfo ))
 	$homeFeaturesObj->numberofunits= $arr_saleMultiUnitInfo [0];
 
-	$homeFeaturesObj->save();
-}
-$house->salehomeFeature()->associate($homeFeaturesObj);
+		$homeFeaturesObj->save();
+	}
+	$house->salehomeFeature()->associate($homeFeaturesObj);
 		///////////////////////////////////////////////////
+}
 
 
 $arr_saleAppliances = $this->getSaleAppliances($html);
+if(array_key_exists(0, $arr_saleAppliances)){
+	
 		// dd($arr_saleAppliances);
-$appliancesObj = Saleappliance::where('refrigerator','=', $arr_saleAppliances [0])->first();
-if (count($appliancesObj)){
-	$house->saleappliance()->associate($appliancesObj);
-} else{
-	$appliancesObj = new Saleappliance(); 
+	$appliancesObj = Saleappliance::where('refrigerator','=', $arr_saleAppliances [0])->first();
+	if (count($appliancesObj)){
+		$house->saleappliance()->associate($appliancesObj);
+	} else{
+		$appliancesObj = new Saleappliance(); 
+		
+	if(array_key_exists(3, $arr_saleAppliances))
 	$appliancesObj->refrigerator = $arr_saleAppliances[3];
+		
+	if(array_key_exists(0, $arr_saleAppliances))
 	$appliancesObj->oven= $arr_saleAppliances[0];
+		
+	if(array_key_exists(1, $arr_saleAppliances))
 	$appliancesObj->microwave = $arr_saleAppliances[1];
+		
+	if(array_key_exists(2, $arr_saleAppliances))
 	$appliancesObj->dishwasher = $arr_saleAppliances[2];
 
-	$appliancesObj->save();
-}
-$house->saleappliance()->associate($appliancesObj);
+		$appliancesObj->save();
+	}
+	$house->saleappliance()->associate($appliancesObj);
 		///////////////////////////////////////////////////
+}
 
 $arr_saleBuildingConstruction = $this->getSaleBuildingConstruction($html);
+if(array_key_exists(0, $arr_saleBuildingConstruction)){
+	
 		// dd($arr_saleBuildingConstruction);
-$buildingConstructionsObj = Salebuildingconstruction::where('levelsorstories','=', $arr_saleBuildingConstruction [0])->first();
-if (count($buildingConstructionsObj)){
-	$house->salebuildingConstruction()->associate($buildingConstructionsObj);
-} else{
-	$buildingConstructionsObj = new Salebuildingconstruction(); 
+	$buildingConstructionsObj = Salebuildingconstruction::where('levelsorstories','=', $arr_saleBuildingConstruction [0])->first();
+	if (count($buildingConstructionsObj)){
+		$house->salebuildingConstruction()->associate($buildingConstructionsObj);
+	} else{
+		$buildingConstructionsObj = new Salebuildingconstruction(); 
+		
+	if(array_key_exists(0, $arr_saleBuildingConstruction))
 	$buildingConstructionsObj->levelsorstories = $arr_saleBuildingConstruction[0];
+		
+	if(array_key_exists(1, $arr_saleBuildingConstruction))
 	$buildingConstructionsObj->exteriorbuildingtype = $arr_saleBuildingConstruction[1];
-
-	$buildingConstructionsObj->save();
-}
-$house->salebuildingConstruction()->associate($buildingConstructionsObj);
+		$buildingConstructionsObj->save();
+	}
+	$house->salebuildingConstruction()->associate($buildingConstructionsObj);
 		///////////////////////////////////////////////////
+}
 
 
 $arr_salegarageparking = $this->getSaleGarageParking($html);
+if(array_key_exists(0, $arr_salegarageparking)){
+	
 		// dd($arr_salegarageparking);
-$garageParkingsObj = SalegarageandParking::where('numberofparking','=', $arr_salegarageparking [0])->first();
-if (count($garageParkingsObj)){
-	$house->salegarageandParking()->associate($garageParkingsObj);
-} else{
-	$garageParkingsObj = new SalegarageandParking(); 
+	$garageParkingsObj = SalegarageandParking::where('numberofparking','=', $arr_salegarageparking [0])->first();
+	if (count($garageParkingsObj)){
+		$house->salegarageandParking()->associate($garageParkingsObj);
+	} else{
+		$garageParkingsObj = new SalegarageandParking(); 
+		
+	if(array_key_exists(0, $arr_salegarageparking))
 	$garageParkingsObj->numberofparking = $arr_salegarageparking[0];
+		
+	if(array_key_exists(1, $arr_salegarageparking))
 	$garageParkingsObj->parkingtype = $arr_salegarageparking[1];
+		
+	if(array_key_exists(2, $arr_salegarageparking))
 	$garageParkingsObj->garagetype = $arr_salegarageparking[2];
 
-	$garageParkingsObj->save();
-}
-$house->salegarageandParking()->associate($garageParkingsObj);
+		$garageParkingsObj->save();
+	}
+	$house->salegarageandParking()->associate($garageParkingsObj);
 		///////////////////////////////////////////////////
+}
 
 
 $arr_saleExteriorFeatures = $this->getSaleExteriorFeatures($html);
 //dd($arr_saleExteriorFeatures);
-$saleexteriorFeatureObj = Saleexteriorfeature::where('lotfeature','=', $arr_saleExteriorFeatures [0])->first();
-if (count($saleexteriorFeatureObj)){
-	$house->saleexteriorfeature()->associate($saleexteriorFeatureObj);
-} else{
-	$saleexteriorFeatureObj = new Saleexteriorfeature(); 
+if(array_key_exists(0, $arr_saleExteriorFeatures)){
+	
+	$saleexteriorFeatureObj = Saleexteriorfeature::where('lotfeature','=', $arr_saleExteriorFeatures [0])->first();
+	if (count($saleexteriorFeatureObj)){
+		$house->saleexteriorfeature()->associate($saleexteriorFeatureObj);
+	} else{
+		$saleexteriorFeatureObj = new Saleexteriorfeature(); 
+		
+	if(array_key_exists(0, $arr_saleExteriorFeatures))
 	$saleexteriorFeatureObj->lotdimension = $arr_saleExteriorFeatures[0];
+		
+	if(array_key_exists(1, $arr_saleExteriorFeatures))
 	$saleexteriorFeatureObj->lotsize = $arr_saleExteriorFeatures[1];
+		
 	if(array_key_exists(2, $arr_saleExteriorFeatures))
 	$saleexteriorFeatureObj->lotfeature = $arr_saleExteriorFeatures[2];
 
-	$saleexteriorFeatureObj->save();
-}
-$house->saleexteriorfeature()->associate($saleexteriorFeatureObj);
+		$saleexteriorFeatureObj->save();
+	}
+	$house->saleexteriorfeature()->associate($saleexteriorFeatureObj);
 		///////////////////////////////////////////////////
+}
 
 
 
@@ -384,8 +562,14 @@ $house->saleexteriorfeature()->associate($saleexteriorFeatureObj);
 // 	$house->saleheatingcooling()->associate($saleHeatingCooling);
 // } else{
 // 	$saleHeatingCooling = new Saleheatingcooling(); 
+// // 	
+// 	if(array_key_exists(1, $arr_saleHeatingCooling))
 // 	$saleHeatingCooling->lotsize = $arr_saleHeatingCooling[1];
+// // 	
+// 	if(array_key_exists(0, $arr_saleHeatingCooling))
 // 	$saleHeatingCooling->lotdimension = $arr_saleHeatingCooling[0];
+// // 	
+// 	if(array_key_exists(2, $arr_saleHeatingCooling))
 // 	$saleHeatingCooling->lotfeature = $arr_saleHeatingCooling[2];
 
 // 	$saleHeatingCooling->save();
@@ -399,35 +583,52 @@ $house->saleexteriorfeature()->associate($saleexteriorFeatureObj);
 $arr_saleHeatingCooling = $this->getSaleHeatingCooling($html);
 $arr_saleUtilities = $this->getSaleUtilities($html);
 // dd($arr_saleHeatingCooling);
-$salesaleUtilitiesObj = Saleutility::where('heatingfeatures','=', $arr_saleUtilities [0])->first();
-if (count($salesaleUtilitiesObj)){
-	$house->saleutility()->associate($salesaleUtilitiesObj);
-} else{
-	$salesaleUtilitiesObj = new Saleutility(); 
+if(array_key_exists(0, $arr_saleUtilities)){
+	
+	$salesaleUtilitiesObj = Saleutility::where('heatingfeatures','=', $arr_saleUtilities [0])->first();
+	if (count($salesaleUtilitiesObj)){
+		$house->saleutility()->associate($salesaleUtilitiesObj);
+	} else{
+		$salesaleUtilitiesObj = new Saleutility(); 
+		
+	if(array_key_exists(2, $arr_saleUtilities))
 	$salesaleUtilitiesObj->electricity = $arr_saleUtilities[2];
+		
+	if(array_key_exists(0, $arr_saleUtilities))
 	$salesaleUtilitiesObj->water = $arr_saleUtilities[0];
+		
+	if(array_key_exists(1, $arr_saleUtilities))
 	$salesaleUtilitiesObj->sewer = $arr_saleUtilities[1];
+		
+	if(array_key_exists(0, $arr_saleHeatingCooling))
 	$salesaleUtilitiesObj->heatingfeatures = $arr_saleHeatingCooling[0];
+		
+	if(array_key_exists(1, $arr_saleHeatingCooling))
 	$salesaleUtilitiesObj->coolingfeatures = $arr_saleHeatingCooling[1];
 	/////////////////  ADDDDDDDD
-	$salesaleUtilitiesObj->save();
+		$salesaleUtilitiesObj->save();
+	}
+	$house->saleutility()->associate($salesaleUtilitiesObj);
 }
-$house->saleutility()->associate($salesaleUtilitiesObj);
 
 
 
 
 $arr_saleAmen = $this->getSaleAmenitiesCommunityFeatures($html);
-
-$saleAmenitiesObj = Saleamenity::where('areaamenities','=', $arr_saleAmen [0])->first();
-if (count($saleAmenitiesObj)){
-	$house->saleamenity()->associate($saleAmenitiesObj);
-} else{
-	$saleAmenitiesObj = new Saleamenity(); 
+if(array_key_exists(0, $arr_saleAmen)){
+	
+	$saleAmenitiesObj = Saleamenity::where('areaamenities','=', $arr_saleAmen [0])->first();
+	if (count($saleAmenitiesObj)){
+		$house->saleamenity()->associate($saleAmenitiesObj);
+	} else{
+		$saleAmenitiesObj = new Saleamenity(); 
+		
+	if(array_key_exists(0, $arr_saleAmen))
 	$saleAmenitiesObj->areaamenities = $arr_saleAmen[0];
-	$saleAmenitiesObj->save();
+		$saleAmenitiesObj->save();
+	}
+	$house->saleamenity()->associate($saleAmenitiesObj);
 }
-$house->saleamenity()->associate($saleAmenitiesObj);
 
 
 
@@ -437,8 +638,10 @@ $house->saleamenity()->associate($saleAmenitiesObj);
 // 	$house->saleamenity()->associate($saleAmenitiesObj);
 // } else{
 // 	$saleAmenitiesObj = new Saleamenity(); 
+// 	
+// 	if(array_key_exists(0, $arr_saleAmen))
 // 	$saleAmenitiesObj->areaamenities = $arr_saleAmen[0];
-// 	$saleAmenitiesObj->save();
+// // 	$saleAmenitiesObj->save();
 // }
 // $house->saleamenity()->associate($saleAmenitiesObj);
 
@@ -446,7 +649,7 @@ $house->issale = $issale;
 
 
 if(!$house->save())
-return 'ERROR occured';	
+	return 'ERROR occured';	
 
 
 
@@ -455,8 +658,6 @@ $this->extractImages($html, $house);
 
 return Redirect::to("search/$id");
 }
-
-
 
 
 protected function getSaleGarageParking($html)	
