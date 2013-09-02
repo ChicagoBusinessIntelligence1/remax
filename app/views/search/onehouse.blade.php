@@ -14,7 +14,7 @@
 			</div>
 			@endif
 			@if(isset($house->price))
-			<div class="large-2 columns">
+			<div class="large-2 columns right">
 				<a class="priceStyle tenMarginTop right">${{number_format($house->price)}}
 				</a>
 			</div>
@@ -39,7 +39,7 @@
 
 				
 				<div class="row">
-					<div class="large-12 columns">
+					<div class="large-12 columns databaseParsing">
 						{{$house->description}}
 						
 					</div>
