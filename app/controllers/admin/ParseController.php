@@ -26,6 +26,52 @@ protected function getDescription($html)
 	return trim($element);
 	
 }
+
+
+protected function extractImages($html, $house)
+		{
+			$start = strpos($html, '#modal_PhotoGallery');			
+			$arr_images = [];
+
+			while ($start<strlen($html) && ($start = strpos($html,'http://p.rdcpix.com', $start))) {
+				$len = strlen('http://p.rdcpix.com');
+				$finish = strpos($html,'.', $start+$len)+4;
+				$imgAddress = substr($html, $start, $finish - $start);
+
+				$start+=1;
+
+				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s'))
+					continue;
+
+				if (!in_array($imgAddress, $arr_images))
+					$arr_images[]=trim($imgAddress);
+			}
+			$i=1;
+			
+			//dd($arr_images);
+
+			foreach ($arr_images as $image) {
+				try {
+				$fileImage = \File::getRemote($image);	
+				} catch (Exception $e) {
+				dd($e);
+				}
+				
+				
+				$dir_path = public_path()."/comp/img/images/$house->id/";
+				if (!File::exists($dir_path))
+					File::makeDirectory($dir_path, '777', true);
+
+				File::put($dir_path."$i.jpg", $fileImage);
+				$i++;
+			}
+			
+			
+			$house->maximgid = --$i;
+			
+			$house->save();
+		}
+
 	
 public function realtor_sale($url, $issale)
 	{
@@ -540,39 +586,7 @@ protected function lisToArray($lists)
 	return $arr_new;
 }
 
-protected function extractImages($html, $house)
-		{
-			$start = strpos($html, '#modal_PhotoGallery');			
-			$arr_images = [];
 
-
-			while ($start<strlen($html) && ($start = strpos($html,'http://p.rdcpix.com', $start))) {
-				$finish = strpos($html,'.jpg', $start)+4;
-				$imgAddress = substr($html, $start, $finish - $start);
-
-				$start+=1;
-
-				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s'))
-					continue;
-
-				if (!in_array($imgAddress, $arr_images))
-					$arr_images[]=trim($imgAddress);
-			}
-			$i=1;
-			foreach ($arr_images as $image) {
-				$fileImage = \File::getRemote($image);
-				$dir_path = public_path()."/comp/img/images/$house->id/";
-				if (!File::exists($dir_path))
-					File::makeDirectory($dir_path, '777', true);
-
-				File::put($dir_path."$i.jpg", $fileImage);
-				$i++;
-			}
-			
-			
-			$house->maximgid = --$i;
-			$house->save();
-		}
 
 
 }
