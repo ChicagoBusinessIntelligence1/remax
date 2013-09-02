@@ -6,19 +6,26 @@
 <div class="mainContent">
 	<div class="panel oneListing oneRentAgent">
 		<div class="row callAgentRent">
-
-			@if(isset($house->status))
-			<div class="large-3 columns">
-				
-				<h5 class="propStat"><em>{{$house->status->dbstatus}}</em></h5>
-			</div>
+			@if (isset($house->mls))
+			{{$house->mls}} <br/>
 			@endif
-			@if(isset($house->price))
-			<div class="large-2 columns right">
-				<a class="priceStyle tenMarginTop right">${{number_format($house->price)}}
-				</a>
-			</div>
-			@endif 
+		
+			@if (isset($house->size))
+			{{$house->size}} <br/>
+@endif
+
+			@if (isset($house->year))
+			{{$house->year}} <br/>
+@endif
+
+			@if (isset($house->isforeclosed))
+			Foreclosed <br/>
+@endif
+
+			@if (isset($house->bankowned))
+			Bank Owned <br/>
+@endif
+			
 		</div>
 		<!-- =callAgentRent ends here -->
 		<hr/>

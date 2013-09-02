@@ -21,7 +21,7 @@ protected function getDescription($html)
 {
 
 	$start = strpos($html, '<h2 class="title-section title-section-detail">Property Details</h2>');
-	$finish = strpos($html, '<!-- // Public Record content -->', $start);
+	$finish = strpos($html, '<div id="AdditionalDetails">', $start);
 	$element = trim(substr($html, $start, $finish - $start));
 	return trim($element);
 	
@@ -52,7 +52,17 @@ protected function extractImages($html, $house)
 
 			foreach ($arr_images as $image) {
 				try {
-				$fileImage = \File::getRemote($image);	
+				$fileImage = \File::getRemote($image);
+				$image = imagecreatefromstring($fileImage);	
+				$width = intval(imagesx($image));
+				$height = intval(imagesy($image));
+
+				if ($width<300 || $height<200)
+					continue;
+			
+
+
+
 				} catch (Exception $e) {
 				dd($e);
 				}
@@ -104,6 +114,13 @@ public function realtor_sale($url, $issale)
 
 
 		$description = $this->getDescription($html);
+
+		if (strpos($html, 'badge-foreclosure'))
+		$house->isforeclosed = 1;
+
+		if (strpos($html, 'badge-bank-owned'))
+		$house->isbankowned = 1;
+
 		$house->description = $description;
 
 
