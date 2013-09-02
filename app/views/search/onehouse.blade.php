@@ -26,7 +26,7 @@
 		<div class="row">
 			@if(isset($house->address))
 			<div class="large-9 columns">
-				<h2 class="oneHouseAddress">{{$house->address}}</h2>
+				<h1 class="oneHouseAddress label radius">{{$house->address}}</h1>
 				&nbsp &nbsp
 			</div>
 			@endif

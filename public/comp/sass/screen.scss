@@ -188,17 +188,46 @@ h6{
 }
 
 /* =database parsing styles start here*/
+.oneListing{
+	font-size:12px;
+	padding-top: 20px !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	h4{
+		font-size: 18px !important;
+		margin-bottom: 10px !important;
+	}
+	h5{
+		color: $colorFontGray;
+		font-size: 16px;
+	}
+	.oneHouseAddress{
+		margin-bottom: 20px !important;
+		color: $colorFontOffWhite !important;
+		background-color: 	lighten(#393939, 15%)!important;
+		font-size: 20px !important;
+		padding-top: 7px !important;
+		padding-bottom: 3px !important;
+		padding-top: 3px !important;
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+}
+
 .databaseParsing{
 	h2{
 		border-bottom: 2px solid lighten($colorFontGray, 45%);
-		padding: 5px;
+		padding-bottom: 5px;
+		font-size: 22px !important;
 	}
 	h3{
+		padding-bottom: 5px;
 		border-bottom: 2px solid lighten($colorFontGray, 45%);
-		padding: 5px;
+		font-size: 18px !important;
 	}
 	p{
 		color: $colorFontGray !important;
+		line-height: 24px;
 	}
 }
 .list-sidebyside{
@@ -206,10 +235,11 @@ h6{
 
 }
 .list-data-alt{
+	line-height: 24px;
 	display: inline-block;
 	width: 290px !important;
 	li{
-		margin-left: 30px !important;	
+		margin-left: 15px !important;	
 		display: inline-block;
 		color: $colorFontGray !important;
 		a{
@@ -217,29 +247,51 @@ h6{
 			text-decoration: none !important;
 		}
 	}
+	span:first-child{
+		font-weight: bold !important;
+	}
 	span{
 		display: inline-block;
 		width: 130px !important;
 		color: $colorFontGray !important;
-		font-weight: bold !important;
 	}
 }
 
 .list-condensed{
 	li{
 		display: inline-block;
-		width: 285px !important;
+		width: 275px !important;
 		color: $colorFontGray !important;
-		margin-left: 5 !important;	
+		margin-right: 10px !important;	
 		color: $colorFontGray !important;
-		padding-bottom: 5px !important;
+		// padding-bottom: 5px !important;
+		padding-left: 5px !important;
+		margin-bottom: 8px !important;
+		background-color: #F1F1F1!important;
+	}
+}
 
+.table-condensed{
+	th{
+		font-size: 14px !important;
+		color: $colorFontGray;
+		display: inline-block;
+		width: 130px;
+		font-weight: bold;
+		text-align: left;
+		margin-right: 20px !important;
+	}
+	td{
+		font-weight: bold;
+		color: lighten($colorFontGray, 10%);
+		// width: 80px;
+		font-size: 14px !important;
+		display: inline-block;
 	}
 }
 
 
-
-
+/* =database parsing styles end here*/
 
 
 
@@ -735,7 +787,7 @@ label{
 	padding-top: 5px !important;
 	padding-bottom: 5px !important;
 	margin-bottom: 0px !important;
-	font-size: 17px;
+	font-size: 20px;
 }
 .alertRentalStyle{
 	font-size: 14px;
@@ -950,28 +1002,6 @@ label{
 .panelShortInfo{
 	background-color: lighten(#F7F7F7, 2%) !important;
 }
-.oneListing{
-	font-size:12px;
-	padding-top: 20px !important;
-	padding-left: 20px !important;
-	padding-right: 20px !important;
-	h4{
-		font-size: 18px !important;
-		margin-bottom: 10px !important;
-	}
-	h5{
-		color: $colorFontGray;
-		font-size: 16px;
-		// margin-top: 10px !important;
-	}
-	.oneHouseAddress{
-		margin-bottom: 0px !important;
-		font-size: 18px !important;
-	}
-/* 	h6{
-		font-size: 16px;
-	}
-*/}
 
 .listingDetails{
 	font-size: 13px !important;

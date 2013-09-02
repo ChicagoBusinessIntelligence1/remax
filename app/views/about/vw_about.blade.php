@@ -6,7 +6,7 @@
 <div class="mainContent">
 	<div class="row">
 		<div class="large-12 columns menues">
-				{{link_to_route('Evanston-township', 'Evanston township high school', array(), array('class'=>'className'))}}
+				
 			<h1 class="docs header">Re/Max First Class</h1>
 			<hr/>
 			<p>On the Shoulders of Titan – we are the biggest Real Estate company in the World. All Real Estate property gets maximum exposure.</p> 
