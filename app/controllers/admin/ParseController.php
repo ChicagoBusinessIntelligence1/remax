@@ -9,8 +9,10 @@ class ParseController extends BaseController {
 		$city = Input::get('city');
 		$numb = Input::get('numb');
 
-		$url="http://www.realtor.com/realestateandhomes-search/$city?pgsz=24&show-50";
+		$url="http://www.realtor.com/realestateandhomes-search/$city";
+		var_dump("start getting remote!");
 		$html = \File::getRemote($url);
+		var_dump("start getting remote done");
 		
 		$arrLinks = $this->getHouseLinkArrays($html, $numb);
 		
@@ -29,7 +31,7 @@ class ParseController extends BaseController {
 
 	}
 
-public function save2()
+public function saveSale()
 	{
 		$url = Input::get('url');
 		
@@ -43,20 +45,33 @@ public function save2()
 
 	}
 
-	
+	public function saveRent()
+	{
+		$url = Input::get('url');
+		
+
+
+		return $this->realtor_sale($url,0);
+		
+		//return $this->realtor_sale($url, $issale);
+
+	}
+
 
 	
 public function realtor_sale($url, $issale)
 	{
 		
-		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
+		// $html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
 		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale2.html');
 		
 		$html =  \File::getRemote($url);
 		
 
-
-
+		$propertyType = $this->getPropertyType($html);
+		
+		
+		
 		$mls = $this->getMls($html);
 		$size = $this->getHouseSize($html);
 
@@ -66,6 +81,8 @@ public function realtor_sale($url, $issale)
 		
 
 		$house = new House();
+		$house->type = $propertyType;
+
 
 		$house->mls = $mls;
 		$house->size = $size;

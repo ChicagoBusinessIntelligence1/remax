@@ -72,7 +72,7 @@ class SearchController extends BaseController {
   }
   public function show($id)
   {
-   $house = House::where('id', '=', $id)->where('issale', '=', 1)->first();   
+   $house = House::where('id', '=', $id)->first();   
 
    return View::make('search.onehouse')->with(compact('house'));
  }

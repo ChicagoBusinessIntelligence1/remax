@@ -7,8 +7,48 @@
 			<h1 class="docs header">Parser from realtor.com</h1>
 			
 			<div class="panel">
+			<h2>Sale</h2>
 				
-				{{Form::open(array('route' => 'parser-realtor-save', 'method'=>'POST'))}}
+			{{Form::open(array('route' => 'parser-realtor-save2', 'method'=>'POST'))}}
+			
+					{{Form::label('url', 'URL')}}
+					{{Form::text('url')}}
+					<br/>			
+					
+					
+
+					{{ Form::submit('Parse URL', array('class'=>'secondary button small radius'))}}
+					
+							
+
+
+			{{Form::close()}}
+
+
+	<hr>
+	
+			<h2>Rent</h2>
+	<hr>
+
+				{{Form::open(array('route' => 'parser-realtor-save3', 'method'=>'POST'))}}
+			
+					{{Form::label('url', 'URL')}}
+					{{Form::text('url')}}
+					<br/>			
+					
+					
+
+					{{ Form::submit('Parse URL', array('class'=>'secondary button small radius'))}}
+					
+							
+
+
+			{{Form::close()}}
+
+<br>
+<hr>
+
+	{{Form::open(array('route' => 'parser-realtor-save', 'method'=>'POST'))}}
 			
 					{{Form::label('city', 'City')}}
 					{{Form::text('city', 'Skokie_IL')}}
@@ -25,28 +65,6 @@
 
 
 			{{Form::close()}}
-
-
-	<br>
-	<hr>
-
-				{{Form::open(array('route' => 'parser-realtor-save2', 'method'=>'POST'))}}
-			
-					{{Form::label('url', 'URL')}}
-					{{Form::text('url')}}
-					<br/>			
-					
-					
-
-					{{ Form::submit('Parse URL', array('class'=>'secondary button small radius'))}}
-					
-							
-
-
-			{{Form::close()}}
-
-
-
 			</div>
 						
 		</div>

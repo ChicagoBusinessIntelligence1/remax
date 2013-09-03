@@ -8,7 +8,7 @@
 		<div class="row callAgentRent">
 
 
-@if($house->maximgid)
+@if(isset($house->maximgid))
 					<ul class="clearing-thumbs" data-clearing>
 						@for ($i =1; $i <= $house->maximgid; $i++)
 						<li class="clearing-featured-img"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
@@ -48,8 +48,9 @@
 				
 				<div class="row">
 					<div class="large-12 columns databaseParsing">
+					@if(isset($house->address))
 						{{$house->description}}
-						
+						@endif
 					</div>
 				</div>
 
