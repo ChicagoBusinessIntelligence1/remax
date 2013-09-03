@@ -10,10 +10,15 @@
 				
 				{{Form::open(array('route' => 'parser-realtor-save', 'method'=>'POST'))}}
 			
-					{{Form::label('url', 'URL of page')}}
-					{{Form::text('url', '', array('placeholder'=>'url', 'class'=>'className'))}}
+					{{Form::label('city', 'City')}}
+					{{Form::text('city', 'Skokie_IL')}}
 					<br/>			
-					{{Form::select('issale', array('9' => 'Please Choose!!!', '1' => 'Sale', '0' =>'Rent'));}}
+					
+					{{Form::label('numb', 'Number Of Houses')}}
+					{{Form::text('numb', '200')}}
+					<br/>
+
+
 					{{ Form::submit('Parse', array('class'=>'secondary button small radius'))}}
 					
 							
@@ -22,7 +27,23 @@
 			{{Form::close()}}
 
 
+	<br>
+	<hr>
 
+				{{Form::open(array('route' => 'parser-realtor-save2', 'method'=>'POST'))}}
+			
+					{{Form::label('url', 'URL')}}
+					{{Form::text('url')}}
+					<br/>			
+					
+					
+
+					{{ Form::submit('Parse URL', array('class'=>'secondary button small radius'))}}
+					
+							
+
+
+			{{Form::close()}}
 
 
 

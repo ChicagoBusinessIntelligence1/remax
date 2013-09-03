@@ -6,95 +6,60 @@ class ParseController extends BaseController {
 
 	public function save()
 	{
-		$url = Input::get('url');
-		$issale = Input::get('issale');
+		$city = Input::get('city');
+		$numb = Input::get('numb');
+
+		$url="http://www.realtor.com/realestateandhomes-search/$city?pgsz=24&show-50";
+		$html = \File::getRemote($url);
 		
-		if ($issale=='9'){
-			return 'Please choose Sale or Rent';
+		$arrLinks = $this->getHouseLinkArrays($html, $numb);
+		
+		foreach ($arrLinks as $url) {
+			$full_url = "http://www.realtor.com".$url;
+			usleep(1000000);
+			
+			
+			$this->realtor_sale($full_url, 1);
 		}
 
-		return $this->realtor_sale($url, $issale);
+
+		return "Finished";
+		
+		//return $this->realtor_sale($url, $issale);
 
 	}
 
-protected function getDescription($html)
-{
+public function save2()
+	{
+		$url = Input::get('url');
+		
 
-	$start = strpos($html, '<h2 class="title-section title-section-detail">Property Details</h2>');
-	$finish = strpos($html, '<div id="AdditionalDetails">', $start);
-	$element = trim(substr($html, $start, $finish - $start));
-	return trim($element);
 	
-}
 
 
-protected function extractImages($html, $house)
-		{
-			$start = strpos($html, '#modal_PhotoGallery');			
-			$arr_images = [];
+		return $this->realtor_sale($url,1);
+		
+		//return $this->realtor_sale($url, $issale);
 
-			while ($start<strlen($html) && ($start = strpos($html,'http://p.rdcpix.com', $start))) {
-				$len = strlen('http://p.rdcpix.com');
-				$finish = strpos($html,'.', $start+$len)+4;
-				$imgAddress = substr($html, $start, $finish - $start);
+	}
 
-				$start+=1;
-
-				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s'))
-					continue;
-
-				if (!in_array($imgAddress, $arr_images))
-					$arr_images[]=trim($imgAddress);
-			}
-			$i=1;
-			
-			//dd($arr_images);
-
-			foreach ($arr_images as $image) {
-				try {
-				$fileImage = \File::getRemote($image);
-				$image = imagecreatefromstring($fileImage);	
-				$width = intval(imagesx($image));
-				$height = intval(imagesy($image));
-
-				if ($width<300 || $height<200)
-					continue;
-			
-
-
-
-				} catch (Exception $e) {
-				dd($e);
-				}
-				
-				
-				$dir_path = public_path()."/comp/img/images/$house->id/";
-				if (!File::exists($dir_path))
-					File::makeDirectory($dir_path, '777', true);
-
-				File::put($dir_path."$i.jpg", $fileImage);
-				$i++;
-			}
-			
-			
-			$house->maximgid = --$i;
-			
-			$house->save();
-		}
+	
 
 	
 public function realtor_sale($url, $issale)
 	{
+		
 		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
 		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale2.html');
-		$html = file_get_contents($url);
-
-
+		
+		$html =  \File::getRemote($url);
+		
 
 
 
 		$mls = $this->getMls($html);
 		$size = $this->getHouseSize($html);
+
 		$year = $this->getHouseYear($html);
 		$address = $this->getAddress($html);
 		$price = $this->getPrice($html);
@@ -133,13 +98,110 @@ public function realtor_sale($url, $issale)
 
 
 	$id = $house->id;
-		$this->extractImages($html, $house);
+	
+	$this->extractImages($html, $house);
 
 return Redirect::to("search/$id");
 		
 	
 }
 
+protected function getHouseLinkArrays($html, $numb)
+	{
+
+	$arrLinks = [];		
+
+
+	$iter = 1;
+	$start = 0;
+	while (true) {
+
+	$start = strpos($html, "listing-wrap", $start);
+	if (!$start || $iter++==$numb)
+	break;
+
+	$start = strpos($html, '<a href="', $start)+strlen('<a href="');
+	$finish = strpos($html, '"', $start);
+
+	$element = trim(substr($html, $start, $finish - $start));
+		$arrLinks[]= $element;
+	$start = $finish;
+	}
+
+	return $arrLinks;
+
+
+
+
+	}
+
+protected function getDescription($html)
+{
+
+	$start = strpos($html, '<h2 class="title-section title-section-detail">Property Details</h2>');
+	$finish = strpos($html, '<div id="AdditionalDetails">', $start);
+	$element = trim(substr($html, $start, $finish - $start));
+	return trim($element);
+	
+}
+
+
+protected function extractImages($html, $house)
+		{
+			$start = strpos($html, '#modal_PhotoGallery');			
+			$arr_images = [];
+
+			while ($start<strlen($html) && ($start = strpos($html,'http://p.rdcpix.com', $start))) {
+				$len = strlen('http://p.rdcpix.com');
+				$finish = strpos($html,'.', $start+$len)+4;
+				$imgAddress = substr($html, $start, $finish - $start);
+
+				$start+=1;
+
+				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s'))
+					continue;
+
+				if (!in_array($imgAddress, $arr_images))
+					$arr_images[]=trim($imgAddress);
+			}
+			$i=1;
+			
+			//dd($arr_images);
+
+			foreach ($arr_images as $image) {
+				try {
+				
+				usleep(500000);
+				$fileImage = \File::getRemote($image);
+				$image = imagecreatefromstring($fileImage);	
+				$width = intval(imagesx($image));
+				$height = intval(imagesy($image));
+
+				if ($width<300 || $height<200)
+					continue;
+			
+
+
+
+				} catch (Exception $e) {
+				dd($e);
+				}
+				
+				
+				$dir_path = public_path()."/comp/img/images/$house->id/";
+				if (!File::exists($dir_path))
+					File::makeDirectory($dir_path, '777', true);
+
+				File::put($dir_path."$i.jpg", $fileImage);
+				
+				$i++;
+			}
+			
+			
+			$house->maximgid = --$i;
+			
+			$house->save();
+		}
 
 protected function getSaleGarageParking($html)	
 {
@@ -522,9 +584,9 @@ protected function getHouseSize($html)
 	$start = strpos($html, '<span', $start);
 	$start = strpos($html, '>', $start)+1;
 	$finish = strpos($html, ' ', $start);
-	$element = str_replace(',','',substr($html, $start, $finish - $start));
+	$element = substr($html, $start, $finish - $start);
 	return trim($element);
-	//return $this->lisToArray($element);
+	
 }
 
 protected function getBathrooms($html)	
