@@ -66,11 +66,58 @@ public function realtor_sale($url, $issale)
 		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale2.html');
 		
 		$html =  \File::getRemote($url);
+		$house = new House();
+		$house->save();
+		$type = $this->getPropertyType($html);
+		
+		$searchType = Type::whereType($type)->first();
+		if ($searchType){
+			$house->type()->associate($searchType);
+		} else {
+			$newType = new Type();
+			$newType->type = $type;
+			$newType->save();			
+			$newType->house()->save($house);
+		}
 		
 
-		$propertyType = $this->getPropertyType($html);
+
+		$status = $this->getStatus($html);
+			$statusObj = Status::whereStatus($status)->first();
+		if ($statusObj){
+			$house->status()->associate($statusObj);
+		} else {
+			$newStatus = new Status();
+			$newStatus->status = $status;
+			$newStatus->save();			
+			$newStatus->house()->save($house);
+		}
 		
 		
+
+		if (strpos($html, 'badge-foreclosure')) {
+
+		$saletypeObj = Saletype::find(1);
+		$house->saletypes()->attach($saletypeObj);
+		}
+		
+		
+
+		if (strpos($html, 'badge-bank-owned')) {
+		$saletypeObj = Saletype::find(2);
+		$house->saletypes()->attach($saletypeObj);
+		}
+		
+
+		if (strpos($html, 'badge-short-sale')) {
+			$saletypeObj = Saletype::find(3);
+		$house->saletypes()->attach($saletypeObj);
+		}
+
+		
+
+
+
 		
 		$mls = $this->getMls($html);
 		$size = $this->getHouseSize($html);
@@ -80,9 +127,8 @@ public function realtor_sale($url, $issale)
 		$price = $this->getPrice($html);
 		
 
-		$house = new House();
-		$house->type = $propertyType;
-
+		
+		
 
 		$house->mls = $mls;
 		$house->size = $size;
@@ -97,11 +143,6 @@ public function realtor_sale($url, $issale)
 
 		$description = $this->getDescription($html);
 
-		if (strpos($html, 'badge-foreclosure'))
-		$house->isforeclosed = 1;
-
-		if (strpos($html, 'badge-bank-owned'))
-		$house->isbankowned = 1;
 
 		$house->description = $description;
 
@@ -165,10 +206,25 @@ protected function getDescription($html)
 
 protected function extractImages($html, $house)
 		{
+			$start = strpos($html, 'galleryCount'); 
+			$start = strpos($html, 'of', $start); 
+			$start = strpos($html, '<b>', $start)+3; 
+			$finish = strpos($html, '</b>', $start); 
+
+			$numbOfImages = substr($html, $start, $finish - $start);
+			
+			$maxIter = intval($numbOfImages);
+			
+			
+
+			$iterator = 0;
+
+						
 			$start = strpos($html, '#modal_PhotoGallery');			
 			$arr_images = [];
 
 			while ($start<strlen($html) && ($start = strpos($html,'http://p.rdcpix.com', $start))) {
+				
 				$len = strlen('http://p.rdcpix.com');
 				$finish = strpos($html,'.', $start+$len)+4;
 				$imgAddress = substr($html, $start, $finish - $start);
@@ -178,9 +234,15 @@ protected function extractImages($html, $house)
 				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s'))
 					continue;
 
-				if (!in_array($imgAddress, $arr_images))
+				if (!in_array($imgAddress, $arr_images)) {
 					$arr_images[]=trim($imgAddress);
+					}
+
+					if (count($arr_images)>$maxIter)
+						break;
+				
 			}
+			
 			$i=1;
 			
 			//dd($arr_images);
@@ -194,7 +256,7 @@ protected function extractImages($html, $house)
 				$width = intval(imagesx($image));
 				$height = intval(imagesy($image));
 
-				if ($width<300 || $height<200)
+				if ($width<100 || $height<100)
 					continue;
 			
 

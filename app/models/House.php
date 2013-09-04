@@ -6,143 +6,21 @@ class House extends Eloquent {
 
     public static $rules = array();
 
-    public function users()
-    {
-    	return $this->belongsToMany('User');
-    }
-
-    
-
-public function agent()
-{
-return $this->belongsTo('Agent');
-}
 
 public function status()
 {
 return $this->belongsTo('Status');
 }
 
-public function saleexteriorfeature()
+public function type()
 {
-return $this->belongsTo('Saleexteriorfeature');
+return $this->belongsTo('Type');
 }
 
-public function propertytype()
+public function saletypes()
 {
-return $this->belongsTo('Propertytype');
+return $this->belongsToMany('Saletype');
 }
-
-public function salebedroom()
-{
-return $this->belongsTo('Salebedroom');
-}
-
-public function salebathroom()
-{
-return $this->belongsTo('Salebathroom');
-}
-
-public function salekitchen()
-{
-return $this->belongsTo('Salekitchen');
-}
-
-public function salediningroom()
-{
-return $this->belongsTo('Salediningroom');
-}
-
-public function salelivingroom()
-{
-return $this->belongsTo('Salelivingroom');
-}
-
-public function saleschool()
-{
-return $this->belongsTo('Saleschool');
-}
-
-public function salepropertyinfo()
-{
-return $this->belongsTo('Salepropertyinfo');
-}
-
-public function salepublicrecord()
-{
-return $this->belongsTo('Salepublicrecord');
-}
-
-public function salefamroom()
-{
-return $this->belongsTo('Salefamroom');
-}
-
-public function salelaundryroom()
-{
-return $this->belongsTo('Salelaundryroom');
-}
-
-public function saleexerciseroom()
-{
-return $this->belongsTo('Saleexerciseroom');
-}
-
-public function salebasement()
-{
-return $this->belongsTo('Salebasement');
-}
-
-public function saleutilityroom()
-{
-return $this->belongsTo('Saleutilityroom');
-}
-
-public function salewalkincloset()
-{
-return $this->belongsTo('Salewalkincloset');
-}
-
-public function saleotherroom()
-{
-return $this->belongsTo('Saleotherroom');
-}
-
-public function saleinteriorfeature()
-{
-return $this->belongsTo('Saleinteriorfeature');
-}
-
-public function saleappliance()
-{
-return $this->belongsTo('Saleappliance');
-}
-
-public function salegarageandparking()
-{
-return $this->belongsTo('Salegarageandparking');
-}
-
-public function salebuildingconstruction()
-{
-return $this->belongsTo('Salebuildingconstruction');
-}
-
-public function saleutility()
-{
-return $this->belongsTo('Saleutility');
-}
-
-public function salehomefeature()
-{
-return $this->belongsTo('Salehomefeature');
-}
-
-public function saleamenity()
-{
-return $this->belongsTo('Saleamenity');
-}
-
 
 
 }
