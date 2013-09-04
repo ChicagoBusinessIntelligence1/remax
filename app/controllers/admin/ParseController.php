@@ -9,16 +9,32 @@ class ParseController extends BaseController {
 		$city = Input::get('city');
 		$numb = Input::get('numb');
 
-		$url="http://www.realtor.com/realestateandhomes-search/$city";
-		var_dump("start getting remote!");
-		$html = \File::getRemote($url);
-		var_dump("start getting remote done");
+		$url="http://www.realtor.com/realestateandhomes-search/$city/sby-6?pgsz=300";
+		
+		
+$opts = array('http' =>
+    array(
+        'method'  => 'GET',
+        //'user_agent '  => "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2) Gecko/20100301 Ubuntu/9.10 (karmic) Firefox/3.6",
+        'header' => array(
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*\/*;q=0.8
+'
+        ), 
+    )
+);
+$context  = stream_context_create($opts);
+
+
+		$html =  file_get_contents($url, false, $context);
+
+
+		
 		
 		$arrLinks = $this->getHouseLinkArrays($html, $numb);
 		
 		foreach ($arrLinks as $url) {
 			$full_url = "http://www.realtor.com".$url;
-			usleep(1000000);
+			
 			
 			
 			$this->realtor_sale($full_url, 1);
@@ -65,7 +81,22 @@ public function realtor_sale($url, $issale)
 		// $html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
 		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale2.html');
 		
-		$html =  \File::getRemote($url);
+$opts = array('http' =>
+    array(
+        'method'  => 'GET',
+        //'user_agent '  => "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2) Gecko/20100301 Ubuntu/9.10 (karmic) Firefox/3.6",
+        'header' => array(
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*\/*;q=0.8
+'
+        ), 
+    )
+);
+$context  = stream_context_create($opts);
+
+
+		$html =  file_get_contents($url, false, $context);
+
+
 		$house = new House();
 		$house->save();
 		$type = $this->getPropertyType($html);
@@ -231,7 +262,7 @@ protected function extractImages($html, $house)
 
 				$start+=1;
 
-				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s')){
+				if (strpos($imgAddress, '0m') || strpos($imgAddress, '0s')){
 				$maxIter--;
 				continue;
 
@@ -250,11 +281,29 @@ protected function extractImages($html, $house)
 			
 			//dd($arr_images);
 
+$opts = array('http' =>
+    array(
+        'method'  => 'GET',
+        //'user_agent '  => "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2) Gecko/20100301 Ubuntu/9.10 (karmic) Firefox/3.6",
+        'header' => array(
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*\/*;q=0.8
+'
+        ), 
+    )
+);
+$context  = stream_context_create($opts);
+
+
+	
+
 			foreach ($arr_images as $image) {
 				try {
 				
-				usleep(500000);
-				$fileImage = \File::getRemote($image);
+			
+				$fileImage = file_get_contents($image,false, $context);
+
+
+
 				$image = imagecreatefromstring($fileImage);	
 				$width = intval(imagesx($image));
 				$height = intval(imagesy($image));
