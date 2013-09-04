@@ -231,14 +231,17 @@ protected function extractImages($html, $house)
 
 				$start+=1;
 
-				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s'))
-					continue;
+				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s')){
+				$maxIter--;
+				continue;
+
+				}
 
 				if (!in_array($imgAddress, $arr_images)) {
 					$arr_images[]=trim($imgAddress);
 					}
 
-					if (count($arr_images)>$maxIter)
+					if (count($arr_images)>($maxIter+1))
 						break;
 				
 			}

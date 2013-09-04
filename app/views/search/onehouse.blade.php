@@ -8,30 +8,42 @@
 		<div class="row callAgentRent">
 
 			<div class="row">
+			
+			
+
 				@if(isset($house->address))
 				<div class="large-9 columns">
 					<h1 class="oneHouseAddress label radius">{{$house->address}}</h1>
 					&nbsp &nbsp
+					
+										
 					<ul class="inline-list">
-							@if (isset($house->isforeclosed))
+
+					@foreach ($house->saletypes as $type)
+						
+						@if ($type->pivot->saletype_id==1)
 						<li class="label radius foreclosureLabel">
 							Foreclosure <br/>
 						</li>
-							@endif
+						@endif
 
-							@if (isset($house->shortsale))
+						@if ($type->pivot->saletype_id==2)
 						<li class="label radius shortsaleLabel">
-							Short Sale<br/>
-						</li>
-							@endif
-
-							@if (isset($house->isbankowned))
-						<li class="label radius bankowedLabel">
 							Bank Owned <br/>
 						</li>
-							@endif
+
+						@endif
+						
+						@if ($type->pivot->saletype_id==3)
+						<li class="label radius shortsaleLabel">
+							Short Sale <br/>
+						</li>
+						@endif
+						@endforeach
 
 					</ul>
+					
+	
 				</div>
 				@endif
 				<div class="large-2 columns">
