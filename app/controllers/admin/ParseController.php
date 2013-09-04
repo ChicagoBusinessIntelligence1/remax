@@ -241,7 +241,7 @@ protected function extractImages($html, $house)
 					$arr_images[]=trim($imgAddress);
 					}
 
-					if (count($arr_images)>$maxIter)
+					if (count($arr_images)>($maxIter+1))
 						break;
 				
 			}
