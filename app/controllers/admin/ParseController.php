@@ -231,8 +231,11 @@ protected function extractImages($html, $house)
 
 				$start+=1;
 
-				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s'))
-					continue;
+				if (strpos($imgAddress, 'm0m') || strpos($imgAddress, 'm0s')){
+				$maxIter--;
+				continue;
+
+				}
 
 				if (!in_array($imgAddress, $arr_images)) {
 					$arr_images[]=trim($imgAddress);
@@ -250,7 +253,7 @@ protected function extractImages($html, $house)
 			foreach ($arr_images as $image) {
 				try {
 				
-				usleep(500000);
+				usleep(1000000);
 				$fileImage = \File::getRemote($image);
 				$image = imagecreatefromstring($fileImage);	
 				$width = intval(imagesx($image));
