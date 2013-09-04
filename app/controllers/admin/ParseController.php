@@ -299,11 +299,16 @@ $context  = stream_context_create($opts);
 			foreach ($arr_images as $image) {
 				try {
 				
+<<<<<<< HEAD
 			
 				$fileImage = file_get_contents($image,false, $context);
 
 
 
+=======
+				usleep(1000000);
+				$fileImage = \File::getRemote($image);
+>>>>>>> 51a9b621e248e2078bc811126ac8e76463773fd1
 				$image = imagecreatefromstring($fileImage);	
 				$width = intval(imagesx($image));
 				$height = intval(imagesy($image));
