@@ -15,22 +15,22 @@
 					<ul class="inline-list">
 							@if (isset($house->isforeclosed))
 						<li class="label radius foreclosureLabel">
-							Foreclose <br/>
+							Foreclosure <br/>
 						</li>
 							@endif
-							
+
 							@if (isset($house->shortsale))
 						<li class="label radius shortsaleLabel">
 							Short Sale<br/>
 						</li>
 							@endif
-							
+
 							@if (isset($house->isbankowned))
 						<li class="label radius bankowedLabel">
 							Bank Owned <br/>
 						</li>
 							@endif
-							 
+
 					</ul>
 				</div>
 				@endif
@@ -42,9 +42,9 @@
 			<hr/>
 
 			@if(isset($house->maximgid))
-			<ul class="clearing-thumbs" data-clearing>
+			<ul class="clearing-thumb ulParsedImg" data-clearing>
 				@for ($i =1; $i <= $house->maximgid; $i++)
-				<li class="clearing-featured-img"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
+				<li class="clearing-featured-img parsedImg"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
 					<img width="100px" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>
 				</li>
 				@endfor

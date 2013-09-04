@@ -319,23 +319,23 @@
                             </div>
                           </div>
                           <div class="row">
-                           <div class="large-6 columns listingsAlertBox">
-                             {{link_to('browse/1', 'SINGLE FAMILY', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
+                           <div class="large-10 large-centered columns listingsAlertBox">
+                             {{link_to('browse/1', 'SINGLE FAMILY HOMES FOR SALE', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
                            </div>
 
-                           <div class="large-6 columns listingsAlertBox">
-                             {{link_to('browse/4', 'MULTI-FAMILY', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
+                         </div>
+                          <div class="row">
+                           <div class="large-10 large-centered columns listingsAlertBox">
+                             {{link_to('browse/1', 'APARTMENTS FOR SALE', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
                            </div>
+
                          </div>
 
                          <div class="row">
-                           <div class="large-6 columns listingsAlertBox">
-                             {{link_to('browse/3', 'CONDO', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
+                           <div class="large-10 large-centered columns listingsAlertBox">
+                             {{link_to('browse/3', 'CONDOS FOR SALE', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
                            </div>
 
-                           <div class="large-6 columns listingsAlertBox">
-                             {{link_to('browse/2', 'VACANT LAND', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
-                           </div>
                          </div>
 
                        </div>
