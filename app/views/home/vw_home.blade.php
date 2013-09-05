@@ -76,49 +76,6 @@
 			</div>		
 		</div>
 
-
-
-
-		<!-- <div class="row">
-			<div class="large-12 columns">
-		
-				=news start here
-		
-				<div class="section-container auto" data-section>
-					<section>
-						<h6 class="title" data-section-title><a class="newsHead" href="#panel1">NEWS FOR Home BUYERS</a></h6>
-						<div class="content" data-section-content>
-							<article >
-								
-								<a class="newsHeadHover" href="{{'news/'.$newsBuy->id;}}">
-									<h5 class="newsHeadHover">{{$newsBuy->title}}</h5>
-								</a>
-								<p>{{$newsBuy->body}}</p>
-		
-								{{link_to('news/'.$newsBuy->id, 'Read more', array('class'=>'readMore'));}}
-							</article>
-						</div>
-					</section>
-					<section>
-						<h6 class="title" data-section-title><a class="newsHead" href="#panel2">NEWS FOR Home SELLERS</a></h6>
-						<div class="content" data-section-content>
-							<article>
-							
-								
-									
-		
-								<a class="newsHeadHover" href="{{'news/'.$newsSell->id;}}">
-									<h5 class="newsHeadHover">{{$newsSell->title}}</h5>
-								</a>
-								<p>{{$newsSell->body}}</p>
-								{{link_to('news/'.$newsSell->id, 'Read more', array('class'=>'readMore'));}}
-							</article>
-						</div>
-					</section>
-				</div>
-		
-			</div>
-		</div> -->
 	</div>
 	@stop
 

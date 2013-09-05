@@ -145,11 +145,7 @@ $context  = stream_context_create($opts);
 		$house->saletypes()->attach($saletypeObj);
 		}
 
-		
-
-
-
-		
+				
 		$mls = $this->getMls($html);
 		$size = $this->getHouseSize($html);
 
@@ -292,9 +288,6 @@ $opts = array('http' =>
     )
 );
 $context  = stream_context_create($opts);
-
-
-	
 
 			foreach ($arr_images as $image) {
 				try {

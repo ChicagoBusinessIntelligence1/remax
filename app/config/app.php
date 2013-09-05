@@ -114,7 +114,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Commands\SeoServiceProvider'
+		'Commands\SeoServiceProvider',
+		'Commands\DcServiceProvider'
 	),
 
 	/*

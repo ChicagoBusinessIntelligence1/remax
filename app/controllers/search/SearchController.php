@@ -40,9 +40,7 @@ class SearchController extends BaseController {
 
     public function index()
     {
-      $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
-      'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
-      'saleutility', 'salehomefeature', 'saleamenity' )->where('issale', '=', 1)->where(function($query){
+      $houses = House::where('issale', '=', 1)->where(function($query){
 
       $location  = Input::get('location');
       if($location)

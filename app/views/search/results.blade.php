@@ -27,7 +27,7 @@
 					</div>
 					<div class="row">
 						<div class="large-4 columns">
-							<h3 class="subheader propType"><em>{{$house->propertytype->type}}</em> </h3>
+							<h3 class="subheader propType"><em>{{$house->type->type}}</em> </h3>
 						</div>
 					</div>
 
@@ -37,12 +37,13 @@
 
 							<div class="fiveMarginBottom">
 								<small>
-									<em>MLS#: </em>{{$house->listing}} | 
-									<em>Year: </em>{{$house->year}} | 
-									<em>Bedrooms: </em>{{$house->bedrooms}} | 
-									<em>Bathrooms: </em>{{$house->bathrooms}}  
+									<em>MLS#: </em>{{$house->mls}} | 
 									@if ($house->year!=null)
+									<em>Year: </em>{{$house->year}} | 
 									@endif
+									<em>Bedrooms: </em>{{$house->beds}} | 
+									<em>Bathrooms: </em>{{$house->baths}}  
+									
 								</small>
 							</div>
 							@if($house->maxid)
