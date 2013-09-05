@@ -3,7 +3,7 @@
 /**
 * 
 */
-namespace Commands;
+
 
 class DcParser
 {
