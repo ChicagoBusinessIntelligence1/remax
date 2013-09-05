@@ -26,7 +26,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="large-4 columns">
+						<div class="large-10 columns">
 							<h3 class="subheader propType"><em>{{$house->type->type}}</em> </h3>
 						</div>
 					</div>
@@ -46,8 +46,8 @@
 									
 								</small>
 							</div>
-							@if($house->maxid)
-							<a class="listingImage" href="{{url('search/'.$house->id)}}"><img src="{{url('comp/img/imag/'.$house->id.'/1.jpg')}}"  class="th">
+							@if($house->maximgid)
+							<a class="listingImage" href="{{url('search/'.$house->id)}}"><img src="{{url('comp/img/images/'.$house->id.'/1.jpg')}}"  class="th">
 							</a> 
 							@endif
 							<div class="signinLabel">
