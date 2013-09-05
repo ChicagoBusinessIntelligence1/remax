@@ -326,7 +326,7 @@
                          </div>
                           <div class="row">
                            <div class="large-10 large-centered columns listingsAlertBox">
-                             {{link_to('browse/1', 'APARTMENTS FOR SALE', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
+                             {{link_to('browse/2', 'MULTI-FAMILY HOMES', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
                            </div>
 
                          </div>

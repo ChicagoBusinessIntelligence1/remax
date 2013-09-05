@@ -47,7 +47,7 @@
 								</small>
 							</div>
 							@if($house->maxid)
-							<a class="listingImage" href="{{url('search/'.$house->id)}}"><img src="{{url('comp/img/thumbs/'.$house->id.'/1.jpg')}}"  class="th">
+							<a class="listingImage" href="{{url('search/'.$house->id)}}"><img src="{{url('comp/img/imag/'.$house->id.'/1.jpg')}}"  class="th">
 							</a> 
 							@endif
 							<div class="signinLabel">

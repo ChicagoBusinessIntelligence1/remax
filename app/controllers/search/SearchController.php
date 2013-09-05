@@ -12,7 +12,7 @@ class SearchController extends BaseController {
     public function browse($type)
     {
         
-        $houses = House::with('agent')->where('propertytype_id', '=', $type)
+        $houses = House::where('type_id', '=', $type)
        ->where('issale', '=', 1)
         ->paginate(5);
         return View::make('search.results')->with(compact('houses'));
