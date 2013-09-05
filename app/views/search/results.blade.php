@@ -46,8 +46,8 @@
 									
 								</small>
 							</div>
-							@if($house->maxid)
-							<a class="listingImage" href="{{url('search/'.$house->id)}}"><img src="{{url('comp/img/imag/'.$house->id.'/1.jpg')}}"  class="th">
+							@if($house->maximgid)
+							<a class="listingImage" href="{{url('search/'.$house->id)}}"><img src="{{url('comp/img/images/'.$house->id.'/1.jpg')}}"  class="th">
 							</a> 
 							@endif
 							<div class="signinLabel">
@@ -73,7 +73,8 @@
 
 									<!-- =searchDescription starts here -->
 									<div class="searchDescription">
-										{{Str::limit(ucfirst(strtolower($house->details)), 280)}} </br>
+										{{substr($house->description, 144, 300)}}... </br>
+										
 										<a href="{{url('search/'.$house->id)}}" class="propDetails"><em>Property Details</em></a>
 										<hr/>
 									</div>
