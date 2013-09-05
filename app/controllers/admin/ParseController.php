@@ -1,8 +1,63 @@
 <?php
 //LOCATION: remax/public/parse
+include_once app_path().'/commands/DcParser.php';
+
 
 class ParseController extends BaseController {
 
+public $parser;
+		public function __construct()
+	{
+		
+		$this->parser = new \DcParser();
+
+	}
+
+public function saveRentCity()
+	{
+		$city = Input::get('city');
+		$numb = Input::get('numb');
+
+		$url="http://www.realtor.com/homesforrent/$city?pgsz=200";
+		
+		
+$opts = array('http' =>
+    array(
+        'method'  => 'GET',
+        //'user_agent '  => "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2) Gecko/20100301 Ubuntu/9.10 (karmic) Firefox/3.6",
+        'header' => array(
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*\/*;q=0.8
+'
+        ), 
+    )
+);
+$context  = stream_context_create($opts);
+
+
+		$html =  file_get_contents($url, false, $context);
+
+
+		
+		
+		$arrLinks = $this->getHouseLinkArrays($html, $numb);
+			foreach ($arrLinks as $url) {
+			if (strpos($url, 'to/save/this/listing')!==false)
+				continue;
+
+			$full_url = "http://www.realtor.com".$url;
+			
+			
+			
+			$this->realtor_sale($full_url, 0);
+			
+		}
+
+
+		return "Finished";
+		
+		//return $this->realtor_sale($url, $issale);
+
+	}
 
 	public function save()
 	{
@@ -172,6 +227,25 @@ $context  = stream_context_create($opts);
 
 
 		$house->description = $description;
+
+		$houseDescription = $description;
+
+			$baths = $this->parser->getBathrooms($houseDescription);
+	//-----------
+			$halfBath = $baths['half'];
+			$fullBath = $baths['full'] + 0.5*$halfBath;
+			$beds = $this->parser->getBedrooms($houseDescription);
+			$lotSize = $this->parser->getLotsize($houseDescription);
+			$houseSize = $this->parser->getHousesize($houseDescription);
+	 //-----------
+
+
+			$house->baths=$fullBath;
+			$house->halfbaths=$halfBath;
+			$house->beds=$beds;
+			$house->size = $houseSize; 
+			$house->lotsize = $lotSize; 
+
 
 
 		$house->issale = $issale;

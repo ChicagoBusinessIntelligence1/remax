@@ -11,11 +11,11 @@ class RentController extends BaseController {
      */
     public function apartments() {
 
-    $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
-    'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
-    'saleutility', 'salehomefeature', 'saleamenity' )->where('propertytype_id', '=', 8)->where('issale', '=', 0)->first();   
+     $houses = House::where('issale', '=', 0)
+      ->whereType_id(3)
+      ->paginate(5);  
 
-   return View::make('search.results')->with(compact('houses'));
+       return View::make('search.results')->with(compact('houses'));
     }
 
     public function show($id) {
@@ -29,32 +29,7 @@ class RentController extends BaseController {
     }
     public function all() {
 
-    $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
-      'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
-      'saleutility', 'salehomefeature', 'saleamenity' )->where('issale', '=', 0)->where(function($query){
-
-      $location  = Input::get('location');
-      if($location)
-        $query->where('address', 'LIKE', '%'.$location.'%');
-
-      $price_l  = Input::get('from');
-      if($price_l)
-        $query->where('price', '>=', $price_l);
-
-      $price_h  = Input::get('to');
-      if($price_h)
-        $query->where('price', '<=', $price_h);
-
-      $beds  = Input::get('beds');
-      if($beds)
-        $query->where('bedrooms', '>=', $beds);
-
-      $baths  = Input::get('baths');
-      if($baths)
-        $query->where('bathrooms', '>=', $baths);
-
-
-    })->paginate(5);  
+    $houses = House::where('issale', '=', 0)->paginate(5);  
 
         return View::make('search.results')->with(compact('houses'));
 
@@ -62,18 +37,18 @@ class RentController extends BaseController {
 
     public function houses(){
 
-        $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
-    'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
-    'saleutility', 'salehomefeature', 'saleamenity' )->where('propertytype_id', '=', 9)->where('issale', '=', 0)->first();   
+      $houses = House::where('issale', '=', 0)
+      ->where('type_id','<', 3)
+      ->paginate(5);  
 
-   return View::make('search.results')->with(compact('houses'));
+       return View::make('search.results')->with(compact('houses'));
+
+
     }
 
-    public function index()
+      public function index()
     {
-     $houses = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
-      'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
-      'saleutility', 'salehomefeature', 'saleamenity' )->where('issale', '=', 0)->where(function($query){
+      $houses = House::where('issale', '=', 0)->where(function($query){
 
       $location  = Input::get('location');
       if($location)
@@ -99,7 +74,8 @@ class RentController extends BaseController {
     })->paginate(5);  
 
         return View::make('search.results')->with(compact('houses'));
-    }
+
+  }
  
 
    
