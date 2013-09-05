@@ -26,7 +26,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="large-4 columns">
+						<div class="large-10 columns">
 							<h3 class="subheader propType"><em>{{$house->type->type}}</em> </h3>
 						</div>
 					</div>
