@@ -73,7 +73,8 @@
 
 									<!-- =searchDescription starts here -->
 									<div class="searchDescription">
-										{{Str::limit(ucfirst(strtolower($house->details)), 280)}} </br>
+										{{substr($house->description, 144, 300)}}... </br>
+										
 										<a href="{{url('search/'.$house->id)}}" class="propDetails"><em>Property Details</em></a>
 										<hr/>
 									</div>
