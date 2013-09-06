@@ -87,7 +87,7 @@ class SeoManyCommand extends Command {
 
 		}
 		$master2 = str_replace($mInit, $m, $master);
-		File::put($masterPath.'p', $master2);
+		\File::put($masterPath.'p', $master2);
 
 	 // 1. Add route
 		
