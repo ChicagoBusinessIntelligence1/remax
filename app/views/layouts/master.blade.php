@@ -571,10 +571,11 @@
       <div class="row">
         <div class="large-3 columns addInfoFooter">
           <ul class="no-bullet addInfoFooterLinks">
-
+          <!-- AutoStart -->
             <li class="liAddInfoFooter1">
            {{link_to_route('North-Chicagoland', 'North Chicagoland Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
+
             <li class="liAddInfoFooter1">
               {{link_to_route('homes-sale-skokie-il', 'SKOKIE HOMES FOR SALE', array(), array('class'=>'localLinks'))}}
             </li>
@@ -687,6 +688,7 @@
             <li class="liAddInfoFooter4">
               {{link_to_route('homes-sale-skokie-il', 'Homes for Rent in Evanston, IL', array(), array('class'=>'localLinks'))}}
             </li>
+            <!-- AutoFinish -->
           </ul>
         </div>
       </div>

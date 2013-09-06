@@ -25,6 +25,14 @@ class SeoServiceProvider extends ServiceProvider {
 			return new SeoCommand($writer);
 		});
 		$this->commands('command.seo');
+
+
+		$this->app['command.seomany'] = $this->app->share(function($app)
+		{
+			$writer = new Writer();
+			return new SeoManyCommand($writer);
+		});
+		$this->commands('command.seomany');
 	}
 
 	/**
