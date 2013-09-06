@@ -38,8 +38,18 @@ class SeoManyCommand extends Command {
 	 */
 	public function fire()
 	{
-	 // 1. Add route
+		$masterPath = app_path().'\views\layouts\master.blade.php';
+		$master = \File::get($masterPath, 'r');
 
+		//dd($master);
+		$start = strpos($master, '<!-- AutoStart -->');
+		$finish = strpos($master, '<!-- AutoFinish -->', $start);
+
+		//dd($start . ' -- '. $finish);
+
+
+
+	 // 1. Add route
 		$keywords = $this->argument('keywords');
 		$keywords = str_replace(" ", "-", ucwords(strtolower($keywords)));
 
