@@ -18,7 +18,7 @@ public function saveRentCity()
 		$city = Input::get('city');
 		$numb = Input::get('numb');
 
-		$url="http://www.realtor.com/homesforrent/$city?pgsz=200";
+		$url="http://www.realtor.com/homesforrent/$city?pgsz=400";
 		
 		
 $opts = array('http' =>

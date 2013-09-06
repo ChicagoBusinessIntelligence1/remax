@@ -7927,7 +7927,7 @@ input[type="password"] {
 
 /* line 682, ../sass/screen.scss */
 .imgShortSale {
-  width: 50px !important;
+  width: 45px !important;
   display: inline-block;
 }
 
@@ -8958,16 +8958,20 @@ footer .row.ul.li.a {
 /* line 1487, ../sass/screen.scss */
 .properties {
   margin-left: 15px;
-  font-size: 10px;
-  line-height: 20px;
+  font-size: 9px;
+  line-height: 22px;
   margin-left: 0px;
   font-weight: bold;
   letter-spacing: 1px;
   color: #396c95;
   text-shadow: white 1px 1px 0px;
 }
+/* line 1496, ../sass/screen.scss */
+.properties a {
+  line-height: 15px;
+}
 
-/* line 1498, ../sass/screen.scss */
+/* line 1502, ../sass/screen.scss */
 .propertiesFooter {
   font-weight: bold;
   display: inline-block;
@@ -8977,104 +8981,103 @@ footer .row.ul.li.a {
   min-width: 150px;
 }
 
-/* line 1501, ../sass/screen.scss */
+/* line 1505, ../sass/screen.scss */
 .copyright {
   background-color: #3f3f3f;
   padding-top: 10px;
 }
 
-/* line 1505, ../sass/screen.scss */
+/* line 1509, ../sass/screen.scss */
 .copy {
   color: #f7f7f4 !important;
 }
 
 /* =addInfoFooter Starts Here */
-/* line 1509, ../sass/screen.scss */
+/* line 1513, ../sass/screen.scss */
 .addInfoFooterWrapper {
   padding: 10px;
   background-color: #727272;
-  text-align: center !important;
-  vertical-align: center !important;
 }
-/* line 1514, ../sass/screen.scss */
+/* line 1516, ../sass/screen.scss */
 .addInfoFooterWrapper .addInfoFooterLinks {
   margin-bottom: 0px !important;
-  text-align: center !important;
-  vertical-align: center !important;
   margin-left: 0px !important;
 }
 /* line 1520, ../sass/screen.scss */
 .addInfoFooterWrapper .addInfoFooterLinks li, .addInfoFooterWrapper .addInfoFooterLinks a {
-  vertical-align: center !important;
-  text-align: center !important;
-  line-height: 16px !important;
+  line-height: 18px !important;
   color: #f7f7f4;
-  font-size: 10px;
+  font-size: 9px;
 }
-/* line 1527, ../sass/screen.scss */
+/* line 1525, ../sass/screen.scss */
+.addInfoFooterWrapper .addInfoFooterLinks .liAddInfoFooter1 {
+  margin-left: 0px !important;
+}
+/* line 1528, ../sass/screen.scss */
+.addInfoFooterWrapper .addInfoFooterLinks .liAddInfoFooter2 {
+  margin-left: 25px !important;
+}
+/* line 1531, ../sass/screen.scss */
 .addInfoFooterWrapper .addInfoFooterLinks li {
   margin-left: 5px !important;
 }
 
-/* line 1533, ../sass/screen.scss */
+/* line 1537, ../sass/screen.scss */
 .addInfoFooter {
-  vertical-align: center !important;
-  text-align: center !important;
   font-family: Verdana, Geneva, Sans-Serif;
-  line-height: 14px !important;
   padding: 0px !important;
 }
-/* line 1539, ../sass/screen.scss */
+/* line 1540, ../sass/screen.scss */
 .addInfoFooter h5 {
   margin-top: 3px !important;
   line-height: 12px !important;
   font-size: 10px !important;
 }
 
-/* line 1546, ../sass/screen.scss */
+/* line 1547, ../sass/screen.scss */
 .skokieRentals {
   font-size: 10px;
   color: #525252;
 }
 
 /* =Contact Us */
-/* line 1552, ../sass/screen.scss */
+/* line 1553, ../sass/screen.scss */
 .prefix {
   font-size: 12px !important;
 }
 
-/* line 1556, ../sass/screen.scss */
+/* line 1557, ../sass/screen.scss */
 .contactUsFormWrapper legend {
   background-color: none !important;
 }
 
-/* line 1560, ../sass/screen.scss */
+/* line 1561, ../sass/screen.scss */
 textarea {
   height: 300px;
   cursor: pointer;
 }
 
-/* line 1565, ../sass/screen.scss */
+/* line 1566, ../sass/screen.scss */
 .textareaCommentsWrapper textarea {
   height: 200px !important;
 }
 
-/* line 1570, ../sass/screen.scss */
+/* line 1571, ../sass/screen.scss */
 .min {
   margin-top: 20px !important;
 }
 
-/* line 1576, ../sass/screen.scss */
+/* line 1577, ../sass/screen.scss */
 .createAccount .account {
   margin-top: 15px !important;
   margin-bottom: 25px !important;
 }
-/* line 1581, ../sass/screen.scss */
+/* line 1582, ../sass/screen.scss */
 .createAccount label {
   font-size: 1em;
   margin-bottom: 10px;
 }
-/* line 1585, ../sass/screen.scss */
+/* line 1586, ../sass/screen.scss */
 .createAccount .button {
   background-color: #5f5f5f !important;
   margin-top: .5em !important;
@@ -9084,7 +9087,13 @@ textarea {
   color: #f7f7f4;
 }
 
-/* line 1589, ../sass/screen.scss */
+/* line 1590, ../sass/screen.scss */
 .contactModal {
   font-size: 27px !important;
+}
+
+/* =footer local links start here */
+/* line 1594, ../sass/screen.scss */
+.localLinks {
+  font-size: 12 px;
 }

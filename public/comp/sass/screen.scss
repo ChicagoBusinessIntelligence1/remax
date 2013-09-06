@@ -680,7 +680,7 @@ input[type="password"]{
 	@extend .buyOrSell;
 }
 .imgShortSale{
-	width: 	50px !important;
+	width: 	45px !important;
 	display: inline-block;
 }
 .shortSaleChicago{
@@ -1486,13 +1486,17 @@ footer{
 }
 .properties{
 	margin-left: 15px;
-	font-size: 10px;
-	line-height: 20px;
+	font-size: 9px;
+	line-height: 22px;
 	margin-left: 0px;
 	font-weight: bold;
 	letter-spacing: 1px;
 	color: 	$colorBlue;
 	text-shadow: $myTextShadow;
+	a{
+		
+		line-height: 15px;
+	}
 }
 
 .propertiesFooter{
@@ -1509,20 +1513,20 @@ footer{
 .addInfoFooterWrapper{
 	padding: 10px;
 	background-color: lighten($copyrightBackgroundColor, 20%);
-	text-align: center !important;
-	vertical-align: center !important;
 	.addInfoFooterLinks{
 		margin-bottom: 0px !important;
-		text-align: center !important;
-		vertical-align: center !important;
 		margin-left: 0px !important;
 
 		li, a{
-			vertical-align: center !important;
-			text-align: center !important;
-			line-height: 16px !important;
+			line-height: 18px !important;
 			color: $colorFontOffWhite;
-			font-size: 10px;
+			font-size: 9px;
+		}
+		.liAddInfoFooter1{
+			margin-left: 	0px !important;
+		}
+		.liAddInfoFooter2{
+			margin-left: 	25px !important;
 		}
 		li{
 			margin-left: 5px !important;
@@ -1531,10 +1535,7 @@ footer{
 }
 
 .addInfoFooter{
-	vertical-align: center !important;
-	text-align: center !important;
 	font-family: Verdana, Geneva, Sans-Serif;
-	line-height: 14px !important;
 	padding: 0px !important;
 	h5{
 		margin-top: 3px !important;
@@ -1588,4 +1589,8 @@ textarea{
 }
 .contactModal{
 	font-size: 27px !important;	
+}
+/* =footer local links start here */
+.localLinks{
+	font-size: 12 px;
 }

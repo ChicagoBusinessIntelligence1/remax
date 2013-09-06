@@ -60,7 +60,7 @@
 							<p>we have no hidden fees and as a Remax Representative, we are very flexible in commissions. We always prioritize the client interest and in some cases we work without commissions when they are obstacles to closing. Our main mission is client satisfaction and long term partnership.</p>
 						</li>
 						<li>
-							<p>Remax 1st Class offers comprehensive service in real estate - we can help to change house, avoid foreclosure without any influence on your credit score.</p>
+							<p>Remax 1st Class offers comprehensive service in real estate - we can help you avoid foreclosure without any influence on your credit score.</p>
 						</li>
 						<li>
 							<p>we also can sell your residential property in the shortest time as we have a wide network of real estate partnerships in the area and our commissions are never the problem. We have a great experience in pre-sell preparation when small investments could bring the highest return.</p>
