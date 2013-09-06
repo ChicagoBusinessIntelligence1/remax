@@ -52,6 +52,8 @@ class SeoManyCommand extends Command {
 
 		
 		$m = substr($master, $start, $finish - $start);
+		$mInit = $m;
+
 		$s= 0;
 		$f= 0;
 		$i=0;
@@ -84,8 +86,8 @@ class SeoManyCommand extends Command {
 		
 
 		}
-
-		dd($m);
+		$master2 = str_replace($mInit, $m, $master);
+		File::put($masterPath.'p', $master2);
 
 	 // 1. Add route
 		
@@ -151,23 +153,25 @@ class SeoManyCommand extends Command {
 		$controllerTemplate = str_replace('{{meta}}', $meta, $controllerTemplate);
 		$controllerTemplate = str_replace('{{viewName}}', $viewName, $controllerTemplate);
 
-		if (strpos($keywords, 'Sale')!==false)
+		if (stripos($keywords, 'Sale')!==false)
 			$issale = 1;
 		else
 			$issale=0;
 
 
-		if (strpos($keywords, 'skokie')!==false) {
+		if (stripos($keywords, 'skokie')!==false) {
 			$city = 'skokie';
-		} elseif (strpos($keywords, 'niles')!==false) {
+		} elseif (stripos($keywords, 'niles')!==false) {
 			$city = 'niles';
-		} elseif (strpos($keywords, 'evanston')!==false) {
+		} elseif (stripos($keywords, 'evanston')!==false) {
 			$city = 'evanston';
-		} elseif (strpos($keywords, 'glenview')!==false) {
+		} elseif (stripos($keywords, 'glenview')!==false) {
 			$city = 'glenview';
-		}elseif (strpos($keywords, 'Morton')!==false) {
+		}elseif (stripos($keywords, 'Morton')!==false) {
 			$city = 'Morton';
-		
+		} else {
+			$city = 'Morton';
+		}
 		
 		$controllerTemplate = str_replace('{{issale}}', $issale, $controllerTemplate);
 		$controllerTemplate = str_replace('{{city}}', $city, $controllerTemplate);
