@@ -111,3 +111,5 @@ Route::post('parser-realtor-save3', array('as'=>'parser-realtor-save3', 'uses'=>
 Route::post('parser-realtor-save2', array('as'=>'parser-realtor-save2', 'uses'=>'ParseController@saveSale'));
 Route::post('parser-realtor-save', array('as'=>'parser-realtor-save', 'uses'=>'ParseController@save'));
 Route::get('Remax-agent-real-estate-skokie-hiring', array('as'=>'Remax-agent', 'uses'=>'RemaxAgentController@index'));
+//
+Route::get('North-Chicagoland-Homes-For-Sale', array('as'=>'North-Chicagoland', 'uses'=>'NorthChicagolandController@index'));

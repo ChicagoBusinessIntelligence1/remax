@@ -1,1 +1,1 @@
-{{link_to_route('North-chicagoland', 'North Chicagoland Homes for Sale', array(), array('class'=>'className'))}}
+{{link_to_route('North-Chicagoland', 'North Chicagoland Homes For Sale', array(), array('class'=>'localLinks'))}}

@@ -41,7 +41,7 @@ class SeoCommand extends Command {
 	 // 1. Add route
 
 		$keywords = $this->argument('keywords');
-		$keywords = ucwords(strtolower(str_replace(" ", "-", $keywords)));
+		$keywords = str_replace(" ", "-", ucwords(strtolower($keywords)));
 
 		$controllerName = $this->addRoute($keywords);
 
