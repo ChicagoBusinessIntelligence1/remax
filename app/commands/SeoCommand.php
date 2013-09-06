@@ -41,7 +41,7 @@ class SeoCommand extends Command {
 	 // 1. Add route
 
 		$keywords = $this->argument('keywords');
-		$keywords = ucwords(str_replace(" ", "-", $keywords));
+		$keywords = ucwords(strtolower(str_replace(" ", "-", $keywords)));
 
 		$controllerName = $this->addRoute($keywords);
 
@@ -61,10 +61,10 @@ class SeoCommand extends Command {
 	protected function addLink($keywords)
 	{
 		$path = app_path().'\views\CopyLinks.txt';
-		$linkTitle = str_replace('-', ' ', $keywords);
+		$linkTitle = ucwords(str_replace('-', ' ', $keywords));
 		$controllerNameArray = explode("-", $keywords);
 		$alias= ($controllerNameArray[0])."-" . ($controllerNameArray[1]);  
-		$link_to_route = "{{link_to_route('$alias', '$linkTitle', array(), array('class'=>'className'))}}";
+		$link_to_route = "{{link_to_route('$alias', '$linkTitle', array(), array('class'=>'localLinks'))}}";
 
 		if (\File::put($path, $link_to_route))
 			$this->info("Write $path was succesful");	
@@ -129,7 +129,7 @@ class SeoCommand extends Command {
 
 		$controllerNameArray = explode("-", $keywords);
 
-		$controllerName= ucfirst($controllerNameArray[0]) . ucfirst($controllerNameArray[1])."Controller";  
+		$controllerName= ucwords($controllerNameArray[0]) . ucwords($controllerNameArray[1])."Controller";  
 		$alias= ($controllerNameArray[0])."-" . ($controllerNameArray[1]);  
 		
 		$routeLine = "Route::get('$keywords', array('as'=>'$alias', 'uses'=>'$controllerName@index'));";

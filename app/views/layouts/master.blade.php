@@ -573,7 +573,7 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'NORTH CHICAGOLAND HOMES FOR SALE', array(), array('class'=>'localLinks'))}}
+            {{link_to_route('North-chicagoland', 'North Chicagoland Homes for Sale', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
               {{link_to_route('homes-sale-skokie-il', 'SKOKIE HOMES FOR SALE', array(), array('class'=>'localLinks'))}}
@@ -592,23 +592,7 @@
             </li>
           </ul>
         </div>
-        <div class="large-3 columns addInfoFooter">
-          <ul class="no-bullet addInfoFooterLinks">
-
-            <li class="liAddInfoFooter2">
-              {{link_to_route('homes-sale-skokie-il', 'Condos for Sale in Skokie, IL', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter2">
-              {{link_to_route('homes-sale-skokie-il', 'Condos for Sale in Morton Grove, IL', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter2">
-              {{link_to_route('homes-sale-skokie-il', 'Condos for Sale in Niles, IL', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter2">
-              {{link_to_route('homes-sale-skokie-il', 'Condos for Sale in Evanston, IL', array(), array('class'=>'localLinks'))}}
-            </li>
-          </ul>
-        </div>
+        
         <div class="large-3 columns addInfoFooter">
           <ul class="no-bullet addInfoFooterLinks">
 

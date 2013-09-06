@@ -105,7 +105,6 @@ Route::get('rent-apartments', 'RentController@apartments');
 Route::get('rent-houses', 'RentController@houses');
 Route::get('all-rent-listings', array('as'=>'all-rent-listings', 'uses'=>'RentController@all'));
 
-Route::get('Evanston-township-high-school', array('as'=>'Evanston-township', 'uses'=>'EvanstonTownshipController@index'));
 Route::get('realtor-sale', array('as'=>'Parser-realtor', 'uses'=>'ParserRealtorController@index'));
 Route::post('parser-realtor-save4', array('as'=>'parser-realtor-save4', 'uses'=>'ParseController@saveRentCity'));
 Route::post('parser-realtor-save3', array('as'=>'parser-realtor-save3', 'uses'=>'ParseController@saveRent'));
