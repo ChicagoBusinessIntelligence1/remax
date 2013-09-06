@@ -72,6 +72,7 @@ class SeoManyCommand extends Command {
 		$f1  = strpos($l, "'", $s1);
 
 		$keywords = substr($l, $s1, $f1 - $s1);
+		$keywords = str_replace(",","", $keywords);
 		$keywords = str_replace(" ", "-", ucwords(strtolower($keywords)));
 
 		$controllerName = $this->addRoute($keywords);
