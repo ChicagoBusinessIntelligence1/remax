@@ -6,13 +6,16 @@ class {{controllerName}} extends BaseController {
 
 	public function index()
 	{
-		
+		$houses  = House::where('issale', '=', {{issale}})
+		->where('address', 'LIKE', '%{{city}}%')
+		->paginate(10);
+
 		$title = '{{title}}';
 		$meta = '{{meta}}';
 
 		return View::make('{{viewName}}')
-		->with(compact('title', 'meta'))
-		->with('gents', parent::getRandomAgents());
+		->with(compact('houses'))
+		->with(compact('title', 'meta'));
 	}
 
 }
