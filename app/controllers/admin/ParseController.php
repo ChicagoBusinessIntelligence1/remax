@@ -1,6 +1,6 @@
 <?php
 //LOCATION: remax/public/parse
-include_once app_path().'/commands/DcParser.php';
+include_once app_path().'/commands/DcParser2.php';
 
 
 class ParseController extends BaseController {
@@ -9,7 +9,7 @@ public $parser;
 		public function __construct()
 	{
 		
-		$this->parser = new \DcParser();
+		$this->parser = new \DcParser2();
 
 	}
 
