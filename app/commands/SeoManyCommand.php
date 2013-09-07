@@ -105,9 +105,7 @@ class SeoManyCommand extends Command {
 	{
 		$path = app_path().'\views\CopyLinks.txt';
 		$linkTitle = ucwords(str_replace('-', ' ', $keywords));
-		$controllerNameArray = explode("-", $keywords);
-		$alias= ($controllerNameArray[0])."-" . ($controllerNameArray[1]);  
-		$link_to_route = "{{link_to_route('$alias', '$linkTitle', array(), array('class'=>'localLinks'))}}";
+		$link_to_route = "{{link_to_route('$keywords', '$linkTitle', array(), array('class'=>'localLinks'))}}";
 
 		if (\File::put($path, $link_to_route))
 			$this->info("Write $path was succesful");	
