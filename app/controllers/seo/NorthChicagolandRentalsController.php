@@ -7,11 +7,12 @@ class NorthChicagolandRentalsController extends BaseController {
 	public function index()
 	{
 		$houses  = House::where('issale', '=', 0)
-		->where(function($query){$query->where('address', 'LIKE', '%Morton%');})
+		
+		->where(function($query){$query->where('address', 'LIKE', '% %');})
 		->paginate(10);
 
 		$title = 'North, Chicagoland, Rentals';
-		$meta = 'North, Chicagoland, RentalsONE STOP Real Estate SERVICE';
+		$meta = 'North, Chicagoland, Rentals ONE STOP Real Estate SERVICE';
 
 		return View::make('seo.vw_north_chicagoland_rentals')
 		->with(compact('houses'))

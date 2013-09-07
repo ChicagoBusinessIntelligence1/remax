@@ -7,11 +7,12 @@ class CondosForSaleInNilesIlController extends BaseController {
 	public function index()
 	{
 		$houses  = House::where('issale', '=', 1)
+		->whereType_id(3)
 		->where(function($query){$query->where('address', 'LIKE', '%niles%');})
 		->paginate(10);
 
 		$title = 'Condos, For, Sale, In, Niles, Il';
-		$meta = 'Condos, For, Sale, In, Niles, IlONE STOP Real Estate SERVICE';
+		$meta = 'Condos, For, Sale, In, Niles, Il ONE STOP Real Estate SERVICE';
 
 		return View::make('seo.vw_condos_for_sale_in_niles_il')
 		->with(compact('houses'))

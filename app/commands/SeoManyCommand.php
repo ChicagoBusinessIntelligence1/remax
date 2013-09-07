@@ -138,7 +138,7 @@ class SeoManyCommand extends Command {
 		$path = app_path()."/controllers/seo/$controllerName.php";
 		$url = $keywords;
 		$title = str_replace('-', ', ', $keywords); 
-		$meta = str_replace('-', ', ', $keywords).'ONE STOP Real Estate SERVICE'; 
+		$meta = str_replace('-', ', ', $keywords).' ONE STOP Real Estate SERVICE'; 
 		$arr_keywords = explode('-', $keywords);
 		
 		$viewName = "vw_";
@@ -176,8 +176,19 @@ class SeoManyCommand extends Command {
 		}elseif (stripos($keywords, 'Morton')!==false) {
 			$city = 'Morton';
 		} else {
-			$city = 'Morton';
+			$city = ' ';
 		}
+
+		if (stripos($keywords, 'Single Family')!==false) {
+			$extrawhere = '->whereType_id(1)';
+		} elseif (stripos($keywords, 'Condos')!==false || stripos($keywords, 'Apartments')!==false) {
+			$extrawhere = '->whereType_id(3)';
+		}else{
+			$extrawhere = '';
+		}
+
+		$controllerTemplate = str_replace('{{extrawhere}}', $extrawhere, $controllerTemplate);
+
 		
 		$controllerTemplate = str_replace('{{issale}}', $issale, $controllerTemplate);
 		$controllerTemplate = str_replace('{{city}}', $city, $controllerTemplate);

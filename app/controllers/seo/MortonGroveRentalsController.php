@@ -7,11 +7,12 @@ class MortonGroveRentalsController extends BaseController {
 	public function index()
 	{
 		$houses  = House::where('issale', '=', 0)
+		
 		->where(function($query){$query->where('address', 'LIKE', '%Morton%');})
 		->paginate(10);
 
 		$title = 'Morton, Grove, Rentals';
-		$meta = 'Morton, Grove, RentalsONE STOP Real Estate SERVICE';
+		$meta = 'Morton, Grove, Rentals ONE STOP Real Estate SERVICE';
 
 		return View::make('seo.vw_morton_grove_rentals')
 		->with(compact('houses'))
