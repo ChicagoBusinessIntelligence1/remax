@@ -577,19 +577,19 @@
 
           <!-- AutoStart -->
             <li class="liAddInfoFooter1">
-              {{link_to_route('Skokie-Homes', 'Skokie Homes For Sale', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Skokie-Homes-For-Sale', 'Skokie Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'MORTON GROVE HOMES FOR SALE', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Morton-Grove-Homes-For-Sale', 'Morton Grove Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'NILES HOMES FOR SALE', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Niles-Homes-For-Sale', 'Niles Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'EVANSTON HOMES FOR SALE', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Evanston-Homes-For-Sale', 'Evanston Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'GLENVIEW HOMES FOR SALE', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Glenview-Homes-For-Sale', 'Glenview Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -598,22 +598,22 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'NORTH CHICAGOLAND', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('North-Chicagoland', 'North Chicagoland', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'SKOKIE RENTALS', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Skokie-Rentals', 'Skokie Rentals', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'MORTON GROVE RENTALS', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Morton-Grove-Rentals', 'Morton Grove Rentals', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'NILES RENTALS', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Niles-Rentals', 'Niles Rentals', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'EVANSTON RENTALS', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Evanston-Rentals', 'Evanston Rentals', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'GLENVIEW RENTALS', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Glenview-Rentals', 'Glenview Rentals', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -626,16 +626,16 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'Single Family Homes for Sale in Skokie, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Skokie-Il', 'Single Family Homes For Sale In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'Single Family Homes for Sale in Morton Grove, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'Single Family Homes For Sale In Morton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'Single Family Homes for Sale in Niles, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Niles-Il', 'Single Family Homes For Sale In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'Single Family Homes for Sale in Evanston, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Evanston-Il', 'Single Family Homes For Sale In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -643,16 +643,16 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter2">
-              {{link_to_route('homes-sale-skokie-il', 'Condos for Sale in Skokie, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Skokie-Il', 'Condos For Sale In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter2">
-              {{link_to_route('homes-sale-skokie-il', 'Condos for Sale in Morton Grove, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Morton-Grove-Il', 'Condos For Sale In Morton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter2">
-              {{link_to_route('homes-sale-skokie-il', 'Condos for Sale in Niles, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Niles-Il', 'Condos For Sale In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter2">
-              {{link_to_route('homes-sale-skokie-il', 'Condos for Sale in Evanston, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Evanston-Il', 'Condos For Sale In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -660,16 +660,16 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'Apartments for Rent in Skokie, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Skokie-Il', 'Apartments For Rent In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'Apartments for Rent in Morton Grove, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Morton-Grove-Il', 'Apartments For Rent In Morton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'Apartments for Rent in Niles, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Niles-Il', 'Apartments For Rent In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('homes-sale-skokie-il', 'Apartments for Rent in Evanston, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Evanston-Il', 'Apartments For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -677,16 +677,16 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter4">
-              {{link_to_route('homes-sale-skokie-il', 'Homes for Rent in Skokie, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Skokie-Il', 'Homes For Rent In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter4">
-              {{link_to_route('homes-sale-skokie-il', 'Homes for Rent in Morton Grove, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Morton-Grove-Il', 'Homes For Rent In Morton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter4">
-              {{link_to_route('homes-sale-skokie-il', 'Homes for Rent in Niles, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Niles-Il', 'Homes For Rent In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter4">
-              {{link_to_route('homes-sale-skokie-il', 'Homes for Rent in Evanston, IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Evanston-Il', 'Homes For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
             <!-- AutoFinish -->
           </ul>

@@ -4,7 +4,7 @@
 <!-- //LOCATION: remax/public/search 
 -->
 <div class="mainContent">
-<h1 class="docs header">North Chicagoland</h1>
+<h1 class="docs header">Apartments For Rent In Morton Grove Il</h1>
 	@if(count($houses)>0)
 	<ul class="no-bullet">
 		@foreach ($houses as $house)
