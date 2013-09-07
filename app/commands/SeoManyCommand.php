@@ -146,9 +146,9 @@ class SeoManyCommand extends Command {
 		
 		$viewName = "vw_";
 		foreach ($arr_keywords as $keyword) {
-		$viewName.=strtolower($keyword.'_';
+		$viewName.=strtolower($keyword).'_';
 		}
-		$viewName = substr($viewName, 0, strlen($viewName-1));
+		$viewName = substr($viewName, 0, strlen($viewName)-1);
 		
 		
 
