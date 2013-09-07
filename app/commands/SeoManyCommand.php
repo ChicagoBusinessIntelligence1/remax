@@ -84,8 +84,7 @@ class SeoManyCommand extends Command {
 		$linkNew = $this->addLink($keywords);
 		$m = str_replace($l, $linkNew, $m);
 		$s=$f;
-		break;
-
+	
 		}
 		$master2 = str_replace($mInit, $m, $master);
 		\File::put($masterPath, $master2);
