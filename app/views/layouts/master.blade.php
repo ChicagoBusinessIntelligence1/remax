@@ -598,7 +598,7 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter3">
-              {{link_to_route('North-Chicagoland', 'North Chicagoland', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('North-Chicagoland-Rentals', 'North Chicagoland Rentals', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
               {{link_to_route('Skokie-Rentals', 'Skokie Rentals', array(), array('class'=>'localLinks'))}}
@@ -637,6 +637,9 @@
             <li class="liAddInfoFooter1">
               {{link_to_route('Single-Family-Homes-For-Sale-In-Evanston-Il', 'Single Family Homes For Sale In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Glenview-Il', 'Single Family Homes For Sale In Glenview Il', array(), array('class'=>'localLinks'))}}
+            </li>
           </ul>
         </div>
         <div class="large-3 columns addInfoFooter">
@@ -654,6 +657,9 @@
             <li class="liAddInfoFooter2">
               {{link_to_route('Condos-For-Sale-In-Evanston-Il', 'Condos For Sale In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
+            <li class="liAddInfoFooter2">
+              {{link_to_route('Condos-For-Sale-In-Glenview-Il', 'Condos For Sale In Glenview Il', array(), array('class'=>'localLinks'))}}
+            </li>
           </ul>
         </div>
         <div class="large-3 columns addInfoFooter">
@@ -663,13 +669,16 @@
               {{link_to_route('Apartments-For-Rent-In-Skokie-Il', 'Apartments For Rent In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Morton-Grove-Il', 'Apartments For Rent In Morton Grove Il', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Molton-Grove-Il', 'Apartments For Rent In Molton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
               {{link_to_route('Apartments-For-Rent-In-Niles-Il', 'Apartments For Rent In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
               {{link_to_route('Apartments-For-Rent-In-Evanston-Il', 'Apartments For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Apartments-For-Rent-In-Glenview-Il', 'Apartments For Rent In Glenview Il', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -687,6 +696,9 @@
             </li>
             <li class="liAddInfoFooter4">
               {{link_to_route('Homes-For-Rent-In-Evanston-Il', 'Homes For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter4">
+              {{link_to_route('Homes-For-Rent-In-Glenview-Il', 'Homes For Rent In Glenview Il', array(), array('class'=>'localLinks'))}}
             </li>
             <!-- AutoFinish -->
           </ul>

@@ -1,1 +1,1 @@
-{{link_to_route('Homes-For-Rent-In-Evanston-Il', 'Homes For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
+{{link_to_route('Homes-For-Rent-In-Glenview-Il', 'Homes For Rent In Glenview Il', array(), array('class'=>'localLinks'))}}

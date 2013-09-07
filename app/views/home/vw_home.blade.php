@@ -21,7 +21,7 @@
 				<div class="panel">
 					<h4 class="selectedProperty">Our selected property</h4>
 					<ul data-orbit>
-						<li> <a href="{{URL::to('search/22')}}">
+						<li> <a href="{{URL::to('search/1194')}}">
 							<img src="{{url('comp/img/orbit/5.jpg')}}" alt="">
 							<div class="orbit-caption">Glenview, IL 60025</div>
 						</a>
