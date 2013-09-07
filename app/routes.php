@@ -11,8 +11,6 @@ Route::post('admin-db', array('as'=>'admin-db-store', 'uses'=>'AdminController@s
 
 
 Route::get('about', array('as'=>'about', 'uses'=>'AboutController@index'));
-Route::get('homes-sale-skokie-il', array('as'=>'homes-sale-skokie-il', 'uses'=>'SeoController@home_sale_skokie'));
-
 Route::post('login', array('uses'=>'LoginController@index'));
 Route::get('logout', array('as'=>'logout', 'uses'=>'LoginController@logout'));
 Route::get('login-attempt', array('as'=>'login-errors', 'uses'=>'LoginController@fail'));

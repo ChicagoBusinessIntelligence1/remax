@@ -84,11 +84,11 @@ class SeoManyCommand extends Command {
 		$linkNew = $this->addLink($keywords);
 		$m = str_replace($l, $linkNew, $m);
 		$s=$f;
-		
+		break;
 
 		}
 		$master2 = str_replace($mInit, $m, $master);
-		\File::put($masterPath.'p', $master2);
+		\File::put($masterPath, $master2);
 
 	 // 1. Add route
 		
@@ -196,10 +196,13 @@ class SeoManyCommand extends Command {
 
 		$controllerNameArray = explode("-", $keywords);
 
-		$controllerName= ucwords($controllerNameArray[0]) . ucwords($controllerNameArray[1])."Controller";  
-		$alias= ($controllerNameArray[0])."-" . ($controllerNameArray[1]);  
-		
-		$routeLine = "Route::get('$keywords', array('as'=>'$alias', 'uses'=>'$controllerName@index'));";
+		$controllerName= '';
+
+		foreach ($controllerNameArray as $contr) {
+				$controllerName.+ = ucwords($contr); 					 	
+				 }		 
+				
+		$routeLine = "Route::get('$keywords', array('as'=>'$keywords', 'uses'=>'$controllerName@index'));";
 	//$this->info($routeLine);
 
 
