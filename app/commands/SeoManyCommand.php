@@ -226,7 +226,7 @@ class SeoManyCommand extends Command {
 	protected function getArguments()
 	{
 		return array(
-			array('keywords', InputArgument::REQUIRED, 'seo important keywords'),
+		//	array('keywords', InputArgument::REQUIRED, 'seo important keywords'),
 			);
 	}
 
