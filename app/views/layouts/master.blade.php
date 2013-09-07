@@ -577,7 +577,7 @@
 
           <!-- AutoStart -->
             <li class="liAddInfoFooter1">
-              {{link_to_route('homes-sale-skokie-il', 'SKOKIE HOMES FOR SALE', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Skokie-Homes', 'Skokie Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
               {{link_to_route('homes-sale-skokie-il', 'MORTON GROVE HOMES FOR SALE', array(), array('class'=>'localLinks'))}}

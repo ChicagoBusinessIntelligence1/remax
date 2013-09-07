@@ -143,8 +143,16 @@ class SeoManyCommand extends Command {
 		$title = str_replace('-', ', ', $keywords); 
 		$meta = str_replace('-', ', ', $keywords).'ONE STOP Real Estate SERVICE'; 
 		$arr_keywords = explode('-', $keywords);
-		$viewName = "seo.vw_".strtolower($arr_keywords[0].'_'.$arr_keywords[1]);	
-		$viewPath = app_path()."/views/seo/vw_".strtolower($arr_keywords[0].'_'.$arr_keywords[1]).'.blade.php';	
+		
+		$viewName = "vw_";
+		foreach ($arr_keywords as $keyword) {
+		$viewName.=strtolower($arr_keywords[0].'_';
+		}
+		$viewName = substr($viewName, 0, strlen($viewName-1));
+		
+		
+
+		$viewPath = app_path()."/views/seo/".$viewName.'.blade.php';
 
 		$controllerTemplate = \File::get(__DIR__.'\ControllerTemplate.txt');
 
@@ -199,9 +207,9 @@ class SeoManyCommand extends Command {
 		$controllerName= '';
 
 		foreach ($controllerNameArray as $contr) {
-				$controllerName.+ = ucwords($contr); 					 	
+				$controllerName.= ucwords($contr); 					 	
 				 }		 
-				
+			$controllerName.='Controller';	
 		$routeLine = "Route::get('$keywords', array('as'=>'$keywords', 'uses'=>'$controllerName@index'));";
 	//$this->info($routeLine);
 

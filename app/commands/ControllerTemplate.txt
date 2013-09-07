@@ -13,7 +13,7 @@ class {{controllerName}} extends BaseController {
 		$title = '{{title}}';
 		$meta = '{{meta}}';
 
-		return View::make('{{viewName}}')
+		return View::make('seo.{{viewName}}')
 		->with(compact('houses'))
 		->with(compact('title', 'meta'));
 	}
