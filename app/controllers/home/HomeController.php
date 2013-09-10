@@ -18,7 +18,7 @@ class HomeController extends BaseController {
 	public function index()
 	{
 
-	$title = 'homes sale, houses rent remax skokie, real estate niles, evanston';
+	$title = 'homes for sale, apartments for rent remax skokie, niles, evanston, morton grove';
 	$meta= 'Comprehensive Real Estate Services, Buy House, Get approved for Home Loan, 
 	Rent, Sell, Invest in Real Estate. ONE STOP SERVICE!';		
 	return View::make('home.vw_home')
