@@ -51,6 +51,11 @@ Route::get('news-for-buyers', array('as'=>'news-for-buyers', 'uses'=>'NewsForBuy
 Route::get('news-for-sellers', array('as'=>'news-for-sellers', 'uses'=>'NewsForSellersController@index'));
 
 /* =buying */
+Route::get('buying-home-in-skokie', array('as'=>'buying-home-in-skokie', 'uses'=>'HomeInSkokieController@index'));
+Route::get('Houses-Sale-Skokie/60076', array('as'=>'skokie_60076', 'uses'=>'HomeInSkokieController@skokie_60076'));
+Route::get('Houses-Sale-Skokie/60077', array('as'=>'skokie_60077', 'uses'=>'HomeInSkokieController@skokie_60077'));
+Route::get('Houses-Sale-Skokie/60203', array('as'=>'skokie_60203', 'uses'=>'HomeInSkokieController@skokie_60203'));
+ 
 
 Route::get('anatomy-of-a-home-purchase', array('as'=>'anatomy-of-a-home-purchase', 'uses'=>'Anatomy_of_a_home_purchaseController@index'));
 Route::get('deciding-where-to-live', array('as'=>'deciding-where-to-live', 'uses'=>'Deciding_where_to_liveController@index'));
@@ -102,6 +107,13 @@ Route::get('rent/{id}', 'RentController@show');
 Route::get('rent-apartments', 'RentController@apartments');
 Route::get('rent-houses', 'RentController@houses');
 Route::get('all-rent-listings', array('as'=>'all-rent-listings', 'uses'=>'RentController@all'));
+
+
+
+
+
+
+
 
 Route::get('realtor-sale', array('as'=>'Parser-realtor', 'uses'=>'ParserRealtorController@index'));
 Route::post('parser-realtor-save4', array('as'=>'parser-realtor-save4', 'uses'=>'ParseController@saveRentCity'));

@@ -17,7 +17,7 @@ public function getBathrooms($html)
 	$start = strpos($html, 'Bathrooms</h3>');
 	$start = strpos($html, '<ul', $start);
 	$start = strpos($html, '>', $start)+1;
-	if($start===false)
+	if(!is_numeric($start))
 		return "";
 	$finish = strpos($html, '</ul>', $start);
 	$element = substr($html, $start, $finish - $start);

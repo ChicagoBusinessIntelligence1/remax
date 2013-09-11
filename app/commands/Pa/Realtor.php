@@ -3,7 +3,7 @@ include_once 'Http.php';
 include_once 'DcParser.php';
 
 
-class Realtor
+class Realtor 
 {
 protected $parser;
 
@@ -13,24 +13,29 @@ public function __construct()
 	}
 
 
-public function getAllCityPages()
+public function getAllCityPages($issale)
 {
 	$arrLinks = [];
 
 	$arrCities=[];
 
+	if ($issale==1)
 	$mLink = 'http://www.realtor.com/realestateandhomes-search/{{city}}?pgsz=300';
+	else
+	$mLink = 'http://www.realtor.com/homesforrent/{{city}}?pgsz=300';
+		
+
 
 	$arrCities[] = 'Skokie_IL';
 	$arrCities[] = 'Niles_IL';
 	$arrCities[] = 'Evanston_IL';
 	$arrCities[] = 'Morton-Grove_IL';
-	$arrCities[] = 'Glenview_IL';
-	$arrCities[] = 'Park-Ridge_IL';
-	$arrCities[] = 'Lincolnwood_IL';
-	$arrCities[] = 'Wilmette_IL';
-	$arrCities[] = 'Winnetka_IL';
-	$arrCities[] = 'Lake-Forest_IL';
+	// $arrCities[] = 'Glenview_IL';
+	// $arrCities[] = 'Park-Ridge_IL';
+	// $arrCities[] = 'Lincolnwood_IL';
+	// $arrCities[] = 'Wilmette_IL';
+	// $arrCities[] = 'Winnetka_IL';
+	// $arrCities[] = 'Lake-Forest_IL';
 
 	
 
@@ -41,9 +46,9 @@ public function getAllCityPages()
 ///////////////////////////////////
 	//	break;
 ///////////////////////////////////
-
+					
 		$html = $this->get($link);
-		if (strpos($html,'pg-2')!==false)
+		if (strpos($html,'View Page 2')!==false)
 			$arrLinks[] = $link.'&pg=2';
 
 
@@ -58,7 +63,7 @@ public function get($url)
 	$opts = array('http' =>
     array(
         'method'  => 'GET',
-        'user_agent '  => "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2) Gecko/20100301 Ubuntu/9.10 (karmic) Firefox/3.6",
+        //'user_agent '  => "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2) Gecko/20100301 Ubuntu/9.10 (karmic) Firefox/3.6",
         'header' => array(
             'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*\/*;q=0.8
 '
@@ -169,19 +174,24 @@ public function getAddressArr($url, $house)
 }
 
 
-public function realtor_sale($url)
+public function realtor_sale($url, $html, $issale)
 	{
-		$this->getAddress($url);
-
-		$html = $this->get($url);
-
-
-		$house = new House();
 		
 		$type = $this->getPropertyType($html);
-		if (strpos($type, 'Single')===false && strpos($type, 'Condo')===false)
+		if ($issale==1 && (strpos($type, 'Single')===false && strpos($type, 'Condo')===false))
 			return;
 
+		$price = $this->getPrice($html);
+		if ($issale==1 && ($price<5000))
+			return;
+		$status = $this->getStatus($html);
+		if ($issale==1 && (strlen($status)==0 || $status == "Not For Sale" || $status == "Temporarily No Showings"))
+			return;
+
+		if($price==0)
+			return;
+
+		$house = new House();
 		$house->realtor_url = $url;	
 		$house->save();
 		
@@ -283,7 +293,7 @@ public function realtor_sale($url)
 
 
 
-		$house->issale = 1;
+		$house->issale = $issale;
 
 
 		if(!$house->save())
@@ -375,8 +385,6 @@ $context  = stream_context_create($opts);
 
 			
 				$fileImage = file_get_contents($image,false, $context);
-
-
 
 				$image = imagecreatefromstring($fileImage);	
 				$width = intval(imagesx($image));

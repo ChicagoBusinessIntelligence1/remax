@@ -115,6 +115,7 @@
              <li class="has-dropdown">{{link_to('#', 'Buying Home');}}
 
               <ul class="dropdown">
+                <li>{{link_to_route('buying-home-in-skokie', 'Buying Home In Skokie');}}</li>
                 <li>{{link_to_route('the-benefits-of-home-ownership', 'The Benefits of Home Ownership');}}</li>
                 <li>{{link_to_route('the-importance-of-buyers-agent', 'The Importance of a Buyer\'s Agent');}}</li>
                 <li>{{link_to_route('deciding-where-to-live', 'Deciding Where to Live');}}</li>

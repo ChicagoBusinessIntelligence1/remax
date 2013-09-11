@@ -4,9 +4,7 @@
 <!-- //LOCATION: remax/public/search 
 -->
 <div class="mainContent">
-@if (isset($houses))
-@include('include.res', compact($houses))
-@yield('houses')
-@endif
+<h1 class="docs header">{{H1}}</h1>
+
 		</div>
 		@stop

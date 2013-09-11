@@ -11,4 +11,5 @@
 |
 */
 Artisan::add(new Pa());
+Artisan::add(new Cv());
 

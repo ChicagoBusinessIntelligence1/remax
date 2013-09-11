@@ -1,0 +1,21 @@
+<?php
+ //LOCATION: remax/public/{{url}}
+class {{controllerName}} extends BaseController {
+
+
+
+	public function index()
+	{
+		$houses  = House::where('issale', '=', {{issale}})
+		->where(function($query){$query->where('address', 'LIKE', '%{{city}}%');})
+		->paginate(10);
+
+		$title = '{{title}}';
+		$meta = '{{meta}}';
+
+		return View::make('{{viewPath}}')
+		->with(compact('houses'))
+		->with(compact('title', 'meta'));
+	}
+
+}

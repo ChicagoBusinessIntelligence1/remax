@@ -48,16 +48,29 @@ class Pa extends Command {
 	 */
 	public function fire()
 	{
-		$this->arrAllpages();
+		// $clean = $this->confirm("Clean all images folder?");
+		// if ($clean){
+		// 	if (File::cleanDirectory(public_path().'/comp/img/images')){
+		// 		$this->info('Images have been deleted');
+		// 		} else {
+					
+		// 		$this->error('Maybe problem in images folder deletion');
+		// 		}
+		// 	}
+		$issale = $this->argument('issale');
+
+
+		$this->arrAllpages($issale);
 	}
 
-	protected function arrAllpages()
+	protected function arrAllpages($issale)
 	{
 
-
+	$saleparses = Saleparse::all();
+	if (count($saleparses)==0) {
 
 	$this->info('Getting city Links to parse');
-	$arrCityLinks = $this->realtor->getAllCityPages();
+	$arrCityLinks = $this->realtor->getAllCityPages($issale);
 	
 	foreach ($arrCityLinks as $cityLink) {
 		$this->info("started parsing $cityLink");
@@ -66,18 +79,40 @@ class Pa extends Command {
 		$houseLinks = $this->realtor->getHouseLinkArrays($html);
 
 		foreach ($houseLinks as $url) {
-			$full_url = "http://www.realtor.com".$url;
-			$this->info($full_url);
-			$this->realtor->realtor_sale($full_url);
-			
+			if (strpos($url, 'path/to/save/')!==false)
+				continue;
+			$full_url = $url;
+			$saleparse = new Saleparse();
+			$saleparse->url = $full_url;
+			$saleparse->save();
+
+			}
+		}
+	}
+	$saleparses = Saleparse::all();
+	$total = count($saleparses);
+	$counter = 1;
+	foreach ($saleparses as $saleparse) {
+		$url = "http://www.realtor.com".$saleparse->url;
+		$html = $this->realtor->get($url, $issale);
+		
+		if (strpos($html, "Blocked IP Address")!==false){
+		die('Zablockirovali Pidorasy');
 		}
 
+		$this->realtor->realtor_sale($url, $html, $issale);
+		$saleparse->delete();
+		$this->info("Parsed  $counter out of $total");
+		$counter++;
 
-	}
-	
-	
+		if($counter%50==0)
+			usleep(10000);
 
+		}
 	}
+
+
+	
 
 
 
@@ -89,7 +124,7 @@ class Pa extends Command {
 	protected function getArguments()
 	{
 		return array(
-			//array('example', InputArgument::REQUIRED, 'An example argument.'),
+			array('issale', InputArgument::REQUIRED, '1-sale, 0, rent'),
 		);
 	}
 
