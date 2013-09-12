@@ -1,6 +1,6 @@
 @section('houses')
 		@if(count($houses)>0)
-		<h3> Found {{$houses->getTotal()}} listings </h3>
+		<h3 class="alert-box secondary foundInfoStyle radius">{{$houses->getTotal()}} LISTINGS FOUND </h3>
 	<ul class="no-bullet">
 		@foreach ($houses as $house)
 		<li>

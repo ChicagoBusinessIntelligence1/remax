@@ -123,9 +123,13 @@ h2, h3 {
 	color: $colorFontGray !important;
 }
 h1{
-	color: $colorNavPanel !important;
-	font-size: 35px !important;
+	color: #525252 !important;
+	font-size: 38px !important;
 	line-height: 40px !important;
+}
+h2{
+	font-size: 30px !important;
+
 }
 h3{
 	font-size: 22px !important;
@@ -764,6 +768,42 @@ input[type="password"]{
 		}
 	}
 }
+/* =buying home in Skokie style starts here */
+
+.foundInfoStyle{
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	font-size: 16px !important;
+	border: 1px groove $colorFontOffWhite !important;
+
+	background-color:  lighten(#F2F2F2, 1%)!important;
+	margin-top: 5px !important;
+	text-shadow: $myTextShadow2 !important;
+}
+.aZipSkokieHome{
+	color: #2795B6;
+	&:hover{
+
+		color: lighten($colorFontGray, 15%);
+	} 
+}
+
+.ulSecond{
+	margin-left: 20px !important;
+}
+.ulZipSkokieHome{
+	line-height: 30px !important;
+}
+.aBreadcrumbs{
+	color: lighten($colorFontGray, 20%);
+	&:hover{
+
+	color: lighten($colorFontGray, 6%);
+	}
+}
+
+
+
 
 /* =find starts here */
 .oneRentDescriptionUl{
