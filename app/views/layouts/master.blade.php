@@ -112,7 +112,17 @@
                </ul>
              </li>
 
-             <li class="has-dropdown">{{link_to('#', 'Buying Home');}}
+      
+
+            <li class="has-dropdown">{{link_to('#', 'Estate Listings');}}
+
+              <ul class="dropdown">
+                
+                
+              </ul>
+            </li>
+              
+                   <li class="has-dropdown">{{link_to('#', 'Buying Home');}}
 
               <ul class="dropdown">
                 <li>{{link_to_route('buying-home-in-skokie', 'Buying Home In Skokie');}}</li>
@@ -123,6 +133,8 @@
                 <li>{{link_to_route('five-tips-to-narrow-your-online-home-search', '5 Tips to Narrow Your Online Home Search');}}</li>
               </ul>
             </li>
+
+
             <li class="has-dropdown">{{link_to('#', 'Selling Home');}}
               <ul class="dropdown">
                 <li>{{link_to_route('the-right-listing-agent', 'The Right Listing Agent');}}</li>
