@@ -8049,6 +8049,7 @@ input[type="password"] {
 }
 /* line 785, ../sass/screen.scss */
 .aZipSkokieHome:hover {
+  text-decoration: underline;
   color: #787878;
 }
 
@@ -8059,7 +8060,7 @@ input[type="password"] {
 
 /* line 794, ../sass/screen.scss */
 .ulZipSkokieHome {
-  line-height: 30px !important;
+  line-height: 36px !important;
 }
 
 /* line 797, ../sass/screen.scss */

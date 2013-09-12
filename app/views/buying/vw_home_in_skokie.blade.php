@@ -14,32 +14,31 @@
 		</nav>
 		@endif
 	</p>
-	<h1 class="docs header">Skokie Real Estate 
-	</h1>
+	<div class="panel">	
+		<h1 class="docs header">Buying Home in Skokie 
+		</h1>
 
-	<h2 class="subheader">
-		@if (isset($zip))
-		<!-- <hr/> -->
-		Homes for Sale in Skokie 
-		at {{$zip}}
-		@endif
-	</h2>
-
-
-	<hr/>
+		<h2 class="subheader">
+			@if (isset($zip))
+			<!-- <hr/> -->
+			Homes for Sale in Skokie 
+			at {{$zip}}
+			@endif
+		</h2>
 
 
-	@if(isset($zips))
-	<div class="row">
-		<div class="large-12 columns ">
-			<div class="panel">	
+		<hr/>
+
+
+		@if(isset($zips))
+		<div class="row">
+			<div class="large-12 columns ">
 				<ul class="no-bullet ulZipSkokieHome">
 					<li class="liZipSkokieHome">
 						
 						{{link_to_route('Skokie-Homes-For-Sale', 'Skokie Listings For Sale', array(), array('class'=>'aZipSkokieHome'))}}
 					</li>
 
-					<hr/>	
 					<ul class="ulSecond ulZipSkokieHome">	
 						@foreach ($zips as $zip)
 						<li class="liZipSkokieHome">
@@ -58,32 +57,14 @@
 					</ul>	
 				</ul>
 			</div>
-			<div class="panel">	
-				<ul class="no-bullet ulZipSkokieHome">
-					
-					<li class="liZipSkokieHome">
-						{{link_to_route('Skokie-Rentals', 'Skokie Rentals', array(), array('class'=>'aZipSkokieHome'))}}
-					</li>
-					<hr/>
-
-					<ul class="ulSecond ulZipSkokieHome">	
-						<li class="liZipSkokieHome">
-							{{link_to_route('Apartments-For-Rent-In-Skokie-Il', 'Apartments For Rent In Skokie IL', array(), array('class'=>'aZipSkokieHome'))}}
-						</li>
-
-						<li class="liZipSkokieHome">
-							{{link_to_route('Homes-For-Rent-In-Skokie-Il', 'Single Family Homes For Rent In Skokie IL', array(), array('class'=>'aZipSkokieHome'))}}
-						</li>
-					</ul>
-				</ul>
-			</div>
+			
 		</div>
-	</div>
-	@endif
-	@if (isset($houses))
-	@include('include.res', compact($houses))
-	@yield('houses')
-	@endif
+		@endif
+		@if (isset($houses))
+		@include('include.res', compact($houses))
+		@yield('houses')
+		@endif
 
+	</div>
 </div>
 @stop

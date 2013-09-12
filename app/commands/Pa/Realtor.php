@@ -20,22 +20,22 @@ public function getAllCityPages($issale)
 	$arrCities=[];
 
 	if ($issale==1)
-	$mLink = 'http://www.realtor.com/realestateandhomes-search/{{city}}?pgsz=300';
+	$mLink = 'http://www.realtor.com/realestateandhomes-search/price-na-400000/{{city}}?pgsz=300';
 	else
 	$mLink = 'http://www.realtor.com/homesforrent/{{city}}?pgsz=300';
 		
 
 
-	$arrCities[] = 'Skokie_IL';
-	$arrCities[] = 'Niles_IL';
-	$arrCities[] = 'Evanston_IL';
-	$arrCities[] = 'Morton-Grove_IL';
-	// $arrCities[] = 'Glenview_IL';
-	// $arrCities[] = 'Park-Ridge_IL';
-	// $arrCities[] = 'Lincolnwood_IL';
-	// $arrCities[] = 'Wilmette_IL';
-	// $arrCities[] = 'Winnetka_IL';
-	// $arrCities[] = 'Lake-Forest_IL';
+	// $arrCities[] = 'Skokie_IL';
+	// $arrCities[] = 'Niles_IL';
+	// $arrCities[] = 'Evanston_IL';
+	// $arrCities[] = 'Morton-Grove_IL';
+	$arrCities[] = 'Glenview_IL';
+	$arrCities[] = 'Park-Ridge_IL';
+	$arrCities[] = 'Lincolnwood_IL';
+	$arrCities[] = 'Wilmette_IL';
+	$arrCities[] = 'Winnetka_IL';
+	$arrCities[] = 'Lake-Forest_IL';
 
 	
 

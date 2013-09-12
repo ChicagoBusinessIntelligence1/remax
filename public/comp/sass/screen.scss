@@ -783,7 +783,7 @@ input[type="password"]{
 .aZipSkokieHome{
 	color: #2795B6;
 	&:hover{
-
+		text-decoration: underline;
 		color: lighten($colorFontGray, 15%);
 	} 
 }
@@ -792,13 +792,13 @@ input[type="password"]{
 	margin-left: 20px !important;
 }
 .ulZipSkokieHome{
-	line-height: 30px !important;
+	line-height: 36px !important;
 }
 .aBreadcrumbs{
 	color: lighten($colorFontGray, 20%);
 	&:hover{
 
-	color: lighten($colorFontGray, 6%);
+		color: lighten($colorFontGray, 6%);
 	}
 }
 
