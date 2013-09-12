@@ -52,9 +52,12 @@ Route::get('news-for-sellers', array('as'=>'news-for-sellers', 'uses'=>'NewsForS
 
 /* =buying */
 Route::get('buying-home-in-skokie', array('as'=>'buying-home-in-skokie', 'uses'=>'HomeInSkokieController@index'));
-Route::get('Houses-Sale-Skokie/60076', array('as'=>'skokie_60076', 'uses'=>'HomeInSkokieController@skokie_60076'));
-Route::get('Houses-Sale-Skokie/60077', array('as'=>'skokie_60077', 'uses'=>'HomeInSkokieController@skokie_60077'));
-Route::get('Houses-Sale-Skokie/60203', array('as'=>'skokie_60203', 'uses'=>'HomeInSkokieController@skokie_60203'));
+Route::get('Houses-Sale-Skokie/60076', array('as'=>'skokie-60076', 'uses'=>'HomeInSkokieController@skokie_60076'));
+Route::get('Houses-Sale-Skokie/60077', array('as'=>'skokie-60077', 'uses'=>'HomeInSkokieController@skokie_60077'));
+Route::get('Houses-Sale-Skokie/60203', array('as'=>'skokie-60203', 'uses'=>'HomeInSkokieController@skokie_60203'));
+
+Route::get('Houses-Sale-Skokie/Single-Family', array('as'=>'skokie-single', 'uses'=>'HomeInSkokieController@skokie_single'));
+Route::get('Houses-Sale-Skokie/Condos', array('as'=>'skokie-condos', 'uses'=>'HomeInSkokieController@skokie_condos'));
  
 
 Route::get('anatomy-of-a-home-purchase', array('as'=>'anatomy-of-a-home-purchase', 'uses'=>'Anatomy_of_a_home_purchaseController@index'));
