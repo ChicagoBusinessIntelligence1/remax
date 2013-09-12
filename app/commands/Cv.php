@@ -36,7 +36,9 @@ class Cv extends Command {
 	 * @return void
 	 */
 	public function fire()
-	{
+	{	
+
+
 		$folder = $this->argument('folder');
 		$contname = $this->argument('contname');
 		$issale = $this->argument('issale');
@@ -135,9 +137,6 @@ class Cv extends Command {
 			return $fullControllerName;
 
 		die('Routes cannot be written');
-
-
-
 
 
 	}

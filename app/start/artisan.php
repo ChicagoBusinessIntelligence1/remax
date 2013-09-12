@@ -12,4 +12,5 @@
 */
 Artisan::add(new Pa());
 Artisan::add(new Cv());
+Artisan::add(new Loc());
 

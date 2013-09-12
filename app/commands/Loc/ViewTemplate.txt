@@ -1,0 +1,24 @@
+@extends('layouts.master')
+@section('content')
+
+<!-- //LOCATION: remax/public/{{url}} 
+-->
+<div class="mainContent">
+	<p>
+		@if (isset($houses))
+		<nav class="breadcrumbs">
+			{{link_to_route('/', "Remax Real Estate Services", array(), array('class'=>'aBreadcrumbs'));}}
+
+			{{link_to_route("$houses->first()->city-real-estate-listings", "$houses->first()->clity Real Estate Listings", array(), array('class'=>'aBreadcrumbs'));}}
+			
+		</nav>
+		@endif
+	</p>
+	<div class="panel">	
+		
+
+
+
+	</div>
+</div>
+@stop

@@ -50,6 +50,156 @@ Route::get('real-estate-news', array('as'=>'real-estate-news', 'uses'=>'RealEsta
 Route::get('news-for-buyers', array('as'=>'news-for-buyers', 'uses'=>'NewsForBuyersController@index'));
 Route::get('news-for-sellers', array('as'=>'news-for-sellers', 'uses'=>'NewsForSellersController@index'));
 
+/* =location */
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+
+
+
+
+
+
 /* =buying */
 Route::get('buying-home-in-skokie', array('as'=>'buying-home-in-skokie', 'uses'=>'HomeInSkokieController@index'));
 Route::get('Houses-Sale-Skokie/60076', array('as'=>'skokie-60076', 'uses'=>'HomeInSkokieController@skokie_60076'));
@@ -125,129 +275,3 @@ Route::post('parser-realtor-save2', array('as'=>'parser-realtor-save2', 'uses'=>
 Route::post('parser-realtor-save', array('as'=>'parser-realtor-save', 'uses'=>'ParseController@save'));
 Route::get('Remax-agent-real-estate-skokie-hiring', array('as'=>'Remax-agent', 'uses'=>'RemaxAgentController@index'));
 //
-Route::get('North-Chicagoland-Homes-For-Sale', array('as'=>'North-Chicagoland', 'uses'=>'NorthChicagolandController@index'));
-
-Route::get('Skokie-Homes-For-Sale', array('as'=>'Skokie-Homes-For-Sale', 'uses'=>'SkokieHomesForSaleController@index'));
-Route::get('Morton-Grove-Homes-For-Sale', array('as'=>'Morton-Grove-Homes-For-Sale', 'uses'=>'MortonGroveHomesForSaleController@index'));
-Route::get('Niles-Homes-For-Sale', array('as'=>'Niles-Homes-For-Sale', 'uses'=>'NilesHomesForSaleController@index'));
-Route::get('Evanston-Homes-For-Sale', array('as'=>'Evanston-Homes-For-Sale', 'uses'=>'EvanstonHomesForSaleController@index'));
-Route::get('Glenview-Homes-For-Sale', array('as'=>'Glenview-Homes-For-Sale', 'uses'=>'GlenviewHomesForSaleController@index'));
-Route::get('North-Chicagoland-Rentals', array('as'=>'North-Chicagoland-Rentals', 'uses'=>'NorthChicagolandRentalsController@index'));
-Route::get('Skokie-Rentals', array('as'=>'Skokie-Rentals', 'uses'=>'SkokieRentalsController@index'));
-Route::get('Morton-Grove-Rentals', array('as'=>'Morton-Grove-Rentals', 'uses'=>'MortonGroveRentalsController@index'));
-Route::get('Niles-Rentals', array('as'=>'Niles-Rentals', 'uses'=>'NilesRentalsController@index'));
-Route::get('Evanston-Rentals', array('as'=>'Evanston-Rentals', 'uses'=>'EvanstonRentalsController@index'));
-Route::get('Glenview-Rentals', array('as'=>'Glenview-Rentals', 'uses'=>'GlenviewRentalsController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Skokie-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Skokie-Il', 'uses'=>'SingleFamilyHomesForSaleInSkokieIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'uses'=>'SingleFamilyHomesForSaleInMortonGroveIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Niles-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Niles-Il', 'uses'=>'SingleFamilyHomesForSaleInNilesIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Evanston-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Evanston-Il', 'uses'=>'SingleFamilyHomesForSaleInEvanstonIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Glenview-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Glenview-Il', 'uses'=>'SingleFamilyHomesForSaleInGlenviewIlController@index'));
-Route::get('Condos-For-Sale-In-Skokie-Il', array('as'=>'Condos-For-Sale-In-Skokie-Il', 'uses'=>'CondosForSaleInSkokieIlController@index'));
-Route::get('Condos-For-Sale-In-Morton-Grove-Il', array('as'=>'Condos-For-Sale-In-Morton-Grove-Il', 'uses'=>'CondosForSaleInMortonGroveIlController@index'));
-Route::get('Condos-For-Sale-In-Niles-Il', array('as'=>'Condos-For-Sale-In-Niles-Il', 'uses'=>'CondosForSaleInNilesIlController@index'));
-Route::get('Condos-For-Sale-In-Evanston-Il', array('as'=>'Condos-For-Sale-In-Evanston-Il', 'uses'=>'CondosForSaleInEvanstonIlController@index'));
-Route::get('Condos-For-Sale-In-Glenview-Il', array('as'=>'Condos-For-Sale-In-Glenview-Il', 'uses'=>'CondosForSaleInGlenviewIlController@index'));
-Route::get('Apartments-For-Rent-In-Skokie-Il', array('as'=>'Apartments-For-Rent-In-Skokie-Il', 'uses'=>'ApartmentsForRentInSkokieIlController@index'));
-Route::get('Apartments-For-Rent-In-Molton-Grove-Il', array('as'=>'Apartments-For-Rent-In-Molton-Grove-Il', 'uses'=>'ApartmentsForRentInMoltonGroveIlController@index'));
-Route::get('Apartments-For-Rent-In-Niles-Il', array('as'=>'Apartments-For-Rent-In-Niles-Il', 'uses'=>'ApartmentsForRentInNilesIlController@index'));
-Route::get('Apartments-For-Rent-In-Evanston-Il', array('as'=>'Apartments-For-Rent-In-Evanston-Il', 'uses'=>'ApartmentsForRentInEvanstonIlController@index'));
-Route::get('Apartments-For-Rent-In-Glenview-Il', array('as'=>'Apartments-For-Rent-In-Glenview-Il', 'uses'=>'ApartmentsForRentInGlenviewIlController@index'));
-Route::get('Homes-For-Rent-In-Skokie-Il', array('as'=>'Homes-For-Rent-In-Skokie-Il', 'uses'=>'HomesForRentInSkokieIlController@index'));
-Route::get('Homes-For-Rent-In-Morton-Grove-Il', array('as'=>'Homes-For-Rent-In-Morton-Grove-Il', 'uses'=>'HomesForRentInMortonGroveIlController@index'));
-Route::get('Homes-For-Rent-In-Niles-Il', array('as'=>'Homes-For-Rent-In-Niles-Il', 'uses'=>'HomesForRentInNilesIlController@index'));
-Route::get('Homes-For-Rent-In-Evanston-Il', array('as'=>'Homes-For-Rent-In-Evanston-Il', 'uses'=>'HomesForRentInEvanstonIlController@index'));
-Route::get('Homes-For-Rent-In-Glenview-Il', array('as'=>'Homes-For-Rent-In-Glenview-Il', 'uses'=>'HomesForRentInGlenviewIlController@index'));
-Route::get('Skokie-Homes-For-Sale', array('as'=>'Skokie-Homes-For-Sale', 'uses'=>'SkokieHomesForSaleController@index'));
-Route::get('Morton-Grove-Homes-For-Sale', array('as'=>'Morton-Grove-Homes-For-Sale', 'uses'=>'MortonGroveHomesForSaleController@index'));
-Route::get('Niles-Homes-For-Sale', array('as'=>'Niles-Homes-For-Sale', 'uses'=>'NilesHomesForSaleController@index'));
-Route::get('Evanston-Homes-For-Sale', array('as'=>'Evanston-Homes-For-Sale', 'uses'=>'EvanstonHomesForSaleController@index'));
-Route::get('Glenview-Homes-For-Sale', array('as'=>'Glenview-Homes-For-Sale', 'uses'=>'GlenviewHomesForSaleController@index'));
-Route::get('North-Chicagoland-Rentals', array('as'=>'North-Chicagoland-Rentals', 'uses'=>'NorthChicagolandRentalsController@index'));
-Route::get('Skokie-Rentals', array('as'=>'Skokie-Rentals', 'uses'=>'SkokieRentalsController@index'));
-Route::get('Morton-Grove-Rentals', array('as'=>'Morton-Grove-Rentals', 'uses'=>'MortonGroveRentalsController@index'));
-Route::get('Niles-Rentals', array('as'=>'Niles-Rentals', 'uses'=>'NilesRentalsController@index'));
-Route::get('Evanston-Rentals', array('as'=>'Evanston-Rentals', 'uses'=>'EvanstonRentalsController@index'));
-Route::get('Glenview-Rentals', array('as'=>'Glenview-Rentals', 'uses'=>'GlenviewRentalsController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Skokie-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Skokie-Il', 'uses'=>'SingleFamilyHomesForSaleInSkokieIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'uses'=>'SingleFamilyHomesForSaleInMortonGroveIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Niles-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Niles-Il', 'uses'=>'SingleFamilyHomesForSaleInNilesIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Evanston-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Evanston-Il', 'uses'=>'SingleFamilyHomesForSaleInEvanstonIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Glenview-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Glenview-Il', 'uses'=>'SingleFamilyHomesForSaleInGlenviewIlController@index'));
-Route::get('Condos-For-Sale-In-Skokie-Il', array('as'=>'Condos-For-Sale-In-Skokie-Il', 'uses'=>'CondosForSaleInSkokieIlController@index'));
-Route::get('Condos-For-Sale-In-Morton-Grove-Il', array('as'=>'Condos-For-Sale-In-Morton-Grove-Il', 'uses'=>'CondosForSaleInMortonGroveIlController@index'));
-Route::get('Condos-For-Sale-In-Niles-Il', array('as'=>'Condos-For-Sale-In-Niles-Il', 'uses'=>'CondosForSaleInNilesIlController@index'));
-Route::get('Condos-For-Sale-In-Evanston-Il', array('as'=>'Condos-For-Sale-In-Evanston-Il', 'uses'=>'CondosForSaleInEvanstonIlController@index'));
-Route::get('Condos-For-Sale-In-Glenview-Il', array('as'=>'Condos-For-Sale-In-Glenview-Il', 'uses'=>'CondosForSaleInGlenviewIlController@index'));
-Route::get('Apartments-For-Rent-In-Skokie-Il', array('as'=>'Apartments-For-Rent-In-Skokie-Il', 'uses'=>'ApartmentsForRentInSkokieIlController@index'));
-Route::get('Apartments-For-Rent-In-Molton-Grove-Il', array('as'=>'Apartments-For-Rent-In-Molton-Grove-Il', 'uses'=>'ApartmentsForRentInMoltonGroveIlController@index'));
-Route::get('Apartments-For-Rent-In-Niles-Il', array('as'=>'Apartments-For-Rent-In-Niles-Il', 'uses'=>'ApartmentsForRentInNilesIlController@index'));
-Route::get('Apartments-For-Rent-In-Evanston-Il', array('as'=>'Apartments-For-Rent-In-Evanston-Il', 'uses'=>'ApartmentsForRentInEvanstonIlController@index'));
-Route::get('Apartments-For-Rent-In-Glenview-Il', array('as'=>'Apartments-For-Rent-In-Glenview-Il', 'uses'=>'ApartmentsForRentInGlenviewIlController@index'));
-Route::get('Homes-For-Rent-In-Skokie-Il', array('as'=>'Homes-For-Rent-In-Skokie-Il', 'uses'=>'HomesForRentInSkokieIlController@index'));
-Route::get('Homes-For-Rent-In-Morton-Grove-Il', array('as'=>'Homes-For-Rent-In-Morton-Grove-Il', 'uses'=>'HomesForRentInMortonGroveIlController@index'));
-Route::get('Homes-For-Rent-In-Niles-Il', array('as'=>'Homes-For-Rent-In-Niles-Il', 'uses'=>'HomesForRentInNilesIlController@index'));
-Route::get('Homes-For-Rent-In-Evanston-Il', array('as'=>'Homes-For-Rent-In-Evanston-Il', 'uses'=>'HomesForRentInEvanstonIlController@index'));
-Route::get('Homes-For-Rent-In-Glenview-Il', array('as'=>'Homes-For-Rent-In-Glenview-Il', 'uses'=>'HomesForRentInGlenviewIlController@index'));
-Route::get('Skokie-Homes-For-Sale', array('as'=>'Skokie-Homes-For-Sale', 'uses'=>'SkokieHomesForSaleController@index'));
-Route::get('Morton-Grove-Homes-For-Sale', array('as'=>'Morton-Grove-Homes-For-Sale', 'uses'=>'MortonGroveHomesForSaleController@index'));
-Route::get('Niles-Homes-For-Sale', array('as'=>'Niles-Homes-For-Sale', 'uses'=>'NilesHomesForSaleController@index'));
-Route::get('Evanston-Homes-For-Sale', array('as'=>'Evanston-Homes-For-Sale', 'uses'=>'EvanstonHomesForSaleController@index'));
-Route::get('Glenview-Homes-For-Sale', array('as'=>'Glenview-Homes-For-Sale', 'uses'=>'GlenviewHomesForSaleController@index'));
-Route::get('North-Chicagoland-Rentals', array('as'=>'North-Chicagoland-Rentals', 'uses'=>'NorthChicagolandRentalsController@index'));
-Route::get('Skokie-Rentals', array('as'=>'Skokie-Rentals', 'uses'=>'SkokieRentalsController@index'));
-Route::get('Morton-Grove-Rentals', array('as'=>'Morton-Grove-Rentals', 'uses'=>'MortonGroveRentalsController@index'));
-Route::get('Niles-Rentals', array('as'=>'Niles-Rentals', 'uses'=>'NilesRentalsController@index'));
-Route::get('Evanston-Rentals', array('as'=>'Evanston-Rentals', 'uses'=>'EvanstonRentalsController@index'));
-Route::get('Glenview-Rentals', array('as'=>'Glenview-Rentals', 'uses'=>'GlenviewRentalsController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Skokie-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Skokie-Il', 'uses'=>'SingleFamilyHomesForSaleInSkokieIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'uses'=>'SingleFamilyHomesForSaleInMortonGroveIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Niles-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Niles-Il', 'uses'=>'SingleFamilyHomesForSaleInNilesIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Evanston-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Evanston-Il', 'uses'=>'SingleFamilyHomesForSaleInEvanstonIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Glenview-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Glenview-Il', 'uses'=>'SingleFamilyHomesForSaleInGlenviewIlController@index'));
-Route::get('Condos-For-Sale-In-Skokie-Il', array('as'=>'Condos-For-Sale-In-Skokie-Il', 'uses'=>'CondosForSaleInSkokieIlController@index'));
-Route::get('Condos-For-Sale-In-Morton-Grove-Il', array('as'=>'Condos-For-Sale-In-Morton-Grove-Il', 'uses'=>'CondosForSaleInMortonGroveIlController@index'));
-Route::get('Condos-For-Sale-In-Niles-Il', array('as'=>'Condos-For-Sale-In-Niles-Il', 'uses'=>'CondosForSaleInNilesIlController@index'));
-Route::get('Condos-For-Sale-In-Evanston-Il', array('as'=>'Condos-For-Sale-In-Evanston-Il', 'uses'=>'CondosForSaleInEvanstonIlController@index'));
-Route::get('Condos-For-Sale-In-Glenview-Il', array('as'=>'Condos-For-Sale-In-Glenview-Il', 'uses'=>'CondosForSaleInGlenviewIlController@index'));
-Route::get('Apartments-For-Rent-In-Skokie-Il', array('as'=>'Apartments-For-Rent-In-Skokie-Il', 'uses'=>'ApartmentsForRentInSkokieIlController@index'));
-Route::get('Apartments-For-Rent-In-Molton-Grove-Il', array('as'=>'Apartments-For-Rent-In-Molton-Grove-Il', 'uses'=>'ApartmentsForRentInMoltonGroveIlController@index'));
-Route::get('Apartments-For-Rent-In-Niles-Il', array('as'=>'Apartments-For-Rent-In-Niles-Il', 'uses'=>'ApartmentsForRentInNilesIlController@index'));
-Route::get('Apartments-For-Rent-In-Evanston-Il', array('as'=>'Apartments-For-Rent-In-Evanston-Il', 'uses'=>'ApartmentsForRentInEvanstonIlController@index'));
-Route::get('Apartments-For-Rent-In-Glenview-Il', array('as'=>'Apartments-For-Rent-In-Glenview-Il', 'uses'=>'ApartmentsForRentInGlenviewIlController@index'));
-Route::get('Homes-For-Rent-In-Skokie-Il', array('as'=>'Homes-For-Rent-In-Skokie-Il', 'uses'=>'HomesForRentInSkokieIlController@index'));
-Route::get('Homes-For-Rent-In-Morton-Grove-Il', array('as'=>'Homes-For-Rent-In-Morton-Grove-Il', 'uses'=>'HomesForRentInMortonGroveIlController@index'));
-Route::get('Homes-For-Rent-In-Niles-Il', array('as'=>'Homes-For-Rent-In-Niles-Il', 'uses'=>'HomesForRentInNilesIlController@index'));
-Route::get('Homes-For-Rent-In-Evanston-Il', array('as'=>'Homes-For-Rent-In-Evanston-Il', 'uses'=>'HomesForRentInEvanstonIlController@index'));
-Route::get('Homes-For-Rent-In-Glenview-Il', array('as'=>'Homes-For-Rent-In-Glenview-Il', 'uses'=>'HomesForRentInGlenviewIlController@index'));
-Route::get('Skokie-Homes-For-Sale', array('as'=>'Skokie-Homes-For-Sale', 'uses'=>'SkokieHomesForSaleController@index'));
-Route::get('Morton-Grove-Homes-For-Sale', array('as'=>'Morton-Grove-Homes-For-Sale', 'uses'=>'MortonGroveHomesForSaleController@index'));
-Route::get('Niles-Homes-For-Sale', array('as'=>'Niles-Homes-For-Sale', 'uses'=>'NilesHomesForSaleController@index'));
-Route::get('Evanston-Homes-For-Sale', array('as'=>'Evanston-Homes-For-Sale', 'uses'=>'EvanstonHomesForSaleController@index'));
-Route::get('Glenview-Homes-For-Sale', array('as'=>'Glenview-Homes-For-Sale', 'uses'=>'GlenviewHomesForSaleController@index'));
-Route::get('North-Chicagoland-Rentals', array('as'=>'North-Chicagoland-Rentals', 'uses'=>'NorthChicagolandRentalsController@index'));
-Route::get('Skokie-Rentals', array('as'=>'Skokie-Rentals', 'uses'=>'SkokieRentalsController@index'));
-Route::get('Morton-Grove-Rentals', array('as'=>'Morton-Grove-Rentals', 'uses'=>'MortonGroveRentalsController@index'));
-Route::get('Niles-Rentals', array('as'=>'Niles-Rentals', 'uses'=>'NilesRentalsController@index'));
-Route::get('Evanston-Rentals', array('as'=>'Evanston-Rentals', 'uses'=>'EvanstonRentalsController@index'));
-Route::get('Glenview-Rentals', array('as'=>'Glenview-Rentals', 'uses'=>'GlenviewRentalsController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Skokie-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Skokie-Il', 'uses'=>'SingleFamilyHomesForSaleInSkokieIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'uses'=>'SingleFamilyHomesForSaleInMortonGroveIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Niles-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Niles-Il', 'uses'=>'SingleFamilyHomesForSaleInNilesIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Evanston-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Evanston-Il', 'uses'=>'SingleFamilyHomesForSaleInEvanstonIlController@index'));
-Route::get('Single-Family-Homes-For-Sale-In-Glenview-Il', array('as'=>'Single-Family-Homes-For-Sale-In-Glenview-Il', 'uses'=>'SingleFamilyHomesForSaleInGlenviewIlController@index'));
-Route::get('Condos-For-Sale-In-Skokie-Il', array('as'=>'Condos-For-Sale-In-Skokie-Il', 'uses'=>'CondosForSaleInSkokieIlController@index'));
-Route::get('Condos-For-Sale-In-Morton-Grove-Il', array('as'=>'Condos-For-Sale-In-Morton-Grove-Il', 'uses'=>'CondosForSaleInMortonGroveIlController@index'));
-Route::get('Condos-For-Sale-In-Niles-Il', array('as'=>'Condos-For-Sale-In-Niles-Il', 'uses'=>'CondosForSaleInNilesIlController@index'));
-Route::get('Condos-For-Sale-In-Evanston-Il', array('as'=>'Condos-For-Sale-In-Evanston-Il', 'uses'=>'CondosForSaleInEvanstonIlController@index'));
-Route::get('Condos-For-Sale-In-Glenview-Il', array('as'=>'Condos-For-Sale-In-Glenview-Il', 'uses'=>'CondosForSaleInGlenviewIlController@index'));
-Route::get('Apartments-For-Rent-In-Skokie-Il', array('as'=>'Apartments-For-Rent-In-Skokie-Il', 'uses'=>'ApartmentsForRentInSkokieIlController@index'));
-Route::get('Apartments-For-Rent-In-Molton-Grove-Il', array('as'=>'Apartments-For-Rent-In-Molton-Grove-Il', 'uses'=>'ApartmentsForRentInMoltonGroveIlController@index'));
-Route::get('Apartments-For-Rent-In-Niles-Il', array('as'=>'Apartments-For-Rent-In-Niles-Il', 'uses'=>'ApartmentsForRentInNilesIlController@index'));
-Route::get('Apartments-For-Rent-In-Evanston-Il', array('as'=>'Apartments-For-Rent-In-Evanston-Il', 'uses'=>'ApartmentsForRentInEvanstonIlController@index'));
-Route::get('Apartments-For-Rent-In-Glenview-Il', array('as'=>'Apartments-For-Rent-In-Glenview-Il', 'uses'=>'ApartmentsForRentInGlenviewIlController@index'));
-Route::get('Homes-For-Rent-In-Skokie-Il', array('as'=>'Homes-For-Rent-In-Skokie-Il', 'uses'=>'HomesForRentInSkokieIlController@index'));
-Route::get('Homes-For-Rent-In-Morton-Grove-Il', array('as'=>'Homes-For-Rent-In-Morton-Grove-Il', 'uses'=>'HomesForRentInMortonGroveIlController@index'));
-Route::get('Homes-For-Rent-In-Niles-Il', array('as'=>'Homes-For-Rent-In-Niles-Il', 'uses'=>'HomesForRentInNilesIlController@index'));
-Route::get('Homes-For-Rent-In-Evanston-Il', array('as'=>'Homes-For-Rent-In-Evanston-Il', 'uses'=>'HomesForRentInEvanstonIlController@index'));
-Route::get('Homes-For-Rent-In-Glenview-Il', array('as'=>'Homes-For-Rent-In-Glenview-Il', 'uses'=>'HomesForRentInGlenviewIlController@index'));

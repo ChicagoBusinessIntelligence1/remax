@@ -1,0 +1,37 @@
+<?php
+ //LOCATION: remax/public/{{url}}
+class {{ControllerName}} extends BaseController {
+
+
+
+	public function index()
+	{
+		$title = '{{title}}';
+		$meta = '{{meta}}';
+
+		$zipSale  = DB::table('houses')
+		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->where('cities.city', '=', {{city}})
+		->where ('houses.issale', '=', 1)
+		->distinct('zip')
+		->lists('zip');
+		
+
+			$zipRent  = DB::table('houses')
+		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->where('cities.city', '=', {{city}})
+		->where ('houses.issale', '=', 0)
+		->distinct('zip')
+		->lists('zip');
+
+		////////////////
+		
+		$zips = ['saleZips'=>$zipSale,
+				'rentZips'=>$zipRent];
+
+
+		return View::make('estatelistings.{{viewName}}')
+		->with(compact('zips'))
+		->with(compact('title', 'meta'));
+	}
+	
