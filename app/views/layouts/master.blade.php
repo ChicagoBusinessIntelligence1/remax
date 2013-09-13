@@ -117,11 +117,52 @@
             <li class="has-dropdown">{{link_to('#', 'Estate Listings');}}
 
               <ul class="dropdown">
-             <!-- =location -->
+             
 
 						<li>{{link_to_route('skokie-lists', 'Skokie');}}</li>
 
-						<!-- =locationEnd -->
+
+
+						<li>{{link_to_route('niles-lists', 'Niles');}}</li>
+
+
+
+						<li>{{link_to_route('evanston-lists', 'Evanston');}}</li>
+
+
+
+						<li>{{link_to_route('morton-grove-lists', 'Morton-Grove');}}</li>
+
+
+
+						<li>{{link_to_route('glenview-lists', 'Glenview');}}</li>
+
+
+
+						<li>{{link_to_route('park-ridge-lists', 'Park-Ridge');}}</li>
+
+
+
+						<li>{{link_to_route('lincolnwood-lists', 'Lincolnwood');}}</li>
+
+
+
+						<li>{{link_to_route('wilmette-lists', 'Wilmette');}}</li>
+
+
+
+						<li>{{link_to_route('winnetka-lists', 'Winnetka');}}</li>
+
+
+
+						<li>{{link_to_route('lake-forest-lists', 'Lake-Forest');}}</li>
+
+<!-- =location -->																																																												
+						
+
+						
+
+						<!-- =locationEnd -->
                
               </ul>
             </li>

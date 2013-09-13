@@ -68,6 +68,38 @@ class Loc extends Command {
 
 	}
 
+
+
+protected function updateMaster($city)
+{
+		$masterPath = app_path().'\views\layouts\master.blade.php';
+		$master = \File::get($masterPath, 'r');
+
+
+		$strStart = "<!-- =location -->";
+		$strFinish = "<!-- =locationEnd -->";
+		
+		
+		//dd($master);
+		$start = strpos($master, $strStart);
+		//$finish = strpos($master, $strFinish, $start);
+		$finish = $start+strlen($strStart);
+
+		//dd($start . ' -- '. $finish);
+		$masterP1 = substr($master, 0, $start)."\n\r\n\r"; 
+		$lcityRoute = strtolower($city).'-lists';
+
+		$masterP2 = "\t\t\t\t\t\t<li>{{link_to_route('$lcityRoute', '$city');}}</li>\n\r\n\r";
+		 $masterP2.=$strStart;
+		$masterP3 = "\t\t\t\t\t\t".substr($master, $finish);
+
+		$newMaster = $masterP1.$masterP2.$masterP3;
+
+		File::put($masterPath, $newMaster);
+
+
+}
+
 	protected function updateView($viewName, $city)
 	{
 		$viewPath = app_path()."/views/estatelistings/$viewName.blade.php";
@@ -82,34 +114,6 @@ class Loc extends Command {
 
 	}
 
-
-protected function updateMaster($city)
-{
-		$masterPath = app_path().'\views\layouts\master.blade.php';
-		$master = \File::get($masterPath, 'r');
-
-
-		$strStart = "<!-- =location -->";
-		$strFinish = "<!-- =locationEnd -->";
-		
-		
-		//dd($master);
-		$start = strpos($master, $strStart)+strlen($strStart);
-		$finish = strpos($master, $strFinish, $start);
-
-		//dd($start . ' -- '. $finish);
-		$masterP1 = substr($master, 0, $start)."\n\r\n\r"; 
-		$lcityRoute = strtolower($city).'-lists';
-
-		$masterP2 = "\t\t\t\t\t\t<li>{{link_to_route('$lcityRoute', '$city');}}</li>\n\r\n\r"; 
-		$masterP3 = "\t\t\t\t\t\t".substr($master, $finish);
-
-		$newMaster = $masterP1.$masterP2.$masterP3;
-
-		File::put($masterPath, $newMaster);
-
-
-}
 	protected function updateRouteController($city)
 		{
 		$title  = "Real Estate Properties in $city";
@@ -128,6 +132,9 @@ protected function updateMaster($city)
 		$routePart2 = substr($route, $start);
 
 		$fullControllerName = $city.'RealEstateController';
+		$fullControllerName = str_replace('-', '', $fullControllerName);
+
+
 		$lcity = strtolower($city);
 		$url = "$city-Real-Estate-Listings";
 
