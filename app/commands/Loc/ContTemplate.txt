@@ -9,9 +9,10 @@ class {{ControllerName}} extends BaseController {
 		$title = '{{title}}';
 		$meta = '{{meta}}';
 		$city = {{city}};
-
+		
 		$zipSale  = DB::table('houses')
 		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->join('types', 'houses.type_id', '=', 'types.id')
 		->where('cities.city', '=', {{city}})
 		->where ('houses.issale', '=', 1)
 		->distinct('zip')

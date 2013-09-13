@@ -52,7 +52,7 @@ class Loc extends Command {
 		foreach ($arrCities as $city) {
 			$this->start($city);
 		/////////////////
-			break;    
+			 
 		}
 
 	}
@@ -152,17 +152,21 @@ protected function updateMaster($city)
 			$stringToAdd .= "Route::get('$city-Houses-Sale-$zip', array('as'=>'$lcity-houses-sale-$zip', 'uses'=>'$fullControllerName@sale_$zip'));\n\r";
 			
 			$contStringToAdd .= "\tpublic function sale_$zip() {\n\r\n\r";
-			$contStringToAdd .="\t\t\$title = 'Homes, Condos for Sale in $city at $zip';\n\r";
-			$contStringToAdd .="\t\t\$meta = 'Homes, Condos for Sale in $city at $zip. ONE STOP SERVICE';\n\r\n\r";
+			$contStringToAdd .="\t\t\$title = 'Houses, Condos for Sale in $city at $zip';\n\r";
+			$contStringToAdd .="\t\t\$meta = 'Houses, Condos for Sale in $city at $zip. ONE STOP SERVICE';\n\r\n\r";
+			$contStringToAdd .="\t\t\$city = '$city';\n\r";
+			$contStringToAdd .="\t\t\$zip = $zip;\n\r";
+
 
 			$contStringToAdd .= 	"\t\t\$houses  = DB::table('houses')
 		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->join('types', 'houses.type_id', '=', 'types.id')
 		->where('cities.city', '=', '$city')
 		->where ('houses.issale', '=', 1)
 		->whereZip($zip)
 		->paginate(10);\n\r\n\r\n\r";
 			$contStringToAdd .= "\t\treturn View::make('estatelistings.$viewName')
-		->with(compact('houses'))
+		->with(compact('houses', 'city', 'zip'))
 		->with(compact('title', 'meta'));\n\r}\n\r\n\r";
 
 		}
@@ -175,15 +179,19 @@ protected function updateMaster($city)
 		$contStringToAdd .= "\tpublic function sale_single_fam() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Single Families Homes for Sale in $city';\n\r";
 			$contStringToAdd .="\t\t\$meta = 'Single Families Homes for Sale in $city. ONE STOP SERVICE';\n\r\n\r";
+			$contStringToAdd .="\t\t\$city = '$city';\n\r";
+			$contStringToAdd .="\t\t\$type = 'single-families';\n\r";
+			$contStringToAdd .="\t\t\$typeTitle = 'Single Families';\n\r";
 
 			$contStringToAdd .= 	"\t\t\$houses  = DB::table('houses')
 		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->join('types', 'houses.type_id', '=', 'types.id')
 		->where('cities.city', '=', '$city')
 		->where ('houses.issale', '=', 1)
 		->whereType_id (2)
 		->paginate(10);\n\r\n\r\n\r";
 			$contStringToAdd .= "\t\treturn View::make('estatelistings.$viewName')
-		->with(compact('houses'))
+		->with(compact('houses', 'city', 'type', 'typeTitle'))
 		->with(compact('title', 'meta'));\n\r}\n\r\n\r";
 ///////////////
 
@@ -191,15 +199,19 @@ protected function updateMaster($city)
 		$contStringToAdd .= "\tpublic function sale_condos() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Condos/Apartments for Sale in $city';\n\r";
 			$contStringToAdd .="\t\t\$meta = 'Condos/Apartments for Sale in $city. ONE STOP SERVICE';\n\r\n\r";
+			$contStringToAdd .="\t\t\$city = '$city';\n\r";
+			$contStringToAdd .="\t\t\$type = 'condos';\n\r";
+			$contStringToAdd .="\t\t\$typeTitle = 'Condos';\n\r";
 
 			$contStringToAdd .= 	"\t\t\$houses  = DB::table('houses')
 		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->join('types', 'houses.type_id', '=', 'types.id')
 		->where('cities.city', '=', '$city')
 		->where ('houses.issale', '=', 1)
 		->whereType_id (1)
 		->paginate(10);\n\r\n\r\n\r";
 			$contStringToAdd .= "\t\treturn View::make('estatelistings.$viewName')
-		->with(compact('houses'))
+		->with(compact('houses', 'city', 'type', 'typeTitle'))
 		->with(compact('title', 'meta'));\n\r}\n\r\n\r";
 ///////////////
 
@@ -221,15 +233,18 @@ protected function updateMaster($city)
 			$contStringToAdd .= "\tpublic function rent_$zip() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Houses and Apartments for rent in $city at $zip';\n\r";
 			$contStringToAdd .="\t\t\$meta = 'Houses and Apartments for rent in $city at $zip. ONE STOP SERVICE';\n\r\n\r";
+			$contStringToAdd .="\t\t\$city = '$city';\n\r";
+			$contStringToAdd .="\t\t\$rzip = $zip;\n\r";
 
 			$contStringToAdd .= 	"\t\t\$houses  = DB::table('houses')
 		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->join('types', 'houses.type_id', '=', 'types.id')
 		->where('cities.city', '=', '$city')
 		->where ('houses.issale', '=', 0)
 		->whereZip($zip)
 		->paginate(10);\n\r\n\r\n\r";
 			$contStringToAdd .= "\t\treturn View::make('estatelistings.$viewName')
-		->with(compact('houses'))
+		->with(compact('houses', 'city', 'rzip'))
 		->with(compact('title', 'meta'));\n\r}\n\r\n\r";
 
 		}
@@ -239,15 +254,19 @@ protected function updateMaster($city)
 				$contStringToAdd .= "\tpublic function rent_apartments() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Apartments for Rent in $city';\n\r";
 			$contStringToAdd .="\t\t\$meta = 'Apartments for Rent in $city. ONE STOP SERVICE';\n\r\n\r";
+			$contStringToAdd .="\t\t\$city = '$city';\n\r";
+			$contStringToAdd .="\t\t\$rtype = 'apartments';\n\r";
+			$contStringToAdd .="\t\t\$rtypeTitle = 'Apartments';\n\r";
 
 			$contStringToAdd .= 	"\t\t\$houses  = DB::table('houses')
 		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->join('types', 'houses.type_id', '=', 'types.id')
 		->where('cities.city', '=', '$city')
 		->where ('houses.issale', '=', 0)
 		->whereType_id (1)
 		->paginate(10);\n\r\n\r\n\r";
 			$contStringToAdd .= "\t\treturn View::make('estatelistings.$viewName')
-		->with(compact('houses'))
+		->with(compact('houses', 'city', 'rtype', 'rtypeTitle'))
 		->with(compact('title', 'meta'));\n\r}\n\r\n\r";
 
 
@@ -258,15 +277,19 @@ protected function updateMaster($city)
 		$contStringToAdd .= "\tpublic function rent_houses() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Houses for Rent in $city';\n\r";
 			$contStringToAdd .="\t\t\$meta = 'Houses for Rent in $city. ONE STOP SERVICE';\n\r\n\r";
+			$contStringToAdd .="\t\t\$city = '$city';\n\r";
+			$contStringToAdd .="\t\t\$rtype = 'houses';\n\r";
+			$contStringToAdd .="\t\t\$rtypeTitle = 'Houses';\n\r";
 
 			$contStringToAdd .= 	"\t\t\$houses  = DB::table('houses')
 		->join('cities', 'houses.city_id', '=', 'cities.id')
+		->join('types', 'houses.type_id', '=', 'types.id')
 		->where('cities.city', '=', '$city')
 		->where ('houses.issale', '=', 0)
 		->where ('type_id', '>', 1)
 		->paginate(10);\n\r\n\r\n\r";
 			$contStringToAdd .= "\t\treturn View::make('estatelistings.$viewName')
-		->with(compact('houses'))
+		->with(compact('houses', 'city', 'rtype', 'rtypeTitle'))
 		->with(compact('title', 'meta'));\n\r}\n\r\n\r";
 
 

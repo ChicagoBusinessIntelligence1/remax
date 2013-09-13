@@ -10,9 +10,31 @@
 			{{link_to_route('home', "Remax Real Estate Services", array(), array('class'=>'aBreadcrumbs'));}}
 
 			@if (isset($houses))
-			{{link_to_route(Str::lower($houses->getCollection()->first()->city)."-lists", $houses->getCollection()->first()->city." Real Estate Listings", array(), 
+			{{link_to_route(Str::lower($city)."-lists", "$city Real Estate Listings", array(), 
 			array('class'=>'aBreadcrumbs'));}}
 			
+			          @if(isset($zip))
+			{{link_to_route(Str::lower($city)."-houses-sale-$zip","Houses, Condos for Sale in $city at $zip", array(), 
+			array('class'=>'aBreadcrumbs current'));}}
+			                  @endif
+
+	@if(isset($rzip))
+			{{link_to_route(Str::lower($city)."-houses-rent-$rzip","Houses/Apartments for Rent in $city at $rzip", array(), 
+			array('class'=>'aBreadcrumbs current'));}}
+			                  @endif
+
+			                   @if(isset($type))
+			{{link_to_route(Str::lower($city)."-".$type."-sale","$typeTitle for Sale in $city", array(), 
+			array('class'=>'aBreadcrumbs current'));}}
+			                  @endif
+			
+			@if(isset($rtype))
+			{{link_to_route(Str::lower($city)."-".$rtype."-rent","$rtypeTitle for Rent in $city", array(), 
+			array('class'=>'aBreadcrumbs current'));}}
+			                  @endif
+
+
+
 			@else
 			{{link_to_route(Str::lower($city)."-lists", "$city Real Estate Listings", array(), 
 			array('class'=>'aBreadcrumbs current'));}}
@@ -68,7 +90,10 @@
 
 		@else
 	
-
+@if (isset($houses))
+@include('include.res', compact($houses))
+@yield('houses')
+@endif
 
 
 		@endif

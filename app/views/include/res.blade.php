@@ -23,7 +23,7 @@
 					</div>
 					<div class="row">
 						<div class="large-10 columns">
-							<h3 class="subheader propType"><em>{{$house->type->type}}</em> </h3>
+							<h3 class="subheader propType"><em>{{$house->type}}</em> </h3>
 						</div>
 					</div>
 
