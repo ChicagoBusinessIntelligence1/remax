@@ -193,6 +193,19 @@ Route::get('news-for-sellers', array('as'=>'news-for-sellers', 'uses'=>'NewsForS
 Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
 Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
 Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
+
+Route::get('Skokie-Real-Estate-Listings', array('as'=>'skokie-lists', 'uses'=>'SkokieRealEstateController@index'));
+Route::get('Skokie-Houses-Sale-60077', array('as'=>'skokie-houses-sale-60077', 'uses'=>'SkokieRealEstateController@sale_60077'));
+Route::get('Skokie-Houses-Sale-60076', array('as'=>'skokie-houses-sale-60076', 'uses'=>'SkokieRealEstateController@sale_60076'));
+Route::get('Skokie-Houses-Sale-60203', array('as'=>'skokie-houses-sale-60203', 'uses'=>'SkokieRealEstateController@sale_60203'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Single-Families-Homes-Sale', array('as'=>'skokie-single-families-sale', 'uses'=>'SkokieRealEstateController@sale_single_fam'));
+Route::get('Skokie-Condos-Sale', array('as'=>'skokie-condos-sale', 'uses'=>'SkokieRealEstateController@sale_condos'));
+Route::get('Skokie-Rentals-60077', array('as'=>'skokie-houses-rent-60077', 'uses'=>'SkokieRealEstateController@rent_60077'));
+Route::get('Skokie-Rentals-60076', array('as'=>'skokie-houses-rent-60076', 'uses'=>'SkokieRealEstateController@rent_60076'));
+Route::get('Skokie-Apartments-for-Rent', array('as'=>'skokie-apartments-rent', 'uses'=>'SkokieRealEstateController@rent_apartments'));
+Route::get('Skokie-Houses-for-Rent', array('as'=>'skokie-houses-rent', 'uses'=>'SkokieRealEstateController@rent_houses'));
 
 
 

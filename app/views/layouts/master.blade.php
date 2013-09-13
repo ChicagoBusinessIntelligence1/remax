@@ -119,9 +119,9 @@
               <ul class="dropdown">
              <!-- =location -->
 
-						<li>{{link_to_route('skokie-lists', 'Skokie');}}</li>
+						<li>{{link_to_route('skokie-lists', 'Skokie');}}</li>
 
-						<!-- =locationEnd -->
+						<!-- =locationEnd -->
                
               </ul>
             </li>

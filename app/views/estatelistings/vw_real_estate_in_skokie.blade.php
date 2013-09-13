@@ -10,7 +10,8 @@
 			{{link_to_route('home', "Remax Real Estate Services", array(), array('class'=>'aBreadcrumbs'));}}
 
 			@if (isset($houses))
-			
+			{{link_to_route(Str::lower($houses->getCollection()->first()->city)."-lists", $houses->getCollection()->first()->city." Real Estate Listings", array(), 
+			array('class'=>'aBreadcrumbs'));}}
 			
 			@else
 			{{link_to_route(Str::lower($city)."-lists", "$city Real Estate Listings", array(), 
@@ -66,6 +67,9 @@
 		</ul>
 
 		@else
+	
+
+
 
 		@endif
 

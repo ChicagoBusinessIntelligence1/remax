@@ -25,16 +25,13 @@
 		->lists('zip');
 
 		////////////////
-		$city = 'Skokie';
-
-		////////////////
 		
 		$zips = ['saleZips'=>$zipSale,
 				'rentZips'=>$zipRent];
 
 
 		return View::make('estatelistings.vw_real_estate_in_skokie')
-		->with(compact('zips', 'city'))
+		->with(compact('zips'))
 		->with(compact('title', 'meta'));
 	}
 	
@@ -48,7 +45,7 @@
 		->join('cities', 'houses.city_id', '=', 'cities.id')
 		->where('cities.city', '=', 'Skokie')
 		->where ('houses.issale', '=', 1)
-		->whereZip ('houses.zip', '=', 60077)
+		->whereZip(60077)
 		->paginate(10);
 
 
@@ -66,8 +63,9 @@
 		->join('cities', 'houses.city_id', '=', 'cities.id')
 		->where('cities.city', '=', 'Skokie')
 		->where ('houses.issale', '=', 1)
-		->whereZip ('houses.zip', '=', 60076)
+		->whereZip(60076)
 		->paginate(10);
+		
 
 
 		return View::make('estatelistings.vw_real_estate_in_skokie')
@@ -84,7 +82,7 @@
 		->join('cities', 'houses.city_id', '=', 'cities.id')
 		->where('cities.city', '=', 'Skokie')
 		->where ('houses.issale', '=', 1)
-		->whereZip ('houses.zip', '=', 60203)
+		->whereZip(60203)
 		->paginate(10);
 
 
@@ -138,7 +136,7 @@
 		->join('cities', 'houses.city_id', '=', 'cities.id')
 		->where('cities.city', '=', 'Skokie')
 		->where ('houses.issale', '=', 0)
-		->whereZip ('houses.zip', '=', 60077)
+		->whereZip(60077)
 		->paginate(10);
 
 
@@ -156,7 +154,7 @@
 		->join('cities', 'houses.city_id', '=', 'cities.id')
 		->where('cities.city', '=', 'Skokie')
 		->where ('houses.issale', '=', 0)
-		->whereZip ('houses.zip', '=', 60076)
+		->whereZip(60076)
 		->paginate(10);
 
 

@@ -8,6 +8,7 @@ class {{ControllerName}} extends BaseController {
 	{
 		$title = '{{title}}';
 		$meta = '{{meta}}';
+		$city = {{city}};
 
 		$zipSale  = DB::table('houses')
 		->join('cities', 'houses.city_id', '=', 'cities.id')
@@ -31,7 +32,7 @@ class {{ControllerName}} extends BaseController {
 
 
 		return View::make('estatelistings.{{viewName}}')
-		->with(compact('zips'))
+		->with(compact('zips', 'city'))
 		->with(compact('title', 'meta'));
 	}
 	
