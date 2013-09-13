@@ -51,6 +51,8 @@ class NilesRealEstateController extends BaseController {
 		->where('cities.city', '=', 'Niles')
 		->where ('houses.issale', '=', 1)
 		->whereZip(60714)
+		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
 		->paginate(10);
 
 
@@ -72,6 +74,8 @@ class NilesRealEstateController extends BaseController {
 		->where('cities.city', '=', 'Niles')
 		->where ('houses.issale', '=', 1)
 		->whereZip(607)
+		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
 		->paginate(10);
 
 
@@ -94,6 +98,8 @@ class NilesRealEstateController extends BaseController {
 		->where('cities.city', '=', 'Niles')
 		->where ('houses.issale', '=', 1)
 		->whereType_id (2)
+		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
 		->paginate(10);
 
 
@@ -116,6 +122,8 @@ class NilesRealEstateController extends BaseController {
 		->where('cities.city', '=', 'Niles')
 		->where ('houses.issale', '=', 1)
 		->whereType_id (1)
+		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
 		->paginate(10);
 
 
@@ -137,6 +145,8 @@ class NilesRealEstateController extends BaseController {
 		->where('cities.city', '=', 'Niles')
 		->where ('houses.issale', '=', 0)
 		->whereZip(60714)
+		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
 		->paginate(10);
 
 
@@ -159,6 +169,8 @@ class NilesRealEstateController extends BaseController {
 		->where('cities.city', '=', 'Niles')
 		->where ('houses.issale', '=', 0)
 		->whereType_id (1)
+		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
 		->paginate(10);
 
 
@@ -181,6 +193,8 @@ class NilesRealEstateController extends BaseController {
 		->where('cities.city', '=', 'Niles')
 		->where ('houses.issale', '=', 0)
 		->where ('type_id', '>', 1)
+		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
 		->paginate(10);
 
 
