@@ -104,17 +104,10 @@
           <section class="top-bar-section">
             <ul class="right">
               <li>{{link_to_route('home', 'Home');}}</li>
-              <li class="has-dropdown">{{link_to_route('about', 'About');}}
-                <ul class="dropdown">
-                 <li>{{link_to_route('about', 'Why Remax 1st Class?');}}</li> 
-                 <li>{{link_to_route('all-agents', 'Our Agents');}}</li> 
-                 <li>{{link_to_route('remax-agents-hiring', 'Become a Remax 1st Class Agent', array(), array('class'=>'className'))}}</li>
-               </ul>
-             </li>
-
+             
       
 
-            <li class="has-dropdown">{{link_to('#', 'Estate Listings');}}
+            <li class="has-dropdown">{{link_to('#', 'Our Listings in');}}
 
               <ul class="dropdown">
              
@@ -190,6 +183,15 @@
                   <li>{{link_to_route('renovating-a-home', 'Renovating a Home? Consider a 203(k) Loan');}}</li>
                 </ul>
                 <li/>
+                
+ <li class="has-dropdown">{{link_to_route('about', 'About');}}
+                <ul class="dropdown">
+                 <li>{{link_to_route('about', 'Why Remax 1st Class?');}}</li> 
+                 <li>{{link_to_route('all-agents', 'Our Agents');}}</li> 
+                 <li>{{link_to_route('remax-agents-hiring', 'Become a Remax 1st Class Agent', array(), array('class'=>'className'))}}</li>
+               </ul>
+             </li>
+
 
                 <li>{{link_to_route('contact', 'Contact');}}</li> 
               </ul>
@@ -256,7 +258,7 @@
                   </div>
                   <ul class="inline-list ulShortSaleChicago">
                     <li id="shortSaleChicagoLogo"> 
-                      <a target="_blank" href="http://www.shortsalechicago.us/Short-Sale-Chicago"><img class="imgShortSale"src="{{url('comp/img/Chicago-Short-Sale-Logo_small.png')}}" alt="name"></a>
+                      <a target="_blank" rel = 'nofollow' href="http://www.shortsalechicago.us/Short-Sale-Chicago"><img class="imgShortSale"src="{{url('comp/img/Chicago-Short-Sale-Logo_small.png')}}" alt="name"></a>
                     </li>
                     <li class="shortSaleChicago">
                       <a target="_blank" href="http://www.shortsalechicago.us/Short-Sale-Chicago"><span>Short Sale <br/> Chicago</span></a>
@@ -566,16 +568,16 @@
             <ul class="prop no-bullet">
               {{link_to('show-all-listings', 'PROPERTIES FOR SALE', array('class'=>'propertiesFooter'));}} 
               <hr/>
-              <li class="locality properties">{{link_to('browse/2', 'SINGLE FAMILY HOMES FOR SALE');}}</li>
-              <li class="locality properties">{{link_to('browse/1', 'CONDOS FOR SALE');}}</li>
+              <li class="locality properties">{{link_to_route('sale-single', 'SINGLE FAMILY HOMES FOR SALE');}}</li>
+              <li class="locality properties">{{link_to_route('sale-single', 'CONDOS FOR SALE');}}</li>
             </ul>
           </section>
           <section class="large-6 small-6 columns propRent">
             <ul class="prop no-bullet">
               {{link_to('all-rent-listings', 'PROPERTIES FOR RENT', array('class'=>'propertiesFooter'));}} 
               <hr/>
-              <li class="locality properties">{{link_to('rent-apartments', 'APARTMENTS FOR RENT');}}</li>
-              <li class="locality properties">{{link_to('rent-houses', 'HOUSES FOR RENT');}}</li>
+              <li class="locality properties">{{link_to_route('rent-apartments', 'APARTMENTS FOR RENT');}}</li>
+              <li class="locality properties">{{link_to_route('rent-houses', 'HOUSES FOR RENT');}}</li>
             </ul>
           </section>
 
@@ -667,19 +669,19 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Skokie-Il', 'Single Family Homes For Sale In Skokie IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Skokie-Il', 'Single Family Homes For Sale In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'Single Family Homes For Sale In Morton Grove IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'Single Family Homes For Sale In Morton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Niles-Il', 'Single Family Homes For Sale In Niles IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Niles-Il', 'Single Family Homes For Sale In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Evanston-Il', 'Single Family Homes For Sale In Evanston IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Evanston-Il', 'Single Family Homes For Sale In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Glenview-Il', 'Single Family Homes For Sale In Glenview IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Glenview-Il', 'Single Family Homes For Sale In Glenview Il', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -687,19 +689,19 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Skokie-Il', 'Condos For Sale In Skokie IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Skokie-Il', 'Condos For Sale In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Morton-Grove-Il', 'Condos For Sale In Morton Grove IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Morton-Grove-Il', 'Condos For Sale In Morton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Niles-Il', 'Condos For Sale In Niles IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Niles-Il', 'Condos For Sale In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Evanston-Il', 'Condos For Sale In Evanston IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Evanston-Il', 'Condos For Sale In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Glenview-Il', 'Condos For Sale In Glenview IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Condos-For-Sale-In-Glenview-Il', 'Condos For Sale In Glenview Il', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -707,19 +709,19 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Skokie-Il', 'Apartments For Rent In Skokie IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Skokie-Il', 'Apartments For Rent In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Molton-Grove-Il', 'Apartments For Rent In Molton Grove IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Molton-Grove-Il', 'Apartments For Rent In Molton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Niles-Il', 'Apartments For Rent In Niles IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Niles-Il', 'Apartments For Rent In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Evanston-Il', 'Apartments For Rent In Evanston IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Evanston-Il', 'Apartments For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Glenview-Il', 'Apartments For Rent In Glenview IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Apartments-For-Rent-In-Glenview-Il', 'Apartments For Rent In Glenview Il', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
         </div>
@@ -727,19 +729,19 @@
           <ul class="no-bullet addInfoFooterLinks">
 
             <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Skokie-Il', 'Homes For Rent In Skokie IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Skokie-Il', 'Homes For Rent In Skokie Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Morton-Grove-Il', 'Homes For Rent In Morton Grove IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Morton-Grove-Il', 'Homes For Rent In Morton Grove Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Niles-Il', 'Homes For Rent In Niles IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Niles-Il', 'Homes For Rent In Niles Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Evanston-Il', 'Homes For Rent In Evanston IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Evanston-Il', 'Homes For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
             </li>
             <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Glenview-Il', 'Homes For Rent In Glenview IL', array(), array('class'=>'localLinks'))}}
+              {{link_to_route('Homes-For-Rent-In-Glenview-Il', 'Homes For Rent In Glenview Il', array(), array('class'=>'localLinks'))}}
             </li>
             <!-- AutoFinish -->
           </ul>
