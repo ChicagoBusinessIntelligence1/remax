@@ -12,7 +12,7 @@ class RentController extends BaseController {
     public function apartments() {
 
      $houses = House::with('city')->where('issale', '=', 0)
-      ->whereType_id(3)
+      ->whereType_id(1)
       ->paginate(5);  
 
        return View::make('search.results')
@@ -24,7 +24,7 @@ class RentController extends BaseController {
 
      $house = House::with('city')->where('id', '=', $id)->where('issale', '=', 0)->first();   
 
-   return View::make('search.onehouse')->with(compact('house'));
+   return View::make('search.onehouse')->with(compact('house'))->with('rentals', true);
 
     }
     public function all() {
@@ -41,11 +41,12 @@ class RentController extends BaseController {
     public function houses(){
 
       $houses = House::where('issale', '=', 0)
-      ->where('type_id','<', 3)
-       ->with('rentals', true)
+      ->where('type_id', '=', 2)
       ->paginate(5);  
 
-       return View::make('search.results')->with(compact('houses'));
+      return View::make('search.results')
+       ->with('rentals', true)
+       ->with(compact('houses'));
 
 
     }
@@ -78,8 +79,7 @@ class RentController extends BaseController {
     })->paginate(5);  
 
         return View::make('search.results')
-
-       ->with('rentals', true)
+        ->with('rentals', true)
         ->with(compact('houses'));
 
   }

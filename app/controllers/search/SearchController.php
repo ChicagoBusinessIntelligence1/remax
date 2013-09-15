@@ -9,16 +9,26 @@ class SearchController extends BaseController {
      *
      * @return Response
      */
-    public function browse($type)
+    public function sale_single()
     {
-        
-        $houses = House::where('type_id', '=', $type)
+              
+        $houses = House::where('type_id', '=', 2)
        ->where('issale', '=', 1)
         ->paginate(5);
         return View::make('search.results')->with(compact('houses'));
 
     }
 
+
+public function sale_condos()
+    {
+              
+        $houses = House::where('type_id', '=', 1)
+       ->where('issale', '=', 1)
+        ->paginate(5);
+        return View::make('search.results')->with(compact('houses'));
+
+    }
 
     public function alert_signup($house_id)
     {

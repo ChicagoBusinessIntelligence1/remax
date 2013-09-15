@@ -316,12 +316,14 @@
 Route::post('login', array('as'=>'login', 'uses'=>'LoginController@index'));
 
 
-Route::get('show-all-listings', 'SearchController@index');
+Route::get('Realty-Property-Sale-North-Chicagoland', array('as'=>'show-all-listings', 'uses'=>'SearchController@index'));
 Route::get('search', 'SearchController@index');
 
 Route::get('{search}/{id}', 'SearchController@show');
 
 /*  Browse db */
+Route::get('Single-Family-Homes-For-Sale', array('as'=>'sale-single', 'uses'=>'SearchController@sale_single'));
+Route::get('Condos-Apartments-For-Sale', array('as'=>'sale-condos', 'uses'=>'SearchController@sale_condos'));
 Route::get('browse/{type}', array('as'=>'browse', 'uses'=>'SearchController@browse'));
 
 /* Agent listing */
@@ -333,9 +335,11 @@
 /*  Renting  */
 Route::get('rent', 'RentController@index');
 Route::get('rent/{id}', 'RentController@show');
-Route::get('rent-apartments', 'RentController@apartments');
-Route::get('rent-houses', 'RentController@houses');
-Route::get('all-rent-listings', array('as'=>'all-rent-listings', 'uses'=>'RentController@all'));
+
+Route::get('Rent-Apartments-in-North-Chicagoland', array('as'=>'rent-apartments', 'uses'=>'RentController@apartments'));
+Route::get('Rent-Houses-in-North-Chicagoland', array('as'=>'rent-houses', 'uses'=>'RentController@houses'));
+
+Route::get('Rent-Houses-in-North-Chicagoland', array('as'=>'all-rent-listings', 'uses'=>'RentController@all'));
 
 
 Route::get('realtor-sale', array('as'=>'Parser-realtor', 'uses'=>'ParserRealtorController@index'));

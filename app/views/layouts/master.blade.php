@@ -364,19 +364,19 @@
 
                            <div class="row">
                              <div class="large-12 columns showAllListings ">
-                              {{link_to('show-all-listings', 'BROWSE ALL LISTINGS FOR SALE', array('class'=>'browseAllListings button radius expand '));}} 
+                              {{link_to_route('show-all-listings', 'BROWSE ALL LISTINGS FOR SALE', array(), array('class'=>'browseAllListings button radius expand '));}} 
                             </div>
                           </div>
                           <div class="row">
                            <div class="large-10 large-centered columns listingsAlertBox">
-                             {{link_to('browse/2', 'SINGLE FAMILY HOMES FOR SALE', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
+                             {{link_to_route('sale-single', 'SINGLE FAMILY HOMES FOR SALE',array(), array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
                            </div>
 
                          </div>
 
                          <div class="row">
                            <div class="large-10 large-centered columns listingsAlertBox">
-                             {{link_to('browse/1', 'CONDOS FOR SALE', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
+                             {{link_to_route('sale-condos', 'CONDOS FOR SALE',array(), array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
                            </div>
 
                          </div>
@@ -448,16 +448,16 @@
 
                          <div class="row">
                            <div class="large-12 columns showAllListings">
-                            {{link_to('all-rent-listings', 'BROWSE ALL LISTINGS FOR RENT', array('class'=>'browseAllListings button radius expand '));}} 
+                            {{link_to_route('all-rent-listings', 'BROWSE ALL LISTINGS FOR RENT',array(), array('class'=>'browseAllListings button radius expand '));}} 
                           </div>
                         </div>
                         <div class="row">
                          <div class="large-6 columns">
-                           {{link_to('rent-apartments', 'APARTMENTS', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
+                           {{link_to_route('rent-apartments', 'APARTMENTS', array(), array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
                          </div>
 
                          <div class="large-6 columns">
-                           {{link_to('rent-houses', 'HOUSES', array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
+                           {{link_to_route('rent-houses', 'HOUSES', array(), array('class'=>'alert-box secondary expand radius propertiesAllert'));}}
                          </div>
                        </div>
 
