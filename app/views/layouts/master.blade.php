@@ -611,289 +611,140 @@
     </footer>
 
     
-    <!-- <div class="addInfoFooterWrapper">
+    
+    <div class="addInfoFooterWrapper">
       <div class="row">
-        <div class="large-12 columns addInfoFooter">
-          <ul class="inline-list addInfoFooterLinks">
-
-            <li class="liClass">
-              {{link_to('#', 'RENTALS', array('class'=>'className'));}}
+        <div class="large-3 columns addInfoFooter">
+          <ul class="no-bullet addInfoFooterLinks">
+                    <!-- AutoStart -->
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Skokie-Homes-For-Sale', 'Skokie Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
-            <li>|</li>
-            <li class="liClass">
-              {{link_to('#', 'House for Rent', array('class'=>'className'));}}
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Morton-Grove-Homes-For-Sale', 'Morton Grove Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
-            <li>|</li>
-            <li class="liClass">
-              {{link_to('#', 'Single Family Home for Rent', array('class'=>'className'));}}
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Niles-Homes-For-Sale', 'Niles Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
-            <li>|</li>
-            <li class="liClass">
-              {{link_to('#', 'Apartment for Rent', array('class'=>'className'));}}
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Evanston-Homes-For-Sale', 'Evanston Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
-            <li>|</li>
-            <li class="liClass">
-              {{link_to('#', 'Studio for Rent', array('class'=>'className'));}}
-            </li>
-            <li>|</li>
-            <li class="liClass">
-              {{link_to('#', 'Townhome for Rent', array('class'=>'className'));}}
-            </li>
-            <li>|</li>
-            <li class="liClass">
-              {{link_to('#', 'Room for Rent', array('class'=>'className'));}}
-            </li>
-            <li>|</li>
-
-            <li class="liClass">
-              {{link_to('#', 'Loft for Rent', array('class'=>'className'));}}
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Glenview-Homes-For-Sale', 'Glenview Homes For Sale', array(), array('class'=>'localLinks'))}}
             </li>
           </ul>
+        </div>
+        
+        <div class="large-3 columns addInfoFooter">
+          <ul class="no-bullet addInfoFooterLinks">
 
-          <ul class="inline-list addInfoFooterLinks">
+            <li class="liAddInfoFooter3">
+              {{link_to_route('North-Chicagoland-Rentals', 'North Chicagoland Rentals', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Skokie-Rentals', 'Skokie Rentals', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Morton-Grove-Rentals', 'Morton Grove Rentals', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Niles-Rentals', 'Niles Rentals', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Evanston-Rentals', 'Evanston Rentals', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Glenview-Rentals', 'Glenview Rentals', array(), array('class'=>'localLinks'))}}
+            </li>
+          </ul>
+        </div>
+        
+        <br/>
+      </div>
+      <div class="row">
+        <hr/>
+        <div class="large-3 columns addInfoFooter">
+          <ul class="no-bullet addInfoFooterLinks">
 
-            <li class="liclass">
-             {{link_to('#', 'SKOKIE RENTALS', array('class'=>'classname'));}} 
-           </li>
-           <li>|</li>
-           <li class="liclass">
-             {{link_to('#', 'Houses for Rent in Skokie', array('class'=>'classname'));}} 
-           </li>
-           <li>|</li>
-           <li class="liclass">
-             {{link_to('#', 'Apartments for Rent in Skokie', array('class'=>'classname'));}} 
-           </li>
-           <li>|</li>
-           <li class="liclass">
-            {{link_to('#', 'Studio for Rent in Skokie', array('class'=>'classname'));}} 
-          </li>
-          <li>|</li>
-          <li class="liclass">
-            {{link_to('#', 'Townhomes for Rent in Skokie', array('class'=>'classname'));}} 
-          </li>
-          <li>|</li>
-          <li class="liclass" >
-           {{link_to('#', 'Condos for Rent in Skokie', array('class'=>'classname'));}} 
-         </li>
-         <li class="liclass">
-           {{link_to('#', 'Room for Rent in Skokie', array('class'=>'classname'));}} 
-         </li>
-         <li>|</li>
-          <li class="liClass">
-            {{link_to('#', 'Single Family Home for Rent in Skokie', array('class'=>'className'));}}
-          </li>
-          <li>|</li>
-         <li class="liClass">
-          {{link_to('#', 'Loft for Rent in Skokie', array('class'=>'className'));}}
-        </li>
-        <li>|</li>
-        <li class="liClass">
-          {{link_to('#', 'Skokie Mansion for Rent', array('class'=>'className'));}}
-        </li>
-      </ul>
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Skokie-Il', 'Single Family Homes For Sale In Skokie IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'Single Family Homes For Sale In Morton Grove IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Niles-Il', 'Single Family Homes For Sale In Niles IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Evanston-Il', 'Single Family Homes For Sale In Evanston IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter1">
+              {{link_to_route('Single-Family-Homes-For-Sale-In-Glenview-Il', 'Single Family Homes For Sale In Glenview IL', array(), array('class'=>'localLinks'))}}
+            </li>
+          </ul>
+        </div>
+        <div class="large-3 columns addInfoFooter">
+          <ul class="no-bullet addInfoFooterLinks">
 
-      <ul class="inline-list addInfoFooterLinks">
+            <li class="liAddInfoFooter2">
+              {{link_to_route('Condos-For-Sale-In-Skokie-Il', 'Condos For Sale In Skokie IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter2">
+              {{link_to_route('Condos-For-Sale-In-Morton-Grove-Il', 'Condos For Sale In Morton Grove IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter2">
+              {{link_to_route('Condos-For-Sale-In-Niles-Il', 'Condos For Sale In Niles IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter2">
+              {{link_to_route('Condos-For-Sale-In-Evanston-Il', 'Condos For Sale In Evanston IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter2">
+              {{link_to_route('Condos-For-Sale-In-Glenview-Il', 'Condos For Sale In Glenview IL', array(), array('class'=>'localLinks'))}}
+            </li>
+          </ul>
+        </div>
+        <div class="large-3 columns addInfoFooter">
+          <ul class="no-bullet addInfoFooterLinks">
 
-        <li class="liclass">
-         {{link_to('#', 'Niles RENTALS', array('class'=>'classname'));}} 
-       </li>
-       <li>|</li>
-       <li class="liclass">
-         {{link_to('#', 'Niles Houses for rent', array('class'=>'classname'));}} 
-       </li>
-       <li>|</li>
-       <li class="liClass">
-        {{link_to('#', 'Niles Single Family Home for Rent', array('class'=>'className'));}}
-      </li>
-      <li>|</li>
-      <li class="liclass">
-       {{link_to('#', 'Niles Apartments for rent', array('class'=>'classname'));}} 
-     </li>
-     <li>|</li>
-     <li class="liclass">
-      {{link_to('#', 'Niles Studio for rent', array('class'=>'classname'));}} 
-    </li>
-    <li>|</li>
-    <li class="liclass" >
-     {{link_to('#', 'Niles Condos for rent', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liclass">
-     {{link_to('#', 'Niles Rooms for rent', array('class'=>'classname'));}} 
-   </li>
-   <li class="liClass">
-    {{link_to('#', 'Niles Loft for Rent', array('class'=>'className'));}}
-  </li>
-  <li>|</li>
-  <li class="liclass">
-    {{link_to('#', 'Niles Townhomes for rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liClass">
-    {{link_to('#', 'Niles Mansion for Rent', array('class'=>'className'));}}
-  </li>
-  </ul>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Apartments-For-Rent-In-Skokie-Il', 'Apartments For Rent In Skokie IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Apartments-For-Rent-In-Molton-Grove-Il', 'Apartments For Rent In Molton Grove IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Apartments-For-Rent-In-Niles-Il', 'Apartments For Rent In Niles IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Apartments-For-Rent-In-Evanston-Il', 'Apartments For Rent In Evanston IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter3">
+              {{link_to_route('Apartments-For-Rent-In-Glenview-Il', 'Apartments For Rent In Glenview IL', array(), array('class'=>'localLinks'))}}
+            </li>
+          </ul>
+        </div>
+        <div class="large-3 columns addInfoFooter">
+          <ul class="no-bullet addInfoFooterLinks">
 
-  <ul class="inline-list addInfoFooterLinks">
-
-    <li class="liclass">
-     {{link_to('#', 'EVANSTON RENTALS', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liclass">
-     {{link_to('#', 'Evanston Houses for rent', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liClass">
-    {{link_to('#', 'Evanston Single Family Home for Rent', array('class'=>'className'));}}
-  </li>
-  <li>|</li>
-  <li class="liclass">
-   {{link_to('#', 'Evanston Apartments for rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass">
-    {{link_to('#', 'Evanston Studio for rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass">
-   {{link_to('#', 'Evanston Condos for rent', array('class'=>'classname'));}} 
-  </li>
-   <li class="liclass">
-   {{link_to('#', 'Evanston Room for rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liClass">
-    {{link_to('#', 'Evanston Loft for Rent', array('class'=>'className'));}}
-  </li>
-  <li>|</li>
-  <li class="liClass">
-    {{link_to('#', 'Evanston Mansion for Rent', array('class'=>'className'));}}
-  </li>
-  </ul>
-
-  <ul class="inline-list addInfoFooterLinks">
-    <li class="liclass">
-     {{link_to('#', 'LINCOLNWOOD RENTALS', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liclass">
-     {{link_to('#', 'Lincolnwood IL Home for Rent', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liClass">
-    {{link_to('#', 'Lincolnwood Single Family Home for Rent', array('class'=>'className'));}}
-  </li>
-  <li>|</li>
-  <li class="liclass">
-   {{link_to('#', 'Apartments for Rent in Lincolnwood IL', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass">
-    {{link_to('#', 'Lincolnwood Studio for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li class="liclass">
-    {{link_to('#', 'Lincolnwood Townhomes for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass" >
-   {{link_to('#', 'Lincolnwood Condos for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass">
-   {{link_to('#', 'Lincolnwood Room for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liClass">
-    {{link_to('#', 'Lincolnwood Loft for Rent', array('class'=>'className'));}}
-  </li>
-  </ul>
-
-  <ul class="inline-list addInfoFooterLinks">
-    <li class="liclass">
-     {{link_to('#', 'VILLAGE OF MORTON GROVE RENTALS', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liclass">
-     {{link_to('#', 'Morton Grove Home for Rent', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liClass">
-    {{link_to('#', 'Morton Grove Single Family Home for Rent', array('class'=>'className'));}}
-  </li>
-
-  <li>|</li>
-  <li class="liclass">
-    <li class="liclass">
-     {{link_to('#', 'Apartments for Rent in Village of Morton Grove ', array('class'=>'classname'));}} 
-   </li>
-   <li class="liclass">
-    <li class="liclass" >
-     {{link_to('#', 'Morton Grove Condos for Rent', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liclass">
-    {{link_to('#', 'Morton Grove Studio for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass">
-    {{link_to('#', 'Morton Grove Townhomes for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass">
-   {{link_to('#', 'Morton Grove Room for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liClass">
-    {{link_to('#', 'Morton Grove Loft for Rent', array('class'=>'className'));}}
-  </li>
-
-  </ul>
-<ul class="inline-list addInfoFooterLinks">
-    <li class="liclass">
-     {{link_to('#', 'VILLAGE OF Wilmette RENTALS', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liclass">
-     {{link_to('#', 'Wilmette  Home for Rent', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liClass">
-    {{link_to('#', 'Wilmette Single Family Home for Rent', array('class'=>'className'));}}
-  </li>
-
-  <li>|</li>
-  <li class="liclass">
-    <li class="liclass">
-     {{link_to('#', 'Apartments for Rent in Village of Wilmette', array('class'=>'classname'));}} 
-   </li>
-   <li>|</li>
-   <li class="liclass">
-    <li class="liclass" >
-     {{link_to('#', 'Wilmette Condos for Rent', array('class'=>'classname'));}} 
-   </li>
-   <li class="liclass">
-    {{link_to('#', 'Wilmette Studio for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass">
-    {{link_to('#', 'Wilmette Townhomes for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liclass">
-   {{link_to('#', 'Wilmette Room for Rent', array('class'=>'classname'));}} 
-  </li>
-  <li>|</li>
-  <li class="liClass">
-    {{link_to('#', 'Wilmette Loft for Rent', array('class'=>'className'));}}
-  </li>
-
-  </ul>
-
-  </div>
-  </div>
-
-</div> -->
+            <li class="liAddInfoFooter4">
+              {{link_to_route('Homes-For-Rent-In-Skokie-Il', 'Homes For Rent In Skokie IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter4">
+              {{link_to_route('Homes-For-Rent-In-Morton-Grove-Il', 'Homes For Rent In Morton Grove IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter4">
+              {{link_to_route('Homes-For-Rent-In-Niles-Il', 'Homes For Rent In Niles IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter4">
+              {{link_to_route('Homes-For-Rent-In-Evanston-Il', 'Homes For Rent In Evanston IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <li class="liAddInfoFooter4">
+              {{link_to_route('Homes-For-Rent-In-Glenview-Il', 'Homes For Rent In Glenview IL', array(), array('class'=>'localLinks'))}}
+            </li>
+            <!-- AutoFinish -->
+          </ul>
+        </div>
+      </div>
 
 <!-- /* =copyright starts here */ -->
 
