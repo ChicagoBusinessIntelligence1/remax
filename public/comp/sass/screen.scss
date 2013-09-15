@@ -191,135 +191,24 @@ h6{
 	padding: 5px !important;
 }
 
-/* =database parsing styles start here*/
-.parsedImg{
-	margin-top: 10px !important;
+/*  =home page starts here*/
+.selectedProperty{
+	letter-spacing: 1px;
+	margin-bottom: 10px !important;
+	text-shadow: $myTextShadow2;
 }
-.foreclosureLabel{
-	background-color: lighten($colorBlue , 10%)!important;
-	padding-left: 5px !important;
-	padding-right: 5px !important;
-	padding-top: 3px !important;
-	padding-bottom: 3px !important;
-}
-.bankowedLabel{
-	background-color: lighten($colorGray, 30%)!important;
-	padding-left: 5px !important;
-	padding-right: 5px !important;
-	padding-top: 3px !important;
-	padding-bottom: 3px !important;
-}
-.shortsaleLabel{
-	background-color: lighten($colorRed, 30%)!important;
-	padding-left: 5px !important;
-	padding-right: 5px !important;
-	padding-top: 3px !important;
-	padding-bottom: 3px !important;
-}
-.oneListing{
-	font-size:12px;
-	padding-top: 20px !important;
-	padding-left: 20px !important;
-	padding-right: 20px !important;
-	h4{
-		font-size: 18px !important;
-		margin-bottom: 10px !important;
-	}
-	h5{
-		color: $colorFontGray;
-		font-size: 16px;
-	}
-	.oneHouseAddress{
-		margin-bottom: 20px !important;
-		color: $colorFontOffWhite !important;
-		background-color: 	lighten(#393939, 15%)!important;
-		font-size: 20px !important;
-		padding-top: 7px !important;
-		padding-bottom: 3px !important;
-		padding-top: 3px !important;
-		padding-left: 10px !important;
-		padding-right: 10px !important;
-	}
-}
-
-.databaseParsing{
-	h2{
-		border-bottom: 2px solid lighten($colorFontGray, 45%);
-		padding-bottom: 5px;
-		font-size: 22px !important;
-	}
-	h3{
-		padding-bottom: 5px;
-		border-bottom: 2px solid lighten($colorFontGray, 45%);
-		font-size: 18px !important;
-	}
-	p{
-		color: $colorFontGray !important;
-		line-height: 24px;
-	}
-}
-.list-sidebyside{
-	list-style-type: none !important;
-
-}
-.list-data-alt{
-	line-height: 24px;
-	display: inline-block;
-	width: 290px !important;
+.ulWorkWith{
 	li{
-		margin-left: 15px !important;	
-		display: inline-block;
-		color: $colorFontGray !important;
-		a{
-			color: $colorFontGray !important;
-			text-decoration: none !important;
+		font-size: 14px !important;
+		margin-left: 20px;
+		p{
+			line-height: 22px !important;
+			font-size: 14px !important;
 		}
 	}
-	span:first-child{
-		font-weight: bold !important;
-	}
-	span{
-		display: inline-block;
-		width: 130px !important;
-		color: $colorFontGray !important;
-	}
-}
-
-.list-condensed{
-	li{
-		display: inline-block;
-		width: 275px !important;
-		color: $colorFontGray !important;
-		margin-right: 10px !important;	
-		color: $colorFontGray !important;
-		// padding-bottom: 5px !important;
-		padding-left: 5px !important;
-		margin-bottom: 8px !important;
-		background-color: #F1F1F1!important;
-	}
-}
-
-.table-condensed{
-	th{
-		font-size: 14px !important;
-		color: $colorFontGray;
-		display: inline-block;
-		width: 130px;
-		font-weight: bold;
-		text-align: left;
-		margin-right: 20px !important;
-	}
-	td{
-		font-weight: bold;
-		color: lighten($colorFontGray, 10%);
-		// width: 80px;
-		font-size: 14px !important;
-		display: inline-block;
-	}
 }
 
 
-/* =database parsing styles end here*/
 
 
 
@@ -537,7 +426,7 @@ input[type="password"]{
 
 	p{
 		font-size:14px !important;
-		line-height: 22px !important;
+		line-height: 29px !important;
 	}
 }
 .companyName{
@@ -689,7 +578,12 @@ input[type="password"]{
 }
 .shortSaleChicago{
 	font-family: 'Noto Serif',​serif;
-	color: $colorBlue;
+	a{
+		color: #2795B6 !important;
+		&:hover{
+			color: lighten(#2795B6, 5%) !important;
+		}
+	}
 	text-shadow: $myTextShadow;
 	font-size: 17px !important;
 	line-height: 20px !important;
@@ -750,22 +644,6 @@ input[type="password"]{
 .menues{
 	p{
 		font-size: 14px !important;
-	}
-}
-/*  =home page starts here*/
-.selectedProperty{
-	letter-spacing: 1px;
-	margin-bottom: 10px !important;
-	text-shadow: $myTextShadow2;
-}
-.ulWorkWith{
-	li{
-		font-size: 14px !important;
-		margin-left: 20px;
-		p{
-			line-height: 22px !important;
-			font-size: 14px !important;
-		}
 	}
 }
 /* =buying home in Skokie style starts here */
@@ -1315,6 +1193,147 @@ ul.ulagents li {
 	display: inline-block !important;
 }
 
+/* =database parsing styles start here*/
+.parsedImg{
+	margin-top: 10px !important;
+}
+.foreclosureLabel{
+	background-color: lighten($colorBlue , 10%)!important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+	padding-top: 3px !important;
+	padding-bottom: 3px !important;
+}
+.bankowedLabel{
+	background-color: lighten($colorGray, 30%)!important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+	padding-top: 3px !important;
+	padding-bottom: 3px !important;
+}
+.shortsaleLabel{
+	background-color: lighten($colorRed, 30%)!important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+	padding-top: 3px !important;
+	padding-bottom: 3px !important;
+}
+.oneListing{
+	font-size:12px;
+	padding-top: 20px !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	h4{
+		font-size: 18px !important;
+		margin-bottom: 10px !important;
+	}
+	h5{
+		color: $colorFontGray;
+		font-size: 16px;
+	}
+	.oneHouseAddress{
+		margin-bottom: 20px !important;
+		color: $colorFontOffWhite !important;
+		background-color: 	lighten(#393939, 15%)!important;
+		font-size: 20px !important;
+		padding-top: 7px !important;
+		padding-bottom: 3px !important;
+		padding-top: 3px !important;
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+}
+
+.databaseParsing{
+	h2{
+		border-bottom: 2px solid lighten($colorFontGray, 45%);
+		padding-bottom: 5px;
+		font-size: 22px !important;
+	}
+	h3{
+		padding-bottom: 5px;
+		border-bottom: 2px solid lighten($colorFontGray, 45%);
+		font-size: 18px !important;
+	}
+	p{
+		color: $colorFontGray !important;
+		line-height: 24px;
+	}
+}
+.list-sidebyside{
+	list-style-type: none !important;
+
+}
+.list-data-alt{
+	line-height: 24px;
+	display: inline-block;
+	width: 290px !important;
+	li{
+		margin-left: 15px !important;	
+		display: inline-block;
+		color: $colorFontGray !important;
+		a{
+			color: $colorFontGray !important;
+			text-decoration: none !important;
+		}
+	}
+	span:first-child{
+		font-weight: bold !important;
+	}
+	span{
+		display: inline-block;
+		width: 130px !important;
+		color: $colorFontGray !important;
+	}
+}
+
+.list-condensed{
+	li{
+		display: inline-block;
+		width: 275px;
+		margin-right: 10px !important;	
+		color: $colorFontGray !important;
+		padding-left: 5px !important;
+		margin-bottom: 8px !important;
+		background-color: #F1F1F1!important;
+	}
+}
+.ulFirstLineDistricts{
+	margin-left: 0px !important;	
+}
+.liFirstLineDistricts{
+	display: inline-block !important;
+	width: 170px !important;
+	line-height: 32px !important;
+	a{
+		color: lighten($colorFontGray, 15%);
+		&:hover{
+			color: $colorFontGray !important;
+		}
+	}
+	
+}
+.table-condensed{
+	th{
+		font-size: 14px !important;
+		color: $colorFontGray;
+		display: inline-block;
+		width: 130px;
+		font-weight: bold;
+		text-align: left;
+		margin-right: 20px !important;
+	}
+	td{
+		font-weight: bold;
+		color: lighten($colorFontGray, 10%);
+		// width: 80px;
+		font-size: 14px !important;
+		display: inline-block;
+	}
+}
+
+
+/* =database parsing styles end here*/
 /* =agent profile starts here */
 
 .specialties{
