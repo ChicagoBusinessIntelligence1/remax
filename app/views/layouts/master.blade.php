@@ -108,7 +108,7 @@
                 <ul class="dropdown">
                  <li>{{link_to_route('about', 'Why Remax 1st Class?');}}</li> 
                  <li>{{link_to_route('all-agents', 'Our Agents');}}</li> 
-                 <li>{{link_to_route('Remax-agent', 'Become a Remax 1st Class Agent', array(), array('class'=>'className'))}}</li>
+                 <li>{{link_to_route('remax-agents-hiring', 'Become a Remax 1st Class Agent', array(), array('class'=>'className'))}}</li>
                </ul>
              </li>
 
