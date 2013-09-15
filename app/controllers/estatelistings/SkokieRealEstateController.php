@@ -52,7 +52,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 1)
 		->whereZip(60077)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 
@@ -75,7 +75,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 1)
 		->whereZip(60076)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 
@@ -98,7 +98,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 1)
 		->whereZip(60203)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 
@@ -122,7 +122,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 1)
 		->whereType_id (2)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 
@@ -146,7 +146,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 1)
 		->whereType_id (1)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 
@@ -169,7 +169,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 0)
 		->whereZip(60077)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 
@@ -192,7 +192,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 0)
 		->whereZip(60076)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 
@@ -216,7 +216,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 0)
 		->whereType_id (1)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 
@@ -240,7 +240,7 @@ class SkokieRealEstateController extends BaseController {
 		->where ('houses.issale', '=', 0)
 		->where ('type_id', '>', 1)
 		->select('houses.id', 'houses.address', 'houses.price', 'types.type', 'houses.mls', 'houses.year', 
-			'houses.baths','houses.description', 'houses.beds','houses.maximgid')
+			'houses.baths','houses.description', 'houses.beds','houses.maximgid', 'houses.issale', 'cities.city')
 		->paginate(10);
 
 

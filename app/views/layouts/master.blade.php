@@ -107,7 +107,7 @@
               <li class="has-dropdown">{{link_to_route('about', 'About');}}
                 <ul class="dropdown">
                  <li>{{link_to_route('about', 'Why Remax 1st Class?');}}</li> 
-                 <li>{{link_to_route('allAgents', 'Our Agents');}}</li> 
+                 <li>{{link_to_route('all-agents', 'Our Agents');}}</li> 
                  <li>{{link_to_route('Remax-agent', 'Become a Remax 1st Class Agent', array(), array('class'=>'className'))}}</li>
                </ul>
              </li>
@@ -119,45 +119,10 @@
               <ul class="dropdown">
              
 
-						<li>{{link_to_route('skokie-lists', 'Skokie');}}</li>
 
+						<
 
-
-						<li>{{link_to_route('niles-lists', 'Niles');}}</li>
-
-
-
-						<li>{{link_to_route('evanston-lists', 'Evanston');}}</li>
-
-
-
-						<li>{{link_to_route('morton-grove-lists', 'Morton-Grove');}}</li>
-
-
-
-						<li>{{link_to_route('glenview-lists', 'Glenview');}}</li>
-
-
-
-						<li>{{link_to_route('park-ridge-lists', 'Park-Ridge');}}</li>
-
-
-
-						<li>{{link_to_route('lincolnwood-lists', 'Lincolnwood');}}</li>
-
-
-
-						<li>{{link_to_route('wilmette-lists', 'Wilmette');}}</li>
-
-
-
-						<li>{{link_to_route('winnetka-lists', 'Winnetka');}}</li>
-
-
-
-						<li>{{link_to_route('lake-forest-lists', 'Lake-Forest');}}</li>
-
-<!-- =location -->																																																												
+<!-- =location -->																																																																																																																																																																																																																																																																																																																																																																																																																																				
 						
 
 						

@@ -11,27 +11,30 @@ class RentController extends BaseController {
      */
     public function apartments() {
 
-     $houses = House::where('issale', '=', 0)
+     $houses = House::with('city')->where('issale', '=', 0)
       ->whereType_id(3)
       ->paginate(5);  
 
-       return View::make('search.results')->with(compact('houses'));
+       return View::make('search.results')
+       ->with('rentals', true)
+       ->with(compact('houses'));
     }
 
     public function show($id) {
 
-     $house = House::with('agent','status', 'saleexteriorfeature', 'propertytype', 'salebedroom', 'salebathroom', 'salekitchen', 'salediningroom', 'salelivingroom', 'saleschool', 'salepropertyinfo', 'salepublicrecord',
-    'salefamroom', 'salelaundryroom', 'saleexerciseroom', 'salebasement', 'saleutilityroom', 'salewalkincloset', 'saleotherroom', 'saleinteriorfeature', 'saleappliance', 'salegarageandparking', 'salebuildingconstruction', 
-    'saleutility', 'salehomefeature', 'saleamenity' )->where('id', '=', $id)->where('issale', '=', 0)->first();   
+     $house = House::with('city')->where('id', '=', $id)->where('issale', '=', 0)->first();   
 
    return View::make('search.onehouse')->with(compact('house'));
 
     }
     public function all() {
 
-    $houses = House::where('issale', '=', 0)->paginate(5);  
+    $houses = House::with('city')
+    ->where('issale', '=', 0)->paginate(5);  
 
-        return View::make('search.results')->with(compact('houses'));
+        return View::make('search.results')
+        ->with('rentals', true)
+        ->with(compact('houses'));
 
     }
 
@@ -39,6 +42,7 @@ class RentController extends BaseController {
 
       $houses = House::where('issale', '=', 0)
       ->where('type_id','<', 3)
+       ->with('rentals', true)
       ->paginate(5);  
 
        return View::make('search.results')->with(compact('houses'));
@@ -73,7 +77,10 @@ class RentController extends BaseController {
 
     })->paginate(5);  
 
-        return View::make('search.results')->with(compact('houses'));
+        return View::make('search.results')
+
+       ->with('rentals', true)
+        ->with(compact('houses'));
 
   }
  

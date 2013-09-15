@@ -5,10 +5,10 @@
 	@foreach ($houses as $house)
 	<li>
 		@if($house->issale ==1)
-		<a href="{{url('Homes-Sale-'.$house->city.'/'.$house->id)}}">
-			@else
-			<a href="{{url('Homes-Rent-'.$house->city.'/'.$house->id)}}">
-				@endif	
+		<a href="{{url('Homes-Sale-'.$house->city->city.'/'.$house->id)}}">
+		@else
+		<a href="{{url('Homes-Rent-'.$house->city->city.'/'.$house->id)}}">
+		@endif	
 				<!-- =addressColor starts here -->
 				<div class="panel addressColor">
 					<div class="row listPropWrap">
@@ -26,7 +26,7 @@
 					</div>
 					<div class="row">
 						<div class="large-10 columns">
-							<h3 class="subheader propType"><em>{{$house->type}}</em> </h3>
+							<h3 class="subheader propType"><em>{{$house->type->type}}</em> </h3>
 						</div>
 					</div>
 
@@ -48,9 +48,9 @@
 							@if($house->maximgid)
 
 							@if($house->issale ==1)
-							<a class="listingImage"  href="{{url('Homes-Sale-'.$house->city.'/'.$house->id)}}">
+							<a class="listingImage"  href="{{url('Homes-Sale-'.$house->city->city.'/'.$house->id)}}">
 								@else
-								<a class="listingImage"  href="{{url('Homes-Rent-'.$house->city.'/'.$house->id)}}">
+								<a class="listingImage"  href="{{url('Homes-Rent-'.$house->city->city.'/'.$house->id)}}">
 									@endif	
 
 									<img src="{{url('comp/img/images/'.$house->id.'/1.jpg')}}"  class="th">

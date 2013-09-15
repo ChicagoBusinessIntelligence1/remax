@@ -7,37 +7,34 @@
 	<div class="row">
 		<div class="large-12 columns menues">
 				
-			<h1 class="docs header">Re/Max First Class</h1>
-			<hr/>
-			<p>On the Shoulders of Titan – we are the biggest Real Estate company in the World. All Real Estate property gets maximum exposure.</p> 
-				<div class="panel">
-					<dl>
-						<dt>
-							More experience and productive agents than competitors.
-						</dt>
-						<dd>
-							RE/MAX Sales Associates hold a higher percentage of professional designations than the industry average which means that RE/MAX Sales Associates are more professional, more efficient and more productive than the competition. 
-						</dd>
-						<dt>
-							We are more than a decade on the market. 
-						</dt>
-						<dd>
-							Clients are so pleased with their RE/MAX experience that 70% of our business comes from referrals and previous customers.
-						</dd>
-						<hr/>
-						<p>We have a successful experience with average and low-income families. </p>
-						<p>Our Company has extensive experience with foreclosure prevention via short sale. </p>
-						<p>Emergency shortsale services, experience with banks negotiations, etc.</p>
-						<p>Huge experience in Real  Estate management and maintenance, especially to preserve existing housing stock, including, but not exclusively, units that are vacant and/or in foreclosure. </p>
-						<p>Experience in house remodeling to bring them to the principles of smart design  as well as provide with accessibility means to make it visitable for those with limited mobility.</p>
-						<p>Experience with rental properties, with people with low income. We are part of 100,000 homes program. </p>
-
-						<dt>
-							
-						</dt>
-					</dl>
+			<h1 class="docs header">Why Remax 1st Class Realty is worth to work with:</h1>
+			<div class="row">
+			<div class="large-12 columns">	
+				<div class="panel radius">
+					
+					<ul class="ulWorkWith">
+						<li>
+							<p>we offer one stop service for home selling or purchase. We have long term partnerships with major banks and can negotiate the best possible deal. We can help you find the right specialist to get the lowest mortgage rate and move you to your new home during one week. Our clients always have all papers signed on time with all details covered.</p>
+						</li>
+						<li>
+							<p>we have no hidden fees and as a Remax Representative, we are very flexible in commissions. We always prioritize the client interest and in some cases we work without commissions when they are obstacles to closing. Our main mission is client satisfaction and long term partnership.</p>
+						</li>
+						<li>
+							<p>Remax 1st Class offers comprehensive service in real estate - we can help you avoid foreclosure without any influence on your credit score.</p>
+						</li>
+						<li>
+							<p>we also can sell your residential property in the shortest time as we have a wide network of real estate partnerships in the area and our commissions are never the problem. We have a great experience in pre-sell preparation when small investments could bring the highest return.</p>
+						</li>
+						<li>
+							<p>we always have the best options for investment opportunities in the area and we also have management experience.</p>
+						</li>
+						<li>
+							<p>in 2012 we sold more than 100 residential properties for middle-class families and 40 of them directly from banks.</p>
+						</li>
+					</ul>
 				</div>
-			</p>			
+			</div>		
+		</div>
 		</div>
 	</div>
 </div>

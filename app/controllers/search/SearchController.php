@@ -40,7 +40,7 @@ class SearchController extends BaseController {
 
     public function index()
     {
-      $houses = House::where('issale', '=', 1)->where(function($query){
+      $houses = House::with('city')->where('issale', '=', 1)->where(function($query){
 
       $location  = Input::get('location');
       if($location)
@@ -68,9 +68,9 @@ class SearchController extends BaseController {
         return View::make('search.results')->with(compact('houses'));
 
   }
-  public function show($id)
+  public function show($search,$id)
   {
-   $house = House::where('id', '=', $id)->first();   
+   $house = House::with('city')->where('id', '=', $id)->first();   
 
    return View::make('search.onehouse')->with(compact('house'));
  }

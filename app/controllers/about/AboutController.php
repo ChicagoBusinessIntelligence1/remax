@@ -20,4 +20,12 @@ class AboutController extends BaseController {
 		return View::make('about.vw_about');
 	}
 
+	 public function allAgents()
+    {
+    
+    $allAgents = Agent::orderBy('lastname')->get();
+    return View::make('about.vw_remax_agent')
+    ->with(compact('allAgents'));
+    }
+
 }

@@ -5,8 +5,29 @@
 -->
 <div class="mainContent">
 	<div class="panel oneListing oneRentAgent">
-		<div class="row callAgentRent">
+		<div class="row">
+		<nav class="breadcrumbs">
+			{{link_to_route('home', "Remax Real Estate Services", array(), array('class'=>'aBreadcrumbs'));}}
 
+			{{link_to_route(Str::lower($house->city->city)."-lists", $house->city->city." Real Estate Listings", array(), 
+			array('class'=>'aBreadcrumbs'));}}
+			
+			 @if($house->issale==1)
+			{{link_to_route(Str::lower($house->city->city)."-houses-sale-$house->zip","Houses, Condos for Sale in
+				".$house->city->city .", ". $house->zip, array(), 
+			array('class'=>'aBreadcrumbs '));}}
+			   @endif
+
+
+
+			 @if($house->issale==0)
+			{{link_to_route(Str::lower($house->city->city)."-houses-rent-".$house->zip,"Houses/Apartments for Rent in 
+				".$house->city->city .", ". $house->zip, array(), 
+			array('class'=>'aBreadcrumbs '));}}
+			@endif
+
+	
+		</nav>
 			<div class="row">
 			
 			

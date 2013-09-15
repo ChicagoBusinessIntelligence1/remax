@@ -5,7 +5,7 @@
 -->
 <div class="mainContent">
 @if (isset($houses))
-@include('include.res', compact($houses))
+@include('include.res_search', compact($houses))
 @yield('houses')
 @endif
 		</div>
