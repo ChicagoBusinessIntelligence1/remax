@@ -10,7 +10,7 @@
 			<div class="panel radius">
 				<h1 class="welcome">Welcome to <br/>Remax 1st Class Realty</h1>
 				<hr/>
-				<p>Remax 1st Class Realty is a <em>trustful Real Estate Company</em> located in <em>Skokie, IL</em>. We offer a comprehensive service in real estate. We can help to buy, sell or manage residential property. Remax 1st Class Realty will also help to find the right mortgage agent to get the best mortgage conditions as well as get all paper prepared by staff attorneys. We have successful experience in short sales and always have a great investment opportunities. Our main price range is from 35k till 500k, though we also have experience and listings in luxury market.</p>
+				<p>Remax 1st Class Realty is a <em>trustful Real Estate Company</em> located in <em>Skokie, IL</em>. We offer a comprehensive service in real estate. We can help to buy, sell or manage residential property. Remax 1st Class Realty will also help to find the right mortgage agent to get the best mortgage conditions as well as find professional attorneys to get all paper prepared. We have successful experience in short sales and always have a great investment opportunities. Our main price range is from 35k till 500k, though we also have experience and listings in luxury market.</p>
 				<p><em class="label secondary subheader">Our first line districts are:</em> 
 					<ul class="no-bullet inline-list ulFirstLineDistricts">
 						<li class="liFirstLineDistricts">{{link_to_route('skokie-lists', 'Skokie');}}</li>
