@@ -1,1 +1,1 @@
-<li>{{link_to_route('buying-home-in-skokie', 'Buying Home In Skokie');}}</li>
+{{link_to_route('Homes-For-Rent-In-Glenview-Il', 'Homes For Rent In Glenview Il', array(), array('class'=>'localLinks'))}}

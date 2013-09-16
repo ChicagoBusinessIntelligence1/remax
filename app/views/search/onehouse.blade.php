@@ -78,7 +78,13 @@
 			<ul class="clearing-thumb ulParsedImg" data-clearing>
 				@for ($i =1; $i <= $house->maximgid; $i++)
 				<li class="clearing-featured-img parsedImg"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
-					<img width="100px" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>
+					<img width="100px" alt="{{$house->city->city}} Home for 
+					@if ($house->issale==1)
+						Sale 
+					@else
+						Rent 
+					@endif
+View {{$i}}" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>
 				</li>
 				@endfor
 			</ul>	
