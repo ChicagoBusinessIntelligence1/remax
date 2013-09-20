@@ -11,9 +11,9 @@
 		<li>
 
 			@if($house->issale ==1)
-		<a href="{{url('Homes-Sale-'.$house->city.'/'.$house->id)}}">
+		<a href="{{url('Homes-Sale-'.$house->city->city.'/'.$house->id)}}">
 			@else
-			<a href="{{url('Homes-Rent-'.$house->city.'/'.$house->id)}}">
+			<a href="{{url('Homes-Rent-'.$house->city->city.'/'.$house->id)}}">
 				@endif	
 
 				<!-- =addressColor starts here -->
@@ -54,15 +54,14 @@
 							</div>
 							@if($house->maximgid)
 							@if($house->issale ==1)
-							<a class="listingImage"  href="{{url('Homes-Sale-'.$house->city.'/'.$house->id)}}">
+							<a class="listingImage"  href="{{url('Homes-Sale-'.$house->city->city.'/'.$house->id)}}">
 								@else
-								<a class="listingImage"  href="{{url('Homes-Rent-'.$house->city.'/'.$house->id)}}">
+								<a class="listingImage"  href="{{url('Homes-Rent-'.$house->city->city.'/'.$house->id)}}">
 									@endif	
 
 									<img src="{{url('comp/img/images/'.$house->id.'/1.jpg')}}"  class="th">
 								</a> 
 								@endif
-							@endif
 							<div class="signinLabel">
 								@if(Auth::check())
 								{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}

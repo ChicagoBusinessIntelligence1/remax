@@ -10,7 +10,12 @@
 		@foreach ($houses as $house)
 		<li>
 
-			<a href="{{url('search/'.$house->id)}}">
+			@if($house->issale ==1)
+		<a href="{{url('Homes-Sale-'.$house->city->city.'/'.$house->id)}}">
+			@else
+			<a href="{{url('Homes-Rent-'.$house->city->city.'/'.$house->id)}}">
+				@endif	
+
 				<!-- =addressColor starts here -->
 				<div class="panel addressColor">
 					<div class="row listPropWrap">
@@ -48,9 +53,15 @@
 								</small>
 							</div>
 							@if($house->maximgid)
-							<a class="listingImage" href="{{url('search/'.$house->id)}}"><img src="{{url('comp/img/images/'.$house->id.'/1.jpg')}}"  class="th">
-							</a> 
-							@endif
+							@if($house->issale ==1)
+							<a class="listingImage"  href="{{url('Homes-Sale-'.$house->city->city.'/'.$house->id)}}">
+								@else
+								<a class="listingImage"  href="{{url('Homes-Rent-'.$house->city->city.'/'.$house->id)}}">
+									@endif	
+
+									<img src="{{url('comp/img/images/'.$house->id.'/1.jpg')}}"  class="th">
+								</a> 
+								@endif
 							<div class="signinLabel">
 								@if(Auth::check())
 								{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}

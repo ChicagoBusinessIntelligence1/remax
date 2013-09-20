@@ -13,6 +13,77 @@ public $parser;
 
 	}
 
+public function getAddressArr($url, $house)
+{
+	$st = 'detail/';
+	$start = strpos($url, $st)+strlen($st);
+	$finish = strpos($url, '_', $start);
+	$strAddress = substr($url, $start, $finish - $start);
+	
+
+	$strArr = explode('-', $strAddress);
+	////
+	if (count($strArr)<3)
+		return;
+	
+	$street = $strArr[1].' '.$strArr[2];
+	
+		$streetObj = Street::whereStreet($street)->first();
+		if ($streetObj){
+			$house->street()->associate($streetObj);
+		} else {
+			$nStreet = new Street();
+			$nStreet->street = $street;
+			$nStreet->save();			
+			$nStreet->house()->save($house);
+		}
+
+	///
+	$streetAddress_txt = str_replace('-', ' ', $strAddress);
+	$house->street_txt = $streetAddress_txt;
+
+	$start = $finish+1;
+	$finish = strpos($url, '_', $start);
+	
+	////
+	$city = substr($url, $start, $finish - $start);
+	$cityObj = City::whereCity($city)->first();
+		if ($cityObj){
+			$house->city()->associate($cityObj);
+		} else {
+			$nCity = new City();
+			$nCity->city = $city;
+			$nCity->save();			
+			$nCity->house()->save($house);
+		}
+
+	///
+	$start = $finish+1;
+	$finish = strpos($url, '_', $start);
+	
+	////
+	$state = substr($url, $start, $finish - $start);
+	$stateObj = State::whereState($state)->first();
+		if ($stateObj){
+			$house->state()->associate($stateObj);
+		} else {
+			$nState = new State();
+			$nState->state = $state;
+			$nState->save();			
+			$nState->house()->save($house);
+		}
+
+
+
+	$start = $finish+1;
+	$finish = strpos($url, '_', $start);
+	
+	////
+	$zip = intval(substr($url, $start, $finish - $start));
+	$house->zip = $zip;
+	$house->save();
+}
+
 public function saveRentCity()
 	{
 		$city = Input::get('city');
@@ -132,6 +203,8 @@ public function saveSale()
 	
 public function realtor_sale($url, $issale)
 	{
+		if (strpos($url, 'http://')===false)
+			$url='http://'.$url;
 		
 		// $html = file_get_contents(app_path().'\controllers\admin\realtor_sale.html');
 		//$html = file_get_contents(app_path().'\controllers\admin\realtor_sale2.html');
@@ -154,6 +227,9 @@ $context  = stream_context_create($opts);
 
 		$house = new House();
 		$house->save();
+
+		$this->getAddressArr($url, $house);
+		
 		$type = $this->getPropertyType($html);
 		
 		$searchType = Type::whereType($type)->first();

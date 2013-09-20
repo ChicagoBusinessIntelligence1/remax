@@ -10,7 +10,7 @@
 			<div class="panel radius">
 				<h1 class="welcome">Welcome to <br/>Remax 1st Class Realty</h1>
 				<hr/>
-				<p>Remax 1st Class Realty is a <em>trustful Real Estate Company</em> located in <em>Skokie, IL</em>. We offer a comprehensive service in real estate. We can help to buy, sell or manage residential property. Remax 1st Class Realty will also help to find the right mortgage agent to get the best mortgage conditions as well as find professional attorneys to get all paper prepared. We have successful experience in short sales and always have a great investment opportunities. Our main price range is from 35k till 500k, though we also have experience and listings in luxury market.</p>
+				<p>Remax 1st Class Realty is a <em> Real Estate Company</em> located in <em>Skokie, IL</em>. We offer a comprehensive service in real estate. We can help to buy, sell or manage residential property, assist in finding the best mortgage conditions as well as find professional attorneys to get all paper prepared. We have successful experience in short sales and always have a great investment opportunities. Our main price range is from 35k till 500k, though we also have experience and listings in luxury market.</p>
 				<p><em class="label secondary subheader">Our first line districts are:</em> 
 					<ul class="no-bullet inline-list ulFirstLineDistricts">
 						<li class="liFirstLineDistricts">{{link_to_route('skokie-lists', 'Skokie');}}</li>
@@ -43,27 +43,18 @@
 				<div class="panel">
 					<h4 class="selectedProperty">Our selected property</h4>
 					<ul data-orbit>
-						<li> <a href="{{URL::to('search/1194')}}">
+						<a href="{{URL::to('Homes-Sale-Skokie/1628')}}">
 							<img src="{{url('comp/img/orbit/5.jpg')}}" alt="">
 							<div class="orbit-caption">Glenview, IL 60025</div>
 						</a>
 					</li>
-					<li> <a href="{{URL::to('search/1')}}">
-						<img src="{{url('comp/img/orbit/1.jpg')}}" alt="">
-						<div class="orbit-caption">Skokie, IL 60076   </div>
-					</a>
-				</li>
-				<li>
-					<a href="{{URL::to('search/16')}}">
+									<li>
+					<a href="{{URL::to('Homes-Sale-Skokie/13')}}">
 						<img src="{{url('comp/img/orbit/4.jpg')}}" alt="">
-						<div class="orbit-caption">Glenview, IL 60025</div>
+						<div class="orbit-caption">Skokie, IL 60076</div>
 					</a>
 				</li>
-				<li><a href="{{URL::to('search/4')}}">
-					<img src="{{url('comp/img/orbit/2.jpg')}}" alt="">
-					<div class="orbit-caption">Morton Grove, IL</div>
-				</a>
-			</li>
+				
 		</ul>
 	</div>
 </div>	

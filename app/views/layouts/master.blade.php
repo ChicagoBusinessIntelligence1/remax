@@ -104,54 +104,56 @@
           <section class="top-bar-section">
             <ul class="right">
               <li>{{link_to_route('home', 'Home');}}</li>
-             
-      
-
-            <li class="has-dropdown">{{link_to('#', 'Our Listings in');}}
-
-              <ul class="dropdown">
-             
-
-						<li>{{link_to_route('skokie-lists', 'Skokie');}}</li>
-
-
-						<li>{{link_to_route('niles-lists', 'Niles');}}</li>
-
-
-						<li>{{link_to_route('evanston-lists', 'Evanston');}}</li>
-
-
-						<li>{{link_to_route('morton-grove-lists', 'Morton-Grove');}}</li>
-
-
-						<li>{{link_to_route('glenview-lists', 'Glenview');}}</li>
-
-
-						<li>{{link_to_route('park-ridge-lists', 'Park-Ridge');}}</li>
-
-
-						<li>{{link_to_route('lincolnwood-lists', 'Lincolnwood');}}</li>
-
-
-						<li>{{link_to_route('wilmette-lists', 'Wilmette');}}</li>
-
-
-						<li>{{link_to_route('winnetka-lists', 'Winnetka');}}</li>
-
-
-						<li>{{link_to_route('lake-forest-lists', 'Lake-Forest');}}</li>
-
-<!-- =location -->																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																
-						
-
-						
-
-						<!-- =locationEnd -->
-               
-              </ul>
-            </li>
               
-                   <li class="has-dropdown">{{link_to('#', 'Buying Home');}}
+              
+
+              <li class="has-dropdown">{{link_to('#', 'Our Listings in');}}
+
+                <ul class="dropdown">
+                 <!-- Skokie =location -->
+                 <li>{{link_to_route('skokie-lists', 'Skokie');}}</li>
+                 <!-- Skokie =locationEnd -->
+
+                 <!-- Niles =location -->
+                 <li>{{link_to_route('niles-lists', 'Niles');}}</li>
+                 <!-- Niles =locationEnd -->
+
+                 <!-- Evanston =location -->
+                 <li>{{link_to_route('evanston-lists', 'Evanston');}}</li>
+                 <!-- Evanston =locationEnd -->
+
+                 <!-- Morton-Grove =location -->
+                 <li>{{link_to_route('morton-grove-lists', 'Morton-Grove');}}</li>
+                 <!-- Morton-Grove =locationEnd -->
+
+                 <!-- Glenview =location -->
+                 <li>{{link_to_route('glenview-lists', 'Glenview');}}</li>
+                 <!-- Glenview =locationEnd -->
+
+                 <!-- Park-Ridge =location -->
+                 <li>{{link_to_route('park-ridge-lists', 'Park-Ridge');}}</li>
+                 <!-- Park-Ridge =locationEnd -->
+
+                 <!-- Lincolnwood =location -->
+                 <li>{{link_to_route('lincolnwood-lists', 'Lincolnwood');}}</li>
+                 <!-- Lincolnwood =locationEnd -->
+
+                 <!-- Wilmette =location -->
+                 <li>{{link_to_route('wilmette-lists', 'Wilmette');}}</li>
+                 <!-- Wilmette =locationEnd -->
+
+                 <!-- Winnetka =location -->
+                 <li>{{link_to_route('winnetka-lists', 'Winnetka');}}</li>
+                 <!-- Winnetka =locationEnd -->
+
+                 <!-- Lake-Forest =location -->
+                 <li>{{link_to_route('lake-forest-lists', 'Lake-Forest');}}</li>
+                 <!-- Lake-Forest =locationEnd -->
+
+               </ul>
+             </li>
+             
+             <li class="has-dropdown">{{link_to('#', 'Buying Home');}}
 
               <ul class="dropdown">
                
@@ -184,27 +186,27 @@
                 </ul>
                 <li/>
                 
- <li class="has-dropdown">{{link_to_route('about', 'About');}}
-                <ul class="dropdown">
-                 <li>{{link_to_route('about', 'Why Remax 1st Class?');}}</li> 
-                 <li>{{link_to_route('all-agents', 'Our Agents');}}</li> 
-                 <li>{{link_to_route('remax-agents-hiring', 'Become a Remax 1st Class Agent', array(), array('class'=>'className'))}}</li>
-               </ul>
-             </li>
+                <li class="has-dropdown">{{link_to_route('about', 'About');}}
+                  <ul class="dropdown">
+                   <li>{{link_to_route('about', 'Why Remax 1st Class?');}}</li> 
+                   <li>{{link_to_route('all-agents', 'Our Agents');}}</li> 
+                   <li>{{link_to_route('remax-agents-hiring', 'Become a Remax 1st Class Agent', array(), array('class'=>'className'))}}</li>
+                 </ul>
+               </li>
 
 
-                <li>{{link_to_route('contact', 'Contact');}}</li> 
-              </ul>
-            </section>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <!-- navPanel Ends Here -->
+               <li>{{link_to_route('contact', 'Contact');}}</li> 
+             </ul>
+           </section>
+         </nav>
+       </div>
+     </div>
+   </div>
+   <!-- navPanel Ends Here -->
 
 
-    <!-- =logoWrapper -->
-    <div class="logoWrapper">
+   <!-- =logoWrapper -->
+   <div class="logoWrapper">
      <div class="row">
 
       <div class="large-2 columns logoContent">
@@ -614,149 +616,16 @@
 
     
     
-    <div class="addInfoFooterWrapper">
+    
+    <!-- /* =copyright starts here */ -->
+
+    <div class="copyright">
       <div class="row">
-        <div class="large-3 columns addInfoFooter">
-          <ul class="no-bullet addInfoFooterLinks">
-                    <!-- AutoStart -->
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Skokie-Homes-For-Sale', 'Skokie Homes For Sale', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Morton-Grove-Homes-For-Sale', 'Morton Grove Homes For Sale', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Niles-Homes-For-Sale', 'Niles Homes For Sale', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Evanston-Homes-For-Sale', 'Evanston Homes For Sale', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Glenview-Homes-For-Sale', 'Glenview Homes For Sale', array(), array('class'=>'localLinks'))}}
-            </li>
-          </ul>
+        <div class="large-4 large-centered columns copy">
+          <p>© 2013 RE/MAX FIRST CLASS</p> 
         </div>
-        
-        <div class="large-3 columns addInfoFooter">
-          <ul class="no-bullet addInfoFooterLinks">
 
-            <li class="liAddInfoFooter3">
-              {{link_to_route('North-Chicagoland-Rentals', 'North Chicagoland Rentals', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Skokie-Rentals', 'Skokie Rentals', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Morton-Grove-Rentals', 'Morton Grove Rentals', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Niles-Rentals', 'Niles Rentals', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Evanston-Rentals', 'Evanston Rentals', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Glenview-Rentals', 'Glenview Rentals', array(), array('class'=>'localLinks'))}}
-            </li>
-          </ul>
-        </div>
-        
-        <br/>
-      </div>
-      <div class="row">
-        <hr/>
-        <div class="large-3 columns addInfoFooter">
-          <ul class="no-bullet addInfoFooterLinks">
-
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Skokie-Il', 'Single Family Homes For Sale In Skokie Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Morton-Grove-Il', 'Single Family Homes For Sale In Morton Grove Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Niles-Il', 'Single Family Homes For Sale In Niles Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Evanston-Il', 'Single Family Homes For Sale In Evanston Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter1">
-              {{link_to_route('Single-Family-Homes-For-Sale-In-Glenview-Il', 'Single Family Homes For Sale In Glenview Il', array(), array('class'=>'localLinks'))}}
-            </li>
-          </ul>
-        </div>
-        <div class="large-3 columns addInfoFooter">
-          <ul class="no-bullet addInfoFooterLinks">
-
-            <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Skokie-Il', 'Condos For Sale In Skokie Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Morton-Grove-Il', 'Condos For Sale In Morton Grove Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Niles-Il', 'Condos For Sale In Niles Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Evanston-Il', 'Condos For Sale In Evanston Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter2">
-              {{link_to_route('Condos-For-Sale-In-Glenview-Il', 'Condos For Sale In Glenview Il', array(), array('class'=>'localLinks'))}}
-            </li>
-          </ul>
-        </div>
-        <div class="large-3 columns addInfoFooter">
-          <ul class="no-bullet addInfoFooterLinks">
-
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Skokie-Il', 'Apartments For Rent In Skokie Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Molton-Grove-Il', 'Apartments For Rent In Molton Grove Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Niles-Il', 'Apartments For Rent In Niles Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Evanston-Il', 'Apartments For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter3">
-              {{link_to_route('Apartments-For-Rent-In-Glenview-Il', 'Apartments For Rent In Glenview Il', array(), array('class'=>'localLinks'))}}
-            </li>
-          </ul>
-        </div>
-        <div class="large-3 columns addInfoFooter">
-          <ul class="no-bullet addInfoFooterLinks">
-
-            <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Skokie-Il', 'Homes For Rent In Skokie Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Morton-Grove-Il', 'Homes For Rent In Morton Grove Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Niles-Il', 'Homes For Rent In Niles Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Evanston-Il', 'Homes For Rent In Evanston Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <li class="liAddInfoFooter4">
-              {{link_to_route('Homes-For-Rent-In-Glenview-Il', 'Homes For Rent In Glenview Il', array(), array('class'=>'localLinks'))}}
-            </li>
-            <!-- AutoFinish -->
-          </ul>
-        </div>
-      </div>
-
-<!-- /* =copyright starts here */ -->
-
-<div class="copyright">
-  <div class="row">
-    <div class="large-4 large-centered columns copy">
-      <p>© 2013 RE/MAX FIRST CLASS</p> 
-    </div>
-
-    <!-- /* =copyright ends here */ -->
+        <!-- /* =copyright ends here */ -->
   <!-- </div>
 </div> -->
 

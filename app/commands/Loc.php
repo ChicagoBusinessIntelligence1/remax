@@ -76,21 +76,24 @@ protected function updateMaster($city)
 		$master = \File::get($masterPath, 'r');
 
 
-		$strStart = "<!-- =location -->";
-		$strFinish = "<!-- =locationEnd -->";
+		$strStart = "<!-- $city =location -->";
+		$strFinish = "<!-- $city =locationEnd -->";
 		
 		
 		//dd($master);
-		$start = strpos($master, $strStart);
-		//$finish = strpos($master, $strFinish, $start);
-		$finish = $start+strlen($strStart);
+		$start = strpos($master, $strStart)+strlen($strStart);
+		$finish = strpos($master, $strFinish);
+		
 
 		//dd($start . ' -- '. $finish);
-		$masterP1 = substr($master, 0, $start)."\n\r\n\r"; 
+		$masterP1 = substr($master, 0, $start); 
 		$lcityRoute = strtolower($city).'-lists';
 
-		$masterP2 = "\t\t\t\t\t\t<li>{{link_to_route('$lcityRoute', '$city');}}</li>\n\r\n\r";
-		 $masterP2.=$strStart;
+		//$masterP2 ="<!-- $city =location -->\n\r";
+		$masterP2 = "\n\r\t\t\t\t\t\t<li>{{link_to_route('$lcityRoute', '$city');}}</li>\n\r";
+ 		//$masterP2 .="\t\t\t\t\t\t<!-- $city =locationEnd -->\n\r\n\r";
+ 		//$masterP2 .=$strStart."\n\r";
+
 		$masterP3 = "\t\t\t\t\t\t".substr($master, $finish);
 
 		$newMaster = $masterP1.$masterP2.$masterP3;
@@ -121,16 +124,19 @@ protected function updateMaster($city)
 
 
 		$route = File::get(app_path().'/routes.php');
-		$searchText = "/* =location */";
+		$searchText = "/* $city Route */";
+		$searchTextFinish = "/* $city Route End */";
+
 		$start = strpos($route, $searchText);
 		if ($start===false) {
 			$this->error("$folder cannot be found in route");
 			die();
 		}
 		$start+=strlen($searchText);
+		$finish  = strpos($route, $searchTextFinish);
 		
 		$routePart1 = substr($route, 0, $start)."\n\r";
-		$routePart2 = substr($route, $start);
+		$routePart2 = substr($route, $finish);
 
 		$fullControllerName = $city.'RealEstateController';
 		$fullControllerName = str_replace('-', '', $fullControllerName);
@@ -140,8 +146,9 @@ protected function updateMaster($city)
 		$url = "$city-Real-Estate-Listings";
 
 
+		//$addToRouteFile  = "/* $city Route */\n\r";
 
-		$stringToAdd = "Route::get('$url', array('as'=>'$lcity-lists', 'uses'=>'$fullControllerName@index'));\n\r";
+		$addToRouteFile = "Route::get('$url', array('as'=>'$lcity-lists', 'uses'=>'$fullControllerName@index'));\n\r";
 		
 
 		$arrSaleZips = $this->getArrOfZips($city, 1);
@@ -157,7 +164,7 @@ protected function updateMaster($city)
 
 
 
-			$stringToAdd .= "Route::get('$city-Houses-Sale-$zip', array('as'=>'$lcity-houses-sale-$zip', 'uses'=>'$fullControllerName@sale_$zip'));\n\r";
+			$addToRouteFile .= "Route::get('$city-Houses-Sale-$zip', array('as'=>'$lcity-houses-sale-$zip', 'uses'=>'$fullControllerName@sale_$zip'));\n\r";
 			
 			$contStringToAdd .= "\tpublic function sale_$zip() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Houses, Condos for Sale in $city at $zip';\n\r";
@@ -181,8 +188,8 @@ protected function updateMaster($city)
 
 		}
 
-		$stringToAdd .= "Route::get('$city-Single-Families-Homes-Sale', array('as'=>'$lcity-single-families-sale', 'uses'=>'$fullControllerName@sale_single_fam'));\n\r";
-		$stringToAdd .= "Route::get('$city-Condos-Sale', array('as'=>'$lcity-condos-sale', 'uses'=>'$fullControllerName@sale_condos'));\n\r";
+		$addToRouteFile .= "Route::get('$city-Single-Families-Homes-Sale', array('as'=>'$lcity-single-families-sale', 'uses'=>'$fullControllerName@sale_single_fam'));\n\r";
+		$addToRouteFile .= "Route::get('$city-Condos-Sale', array('as'=>'$lcity-condos-sale', 'uses'=>'$fullControllerName@sale_condos'));\n\r";
 
 
 ///////////
@@ -232,13 +239,13 @@ protected function updateMaster($city)
 
 		
 
-		$stringToAdd .= "Route::get('$city-Single-Families-Homes-Sale', array('as'=>'$lcity-single-families-sale', 'uses'=>'$fullControllerName@sale_single_fam'));\n\r";
-		$stringToAdd .= "Route::get('$city-Condos-Sale', array('as'=>'$lcity-condos-sale', 'uses'=>'$fullControllerName@sale_condos'));\n\r";
+		$addToRouteFile .= "Route::get('$city-Single-Families-Homes-Sale', array('as'=>'$lcity-single-families-sale', 'uses'=>'$fullControllerName@sale_single_fam'));\n\r";
+		$addToRouteFile .= "Route::get('$city-Condos-Sale', array('as'=>'$lcity-condos-sale', 'uses'=>'$fullControllerName@sale_condos'));\n\r";
 
 
 
 		foreach ($arrRentZips as $zip) {
-			$stringToAdd .= "Route::get('$city-Rentals-$zip', array('as'=>'$lcity-houses-rent-$zip', 'uses'=>'$fullControllerName@rent_$zip'));\n\r";
+			$addToRouteFile .= "Route::get('$city-Rentals-$zip', array('as'=>'$lcity-houses-rent-$zip', 'uses'=>'$fullControllerName@rent_$zip'));\n\r";
 		
 			$contStringToAdd .= "\tpublic function rent_$zip() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Houses and Apartments for rent in $city at $zip';\n\r";
@@ -262,7 +269,7 @@ protected function updateMaster($city)
 		}
 
 
-		$stringToAdd .= "Route::get('$city-Apartments-for-Rent', array('as'=>'$lcity-apartments-rent', 'uses'=>'$fullControllerName@rent_apartments'));\n\r";
+		$addToRouteFile .= "Route::get('$city-Apartments-for-Rent', array('as'=>'$lcity-apartments-rent', 'uses'=>'$fullControllerName@rent_apartments'));\n\r";
 				$contStringToAdd .= "\tpublic function rent_apartments() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Apartments for Rent in $city';\n\r";
 			$contStringToAdd .="\t\t\$meta = 'Apartments for Rent in $city. ONE STOP SERVICE';\n\r\n\r";
@@ -286,7 +293,10 @@ protected function updateMaster($city)
 
 
 
-		$stringToAdd .= "Route::get('$city-Houses-for-Rent', array('as'=>'$lcity-houses-rent', 'uses'=>'$fullControllerName@rent_houses'));\n\r";
+		$addToRouteFile .= "Route::get('$city-Houses-for-Rent', array('as'=>'$lcity-houses-rent', 'uses'=>'$fullControllerName@rent_houses'));\n\r";
+		
+
+
 
 		$contStringToAdd .= "\tpublic function rent_houses() {\n\r\n\r";
 			$contStringToAdd .="\t\t\$title = 'Houses for Rent in $city';\n\r";
@@ -327,7 +337,7 @@ protected function updateMaster($city)
 		
 
 
-		$newRouteFile = $routePart1.$stringToAdd.$routePart2;
+		$newRouteFile = $routePart1.$addToRouteFile.$routePart2;
 
 
 		////////////////////////////////////////////////////
