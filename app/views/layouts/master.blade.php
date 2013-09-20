@@ -31,6 +31,7 @@
 
     {{HTML::script("comp/javascripts/vendor/custom.modernizr.js")}} 
     {{HTML::script("comp/javascripts/script.js")}} 
+   
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -961,22 +962,10 @@
 
         {{HTML::script("comp/javascripts/vendor/zepto.js")}} 
 
-        {{HTML::script("comp/javascripts/foundation/foundation.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.abide.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.alerts.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.clearing.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.cookie.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.dropdown.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.forms.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.interchange.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.joyride.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.magellan.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.orbit.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.placeholder.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.reveal.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.section.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.tooltips.js")}} 
-        {{HTML::script("comp/javascripts/foundation/foundation.topbar.js")}} 
+       
+         {{HTML::script("comp/javascripts/foundation.min.js")}} 
+
+       
 
 
         <script>
