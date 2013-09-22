@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost/remax',
+	'url' => 'http://www.remax1stclass.com',
 
 	/*
 	|--------------------------------------------------------------------------
