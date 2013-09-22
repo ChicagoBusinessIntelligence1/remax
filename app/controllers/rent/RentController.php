@@ -11,7 +11,7 @@ class RentController extends BaseController {
      */
     public function apartments() {
 
-     $houses = House::with('city')->where('issale', '=', 0)
+     $houses = House::with('city')->where('issale', '=', 0)->orderBy('price')
       ->whereType_id(1)
       ->paginate(5);  
 
@@ -22,7 +22,7 @@ class RentController extends BaseController {
 
     public function show($id) {
 
-     $house = House::with('city')->where('id', '=', $id)->where('issale', '=', 0)->first();   
+     $house = House::with('city')->where('id', '=', $id)->where('issale', '=', 0)->orderBy('price')->first();   
 
    return View::make('search.onehouse')->with(compact('house'))->with('rentals', true);
 
@@ -30,7 +30,7 @@ class RentController extends BaseController {
     public function all() {
 
     $houses = House::with('city')
-    ->where('issale', '=', 0)->paginate(5);  
+    ->where('issale', '=', 0)->orderBy('price')->paginate(5);  
 
         return View::make('search.results')
         ->with('rentals', true)
@@ -53,7 +53,7 @@ class RentController extends BaseController {
 
       public function index()
     {
-      $houses = House::where('issale', '=', 0)->where(function($query){
+      $houses = House::where('issale', '=', 0)->orderBy('price')->where(function($query){
 
       $location  = Input::get('location');
       if($location)
@@ -69,11 +69,11 @@ class RentController extends BaseController {
 
       $beds  = Input::get('beds');
       if($beds)
-        $query->where('bedrooms', '>=', $beds);
+        $query->where('beds', '>=', $beds);
 
       $baths  = Input::get('baths');
       if($baths)
-        $query->where('bathrooms', '>=', $baths);
+        $query->where('baths', '>=', $baths);
 
 
     })->paginate(5);  
