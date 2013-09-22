@@ -7948,12 +7948,18 @@ input[type="password"] {
 
 /* line 699, ../sass/screen.scss */
 .submitSearch {
-  font-size: 11px !important;
+  font-size: 13px !important;
   letter-spacing: 1px;
-  text-shadow: white 1px 1px 0px;
+  background-color: #5a93c0 !important;
+  border-color: #5a93c0 !important;
+  margin-top: 10px !important;
+}
+/* line 705, ../sass/screen.scss */
+.submitSearch:hover {
+  background-color: #4079a7 !important;
 }
 
-/* line 704, ../sass/screen.scss */
+/* line 710, ../sass/screen.scss */
 .sectionWidth {
   font-size: 12px !important;
   font-weight: bold;
@@ -7961,25 +7967,25 @@ input[type="password"] {
   text-shadow: white 1px 1px 0px;
 }
 
-/* line 710, ../sass/screen.scss */
+/* line 716, ../sass/screen.scss */
 .find {
   display: inline-block;
   font-weight: bold;
   color: #525252;
 }
 
-/* line 713, ../sass/screen.scss */
+/* line 719, ../sass/screen.scss */
 .findInput {
   margin-bottom: 15px !important;
 }
 
-/* line 716, ../sass/screen.scss */
+/* line 722, ../sass/screen.scss */
 label {
   margin-bottom: .5em;
   font-size: 12px !important;
 }
 
-/* line 720, ../sass/screen.scss */
+/* line 726, ../sass/screen.scss */
 .propertiesAllert {
   text-align: center;
   color: #393939;
@@ -7987,12 +7993,12 @@ label {
   letter-spacing: 1px;
 }
 
-/* line 726, ../sass/screen.scss */
+/* line 732, ../sass/screen.scss */
 .propertiesAllert:hover, .propertiesAllert:active {
   color: #797979;
 }
 
-/* line 729, ../sass/screen.scss */
+/* line 735, ../sass/screen.scss */
 .priceStyle {
   color: #396c95 !important;
   font-weight: bold !important;
@@ -8003,7 +8009,7 @@ label {
   font-size: 20px;
 }
 
-/* line 738, ../sass/screen.scss */
+/* line 744, ../sass/screen.scss */
 .alertRentalStyle {
   font-size: 14px;
   color: #396c95 !important;
@@ -8017,22 +8023,22 @@ label {
   padding-bottom: 5px !important;
 }
 
-/* line 751, ../sass/screen.scss */
+/* line 757, ../sass/screen.scss */
 .ulRent {
   line-height: 14px !important;
 }
-/* line 753, ../sass/screen.scss */
+/* line 759, ../sass/screen.scss */
 .ulRent a {
   line-height: 14px !important;
 }
 
-/* line 757, ../sass/screen.scss */
+/* line 763, ../sass/screen.scss */
 .basicInfoWrapper {
   padding-left: 0px;
   padding-right: 0px;
 }
 
-/* line 762, ../sass/screen.scss */
+/* line 768, ../sass/screen.scss */
 .basicInfo {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
@@ -8043,12 +8049,12 @@ label {
   text-shadow: white 1px 1px 0px !important;
 }
 
-/* line 772, ../sass/screen.scss */
+/* line 778, ../sass/screen.scss */
 .basicInfoUl {
   padding-left: 0px !important;
 }
 
-/* line 775, ../sass/screen.scss */
+/* line 781, ../sass/screen.scss */
 .propDetails {
   display: inline-block;
   margin-bottom: 5px !important;
@@ -8059,19 +8065,19 @@ label {
   text-shadow: white 1px 1px 0px !important;
 }
 
-/* line 786, ../sass/screen.scss */
+/* line 792, ../sass/screen.scss */
 .agentNameList {
   color: #396c95 !important;
   font-size: 12px;
   text-shadow: white 1px 1px 0px !important;
   font-weight: bold !important;
 }
-/* line 791, ../sass/screen.scss */
+/* line 797, ../sass/screen.scss */
 .agentNameList:hover {
   color: #5a93c0 !important;
 }
 
-/* line 796, ../sass/screen.scss */
+/* line 802, ../sass/screen.scss */
 .agentPhoneList {
   font-size: 12px;
   color: #396c95;
@@ -8079,36 +8085,36 @@ label {
   font-weight: bold !important;
 }
 
-/* line 802, ../sass/screen.scss */
+/* line 808, ../sass/screen.scss */
 .phoneNumber {
   font-size: 14px;
   color: #db3136;
 }
 
-/* line 806, ../sass/screen.scss */
+/* line 812, ../sass/screen.scss */
 .oneRentVcard {
   padding: 0px !important;
 }
 
-/* line 809, ../sass/screen.scss */
+/* line 815, ../sass/screen.scss */
 .agentPic {
   margin-bottom: 5px !important;
 }
 
-/* line 812, ../sass/screen.scss */
+/* line 818, ../sass/screen.scss */
 .propDetails:hover {
   color: #4887b9 !important;
   text-decoration: underline !important;
 }
 
-/* line 817, ../sass/screen.scss */
+/* line 823, ../sass/screen.scss */
 .details {
   margin-top: 5px !important;
   display: inline-block !important;
   font-size: 10px !important;
 }
 
-/* line 822, ../sass/screen.scss */
+/* line 828, ../sass/screen.scss */
 .callAgent {
   font-size: 10px !important;
   border: 0px !important;
@@ -8118,29 +8124,29 @@ label {
   padding-bottom: 5px !important;
   margin-bottom: 0px !important;
 }
-/* line 832, ../sass/screen.scss */
+/* line 838, ../sass/screen.scss */
 .callAgent a {
   color: #525252;
   line-height: 14px !important;
 }
-/* line 837, ../sass/screen.scss */
+/* line 843, ../sass/screen.scss */
 .callAgent a:hover {
   color: #6c6c6c !important;
 }
 
-/* line 843, ../sass/screen.scss */
+/* line 849, ../sass/screen.scss */
 .addPropertyButton {
   font-size: 12px !important;
   margin-top: 10px !important;
 }
 
-/* line 847, ../sass/screen.scss */
+/* line 853, ../sass/screen.scss */
 .deletePropertyButton {
   margin-top: 10px !important;
   font-size: 12px !important;
 }
 
-/* line 852, ../sass/screen.scss */
+/* line 858, ../sass/screen.scss */
 .aCallAgent {
   display: inline-block !important;
   border: 0px solid #FFFFFF !important;
@@ -8151,21 +8157,21 @@ label {
   font-size: 12px !important;
 }
 
-/* line 862, ../sass/screen.scss */
+/* line 868, ../sass/screen.scss */
 .callAgentRent {
   margin-bottom: 10px !important;
 }
 
-/* line 866, ../sass/screen.scss */
+/* line 872, ../sass/screen.scss */
 .searchDescription {
   font-size: 12px !important;
 }
 
-/* line 870, ../sass/screen.scss */
+/* line 876, ../sass/screen.scss */
 .showAllListings {
   margin-bottom: 10px !important;
 }
-/* line 872, ../sass/screen.scss */
+/* line 878, ../sass/screen.scss */
 .showAllListings button, .showAllListings .button {
   background-color: #5f5f5f !important;
   margin-top: .5em !important;
@@ -8177,17 +8183,17 @@ label {
   letter-spacing: 1px;
   word-spacing: 2px !important;
 }
-/* line 878, ../sass/screen.scss */
+/* line 884, ../sass/screen.scss */
 .showAllListings button:hover, .showAllListings button:focus, .showAllListings .button:hover, .showAllListings .button:focus {
   background-color: #393939 !important;
 }
 
-/* line 882, ../sass/screen.scss */
+/* line 888, ../sass/screen.scss */
 .listingsAlertBox {
   margin-bottom: 10px !important;
 }
 
-/* line 885, ../sass/screen.scss */
+/* line 891, ../sass/screen.scss */
 .listingImage {
   margin-left: 0px !important;
   margin-top: 5px !important;
@@ -8195,7 +8201,7 @@ label {
   width: 315px;
 }
 
-/* line 892, ../sass/screen.scss */
+/* line 898, ../sass/screen.scss */
 .houseImgWrapper {
   padding-right: 0px !important;
   font-size: 16px !important;
@@ -8203,49 +8209,49 @@ label {
   color: #525252 !important;
 }
 
-/* line 899, ../sass/screen.scss */
+/* line 905, ../sass/screen.scss */
 .alert-box {
   margin-bottom: .5em !important;
 }
 
-/* line 903, ../sass/screen.scss */
+/* line 909, ../sass/screen.scss */
 .listPropWrap hr {
   margin-bottom: 10px !important;
 }
 
-/* line 907, ../sass/screen.scss */
+/* line 913, ../sass/screen.scss */
 .addressColor {
   color: #525252;
   margin-bottom: 10px !important;
   padding-bottom: 15px !important;
 }
-/* line 909, ../sass/screen.scss */
+/* line 915, ../sass/screen.scss */
 .addressColor a {
   color: #525252;
   line-height: 14px !important;
 }
-/* line 913, ../sass/screen.scss */
+/* line 919, ../sass/screen.scss */
 .addressColor a:hover {
   color: #6c6c6c;
 }
-/* line 918, ../sass/screen.scss */
+/* line 924, ../sass/screen.scss */
 .addressColor hr {
   margin-top: 0px !important;
   margin-bottom: 10px !important;
 }
-/* line 922, ../sass/screen.scss */
+/* line 928, ../sass/screen.scss */
 .addressColor h2 {
   font-size: 17px !important;
   margin-bottom: 0px !important;
 }
 
 /* =ohehouse oneListing style starts here */
-/* line 929, ../sass/screen.scss */
+/* line 935, ../sass/screen.scss */
 .spanAccordion {
   font-size: 14px;
 }
 
-/* line 932, ../sass/screen.scss */
+/* line 938, ../sass/screen.scss */
 .propStat {
   color: #df464b !important;
   font-weight: bold !important;
@@ -8254,36 +8260,36 @@ label {
   margin-bottom: 0px !important;
 }
 
-/* line 940, ../sass/screen.scss */
+/* line 946, ../sass/screen.scss */
 .propType {
   font-size: 16px !important;
   margin-bottom: 5px !important;
 }
 
-/* line 945, ../sass/screen.scss */
+/* line 951, ../sass/screen.scss */
 .shortProtDet {
   margin-left: 20px !important;
 }
 
-/* line 948, ../sass/screen.scss */
+/* line 954, ../sass/screen.scss */
 .panelShortInfo {
   background-color: #fcfcfc !important;
 }
 
-/* line 952, ../sass/screen.scss */
+/* line 958, ../sass/screen.scss */
 .listingDetails {
   font-size: 13px !important;
 }
-/* line 954, ../sass/screen.scss */
+/* line 960, ../sass/screen.scss */
 .listingDetails hr {
   margin-top: 0px !important;
 }
-/* line 957, ../sass/screen.scss */
+/* line 963, ../sass/screen.scss */
 .listingDetails p {
   font-size: 13px !important;
 }
 
-/* line 961, ../sass/screen.scss */
+/* line 967, ../sass/screen.scss */
 .dlInlineDescription {
   margin-left: 0px;
   padding-left: 5px;
@@ -8294,7 +8300,7 @@ label {
   margin-bottom: 10px !important;
 }
 
-/* line 970, ../sass/screen.scss */
+/* line 976, ../sass/screen.scss */
 .dtDes {
   padding-top: 5px !important;
   width: 130px;
@@ -8303,7 +8309,7 @@ label {
   line-height: 13px !important;
 }
 
-/* line 978, ../sass/screen.scss */
+/* line 984, ../sass/screen.scss */
 .ddDes {
   padding-top: 5px !important;
   margin-bottom: 0px !important;
@@ -8313,7 +8319,7 @@ label {
   line-height: 13px !important;
 }
 
-/* line 988, ../sass/screen.scss */
+/* line 994, ../sass/screen.scss */
 .pleaseSignIn, .pleaseSignInOneListing {
   padding-right: 8px !important;
   padding-left: 8px !important;
@@ -8328,147 +8334,147 @@ label {
   margin-top: 10px !important;
 }
 
-/* line 1002, ../sass/screen.scss */
+/* line 1008, ../sass/screen.scss */
 .pleaseSignInOneListing {
   margin-bottom: 15px !important;
 }
 
-/* line 1006, ../sass/screen.scss */
+/* line 1012, ../sass/screen.scss */
 .button.secondary {
   color: #525252 !important;
 }
 
 /* news start here */
-/* line 1011, ../sass/screen.scss */
+/* line 1017, ../sass/screen.scss */
 .readMore {
   color: #396c95 !important;
   font-size: 10px;
   letter-spacing: 1px;
 }
 
-/* line 1016, ../sass/screen.scss */
+/* line 1022, ../sass/screen.scss */
 .newsHead {
   color: #525252 !important;
   font-size: 18px !important;
   text-shadow: white 1px 1px 0px !important;
 }
 
-/* line 1021, ../sass/screen.scss */
+/* line 1027, ../sass/screen.scss */
 .newsHead:hover {
   color: #6c6c6c;
 }
 
-/* line 1024, ../sass/screen.scss */
+/* line 1030, ../sass/screen.scss */
 .newsHead:active {
   color: #6c6c6c;
 }
 
-/* line 1028, ../sass/screen.scss */
+/* line 1034, ../sass/screen.scss */
 .newsHeadHover {
   font-size: 14px !important;
   font-weight: bold;
 }
-/* line 1031, ../sass/screen.scss */
+/* line 1037, ../sass/screen.scss */
 .newsHeadHover p {
   font-size: 10px !important;
 }
 
-/* line 1035, ../sass/screen.scss */
+/* line 1041, ../sass/screen.scss */
 .newListingsTitle {
   color: #525252;
   font-size: 16px;
   letter-spacing: 1px;
 }
 
-/* line 1040, ../sass/screen.scss */
+/* line 1046, ../sass/screen.scss */
 .newListingsTitle:hover {
   color: #6c6c6c;
 }
 
-/* line 1043, ../sass/screen.scss */
+/* line 1049, ../sass/screen.scss */
 .newListingsTitle:active {
   color: #6c6c6c;
 }
 
-/* line 1047, ../sass/screen.scss */
+/* line 1053, ../sass/screen.scss */
 article p {
   font-size: 11px;
   line-height: 1.7em;
   margin-bottom: .5em;
 }
 
-/* line 1052, ../sass/screen.scss */
+/* line 1058, ../sass/screen.scss */
 .pNews {
   font-size: 10px !important;
 }
 
 /* =breadcrumbs style starts here */
-/* line 1057, ../sass/screen.scss */
+/* line 1063, ../sass/screen.scss */
 .breadcrumbs {
   border: none !important;
   padding: 0px  !important;
 }
-/* line 1060, ../sass/screen.scss */
+/* line 1066, ../sass/screen.scss */
 .breadcrumbs li a {
   font-size: 9px !important;
 }
 
-/* line 1064, ../sass/screen.scss */
+/* line 1070, ../sass/screen.scss */
 .breadcrumbs li:before {
   color: #aaaaaa;
   content: "/";
   position: relative;
 }
 
-/* line 1068, ../sass/screen.scss */
+/* line 1074, ../sass/screen.scss */
 .breadcrumbsFontStyle a {
   color: #5a93c0 !important;
 }
-/* line 1071, ../sass/screen.scss */
+/* line 1077, ../sass/screen.scss */
 .breadcrumbsFontStyle a:hover {
   color: #396c95 !important;
   text-decoration: underline !important;
 }
 
-/* line 1077, ../sass/screen.scss */
+/* line 1083, ../sass/screen.scss */
 .current a {
   color: #6c6c6c !important;
   font-weight: bold;
 }
 
 /* =welcome style starts here */
-/* line 1085, ../sass/screen.scss */
+/* line 1091, ../sass/screen.scss */
 .welcome {
   text-align: center;
   line-height: 55px !important;
 }
 
 /* =newListings style starts here  */
-/* line 1091, ../sass/screen.scss */
+/* line 1097, ../sass/screen.scss */
 .listingSection {
   padding-right: 0px 	!important;
   padding-left: 0px 	!important;
 }
 
-/* line 1098, ../sass/screen.scss */
+/* line 1104, ../sass/screen.scss */
 input[type="text"] {
   font-size: 12px !important;
 }
 
-/* line 1101, ../sass/screen.scss */
+/* line 1107, ../sass/screen.scss */
 .newListings {
   margin-top: 15px;
   padding: 15px !important;
   padding-bottom: 0px !important;
   padding-top: 15px !important;
 }
-/* line 1103, ../sass/screen.scss */
+/* line 1109, ../sass/screen.scss */
 .newListings .liNewListings {
   padding-right: 0px !important;
   padding-left: 0px !important;
 }
 
-/* line 1108, ../sass/screen.scss */
+/* line 1114, ../sass/screen.scss */
 .imgNewListings {
   width: 75px;
 }
@@ -8476,27 +8482,27 @@ input[type="text"] {
 /* =newListings style ends here  *
 
 /* =our agents style starts here */
-/* line 1116, ../sass/screen.scss */
+/* line 1122, ../sass/screen.scss */
 .oneRentAgent {
   padding-top: 10px !important;
 }
-/* line 1118, ../sass/screen.scss */
+/* line 1124, ../sass/screen.scss */
 .oneRentAgent hr {
   margin-top: 5px !important;
 }
 
-/* line 1123, ../sass/screen.scss */
+/* line 1129, ../sass/screen.scss */
 .marginPadding {
   margin: 0px !important;
   padding: 0px !important;
 }
 
-/* line 1127, ../sass/screen.scss */
+/* line 1133, ../sass/screen.scss */
 .allAgents {
   margin-top: 20px !important;
 }
 
-/* line 1130, ../sass/screen.scss */
+/* line 1136, ../sass/screen.scss */
 .position {
   font-size: 13px;
   margin-top: 5px;
@@ -8504,16 +8510,16 @@ input[type="text"] {
   font-weight: bold;
 }
 
-/* line 1136, ../sass/screen.scss */
+/* line 1142, ../sass/screen.scss */
 .ulagents {
   margin-top: 15px !important;
 }
-/* line 1138, ../sass/screen.scss */
+/* line 1144, ../sass/screen.scss */
 .ulagents a {
   text-align: center;
 }
 
-/* line 1143, ../sass/screen.scss */
+/* line 1149, ../sass/screen.scss */
 ul.ulagents li {
   font-size: 12px;
   color: #393939;
@@ -8524,7 +8530,7 @@ ul.ulagents li {
   letter-spacing: .04em;
 }
 
-/* line 1153, ../sass/screen.scss */
+/* line 1159, ../sass/screen.scss */
 .ourAgents {
   margin-top: 15px;
   padding: 15px !important;
@@ -8533,11 +8539,11 @@ ul.ulagents li {
   margin-bottom: 0px !important;
   padding-bottom: 20px !important;
 }
-/* line 1157, ../sass/screen.scss */
+/* line 1163, ../sass/screen.scss */
 .ourAgents .carousel {
   margin-left: -12px !important;
 }
-/* line 1160, ../sass/screen.scss */
+/* line 1166, ../sass/screen.scss */
 .ourAgents .liAgents {
   margin-bottom: 0px !important;
   margin-right: 0px !important;
@@ -8546,14 +8552,14 @@ ul.ulagents li {
   padding-left: 0px !important;
   text-align: center !important;
 }
-/* line 1167, ../sass/screen.scss */
+/* line 1173, ../sass/screen.scss */
 .ourAgents .liAgents .th {
   border-right-width: 2px !important;
   border-left-width: 2px !important;
   border-top-width: 2px !important;
   border-bottom-width: 2px !important;
 }
-/* line 1174, ../sass/screen.scss */
+/* line 1180, ../sass/screen.scss */
 .ourAgents .agentLinkLast {
   font-size: 11px !important;
   font-weight: bold !important;
@@ -8563,16 +8569,16 @@ ul.ulagents li {
   display: inline-block;
   margin-bottom: 10px;
 }
-/* line 1183, ../sass/screen.scss */
+/* line 1189, ../sass/screen.scss */
 .ourAgents .agentLink:hover {
   color: #5a93c0;
 }
-/* line 1186, ../sass/screen.scss */
+/* line 1192, ../sass/screen.scss */
 .ourAgents .agentLinkLast:hover {
   color: #5a93c0;
 }
 
-/* line 1190, ../sass/screen.scss */
+/* line 1196, ../sass/screen.scss */
 .agentLink {
   color: #396c95;
   font-size: 10px !important;
@@ -8584,12 +8590,12 @@ ul.ulagents li {
 }
 
 /* =database parsing styles start here*/
-/* line 1201, ../sass/screen.scss */
+/* line 1207, ../sass/screen.scss */
 .parsedImg {
   margin-top: 10px !important;
 }
 
-/* line 1204, ../sass/screen.scss */
+/* line 1210, ../sass/screen.scss */
 .foreclosureLabel {
   background-color: #4887b9 !important;
   padding-left: 5px !important;
@@ -8598,7 +8604,7 @@ ul.ulagents li {
   padding-bottom: 3px !important;
 }
 
-/* line 1211, ../sass/screen.scss */
+/* line 1217, ../sass/screen.scss */
 .bankowedLabel {
   background-color: #969ba2 !important;
   padding-left: 5px !important;
@@ -8607,7 +8613,7 @@ ul.ulagents li {
   padding-bottom: 3px !important;
 }
 
-/* line 1218, ../sass/screen.scss */
+/* line 1224, ../sass/screen.scss */
 .shortsaleLabel {
   background-color: #f2b3b5 !important;
   padding-left: 5px !important;
@@ -8616,24 +8622,24 @@ ul.ulagents li {
   padding-bottom: 3px !important;
 }
 
-/* line 1225, ../sass/screen.scss */
+/* line 1231, ../sass/screen.scss */
 .oneListing {
   font-size: 12px;
   padding-top: 20px !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
-/* line 1230, ../sass/screen.scss */
+/* line 1236, ../sass/screen.scss */
 .oneListing h4 {
   font-size: 18px !important;
   margin-bottom: 10px !important;
 }
-/* line 1234, ../sass/screen.scss */
+/* line 1240, ../sass/screen.scss */
 .oneListing h5 {
   color: #525252;
   font-size: 16px;
 }
-/* line 1238, ../sass/screen.scss */
+/* line 1244, ../sass/screen.scss */
 .oneListing .oneHouseAddress {
   margin-bottom: 20px !important;
   color: #f7f7f4 !important;
@@ -8646,58 +8652,58 @@ ul.ulagents li {
   padding-right: 10px !important;
 }
 
-/* line 1252, ../sass/screen.scss */
+/* line 1258, ../sass/screen.scss */
 .databaseParsing h2 {
   border-bottom: 2px solid #c5c5c5;
   padding-bottom: 5px;
   font-size: 22px !important;
 }
-/* line 1257, ../sass/screen.scss */
+/* line 1263, ../sass/screen.scss */
 .databaseParsing h3 {
   padding-bottom: 5px;
   border-bottom: 2px solid #c5c5c5;
   font-size: 18px !important;
 }
-/* line 1262, ../sass/screen.scss */
+/* line 1268, ../sass/screen.scss */
 .databaseParsing p {
   color: #525252 !important;
   line-height: 24px;
 }
 
-/* line 1267, ../sass/screen.scss */
+/* line 1273, ../sass/screen.scss */
 .list-sidebyside {
   list-style-type: none !important;
 }
 
-/* line 1271, ../sass/screen.scss */
+/* line 1277, ../sass/screen.scss */
 .list-data-alt {
   line-height: 24px;
   display: inline-block;
   width: 290px !important;
 }
-/* line 1275, ../sass/screen.scss */
+/* line 1281, ../sass/screen.scss */
 .list-data-alt li {
   margin-left: 15px !important;
   display: inline-block;
   color: #525252 !important;
 }
-/* line 1279, ../sass/screen.scss */
+/* line 1285, ../sass/screen.scss */
 .list-data-alt li a {
   color: #525252 !important;
   text-decoration: none !important;
 }
-/* line 1284, ../sass/screen.scss */
+/* line 1290, ../sass/screen.scss */
 .list-data-alt span:first-child {
   font-weight: bold !important;
 }
-/* line 1287, ../sass/screen.scss */
+/* line 1293, ../sass/screen.scss */
 .list-data-alt span {
   display: inline-block;
   width: 130px !important;
   color: #525252 !important;
 }
 
-/* line 1295, ../sass/screen.scss */
+/* line 1301, ../sass/screen.scss */
 .list-condensed li {
   display: inline-block;
   width: 275px;
@@ -8708,27 +8714,27 @@ ul.ulagents li {
   background-color: #f1f1f1 !important;
 }
 
-/* line 1305, ../sass/screen.scss */
+/* line 1311, ../sass/screen.scss */
 .ulFirstLineDistricts {
   margin-left: 0px !important;
 }
 
-/* line 1308, ../sass/screen.scss */
+/* line 1314, ../sass/screen.scss */
 .liFirstLineDistricts {
   display: inline-block !important;
   width: 170px !important;
   line-height: 32px !important;
 }
-/* line 1312, ../sass/screen.scss */
+/* line 1318, ../sass/screen.scss */
 .liFirstLineDistricts a {
   color: #787878;
 }
-/* line 1314, ../sass/screen.scss */
+/* line 1320, ../sass/screen.scss */
 .liFirstLineDistricts a:hover {
   color: #525252 !important;
 }
 
-/* line 1321, ../sass/screen.scss */
+/* line 1327, ../sass/screen.scss */
 .table-condensed th {
   font-size: 14px !important;
   color: #525252;
@@ -8738,7 +8744,7 @@ ul.ulagents li {
   text-align: left;
   margin-right: 20px !important;
 }
-/* line 1330, ../sass/screen.scss */
+/* line 1336, ../sass/screen.scss */
 .table-condensed td {
   font-weight: bold;
   color: #6c6c6c;
@@ -8748,28 +8754,28 @@ ul.ulagents li {
 
 /* =database parsing styles end here*/
 /* =agent profile starts here */
-/* line 1343, ../sass/screen.scss */
+/* line 1349, ../sass/screen.scss */
 .specialties {
   font-size: 12px;
 }
 
-/* line 1346, ../sass/screen.scss */
+/* line 1352, ../sass/screen.scss */
 .ulAgentName {
   margin-bottom: 10px !important;
 }
 
-/* line 1349, ../sass/screen.scss */
+/* line 1355, ../sass/screen.scss */
 .agentName {
   margin-bottom: 5px 	!important;
   font-size: 22px !important;
 }
 
-/* line 1353, ../sass/screen.scss */
+/* line 1359, ../sass/screen.scss */
 .agentInfoContent {
   margin-top: 10px;
 }
 
-/* line 1357, ../sass/screen.scss */
+/* line 1363, ../sass/screen.scss */
 .specialist {
   font-size: 11px !important;
   padding-top: 5px !important;
@@ -8780,26 +8786,26 @@ ul.ulagents li {
   border: 1px solid #f7f7f4 !important;
 }
 
-/* line 1367, ../sass/screen.scss */
+/* line 1373, ../sass/screen.scss */
 .specialist:hover, .specialist:focus {
   color: #858585 !important;
 }
 
-/* line 1371, ../sass/screen.scss */
+/* line 1377, ../sass/screen.scss */
 .info {
   margin-top: 25px !important;
   padding-bottom: 25px !important;
   padding-top: 0px !important;
 }
 
-/* line 1376, ../sass/screen.scss */
+/* line 1382, ../sass/screen.scss */
 .innerInfo {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   font-size: 14px !important;
 }
 
-/* line 1381, ../sass/screen.scss */
+/* line 1387, ../sass/screen.scss */
 .agentPropSale {
   font-size: 9px !important;
   font-weight: bold !important;
@@ -8812,7 +8818,7 @@ ul.ulagents li {
   font-size: 11px;
 }
 
-/* line 1393, ../sass/screen.scss */
+/* line 1399, ../sass/screen.scss */
 .agentPropRent {
   font-size: 9px !important;
   font-weight: bold !important;
@@ -8824,23 +8830,23 @@ ul.ulagents li {
   font-size: 11px;
 }
 
-/* line 1404, ../sass/screen.scss */
+/* line 1410, ../sass/screen.scss */
 .agentP {
   color: #396c95 !important;
   text-shadow: 1px solid #f7f7f4 !important;
 }
-/* line 1407, ../sass/screen.scss */
+/* line 1413, ../sass/screen.scss */
 .agentP:hover {
   color: #5a93c0 !important;
 }
 
-/* line 1411, ../sass/screen.scss */
+/* line 1417, ../sass/screen.scss */
 .logoS {
   margin-top: 5px;
   display: inline-block;
 }
 
-/* line 1415, ../sass/screen.scss */
+/* line 1421, ../sass/screen.scss */
 .profileContent {
   padding-right: 25px !important;
   padding-left: 25px !important;
@@ -8848,19 +8854,19 @@ ul.ulagents li {
 }
 
 /*=footer starts here */
-/* line 1422, ../sass/screen.scss */
+/* line 1428, ../sass/screen.scss */
 .logoFooterPadding {
   margin-left: 1em;
   margin-top: 1em;
 }
 
-/* line 1425, ../sass/screen.scss */
+/* line 1431, ../sass/screen.scss */
 .logoRemaxFooter {
   margin-left: 1em;
   margin-top: 1em;
 }
 
-/* line 1428, ../sass/screen.scss */
+/* line 1434, ../sass/screen.scss */
 .connectFooter {
   padding-bottom: 5px !important;
   display: inline-block;
@@ -8871,70 +8877,70 @@ ul.ulagents li {
   border-bottom: 1px solid #393939;
 }
 
-/* line 1433, ../sass/screen.scss */
+/* line 1439, ../sass/screen.scss */
 .vcard {
   border: 0em;
   margin-bottom: 0em !important;
   min-width: 170px;
 }
-/* line 1437, ../sass/screen.scss */
+/* line 1443, ../sass/screen.scss */
 .vcard hr {
   margin-bottom: 10px !important;
 }
 
-/* line 1441, ../sass/screen.scss */
+/* line 1447, ../sass/screen.scss */
 .vcard .fn {
   font-size: 12px;
 }
 
-/* line 1444, ../sass/screen.scss */
+/* line 1450, ../sass/screen.scss */
 .vcard .street-address {
   font-size: 12px;
 }
 
-/* line 1447, ../sass/screen.scss */
+/* line 1453, ../sass/screen.scss */
 .vcard .locality {
   font-size: 12px;
 }
 
-/* line 1450, ../sass/screen.scss */
+/* line 1456, ../sass/screen.scss */
 .vcard .state {
   font-size: 12px;
 }
 
-/* line 1453, ../sass/screen.scss */
+/* line 1459, ../sass/screen.scss */
 .vcard .zip {
   font-size: 12px;
   display: inline-block;
 }
 
-/* line 1458, ../sass/screen.scss */
+/* line 1464, ../sass/screen.scss */
 .vcard .email a {
   font-size: 11px !important;
 }
 
-/* line 1462, ../sass/screen.scss */
+/* line 1468, ../sass/screen.scss */
 footer {
   background-color: #dddddd;
   padding-top: 10px;
   margin-top: 17px;
 }
-/* line 1464, ../sass/screen.scss */
+/* line 1470, ../sass/screen.scss */
 footer .row .columns {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
-/* line 1468, ../sass/screen.scss */
+/* line 1474, ../sass/screen.scss */
 footer .prop {
   font-size: 11px !important;
 }
-/* line 1471, ../sass/screen.scss */
+/* line 1477, ../sass/screen.scss */
 footer .row.ul.li.a {
   color: #f7f7f4;
   cursor: pointer;
 }
 
-/* line 1477, ../sass/screen.scss */
+/* line 1483, ../sass/screen.scss */
 .contactFooter {
   font-size: 11px;
   font-weight: bold !important;
@@ -8943,7 +8949,7 @@ footer .row.ul.li.a {
   min-width: 180px;
   line-height: 17px !important;
 }
-/* line 1479, ../sass/screen.scss */
+/* line 1485, ../sass/screen.scss */
 .contactFooter hr {
   display: block;
   height: 1px;
@@ -8953,20 +8959,20 @@ footer .row.ul.li.a {
   margin-top: 0px !important;
 }
 
-/* line 1489, ../sass/screen.scss */
+/* line 1495, ../sass/screen.scss */
 .ulFooterSocial {
   margin: 0px !important;
   padding-top: 5px !important;
 }
 
-/* line 1494, ../sass/screen.scss */
+/* line 1500, ../sass/screen.scss */
 .liFooterConnect {
   padding-right: 0px !important;
   padding-left: 0px !important;
   width: 45px !important;
   height: 45px !important;
 }
-/* line 1499, ../sass/screen.scss */
+/* line 1505, ../sass/screen.scss */
 .liFooterConnect hr {
   display: block;
   height: 1px;
@@ -8976,14 +8982,14 @@ footer .row.ul.li.a {
   margin-top: 0px !important;
 }
 
-/* line 1508, ../sass/screen.scss */
+/* line 1514, ../sass/screen.scss */
 .liFooterConnectRight {
   padding-right: 0px !important;
   padding-left: 0px !important;
   width: 32px !important;
   height: 45px !important;
 }
-/* line 1513, ../sass/screen.scss */
+/* line 1519, ../sass/screen.scss */
 .liFooterConnectRight hr {
   display: block;
   height: 1px;
@@ -8993,12 +8999,12 @@ footer .row.ul.li.a {
   margin-top: 0px !important;
 }
 
-/* line 1522, ../sass/screen.scss */
+/* line 1528, ../sass/screen.scss */
 .social {
   padding-top: 10px;
   width: 125px;
 }
-/* line 1525, ../sass/screen.scss */
+/* line 1531, ../sass/screen.scss */
 .social hr {
   display: block;
   height: 1px;
@@ -9008,13 +9014,13 @@ footer .row.ul.li.a {
   margin-top: 0px !important;
 }
 
-/* line 1534, ../sass/screen.scss */
+/* line 1540, ../sass/screen.scss */
 .propRent {
   padding-top: 10px;
   margin-right: 30px !important;
   width: 130px;
 }
-/* line 1538, ../sass/screen.scss */
+/* line 1544, ../sass/screen.scss */
 .propRent hr {
   display: block;
   height: 1px;
@@ -9024,12 +9030,12 @@ footer .row.ul.li.a {
   margin-top: 0px !important;
 }
 
-/* line 1547, ../sass/screen.scss */
+/* line 1553, ../sass/screen.scss */
 .mls {
   margin-top: 70px;
 }
 
-/* line 1550, ../sass/screen.scss */
+/* line 1556, ../sass/screen.scss */
 .properties {
   margin-left: 15px;
   font-size: 9px;
@@ -9040,12 +9046,12 @@ footer .row.ul.li.a {
   color: #396c95;
   text-shadow: white 1px 1px 0px;
 }
-/* line 1559, ../sass/screen.scss */
+/* line 1565, ../sass/screen.scss */
 .properties a {
   line-height: 15px;
 }
 
-/* line 1565, ../sass/screen.scss */
+/* line 1571, ../sass/screen.scss */
 .propertiesFooter {
   font-weight: bold;
   display: inline-block;
@@ -9055,103 +9061,103 @@ footer .row.ul.li.a {
   min-width: 150px;
 }
 
-/* line 1568, ../sass/screen.scss */
+/* line 1574, ../sass/screen.scss */
 .copyright {
   background-color: #3f3f3f;
   padding-top: 10px;
 }
 
-/* line 1572, ../sass/screen.scss */
+/* line 1578, ../sass/screen.scss */
 .copy {
   color: #f7f7f4 !important;
 }
 
 /* =addInfoFooter Starts Here */
-/* line 1576, ../sass/screen.scss */
+/* line 1582, ../sass/screen.scss */
 .addInfoFooterWrapper {
   padding: 10px;
   background-color: #727272;
 }
-/* line 1579, ../sass/screen.scss */
+/* line 1585, ../sass/screen.scss */
 .addInfoFooterWrapper .addInfoFooterLinks {
   margin-bottom: 0px !important;
   margin-left: 0px !important;
 }
-/* line 1583, ../sass/screen.scss */
+/* line 1589, ../sass/screen.scss */
 .addInfoFooterWrapper .addInfoFooterLinks li, .addInfoFooterWrapper .addInfoFooterLinks a {
   line-height: 18px !important;
   color: #f7f7f4;
   font-size: 9px;
 }
-/* line 1588, ../sass/screen.scss */
+/* line 1594, ../sass/screen.scss */
 .addInfoFooterWrapper .addInfoFooterLinks .liAddInfoFooter1 {
   margin-left: 0px !important;
 }
-/* line 1591, ../sass/screen.scss */
+/* line 1597, ../sass/screen.scss */
 .addInfoFooterWrapper .addInfoFooterLinks .liAddInfoFooter2 {
   margin-left: 25px !important;
 }
-/* line 1594, ../sass/screen.scss */
+/* line 1600, ../sass/screen.scss */
 .addInfoFooterWrapper .addInfoFooterLinks li {
   margin-left: 5px !important;
 }
 
-/* line 1600, ../sass/screen.scss */
+/* line 1606, ../sass/screen.scss */
 .addInfoFooter {
   font-family: Verdana, Geneva, Sans-Serif;
   padding: 0px !important;
 }
-/* line 1603, ../sass/screen.scss */
+/* line 1609, ../sass/screen.scss */
 .addInfoFooter h5 {
   margin-top: 3px !important;
   line-height: 12px !important;
   font-size: 10px !important;
 }
 
-/* line 1610, ../sass/screen.scss */
+/* line 1616, ../sass/screen.scss */
 .skokieRentals {
   font-size: 10px;
   color: #525252;
 }
 
 /* =Contact Us */
-/* line 1616, ../sass/screen.scss */
+/* line 1622, ../sass/screen.scss */
 .prefix {
   font-size: 12px !important;
 }
 
-/* line 1620, ../sass/screen.scss */
+/* line 1626, ../sass/screen.scss */
 .contactUsFormWrapper legend {
   background-color: none !important;
 }
 
-/* line 1624, ../sass/screen.scss */
+/* line 1630, ../sass/screen.scss */
 textarea {
   height: 300px;
   cursor: pointer;
 }
 
-/* line 1629, ../sass/screen.scss */
+/* line 1635, ../sass/screen.scss */
 .textareaCommentsWrapper textarea {
   height: 200px !important;
 }
 
-/* line 1634, ../sass/screen.scss */
+/* line 1640, ../sass/screen.scss */
 .min {
   margin-top: 20px !important;
 }
 
-/* line 1640, ../sass/screen.scss */
+/* line 1646, ../sass/screen.scss */
 .createAccount .account {
   margin-top: 15px !important;
   margin-bottom: 25px !important;
 }
-/* line 1645, ../sass/screen.scss */
+/* line 1651, ../sass/screen.scss */
 .createAccount label {
   font-size: 1em;
   margin-bottom: 10px;
 }
-/* line 1649, ../sass/screen.scss */
+/* line 1655, ../sass/screen.scss */
 .createAccount .button {
   background-color: #5f5f5f !important;
   margin-top: .5em !important;
@@ -9161,13 +9167,13 @@ textarea {
   color: #f7f7f4;
 }
 
-/* line 1653, ../sass/screen.scss */
+/* line 1659, ../sass/screen.scss */
 .contactModal {
   font-size: 27px !important;
 }
 
 /* =footer local links start here */
-/* line 1657, ../sass/screen.scss */
+/* line 1663, ../sass/screen.scss */
 .localLinks {
   font-size: 12 px;
 }

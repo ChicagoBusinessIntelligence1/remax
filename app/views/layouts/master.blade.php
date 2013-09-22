@@ -355,13 +355,13 @@
 
                                </div>
                                <div class="row">
-                                 <div class="large-4 columns">
+                                 <div class="large-5 columns">
 
-                                   {{ Form::submit('Search', array('class'=>'button small secondary radius submitSearch'))}}
+                                   {{ Form::submit('Search', array('class'=>'button small radius expand  submitSearch'))}}
                                    <br/>
                                  </div>
                                </div>
-
+<hr/>
                                {{Form::close()}}
 
                              </div>
@@ -437,12 +437,13 @@
 
                              </div>
                              <div class="row">
-                               <div class="large-4 columns">
+                               <div class="large-5 columns">
 
-                                 {{ Form::submit('Search', array('class'=>'button small secondary radius submitSearch'))}}
+                                 {{ Form::submit('Search', array('class'=>'button small radius expand submitSearch'))}}
                                  <br/>
                                </div>
                              </div>
+                             <hr/>
 
                              {{Form::close()}}
 
