@@ -8,9 +8,10 @@ class City extends Eloquent {
 
 public $timestamps  = false;
 
-public function house()
+public function listing()
 {
-return $this->hasOne('House');
+return $this->hasMany('Listing');
+
 }
 
 

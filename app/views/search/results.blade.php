@@ -4,9 +4,9 @@
 <!-- //LOCATION: remax/public/search 
 -->
 <div class="mainContent">
-@if (isset($houses))
-@include('include.res_search', compact($houses))
-@yield('houses')
+@if (isset($listings))
+@include('include.res_search', compact($listings))
+@yield('listings')
 @endif
 		</div>
 		@stop

@@ -570,7 +570,7 @@
 
           <section class="large-6 small-6 columns social">
             <ul class="prop no-bullet">
-              {{link_to('show-all-listings', 'PROPERTIES FOR SALE', array('class'=>'propertiesFooter'));}} 
+              {{link_to_route('show-all-listings', 'PROPERTIES FOR SALE', array('class'=>'propertiesFooter'));}} 
               <hr/>
               <li class="locality properties">{{link_to_route('sale-single', 'SINGLE FAMILY HOMES FOR SALE');}}</li>
               <li class="locality properties">{{link_to_route('sale-single', 'CONDOS FOR SALE');}}</li>
@@ -578,7 +578,7 @@
           </section>
           <section class="large-6 small-6 columns propRent">
             <ul class="prop no-bullet">
-              {{link_to('all-rent-listings', 'PROPERTIES FOR RENT', array('class'=>'propertiesFooter'));}} 
+              {{link_to_route('all-rent-listings', 'PROPERTIES FOR RENT', array('class'=>'propertiesFooter'));}} 
               <hr/>
               <li class="locality properties">{{link_to_route('rent-apartments', 'APARTMENTS FOR RENT');}}</li>
               <li class="locality properties">{{link_to_route('rent-houses', 'HOUSES FOR RENT');}}</li>
