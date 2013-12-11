@@ -98,6 +98,7 @@
 									@else
 									<span>-</span>
 									@endif
+
 									
 								</li>
 								<li class="list-sidebyside">
@@ -155,10 +156,13 @@
 								</li>
 							</ul>
 						</div>	
+						@if(isset($listing->BedroomUl))
 						<h3 class="title-section title-section-sub">Bedrooms</h3>
 						<ul class="list-disc list-condensed list-col-c group">
 							<li class="">{{$listing->BedroomUl}}</li>
 							<ul/>
+							@endif
+
 
 							<h3 class="title-section title-section-sub">Bathrooms</h3>
 							<ul class="list-disc list-condensed list-col-c group">
@@ -166,28 +170,35 @@
 							</ul>
 							<h3 class="title-section title-section-sub">Kitchen and Dining</h3>
 							<ul class="list-disc list-condensed list-col-c group">
-								<li class="">Kitchen Level: Main Level</li>
+								<li class="">{{$listing->KitchenDiningUl}}</li>
 							</ul>
 							<h3 class="title-section title-section-sub">Other Rooms</h3>
 							<ul class="list-disc list-condensed list-col-c group">
-								<li class="">Living Room: 21x14</li>
+								<li class="">{{$listing->OtherRoomsUl}}</li>
 							</ul>
-							<h3 class="title-section title-section-sub">Building and Construction</h3>
 
 							<h3 class="title-section title-section-sub">Home Features</h3>
 							<ul class="list-disc list-condensed list-col-c group">
-								<li class="">Security Deposit: 2600</li>
+								<li class="">{{$listing->HomeFeaturesUl}}</li>
 							</ul>
-
 							<h3 class="title-section title-section-sub">Building and Construction</h3>
-
+							<li class="">{{$listing->BuldingConstructionUl}}</li>
 							<h3 class="title-section title-section-sub">Exterior and Lot Features</h3>
+							<li class="">{{$listing->ExteriorLotFeaturesUl}}</li>
 							<h3 class="title-section title-section-sub">Garage and Parking</h3>
+							<li class="">{{$listing->GarageParkingUl}}</li>
 							<h3 class="title-section title-section-sub">Heating and Cooling</h3>
+							<li class="">{{$listing->HeatingCoolingUl}}</li>
 							<h3 class="title-section title-section-sub">Utilities</h3>
+							<li class="">{{$listing->UtilitiesUl}}</li>
 							<h3 class="title-section title-section-sub">Appliances</h3>
+							<li class="">{{$listing->AppliancesUl}}</li>
 							<h3 class="title-section title-section-sub">Amenities and Communities Features</h3>
+							<li class="">{{$listing->AmenitiesCommunitiesFeaturesUl}}</li>
 							<h3 class="title-section title-section-sub">Other Property Info</h3>
+							<li class="">{{$listing->OtherPropertyInfoUl}}</li>
+							<h3 class="title-section title-section-sub">LocationMapUl</h3>
+							<li class="">{{$listing->OtherPropertyInfoUl}}</li>
 
 							@endif
 
