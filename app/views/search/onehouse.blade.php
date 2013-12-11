@@ -164,54 +164,113 @@
 							@endif
 
 
+							@if(isset($listing->BathroomUl))
 							<h3 class="title-section title-section-sub">Bathrooms</h3>
 							<ul class="list-disc list-condensed list-col-c group">
 								<li class="">{{$listing->BathroomUl}}</li>
 							</ul>
+							@endif
+
+							@if(isset($listing->KitchenDiningUl))
 							<h3 class="title-section title-section-sub">Kitchen and Dining</h3>
 							<ul class="list-disc list-condensed list-col-c group">
 								<li class="">{{$listing->KitchenDiningUl}}</li>
 							</ul>
+							@endif
+
+							@if(isset($listing->OtherRoomsUl))
 							<h3 class="title-section title-section-sub">Other Rooms</h3>
 							<ul class="list-disc list-condensed list-col-c group">
 								<li class="">{{$listing->OtherRoomsUl}}</li>
 							</ul>
-
+							@endif
+							@if(isset($listing->HomeFeaturesUl))
 							<h3 class="title-section title-section-sub">Home Features</h3>
 							<ul class="list-disc list-condensed list-col-c group">
 								<li class="">{{$listing->HomeFeaturesUl}}</li>
 							</ul>
-							<h3 class="title-section title-section-sub">Building and Construction</h3>
-							<li class="">{{$listing->BuldingConstructionUl}}</li>
-							<h3 class="title-section title-section-sub">Exterior and Lot Features</h3>
-							<li class="">{{$listing->ExteriorLotFeaturesUl}}</li>
-							<h3 class="title-section title-section-sub">Garage and Parking</h3>
-							<li class="">{{$listing->GarageParkingUl}}</li>
-							<h3 class="title-section title-section-sub">Heating and Cooling</h3>
-							<li class="">{{$listing->HeatingCoolingUl}}</li>
-							<h3 class="title-section title-section-sub">Utilities</h3>
-							<li class="">{{$listing->UtilitiesUl}}</li>
-							<h3 class="title-section title-section-sub">Appliances</h3>
-							<li class="">{{$listing->AppliancesUl}}</li>
-							<h3 class="title-section title-section-sub">Amenities and Communities Features</h3>
-							<li class="">{{$listing->AmenitiesCommunitiesFeaturesUl}}</li>
-							<h3 class="title-section title-section-sub">Other Property Info</h3>
-							<li class="">{{$listing->OtherPropertyInfoUl}}</li>
-							<h3 class="title-section title-section-sub">LocationMapUl</h3>
-							<li class="">{{$listing->OtherPropertyInfoUl}}</li>
-
 							@endif
 
+							@if(isset($listing->BuldingConstructionUl))
+							<h3 class="title-section title-section-sub">Building and Construction</h3>
+							<ul class="list-disc list-condensed list-col-c group">
+								<li class="">{{$listing->BuldingConstructionUl}}</li>
+								<ul/>
+								@endif
+
+								@if(isset($listing->exteriorlotfeaturesul))
+								<h3 class="title-section title-section-sub">exterior and lot features</h3>
+								<ul class="list-disc list-condensed list-col-c group">
+									<li class="">{{$listing->exteriorlotfeaturesul}}</li>
+									<ul/>
+									@endif
+
+									@if(isset($listing->GarageParkingUl))
+									<h3 class="title-section title-section-sub">Garage and Parking</h3>
+									<ul class="list-disc list-condensed list-col-c group">
+										<li class="">{{$listing->GarageParkingUl}}</li>
+										<ul/>
+										@endif
+
+										@if(isset($listing->HeatingCoolingUl))
+										<h3 class="title-section title-section-sub">Heating and Cooling</h3>
+										<ul class="list-disc list-condensed list-col-c group">
+											<li class="">{{$listing->HeatingCoolingUl}}</li>
+											<ul/>
+											@endif
 
 
-						</div> <!-- database Parsing -->
+											@if(isset($listing->UtilitiesUl))
+											<h3 class="title-section title-section-sub">Utilities</h3>
+											<ul class="list-disc list-condensed list-col-c group">
+												<li class="">{{$listing->UtilitiesUl}}</li>
+												<ul/>
+												@endif
 
-					</div>
-				</div>
-			</div>
+												@if(isset($listing->AppliancesUl))
+												<h3 class="title-section title-section-sub">Appliances</h3>
+												<ul class="list-disc list-condensed list-col-c group">
+													<li class="">{{$listing->AppliancesUl}}</li>
+													<ul/>
+													@endif
 
-		</div>
-	</div>
-	@stop
+													@if(isset($listing->AmenitiesCommunitiesFeaturesUl))
+													<h3 class="title-section title-section-sub">Amenities and Communities Features</h3>
+													<ul class="list-disc list-condensed list-col-c group">
+														<li class="">{{$listing->AmenitiesCommunitiesFeaturesUl}}</li>
+														<ul/>
+														@endif
+
+
+														@if(isset($listing->OtherPropertyInfoUl))
+														<h3 class="title-section title-section-sub">Other Property Info</h3>
+														<ul class="list-disc list-condensed list-col-c group">
+															<li class="">{{$listing->OtherPropertyInfoUl}}</li>
+															<ul/>
+															@endif
+
+
+															@if(isset($listing->OtherPropertyInfoUl))
+															<h3 class="title-section title-section-sub">LocationMapUl</h3>
+															<ul class="list-disc list-condensed list-col-c group">
+
+																<li class="">{{$listing->OtherPropertyInfoUl}}</li>
+																<ul/>
+
+																@endif
+																
+																@endif
+
+
+
+															</div> <!-- database Parsing -->
+
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										@stop
 
 
