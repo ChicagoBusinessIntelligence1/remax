@@ -7,7 +7,6 @@ class Listing extends Eloquent {
     public static $rules = array();
 
 
-
 public function city()
 {
 return $this->belongsTo('City');

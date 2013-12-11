@@ -107,6 +107,7 @@
               <li>{{link_to_route('home', 'Home');}}</li>
               
               
+              
 
               <li class="has-dropdown">{{link_to('#', 'Our Listings in');}}
 
@@ -473,7 +474,7 @@
                  </div>
 
                </div><!-- aside  large-12 columns panel --> 
-             </div>
+             </div>  
 
              <div class="row">
                <div class="large-12 columns panel newListings"> 
