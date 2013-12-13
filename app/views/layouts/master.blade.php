@@ -31,7 +31,7 @@
 
     {{HTML::script("comp/javascripts/vendor/custom.modernizr.js")}} 
     {{HTML::script("comp/javascripts/script.js")}} 
-   
+
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -158,7 +158,7 @@
              <li class="has-dropdown">{{link_to('#', 'Buying Home');}}
 
               <ul class="dropdown">
-               
+
                 <li>{{link_to_route('the-benefits-of-home-ownership', 'The Benefits of Home Ownership');}}</li>
                 <li>{{link_to_route('the-importance-of-buyers-agent', 'The Importance of a Buyer\'s Agent');}}</li>
                 <li>{{link_to_route('deciding-where-to-live', 'Deciding Where to Live');}}</li>
@@ -362,7 +362,7 @@
                                    <br/>
                                  </div>
                                </div>
-<hr/>
+                               <hr/>
                                {{Form::close()}}
 
                              </div>
@@ -964,11 +964,14 @@
 
         {{HTML::script("comp/javascripts/vendor/zepto.js")}} 
 
-       
-         {{HTML::script("comp/javascripts/foundation.min.js")}} 
 
-       
+        {{HTML::script("comp/javascripts/foundation.min.js")}} 
+        {{HTML::script("comp/javascripts/foundation/foundation.js")}} 
+        {{HTML::script("comp/javascripts/foundation/foundation.clearing.js")}} 
 
+<!--         {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.clearing.js")}}
+<!--           {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.js")}} 
+ -->
 
         <script>
           $(document).foundation();

@@ -5,9 +5,9 @@
 	@foreach ($listings as $listing)
 	<li>
 		@if($listing->IsRental ==0)
-		<a href="{{url('Homes-Sale-'.$listing->city->CityName.'/'.$listing->Id)}}">
+		<a href="{{url('Homes-Sale-'.$listing->city->CityName.'/'.$listing->id)}}">
 		@else
-		<a href="{{url('Homes-Rent-'.$listing->city->CityName .'/'.$listing->Id)}}">
+		<a href="{{url('Homes-Rent-'.$listing->city->CityName .'/'.$listing->id)}}">
 		@endif	
 				<!-- =addressColor starts here -->
 				<div class="panel addressColor">
@@ -48,9 +48,9 @@
 							@if($listing->NumberPhotos)
 
 							@if($listing->IsRental ==0)
-							<a class="listingImage"  href="{{url('Homes-Sale-'.$listing->city->CityName.'/'.$listing->Id)}}">
+							<a class="listingImage"  href="{{url('Homes-Sale-'.$listing->city->CityName.'/'.$listing->id)}}">
 								@else
-								<a class="listingImage"  href="{{url('Homes-Rent-'.$listing->city->CityName.'/'.$listing->Id)}}">
+								<a class="listingImage"  href="{{url('Homes-Rent-'.$listing->city->CityName.'/'.$listing->id)}}">
 									@endif	
 
 									<img src="{{url('comp/img/images/'.$listing->MlsNum.'/1.jpg')}}"  class="th">
@@ -58,7 +58,7 @@
 								@endif
 								<div class="signinLabel">
 									@if(Auth::check())
-									{{Form::open(array('url' => 'listing-alert/'.$listing->Id, 'method'=>'POST'))}}
+									{{Form::open(array('url' => 'listing-alert/'.$listing->id, 'method'=>'POST'))}}
 									{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
 									{{Form::close()}}
 									@else
@@ -81,7 +81,7 @@
 										<div class="searchDescription">
 											{{substr($listing->PropDetails, 0, 300)}}... </br>
 
-											<a href="{{url('search/'.$listing->Id)}}" class="propDetails"><em>Property Details</em></a>
+											<a href="{{url('search/'.$listing->id)}}" class="propDetails"><em>Property Details</em></a>
 											<hr/>
 										</div>
 										<!-- =searchDescription ends here -->

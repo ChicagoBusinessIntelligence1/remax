@@ -12,6 +12,10 @@ public function city()
 return $this->belongsTo('City');
 }
 
+public function elementaryschools()
+{
+return $this->HasMany('ElementarySchool');
+}
 
 
 }

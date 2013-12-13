@@ -1,9 +1,8 @@
 //LOCATION: remax/public
-@import "settings";
-@import "normalize";
+// @import "settings";
 @import "foundation";
 
-
+@import "foundation/components/clearing";
 
 * {
 	vertical-align: top;
@@ -954,12 +953,17 @@ label{
 }
 
 .listingDetails{
-	font-size: 13px !important;
+	padding-left: 10 px !important;
 	hr{
 		margin-top: 0px !important;
 	}
 	p{
+	padding-left: 10 px !important;
 		font-size: 13px !important;
+	}
+	li{
+	font-size: 13px !important;
+		
 	}
 }
 .dlInlineDescription{
@@ -1252,7 +1256,7 @@ ul.ulagents li {
 	}
 }
 
-.databaseParsing{
+/* .databaseParsing{
 	h2{
 		border-bottom: 2px solid lighten($colorFontGray, 45%);
 		padding-bottom: 5px;
@@ -1267,7 +1271,7 @@ ul.ulagents li {
 		color: $colorFontGray !important;
 		line-height: 24px;
 	}
-}
+} */
 .list-sidebyside{
 	list-style-type: none !important;
 
