@@ -304,6 +304,21 @@
 
                  <!--  =aside starts here-->
                  <adide class="large-4 columns">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <dl class="tabs" data-tab> 
+          <dd class="active">
+            <a href="#panel2-1">Tab 1</a></dd> <dd>
+            <a href="#panel2-2">Tab 2</a></dd> <dd>
+          </dl> 
+          <div class="tabs-content"> 
+          <div class="content active" id="panel2-1"> 
+            <p>First panel content goes here...</p> </div>
+            <div class="content" id="panel2-2"> <p>Second panel content goes here...</p> </div>
+          </div>
+        </div>
+      </div>
                    <div class="row">
                     <div class="large-12 columns listingSection">
 
@@ -311,11 +326,7 @@
                         <section>
                           <h5 class="title" data-section-title><a class="sectionWidth find" href="#panel1"> PROPERTY FOR SALE</a></h5>
                           <div class="content" data-section-content>
-
-
                             <!-- Buy / SELL -->
-
-
 
                             <div class="row">
                               <div class="large-12 columns">
@@ -963,15 +974,16 @@
         @yield('agent_thumb')  
 
         {{HTML::script("comp/javascripts/vendor/zepto.js")}} 
-{{HTML::script("comp/javascripts/foundation.min.js")}} 
-<!-- 
+        {{HTML::script("comp/javascripts/vendor/jquery.js")}} 
         {{HTML::script("comp/javascripts/foundation.min.js")}} 
+
         {{HTML::script("comp/javascripts/foundation/foundation.js")}} 
         {{HTML::script("comp/javascripts/foundation/foundation.clearing.js")}} 
-      -->
-      {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.js")}} 
+     
+<!--       {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.js")}} 
       {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.clearing.js")}}
-
+ -->
+      <script src="js/app.js"></script>
 
       <script>
         $(document).foundation();
