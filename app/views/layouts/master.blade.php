@@ -963,18 +963,18 @@
         @yield('agent_thumb')  
 
         {{HTML::script("comp/javascripts/vendor/zepto.js")}} 
-
-
+{{HTML::script("comp/javascripts/foundation.min.js")}} 
+<!-- 
         {{HTML::script("comp/javascripts/foundation.min.js")}} 
         {{HTML::script("comp/javascripts/foundation/foundation.js")}} 
         {{HTML::script("comp/javascripts/foundation/foundation.clearing.js")}} 
+      -->
+      {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.js")}} 
+      {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.clearing.js")}}
 
-<!--         {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.clearing.js")}}
-<!--           {{HTML::script("comp/bower_components/foundation/js/foundation/foundation.js")}} 
- -->
 
-        <script>
-          $(document).foundation();
-        </script>
-      </body>
-      </html>
+      <script>
+        $(document).foundation();
+      </script>
+    </body>
+    </html>

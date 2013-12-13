@@ -179,6 +179,10 @@ h6{
 .tenMarginTopBottom{
 	margin-bottom: 10px  !important;
 	margin-top: 10px  !important;
+}
+.fiveMarginTopBottom{
+	margin-bottom: 5px  !important;
+	margin-top: 5px  !important;
 
 }
 .noPadding{
@@ -190,8 +194,12 @@ h6{
 .fivePadding{
 	padding: 5px !important;
 }
+.marginTopBottomNull{
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
 
-/*  =home page starts here*/
+/* / =home page starts here*/
 .selectedProperty{
 	letter-spacing: 1px;
 	margin-bottom: 10px !important;
@@ -208,7 +216,11 @@ h6{
 		}
 	}
 }
-
+.oneListingWrapper{
+	hr{
+		margin-top: 10px !important;
+	}
+}
 
 
 
@@ -430,17 +442,16 @@ input[type="password"]{
 		line-height: 28px !important;
 	}
 }
-.companyName{
-	font-size: 17px !important;
-}
 .name{
 	h1{
-		font-size: 17px !important;
-	}
-	a{
-		color: $colorFontOffWhite; 
-		&:hover{
-			color: lighten($colorBlue, 30%);
+			font-size: 17px !important;
+		a{
+			font-weight: bold !important;
+			line-height: 48px !important;
+			color: $colorFontOffWhite; 
+			&:hover{
+				color: lighten($colorBlue, 30%);
+			}
 		}
 	}
 }
@@ -652,9 +663,10 @@ input[type="password"]{
 /* =buying home in Skokie style starts here */
 
 .foundInfoStyle{
+	color: lighten($colorNavPanel, 40%) !important;
 	padding-top: 5px !important;
 	padding-bottom: 5px !important;
-	font-size: 16px !important;
+	font-size: 14px !important;
 	border: 1px groove $colorFontOffWhite !important;
 
 	background-color:  lighten(#F2F2F2, 1%)!important;
@@ -700,8 +712,8 @@ input[type="password"]{
 	border-color: lighten($colorBlue, 15%) !important;
 	margin-top: 10px !important;
 	&:hover{
-	background-color: lighten($colorBlue, 5%) !important;
-}
+		background-color: lighten($colorBlue, 5%) !important;
+	}
 	// text-shadow: $myTextShadow;
 }
 .sectionWidth{
@@ -901,8 +913,12 @@ label{
 }
 .alert-box{
 	margin-bottom: .5em !important;
+	font-weight: bold !important;
 }	
 .listPropWrap{
+	h2{
+		font-weight: bold !important;
+	}
 	hr{
 		margin-bottom: 10px !important;
 	}
@@ -941,7 +957,7 @@ label{
 }
 
 .propType{
-	font-size: 16px !important;
+	font-size: 15px !important;
 	margin-bottom: 5px !important;
 }
 
@@ -958,11 +974,11 @@ label{
 		margin-top: 0px !important;
 	}
 	p{
-	padding-left: 10 px !important;
+		padding-left: 10 px !important;
 		font-size: 13px !important;
 	}
 	li{
-	font-size: 13px !important;
+		font-size: 13px !important;
 		
 	}
 }
@@ -1216,7 +1232,7 @@ ul.ulagents li {
 	padding-top: 3px !important;
 	padding-bottom: 3px !important;
 }
-.bankowedLabel{
+.bankownedLabel{
 	background-color: lighten($colorGray, 30%)!important;
 	padding-left: 5px !important;
 	padding-right: 5px !important;
@@ -1244,13 +1260,12 @@ ul.ulagents li {
 		font-size: 16px;
 	}
 	.oneHouseAddress{
-		margin-bottom: 20px !important;
+		margin-bottom: 10px !important;
 		color: $colorFontOffWhite !important;
 		background-color: 	lighten(#393939, 15%)!important;
-		font-size: 20px !important;
-		padding-top: 7px !important;
-		padding-bottom: 3px !important;
-		padding-top: 3px !important;
+		font-size: 18px !important;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
 		padding-left: 10px !important;
 		padding-right: 10px !important;
 	}
@@ -1271,73 +1286,73 @@ ul.ulagents li {
 		color: $colorFontGray !important;
 		line-height: 24px;
 	}
-} */
-.list-sidebyside{
-	list-style-type: none !important;
+	} */
+	.list-sidebyside{
+		list-style-type: none !important;
 
-}
-.list-data-alt{
-	line-height: 24px;
-	display: inline-block;
-	width: 290px !important;
-	li{
-		margin-left: 15px !important;	
+	}
+	.list-data-alt{
+		line-height: 24px;
 		display: inline-block;
-		color: $colorFontGray !important;
+		width: 290px !important;
+		li{
+			margin-left: 15px !important;	
+			display: inline-block;
+			color: $colorFontGray !important;
+			a{
+				color: $colorFontGray !important;
+				text-decoration: none !important;
+			}
+		}
+		span:first-child{
+			font-weight: bold !important;
+		}
+		span{
+			display: inline-block;
+			width: 130px !important;
+			color: $colorFontGray !important;
+		}
+	}
+
+	.list-condensed{
+		li{
+			display: inline-block;
+			width: 275px;
+			margin-right: 10px !important;	
+			color: $colorFontGray !important;
+			padding-left: 5px !important;
+			margin-bottom: 8px !important;
+			background-color: #F1F1F1!important;
+		}
+	}
+	.ulFirstLineDistricts{
+		margin-left: 0px !important;	
+	}
+	.liFirstLineDistricts{
+		display: inline-block !important;
+		width: 170px !important;
+		line-height: 32px !important;
 		a{
-			color: $colorFontGray !important;
-			text-decoration: none !important;
+			color: lighten($colorFontGray, 15%);
+			&:hover{
+				color: $colorFontGray !important;
+			}
 		}
-	}
-	span:first-child{
-		font-weight: bold !important;
-	}
-	span{
-		display: inline-block;
-		width: 130px !important;
-		color: $colorFontGray !important;
-	}
-}
 
-.list-condensed{
-	li{
-		display: inline-block;
-		width: 275px;
-		margin-right: 10px !important;	
-		color: $colorFontGray !important;
-		padding-left: 5px !important;
-		margin-bottom: 8px !important;
-		background-color: #F1F1F1!important;
 	}
-}
-.ulFirstLineDistricts{
-	margin-left: 0px !important;	
-}
-.liFirstLineDistricts{
-	display: inline-block !important;
-	width: 170px !important;
-	line-height: 32px !important;
-	a{
-		color: lighten($colorFontGray, 15%);
-		&:hover{
-			color: $colorFontGray !important;
+	.table-condensed{
+		th{
+			font-size: 14px !important;
+			color: $colorFontGray;
+			display: inline-block;
+			width: 130px;
+			font-weight: bold;
+			text-align: left;
+			margin-right: 20px !important;
 		}
-	}
-	
-}
-.table-condensed{
-	th{
-		font-size: 14px !important;
-		color: $colorFontGray;
-		display: inline-block;
-		width: 130px;
-		font-weight: bold;
-		text-align: left;
-		margin-right: 20px !important;
-	}
-	td{
-		font-weight: bold;
-		color: lighten($colorFontGray, 10%);
+		td{
+			font-weight: bold;
+			color: lighten($colorFontGray, 10%);
 		// width: 80px;
 		font-size: 14px !important;
 		display: inline-block;

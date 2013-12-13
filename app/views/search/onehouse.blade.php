@@ -6,7 +6,7 @@
 <div class="mainContent">
 	<div class="panel oneListing oneRentAgent">
 		<div class="row">
-			<div class="large-12 columns">
+			<div class="large-12 columns oneListingWrapper">
 				<div class="row">
 					@if(isset($listing->Address))
 					<div class="large-9 columns">
@@ -14,7 +14,7 @@
 						&nbsp &nbsp
 
 
-						<ul class="inline-list">
+						<ul class="inline-list marginTopBottomNull">
 
 							@if ($listing->IsForeclosure  == 1)
 							<li class="label radius foreclosureLabel">
@@ -43,9 +43,10 @@
 						</span>
 					</div>
 				</div>
-				<hr/>
 
 
+
+				<hr/> 
 				<div class="row">
 					<div class="large-12 columns">
 
@@ -53,7 +54,7 @@
 						<ul class="clearing-thumbs" data-clearing>
 							@for ($i =1; $i <= $listing->NumberPhotos; $i++)
 							<li> 
-								<a class="th" href="{{url('comp/img/images/'.$listing->MlsNum.'/'.$i.'.jpg')}}">
+								<a class="th fiveMarginTopBottom" href="{{url('comp/img/images/'.$listing->MlsNum.'/'.$i.'.jpg')}}">
 									<img width="100px" alt="{{$listing->city->CityName}} Home for 
 									@if ($listing->IsRental==0)
 									Sale 
