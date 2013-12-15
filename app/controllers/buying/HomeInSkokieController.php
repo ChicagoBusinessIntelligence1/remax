@@ -6,7 +6,7 @@ class HomeInSkokieController extends BaseController {
 
 	public function index()
 	{
-		$zips  = DB::table('houses')
+		$zips  = DB::table('listings')
 		->whereCity_id(1)
 		->distinct('zip')
 		->lists('zip');
@@ -17,31 +17,31 @@ class HomeInSkokieController extends BaseController {
 		$meta = 'Buying Home In Skokie. ONE STOP SERVICE!';
 		////////////////
 		$zip = 60076;
-		$count60076  = House::with('City')
+		$count60076  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereZip($zip)
 		->whereCity_id(1)->count();
 		
 		$zip = 60077;
-		$count60077  = House::with('City')
+		$count60077  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereZip($zip)
 		->whereCity_id(1)->count();
 
 		$zip = 60203;
-		$count60203  = House::with('City')
+		$count60203  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereZip($zip)
 		->whereCity_id(1)->count();
 
 		$type = 1;
-		$countCondos  = House::with('City')
+		$countCondos  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereType_id($type)
 		->whereCity_id(1)->count();
 		
 		$type = 2;
-		$countSingle  = House::with('City')
+		$countSingle  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereType_id($type)
 		->whereCity_id(1)->count();
@@ -58,7 +58,7 @@ class HomeInSkokieController extends BaseController {
 	public function skokie_60076()
 	{
 		$zip = 60076;
-		$houses  = House::with('City')
+		$houses  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereZip($zip)
 		->whereCity_id(1)
@@ -79,7 +79,7 @@ class HomeInSkokieController extends BaseController {
 	public function skokie_60077()
 	{
 		$zip = 60077;
-		$houses  = House::with('City')
+		$houses  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereZip($zip)
 		->whereCity_id(1)
@@ -96,7 +96,7 @@ class HomeInSkokieController extends BaseController {
 	public function skokie_60203()
 	{
 		$zip = 60203;
-		$houses  = House::with('City')
+		$houses  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereZip($zip)
 		->whereCity_id(1)
@@ -113,7 +113,7 @@ class HomeInSkokieController extends BaseController {
 	public function skokie_single()
 	{
 		$type = 2;
-		$houses  = House::with('City')
+		$houses  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereType_id($type)
 		->whereCity_id(1)
@@ -131,7 +131,7 @@ class HomeInSkokieController extends BaseController {
 	{
 		
 		$type = 1;
-		$houses  = House::with('City')
+		$houses  = Listing::with('City')
 		->where('issale', '=', 1)
 		->whereType_id($type)
 		->whereCity_id(1)

@@ -6,110 +6,376 @@
 <div class="mainContent">
 	<div class="panel oneListing oneRentAgent">
 		<div class="row">
-		<nav class="breadcrumbs">
-					
-			 @if($house->issale==1)
-			{{link_to_route(Str::lower($house->city->city)."-houses-sale-$house->zip","Houses, Condos for Sale in
-				".$house->city->city .", ". $house->zip, array(), 
-			array('class'=>'aBreadcrumbs '));}}
-			   @endif
+			<div class="large-12 columns oneListingWrapper">
+				<div class="row">
+					@if(isset($listing->Address))
+					<div class="large-9 columns">
+						<span class="label onehouseAddress radius">{{$listing->Address}}</span>
+						&nbsp &nbsp
 
 
+						<ul class="inline-list marginTopBottomNull">
 
-			 @if($house->issale==0)
-			{{link_to_route(Str::lower($house->city->city)."-houses-rent-".$house->zip,"Houses/Apartments for Rent in 
-				".$house->city->city .", ". $house->zip, array(), 
-			array('class'=>'aBreadcrumbs '));}}
-			@endif
+							@if ($listing->IsForeclosure  == 1)
+							<li class="label radius foreclosureLabel">
+								Foreclosure <br/>
+							</li>
+							@endif
 
-	
-		</nav>
-			<div class="row">
-			
-			
+							@if ($listing->IsBankOwned == 1)
+							<li class="label radius bankowedLabel">
+								Bank Owned <br/>
+							</li>
 
-				@if(isset($house->address))
-				<div class="large-9 columns">
-					<h1 class="oneHouseAddress label radius">{{$house->address}}</h1>
-					&nbsp &nbsp
-					
-										
-					<ul class="inline-list">
+							@endif
 
-					@foreach ($house->saletypes as $type)
-						
-						@if ($type->pivot->saletype_id==1)
-						<li class="label radius foreclosureLabel">
-							Foreclosure <br/>
-						</li>
-						@endif
+							@if ($listing->IsShortSale  == 1)
+							<li class="label radius shortsaleLabel">
+								Short Sale <br/>
+							</li>
+							@endif
+						</ul>
+					</div>
+					@endif
 
-						@if ($type->pivot->saletype_id==2)
-						<li class="label radius shortsaleLabel">
-							Bank Owned <br/>
-						</li>
-
-						@endif
-						
-						@if ($type->pivot->saletype_id==3)
-						<li class="label radius shortsaleLabel">
-							Short Sale <br/>
-						</li>
-						@endif
-						@endforeach
-
-					</ul>
-					
-	
+					<div class="large-2 columns">
+						<span class="priceStyle right ">${{number_format($listing->Price)}}
+						</span>
+					</div>
 				</div>
-				@endif
-				<div class="large-2 columns">
-					<span class="priceStyle right ">${{number_format($house->price)}}
-					</span>
+
+
+
+				<hr/> 
+				<div class="row">
+					<div class="large-12 columns">
+
+						@if(isset($listing->NumberPhotos))
+						<ul class="clearing-thumbs" data-clearing>
+							@for ($i =1; $i <= $listing->NumberPhotos; $i++)
+							<li> 
+								<a class="th tenMarginBottom" href="{{url('comp/img/images/'.$listing->MlsNum.'/'.$i.'.jpg')}}">
+									<img width="100px" alt="{{$listing->city->CityName}} Home for 
+									@if ($listing->IsRental==0)
+									Sale 
+									@else
+									Rent 
+									@endif
+									View {{$i}}" height="50px"  src="{{url('comp/img/images/'.$listing->MlsNum.'/'.$i.'.jpg')}}">
+								</a>
+							</li>
+							@endfor
+						</ul>	
+						@endif
+					</div>
+
+				</div>
+				<!-- =callAgentRent ends here -->
+				<hr/>
+				<br/>		
+				<div class="row">
+					<div class="large-12 columns listingDetails">
+						<h2 class="title-section title-section-detail">Property Details</h2>
+						<hr/>
+
+					</hr>
+					@if(isset($listing->Address))
+					<p class="property-description">{{$listing->PropDetails}}</p>
+
 				</div>
 			</div>
-			<hr/>
 
-			@if(isset($house->maximgid))
-			<ul class="clearing-thumb ulParsedImg" data-clearing>
-				@for ($i =1; $i <= $house->maximgid; $i++)
-				<li class="clearing-featured-img parsedImg"><a class="th" href="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}">
-					<img width="100px" alt="{{$house->city->city}} Home for 
-					@if ($house->issale==1)
-						Sale 
-					@else
-						Rent 
-					@endif
-View {{$i}}" height="50px" src="{{url('comp/img/images/'.$house->id.'/'.$i.'.jpg')}}"></a>
-				</li>
-				@endfor
-			</ul>	
-			@endif
+			<div class="row">
+				<div class="large-12 columns listingDetails">
 
+					@if(isset($listing->BedroomUl))
+					<h3 class="title-section title-section-sub">Bedrooms</h3>
+					<hr/>
+					<ul class="list-disc list-condensed list-col-c group">
+						<?php 
+						$beds = ($listing->BedroomUl);
 
-			
-		</div>
-		<!-- =callAgentRent ends here -->
+						$arrBeds = explode("\n", $beds);
+						foreach ($arrBeds as $bed) {
+							echo "<li>".$bed."</li>";
+						}
+						?>
+						<ul/>
+						@endif
 
-		<br/>		
-		<div class="row">
-			<div class="large-12 columns listingDetails">
+					</div>
+				</div>
 
-				
 				<div class="row">
-					<div class="large-12 columns databaseParsing">
-						@if(isset($house->address))
-						{{$house->description}}
+					<div class="large-12 columns listingDetails">
+						
+						@if(isset($listing->BathroomUl))
+						<h3 class="title-section title-section-sub">Bathrooms</h3>
+						<hr/>
+						<ul class="list-disc list-condensed list-col-c group">
+							<?php 
+							$baths = ($listing->BathroomUl);
+
+							$arrBaths = explode("\n", $baths);
+							foreach ($arrBaths as $bath) {
+								echo "<li>".$bath."</li>";	# code...
+							}
+							?>
+
+						</ul>
+						@endif
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="large-12 columns listingDetails">
+						
+						@if(isset($listing->KitchenDiningUl))
+						<h3 class="title-section title-section-sub">Kitchen and Dining</h3>
+						<hr/>
+						<ul class="list-disc list-condensed list-col-c group">
+
+							<?php 
+							$kithens = ($listing->KitchenDiningUl);
+
+							$arrKitchens = explode("\n", $kithens);
+							foreach ($arrKitchens as $kitchen) {
+								echo "<li>".$kitchen."</li>";
+							}
+							?>
+						</ul>
 						@endif
 					</div>
 				</div>
 
-				
-			</div>
-		</div>
+				<div class="row">
+					<div class="large-12 columns listingDetails">
+						
+						@if(isset($listing->OtherRoomsUl)) 
+						<h3 class="title-section title-section-sub">Other Rooms</h3>
+						<hr/>
+						<ul class="list-disc list-condensed list-col-c group">
 
-	</div>
-</div>
-@stop
+							<?php 
+							$otherRooms = ($listing->OtherRoomsUl);
+
+							$arrOtherRooms = explode("\n", $otherRooms);
+							foreach ($arrOtherRooms as $otherRoom) {
+								echo "<li>".$otherRoom."</li>";
+							}
+							?>
+
+						</ul>
+						@endif
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="large-12 columns listingDetails">
+						@if(isset($listing->HomeFeaturesUl))
+						<h3 class="title-section title-section-sub">Home Features</h3>
+						<hr/>
+						<ul class="list-disc list-condensed list-col-c group">
+
+							<?php 
+							$homeFeatures = ($listing->HomeFeaturesUl);
+
+							$arrHomeFeatures = explode("\n", $homeFeatures);
+							foreach ($arrHomeFeatures as $homeFeature) {
+								echo "<li>".$homeFeature."</li>";
+							}
+							?>
+
+						</ul>
+						@endif
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="large-12 columns listingDetails">
+						@if(isset($listing->BuldingConstructionUl))
+						<h3 class="title-section title-section-sub">Building and Construction</h3>
+						<hr/>
+						<ul class="list-disc list-condensed list-col-c group">
+
+							<?php 
+							$buildingConstructions = ($listing->BuldingConstructionUl);
+
+							$arrBuildingConstructions = explode("\n", $buildingConstructions);
+							foreach ($arrBuildingConstructions as $buildingConstruction) {
+								echo "<li>".$buildingConstruction."</li>";
+							}
+							?>
+							<ul/>
+							@endif
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-12 columns listingDetails">
+							@if(isset($listing->ExteriorLotFeaturesUl))
+							<h3 class="title-section title-section-sub">Exterior and lot features</h3>
+							<hr/>
+							<ul class="list-disc list-condensed list-col-c group">
+
+								<?php 
+								$elFeatures = ($listing->ExteriorLotFeaturesUl);
+
+								$elFeatures = explode("\n", $elFeatures);
+								foreach ($elFeatures as $elFeature) {
+									echo "<li>".$elFeature."</li>";
+								}
+								?>
+								<ul/>
+								@endif
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="large-12 columns listingDetails">
+								@if(isset($listing->GarageParkingUl))
+								<h3 class="title-section title-section-sub">Garage and Parking</h3>
+								<hr/>
+								<ul class="list-disc list-condensed list-col-c group">
+
+									<?php 
+									$garages = ($listing->GarageParkingUl);
+
+									$arrGarages = explode("\n", $garages);
+									foreach ($arrGarages as $garage) {
+										echo "<li>".$garage."</li>";
+									}
+									?>
+									<ul/>
+									@endif
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="large-12 columns listingDetails">
+									@if(isset($listing->HeatingCoolingUl))
+									<h3 class="title-section title-section-sub">Heating and Cooling</h3>
+									<hr/>
+									<ul class="list-disc list-condensed list-col-c group">
+
+										<?php 
+										$heatingCoolings = ($listing->HeatingCoolingUl);
+
+										$arrHeatingCoolings = explode("\n", $heatingCoolings);
+										foreach ($arrHeatingCoolings as $heat) {
+											echo "<li>".$heat."</li>";
+										}
+										?>
+										<ul/>
+										@endif
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="large-12 columns listingDetails">
+										@if(isset($listing->UtilitiesUl))
+										<h3 class="title-section title-section-sub">Utilities</h3>
+										<hr/>
+										<ul class="list-disc list-condensed list-col-c group">
+
+											<?php 
+											$utils = ($listing->UtilitiesUl);
+
+											$arrUtils = explode("\n", $utils);
+											foreach ($arrUtils as $util) {
+												echo "<li>".$util."</li>";
+											}
+											?>
+											<ul/>
+											@endif
+										</div>
+									</div>
+
+
+									<div class="row">
+										<div class="large-12 columns listingDetails">
+											@if(isset($listing->AppliancesUl))
+											<h3 class="title-section title-section-sub">Appliances</h3>
+											<hr/>
+											<ul class="list-disc list-condensed list-col-c group">
+
+												<?php 
+												$apps = ($listing->AppliancesUl);
+
+												$arrApps = explode("\n", $apps);
+												foreach ($arrApps as $app) {
+													echo "<li>".$app."</li>";
+												}
+												?>
+												<ul/>
+												@endif
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="large-12 columns listingDetails">
+												@if(isset($listing->AmenitiesCommunitiesFeaturesUl))
+												<h3 class="title-section title-section-sub">Amenities and Communities Features</h3>
+												<hr/>
+												<ul class="list-disc list-condensed list-col-c group">
+
+													<?php 
+													$amens = ($listing->AmenitiesCommunitiesFeaturesUl);
+
+													$arrAmens = explode("\n", $amens);
+													foreach ($arrAmens as $amen) {
+														echo "<li>".$amen."</li>";
+													}
+													?>
+													<ul/>
+													@endif
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="large-12 columns listingDetails">
+													@if(isset($listing->OtherPropertyInfoUl))
+													<h3 class="title-section title-section-sub">Other Property Info</h3>
+													<hr/>
+													<ul class="list-disc list-condensed list-col-c group">
+
+														<?php 
+														$otherProps = ($listing->OtherPropertyInfoUl);
+
+														$arrOthers = explode("\n", $otherProps);
+														foreach ($arrOthers as $others) {
+															echo "<li>".$others."</li>";
+														}
+														?>
+														<ul/>
+														@endif
+													</div>
+												</div>
+
+
+												<div class="row">
+													<div class="large-12 columns listingDetails">
+													</div>
+												</div>
+
+
+
+
+
+												@endif
+
+
+
+
+
+												<hr/>
+												
+												</div>
+											</div>
+										</div>
+									</div>
+									@stop
 
 

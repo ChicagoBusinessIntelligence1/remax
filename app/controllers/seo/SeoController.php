@@ -17,7 +17,7 @@ class SeoController extends BaseController {
 
 	public function home_sale_skokie()
 	{
-		$skokie_houses = House::where('city', '=', 'Skokie')->get();
+		$skokie_houses = Listing::where('city', '=', 'Skokie')->get();
 		$title = 'Homes for Sale in Skokie, IL';
 		$meta = 'Houses, Appartments, Vacand Land in Skokie IL. HOME LOANS AVALIABLE!';
 		return View::make('seo.vw_home_sale_skokie')

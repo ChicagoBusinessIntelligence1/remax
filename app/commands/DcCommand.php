@@ -37,7 +37,7 @@ class DcCommand extends Command {
 	 */
 	public function fire()
 	{
-		$houses = \House::all();
+		$houses = \Listing::all();
 
 		foreach ($houses as $house) {
 			$houseDescription = $house->description;

@@ -12,10 +12,10 @@ class SearchController extends BaseController {
     public function sale_single()
     {
               
-        $houses = House::where('type_id', '=', 2)
-       ->where('issale', '=', 1)
-        ->paginate(5);
-        return View::make('search.results')->with(compact('houses'));
+        $listings = Listing::where('PropType', '=', 'Single Family Home')
+       ->where('IsRental', '=', 0)->orderBy('Price')
+       ->paginate(5);
+        return View::make('search.results')->with(compact('listings'));
 
     }
 
@@ -23,66 +23,68 @@ class SearchController extends BaseController {
 public function sale_condos()
     {
               
-        $houses = House::where('type_id', '=', 1)
-       ->where('issale', '=', 1)
+        $listings = Listing::where('PropType', '=', 'Condo/Townhome/Row Home/Co-Op')
+       ->where('IsRental', '=', 0)->orderBy('Price')
         ->paginate(5);
-        return View::make('search.results')->with(compact('houses'));
-
+        return View::make('search.results')->with(compact('listings'));
     }
-
-    public function alert_signup($house_id)
-    {
-      $user_id  = Auth::user()->id;
-      $user  = User::find($user_id);
-      $user->houses()->attach($house_id);
-
-      return Redirect::route('saved-homes');
-    }
-
-    public function alert_signup_remove($house_id)
-    {
-      $user_id  = Auth::user()->id;
-      $user  = User::find($user_id);
-      $user->houses()->detach($house_id);
-
-      return Redirect::route('saved-homes');
-    }  
+    
 
     public function index()
     {
-      $houses = House::with('city')->where('issale', '=', 1)->where(function($query){
+      $listings = Listing::with('city')->where('IsRental', '=', 0)->orderBy('Price')->where(function($query){
 
       $location  = Input::get('location');
       if($location)
-        $query->where('address', 'LIKE', '%'.$location.'%');
+        $query->where('Address', 'LIKE', '%'.$location.'%');
 
       $price_l  = Input::get('from');
       if($price_l)
-        $query->where('price', '>=', $price_l);
+        $query->where('Price', '>=', $price_l);
 
       $price_h  = Input::get('to');
       if($price_h)
-        $query->where('price', '<=', $price_h);
+        $query->where('Price', '<=', $price_h);
 
       $beds  = Input::get('beds');
       if($beds)
-        $query->where('bedrooms', '>=', $beds);
+        $query->where('Beds', '>=', $beds);
 
       $baths  = Input::get('baths');
       if($baths)
-        $query->where('bathrooms', '>=', $baths);
+        $query->where('FullBaths', '>=', $baths);
 
 
     })->paginate(5);  
 
-        return View::make('search.results')->with(compact('houses'));
+        return View::make('search.results')->with(compact('listings'));
 
   }
+
+  public function alert_signup($listing_id)
+    {
+      $user_id  = Auth::user()->id;
+      $user  = User::find($user_id);
+      $user->listings()->attach($listing_id);
+
+      return Redirect::route('saved-homes');
+    }
+
+    public function alert_signup_remove($listing_id)
+    {
+      $user_id  = Auth::user()->id;
+      $user  = User::find($user_id);
+      $user->listings()->detach($listing_id);
+
+      return Redirect::route('saved-homes');
+    }  
+
+
   public function show($search,$id)
   {
-   $house = House::with('city')->where('id', '=', $id)->first();   
+   $listing = Listing::with('city')->where('Id', '=', $id)->first();   
 
-   return View::make('search.onehouse')->with(compact('house'));
+   return View::make('search.onehouse')->with(compact('listing'));
  }
 
 

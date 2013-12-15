@@ -180,8 +180,13 @@ h6{
 .tenMarginTopBottom{
 	margin-bottom: 10px  !important;
 	margin-top: 10px  !important;
-
 }
+
+.fiveMarginTb/{
+	margin-bottom: 5px  !important;
+	margin-top: 5px  !important;
+}
+
 .noPadding{
 	padding: 0px !important;
 }
@@ -433,12 +438,16 @@ input[type="password"]{
 }
 .companyName{
 	font-size: 17px !important;
+	font-weight: bold !important;
+	font-size: 17px !important;
+	vertical-align: center !important;
 }
 .name{
-	h1{
-		font-size: 17px !important;
-	}
+	margin-left: 15px !important;
 	a{
+		vertical-align: center !important;
+		line-height: 48px !important;
+		padding-right: 15px !important;
 		color: $colorFontOffWhite; 
 		&:hover{
 			color: lighten($colorBlue, 30%);
@@ -701,8 +710,8 @@ input[type="password"]{
 	border-color: lighten($colorBlue, 15%) !important;
 	margin-top: 10px !important;
 	&:hover{
-	background-color: lighten($colorBlue, 5%) !important;
-}
+		background-color: lighten($colorBlue, 5%) !important;
+	}
 	// text-shadow: $myTextShadow;
 }
 .sectionWidth{
@@ -1220,7 +1229,7 @@ ul.ulagents li {
 	padding-bottom: 3px !important;
 }
 .shortsaleLabel{
-	background-color: lighten($colorRed, 30%)!important;
+	background-color: lighten($colorRed, 20%)!important;
 	padding-left: 5px !important;
 	padding-right: 5px !important;
 	padding-top: 3px !important;
@@ -1239,17 +1248,17 @@ ul.ulagents li {
 		color: $colorFontGray;
 		font-size: 16px;
 	}
-	.oneHouseAddress{
-		margin-bottom: 20px !important;
-		color: $colorFontOffWhite !important;
-		background-color: 	lighten(#393939, 15%)!important;
-		font-size: 20px !important;
-		padding-top: 7px !important;
-		padding-bottom: 3px !important;
-		padding-top: 3px !important;
-		padding-left: 10px !important;
-		padding-right: 10px !important;
-	}
+}
+.onehouseAddress{
+	margin-bottom: 10px !important;
+	color: $colorFontOffWhite !important;
+	background-color: 	lighten(#393939, 15%)!important;
+	font-size: 18px !important;
+	padding-bottom: 10px !important;
+	padding-top: 5px !important;
+	padding-left: 5px !important;
+	padding-right: 10px !important;
+	line-height: 48px !important;
 }
 
 .databaseParsing{

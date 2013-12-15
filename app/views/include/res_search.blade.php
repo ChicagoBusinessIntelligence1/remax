@@ -1,64 +1,64 @@
-@section('houses')
-@if(count($houses)>0)
-<h3 class="alert-box secondary foundInfoStyle radius">{{$houses->getTotal()}} LISTINGS FOUND </h3>
+@section('listings')
+@if(count($listings)>0)
+<h3 class="alert-box secondary foundInfoStyle radius">{{$listings->getTotal()}} LISTINGS FOUND </h3>
 <ul class="no-bullet">
-	@foreach ($houses as $house)
+	@foreach ($listings as $listing)
 	<li>
-		@if($house->issale ==1)
-		<a href="{{url('Homes-Sale-'.$house->city->city.'/'.$house->id)}}">
+		@if($listing->IsRental ==0)
+		<a href="{{url('Homes-Sale-'.$listing->city->CityName.'/'.$listing->Id)}}">
 		@else
-		<a href="{{url('Homes-Rent-'.$house->city->city.'/'.$house->id)}}">
+		<a href="{{url('Homes-Rent-'.$listing->city->CityName .'/'.$listing->Id)}}">
 		@endif	
 				<!-- =addressColor starts here -->
 				<div class="panel addressColor">
 					<div class="row listPropWrap">
 						<div class="large-10 columns">
 							<h2>
-								{{$house->address}}
+								{{$listing->Address}}
 							</h2> &nbsp	&nbsp	
 							<br/>
 						</div>
 
 						<div class="large-2 columns">
-							<span class="priceStyle right ">${{number_format($house->price)}}
+							<span class="priceStyle right ">${{number_format($listing->Price)}}
 							</span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-10 columns">
-							<h3 class="subheader propType"><em>{{$house->type->type}}</em> </h3>
+							<h3 class="subheader propType"><em>{{$listing->PropType}}</em> </h3>
 						</div>
 					</div>
 
 					<hr/>
 					<div class="row">
-						<div class="large-7 columns houseImgWrapper">
+						<div class="large-7 columns listingImgWrapper">
 
 							<div class="fiveMarginBottom">
 								<small>
-									<em>MLS#: </em>{{$house->mls}} | 
-									@if ($house->year!=null)
-									<em>Year: </em>{{$house->year}} | 
+									<em>MLS#: </em> 0{{$listing->MlsNum}} | 
+									@if ($listing->YearBuilt!=null)
+									<em>Year: </em>{{substr($listing->YearBuilt, 0, 4)}} | 
 									@endif
-									<em>Bedrooms: </em>{{$house->beds}} | 
-									<em>Bathrooms: </em>{{$house->baths}}  
+									<em>Bedrooms: </em>{{$listing->Bed}} | 
+									<em>Bathrooms: </em>{{$listing->FullBath}}  
 									
 								</small>
 							</div>
-							@if($house->maximgid)
+							@if($listing->NumberPhotos)
 
-							@if($house->issale ==1)
-							<a class="listingImage"  href="{{url('Homes-Sale-'.$house->city->city.'/'.$house->id)}}">
+							@if($listing->IsRental ==0)
+							<a class="listingImage"  href="{{url('Homes-Sale-'.$listing->city->CityName.'/'.$listing->Id)}}">
 								@else
-								<a class="listingImage"  href="{{url('Homes-Rent-'.$house->city->city.'/'.$house->id)}}">
+								<a class="listingImage"  href="{{url('Homes-Rent-'.$listing->city->CityName.'/'.$listing->Id)}}">
 									@endif	
 
-									<img src="{{url('comp/img/images/'.$house->id.'/1.jpg')}}"  class="th">
+									<img src="{{url('comp/img/images/'.$listing->MlsNum.'/1.jpg')}}"  class="th">
 								</a> 
 								@endif
 								<div class="signinLabel">
 									@if(Auth::check())
-									{{Form::open(array('url' => 'house-alert/'.$house->id, 'method'=>'POST'))}}
+									{{Form::open(array('url' => 'listing-alert/'.$listing->Id, 'method'=>'POST'))}}
 									{{ Form::submit('Save this Property to My Account', array('class'=>'button tiny secondary radius addPropertyButton'))}}
 									{{Form::close()}}
 									@else
@@ -68,7 +68,7 @@
 								</div>
 
 							</div>
-							<!-- =houseImgWrapper ends here -->
+							<!-- =listingImgWrapper ends here -->
 
 							<!-- =badicInfoWrapper starts here -->
 							<div class="large-5 columns basicInfoWrapper">
@@ -79,9 +79,9 @@
 
 										<!-- =searchDescription starts here -->
 										<div class="searchDescription">
-											{{substr($house->description, 144, 300)}}... </br>
+											{{substr($listing->PropDetails, 0, 300)}}... </br>
 
-											<a href="{{url('search/'.$house->id)}}" class="propDetails"><em>Property Details</em></a>
+											<a href="{{url('search/'.$listing->Id)}}" class="propDetails"><em>Property Details</em></a>
 											<hr/>
 										</div>
 										<!-- =searchDescription ends here -->
@@ -108,7 +108,7 @@
 			@endforeach
 		</ul>
 
-		<?php echo $houses->appends(array(
+		<?php echo $listings->appends(array(
 			'location' => Input::get('location'),
 			'from' => Input::get('from'),
 			'to' => Input::get('to'),

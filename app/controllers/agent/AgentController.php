@@ -12,7 +12,7 @@ class AgentController extends BaseController {
     public function show_listings($id)
     {
     
-    $houses = House::with('images')->where('agent_id', '=', $id)->paginate(5);
+    $houses = Listing::with('images')->where('agent_id', '=', $id)->paginate(5);
     return View::make('search.results')->with(compact('houses'))
     ->with('agents', parent::getRandomAgents());
 

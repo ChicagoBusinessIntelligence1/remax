@@ -6,7 +6,7 @@ class ApartmentsForRentInSkokieIlController extends BaseController {
 
 	public function index()
 	{
-		$houses  = House::where('issale', '=', 0)
+		$houses  = Listing::where('issale', '=', 0)
 		->whereType_id(3)
 		->where(function($query){$query->where('address', 'LIKE', '%skokie%');})
 		->paginate(10);

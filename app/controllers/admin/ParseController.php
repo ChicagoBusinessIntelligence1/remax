@@ -463,9 +463,11 @@ $context  = stream_context_create($opts);
 				}
 				
 				
-				$dir_path = public_path()."/comp/img/images/$house->id/";
+				$dir_path = "/home5/remaxone/public_html/comp/img/images/$house->id/";
+				//dd($dir_path);
+
 				if (!File::exists($dir_path))
-					File::makeDirectory($dir_path, '777', true);
+					File::makeDirectory($dir_path, 0777, true);
 
 				File::put($dir_path."$i.jpg", $fileImage);
 				

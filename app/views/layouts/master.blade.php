@@ -107,52 +107,9 @@
               <li>{{link_to_route('home', 'Home');}}</li>
               
               
+              
 
-              <li class="has-dropdown">{{link_to('#', 'Our Listings in');}}
-
-                <ul class="dropdown">
-                 <!-- Skokie =location -->
-                 <li>{{link_to_route('skokie-lists', 'Skokie');}}</li>
-                 <!-- Skokie =locationEnd -->
-
-                 <!-- Niles =location -->
-                 <li>{{link_to_route('niles-lists', 'Niles');}}</li>
-                 <!-- Niles =locationEnd -->
-
-                 <!-- Evanston =location -->
-                 <li>{{link_to_route('evanston-lists', 'Evanston');}}</li>
-                 <!-- Evanston =locationEnd -->
-
-                 <!-- Morton-Grove =location -->
-                 <li>{{link_to_route('morton-grove-lists', 'Morton-Grove');}}</li>
-                 <!-- Morton-Grove =locationEnd -->
-
-                 <!-- Glenview =location -->
-                 <li>{{link_to_route('glenview-lists', 'Glenview');}}</li>
-                 <!-- Glenview =locationEnd -->
-
-                 <!-- Park-Ridge =location -->
-                 <li>{{link_to_route('park-ridge-lists', 'Park-Ridge');}}</li>
-                 <!-- Park-Ridge =locationEnd -->
-
-                 <!-- Lincolnwood =location -->
-                 <li>{{link_to_route('lincolnwood-lists', 'Lincolnwood');}}</li>
-                 <!-- Lincolnwood =locationEnd -->
-
-                 <!-- Wilmette =location -->
-                 <li>{{link_to_route('wilmette-lists', 'Wilmette');}}</li>
-                 <!-- Wilmette =locationEnd -->
-
-                 <!-- Winnetka =location -->
-                 <li>{{link_to_route('winnetka-lists', 'Winnetka');}}</li>
-                 <!-- Winnetka =locationEnd -->
-
-                 <!-- Lake-Forest =location -->
-                 <li>{{link_to_route('lake-forest-lists', 'Lake-Forest');}}</li>
-                 <!-- Lake-Forest =locationEnd -->
-
-               </ul>
-             </li>
+             
              
              <li class="has-dropdown">{{link_to('#', 'Buying Home');}}
 
@@ -473,7 +430,7 @@
                  </div>
 
                </div><!-- aside  large-12 columns panel --> 
-             </div>
+             </div>  
 
              <div class="row">
                <div class="large-12 columns panel newListings"> 
@@ -482,12 +439,12 @@
                 </div>
                 <hr/>
                 <ul class="large-block-grid-3 small-block-grid-2 ulagents">
-                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/5')}}"><img class="imgNewListings"src="{{url('comp/img/images/5/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
-                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/133')}}"><img class="imgNewListings"src="{{url('comp/img/images/133/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
-                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/492')}}"><img class="imgNewListings"src="{{url('comp/img/images/492/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
-                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/480')}}"><img class="imgNewListings"src="{{url('comp/img/images/480/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
-                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/403')}}"><img class="imgNewListings"src="{{url('comp/img/images/403/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
-                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/815')}}"><img class="imgNewListings"src="{{url('comp/img/images/815/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
+                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/5')}}"><img class="imgNewListings"src="{{url('comp/img/images/8367689/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
+                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/133')}}"><img class="imgNewListings"src="{{url('comp/img/images/8359868/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
+                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/492')}}"><img class="imgNewListings"src="{{url('comp/img/images/8006143/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
+                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/480')}}"><img class="imgNewListings"src="{{url('comp/img/images/8423458/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
+                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/403')}}"><img class="imgNewListings"src="{{url('comp/img/images/8458501/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
+                  <li class="liNewListings"><a class="th radius" href="{{URL::to('search/815')}}"><img class="imgNewListings"src="{{url('comp/img/images/8306300/1.jpg')}}" alt="RE/MAX FIRST CLASS New Listing"><a/></li>
                 </ul>
               </div>
             </div>
@@ -570,7 +527,7 @@
 
           <section class="large-6 small-6 columns social">
             <ul class="prop no-bullet">
-              {{link_to('show-all-listings', 'PROPERTIES FOR SALE', array('class'=>'propertiesFooter'));}} 
+              {{link_to_route('show-all-listings', 'PROPERTIES FOR SALE', array('class'=>'propertiesFooter'));}} 
               <hr/>
               <li class="locality properties">{{link_to_route('sale-single', 'SINGLE FAMILY HOMES FOR SALE');}}</li>
               <li class="locality properties">{{link_to_route('sale-single', 'CONDOS FOR SALE');}}</li>
@@ -578,7 +535,7 @@
           </section>
           <section class="large-6 small-6 columns propRent">
             <ul class="prop no-bullet">
-              {{link_to('all-rent-listings', 'PROPERTIES FOR RENT', array('class'=>'propertiesFooter'));}} 
+              {{link_to_route('all-rent-listings', 'PROPERTIES FOR RENT', array('class'=>'propertiesFooter'));}} 
               <hr/>
               <li class="locality properties">{{link_to_route('rent-apartments', 'APARTMENTS FOR RENT');}}</li>
               <li class="locality properties">{{link_to_route('rent-houses', 'HOUSES FOR RENT');}}</li>

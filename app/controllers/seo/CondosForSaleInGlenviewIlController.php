@@ -6,7 +6,7 @@ class CondosForSaleInGlenviewIlController extends BaseController {
 
 	public function index()
 	{
-		$houses  = House::where('issale', '=', 1)
+		$houses  = Listing::where('issale', '=', 1)
 		->whereType_id(3)
 		->where(function($query){$query->where('address', 'LIKE', '%glenview%');})
 		->paginate(10);

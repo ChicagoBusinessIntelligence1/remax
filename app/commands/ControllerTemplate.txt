@@ -6,7 +6,7 @@ class {{controllerName}} extends BaseController {
 
 	public function index()
 	{
-		$houses  = House::where('issale', '=', {{issale}})
+		$houses  = Listing::where('issale', '=', {{issale}})
 		{{extrawhere}}
 		->where(function($query){$query->where('address', 'LIKE', '%{{city}}%');})
 		->paginate(10);

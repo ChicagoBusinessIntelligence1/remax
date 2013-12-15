@@ -10,19 +10,19 @@ class {{ControllerName}} extends BaseController {
 		$meta = '{{meta}}';
 		$city = {{city}};
 		
-		$zipSale  = DB::table('houses')
-		->join('cities', 'houses.city_id', '=', 'cities.id')
-		->join('types', 'houses.type_id', '=', 'types.id')
-		->where('cities.city', '=', {{city}})
-		->where ('houses.issale', '=', 1)
+		$zipSale  = DB::table('listings')
+		->join('cities', 'listings.city_id', '=', 'cities.id')
+		
+		->where('cities.CityName', '=', {{city}})
+		->where ('listings.isRental', '=', 0)
 		->distinct('zip')
 		->lists('zip');
 		
 
-			$zipRent  = DB::table('houses')
-		->join('cities', 'houses.city_id', '=', 'cities.id')
-		->where('cities.city', '=', {{city}})
-		->where ('houses.issale', '=', 0)
+			$zipRent  = DB::table('listings')
+		->join('cities', 'listings.city_id', '=', 'cities.id')
+		->where('cities.CityName', '=', {{city}})
+		->where ('listings.isRental', '=', 1)
 		->distinct('zip')
 		->lists('zip');
 

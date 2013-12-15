@@ -43,15 +43,15 @@
 				<div class="panel">
 					<h4 class="selectedProperty">Our selected property</h4>
 					<ul data-orbit>
-						<a href="{{URL::to('Homes-Sale-Skokie/1628')}}">
-							<img src="{{url('comp/img/orbit/5.jpg')}}" alt="">
-							<div class="orbit-caption">Glenview, IL 60025</div>
+						<a href="{{URL::to('Homes-Sale-Skokie/4')}}">
+							<img src="{{url('comp/img/images/8367689/1.jpg')}}" alt="">
+							<div class="orbit-caption">Skokie, IL 60203</div>
 						</a>
 					</li>
 									<li>
-					<a href="{{URL::to('Homes-Sale-Skokie/13')}}">
-						<img src="{{url('comp/img/orbit/4.jpg')}}" alt="">
-						<div class="orbit-caption">Skokie, IL 60076</div>
+					<a href="{{URL::to('Homes-Sale-Skokie/14')}}">
+						<img src="{{url('comp/img/images/8450115/1.jpg')}}" alt="">
+						<div class="orbit-caption">Skokie, IL 60077</div>
 					</a>
 				</li>
 				

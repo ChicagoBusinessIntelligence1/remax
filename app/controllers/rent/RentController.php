@@ -11,49 +11,51 @@ class RentController extends BaseController {
      */
     public function apartments() {
 
-     $houses = House::with('city')->where('issale', '=', 0)
-      ->whereType_id(1)
-      ->paginate(5);  
+        $listings = Listing::where('PropType', '=', 'Condo/Townhome/Row Home/Co-Op')
+       ->where('IsRental', '=', 1)->orderBy('Price')
+        ->paginate(5);
+        return View::make('search.results')->with(compact('listings'));
 
        return View::make('search.results')
        ->with('rentals', true)
-       ->with(compact('houses'));
+       ->with(compact('listings'));
     }
 
     public function show($id) {
 
-     $house = House::with('city')->where('id', '=', $id)->where('issale', '=', 0)->first();   
+     $house = Listing::with('city')->where('id', '=', $id)->where('isRental', '=', 1)->orderBy('price')->first();   
 
    return View::make('search.onehouse')->with(compact('house'))->with('rentals', true);
 
     }
     public function all() {
 
-    $houses = House::with('city')
-    ->where('issale', '=', 0)->paginate(5);  
+    $listings = Listing::with('city')
+    ->where('isRental', '=', 1)->orderBy('price')->paginate(5);  
 
         return View::make('search.results')
         ->with('rentals', true)
-        ->with(compact('houses'));
+        ->with(compact('listings'));
 
     }
 
     public function houses(){
 
-      $houses = House::where('issale', '=', 0)
-      ->where('type_id', '=', 2)
-      ->paginate(5);  
+        $listings = Listing::where('PropType', '=', 'Single Family Home')
+       ->where('IsRental', '=', 1)->orderBy('Price')
+        ->paginate(5);
+        return View::make('search.results')->with(compact('listings'));
 
       return View::make('search.results')
        ->with('rentals', true)
-       ->with(compact('houses'));
+       ->with(compact('listings'));
 
 
     }
 
       public function index()
     {
-      $houses = House::where('issale', '=', 0)->where(function($query){
+      $listings = Listing::where('isRental', '=', 1)->orderBy('price')->where(function($query){
 
       $location  = Input::get('location');
       if($location)
@@ -69,18 +71,18 @@ class RentController extends BaseController {
 
       $beds  = Input::get('beds');
       if($beds)
-        $query->where('bedrooms', '>=', $beds);
+        $query->where('beds', '>=', $beds);
 
       $baths  = Input::get('baths');
       if($baths)
-        $query->where('bathrooms', '>=', $baths);
+        $query->where('baths', '>=', $baths);
 
 
     })->paginate(5);  
 
         return View::make('search.results')
         ->with('rentals', true)
-        ->with(compact('houses'));
+        ->with(compact('listings'));
 
   }
  
